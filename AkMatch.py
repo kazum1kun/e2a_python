@@ -7,6 +7,7 @@ class AkMatch:
                     2: [['a', 'b', 'c'], ['a', 'b']]}
         self.E = ['a', 'b', 'a', 'b', 'd', 'c', 'a', 'b', 'c']
 
+    # Find the LCS between two input event sequences
     def find_matches(self, E, A, k):
         # Arrays start at zero...
         k = k - 1
