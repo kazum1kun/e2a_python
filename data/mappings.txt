@@ -1,0 +1,35 @@
+1 K O N L M C T U C A
+1 O N L M C T U C A
+2 K P N L M C T U C A Q
+2 P N L M C T U C A Q
+3 K O B T U D A
+3 O B T U D A
+4 K P B T U D A Q
+4 P B T U D A Q
+5 K O C T U D A
+5 O C T U D A
+6 K P C T U D A Q
+6 P C T U D A Q
+7 K O N
+7 O N
+8 K P N Q
+8 P N Q
+9 K O
+9 O
+10 K P Q
+10 P Q
+11 A C T U K O C
+11 A C T U O C
+12 A C T U K P C Q
+12 A C T U P C Q
+13 A C T U K O
+13 A C T U O
+14 A C T U K P Q
+14 A C T U P Q
+15 G V
+16 G W
+17 I J
+18 H
+19 R H
+20 H S
+21 E Y F X
