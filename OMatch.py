@@ -15,7 +15,7 @@ class OMatch:
     def max_weight_sequence(self):
         # OPT stores the optimal window selection at each window index
         M_len = len(self.M)
-        OPT = np.empty((M_len,), dtype=np.dtype(int))
+        OPT = np.empty((M_len + 1,), dtype=np.dtype(int))
         OPT[0] = 0
 
         # Find the max-weight matches
@@ -30,7 +30,7 @@ class OMatch:
         j = M_len
         while j > 0:
             if self.M[j - 1][4] + OPT[self.p[j]] > OPT[j - 1]:
-                Mw.append(self.M[j])
+                Mw.append(self.M[j - 1])
                 j = self.p[j]
             else:
                 j -= 1
@@ -47,4 +47,5 @@ class OMatch:
             # if M[t][beta] < M[i][alpha]
             if self.M[i - 1][3] < i_alpha:
                 return i
+            i -= 1
         return 0
