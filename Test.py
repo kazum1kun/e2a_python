@@ -3,9 +3,10 @@ from OMatch import OMatch
 
 
 def main():
-    E = ['a', 'b', 'a', 'b', 'd', 'c', 'a', 'b', 'c']
+    E = ['', 'a', 'b', 'a', 'b', 'd', 'c', 'a', 'b', 'c']
     akMatch = AkMatch()
     L = akMatch.find_matches(E, 2, 1)
+    print(L)
 
     L = [(1, 5), (2, 7), (6, 8), (3, 11), (9, 12), (10, 13)]
 
