@@ -28,7 +28,8 @@ class OMatch:
                 OPT[j] = OPT[j - 1]
 
         # Backtrack to find the selected interval
-        Mw = []
+        # Pseudo-element to maintain 1-based array
+        Mw = [()]
         j = M_len
         while j > 0:
             if self.M[j][4] + OPT[self.p[j]] > OPT[j - 1]:
