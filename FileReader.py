@@ -15,7 +15,7 @@ def read_activities(file):
     with open(file, 'r') as act_file:
         # Read the first line to obtain the number of lines
         num_activities = int(act_file.readline())
-        activities = np.zeros((num_activities + 1, 2), dtype=np.int_)
+        activities = np.zeros((num_activities + 1, 2), np.int_)
         i = 1
 
         for line in act_file:
@@ -42,7 +42,7 @@ def read_events(file):
     with open(file, 'r') as event_file:
         # Read the first line to obtain the number of lines
         num_events = int(event_file.readline())
-        events = np.zeros((num_events + 1, 2), dtype=np.int_)
+        events = np.zeros((num_events + 1, 2), np.int_)
         i = 1
 
         for line in event_file:

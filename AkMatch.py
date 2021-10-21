@@ -15,7 +15,7 @@ class AkMatch:
         start = 1
         i = 1
         m = len(self.E) - 1
-        c = np.full((m + 1, eta + 1), -1, dtype=np.dtype(int))
+        c = np.full((m + 1, eta + 1), -1, np.int_)
         flag = True
 
         while flag:
@@ -45,7 +45,7 @@ class AkMatch:
                     l += 1
                     row = i
                     col = eta
-                    psi_i = np.full((col + 1,), -1, dtype=np.dtype(int))
+                    psi_i = np.full((col + 1,), -1, np.int_)
 
                     while col > 0:
                         if self.E[row] == curr_seq[col]:

@@ -3,6 +3,8 @@ from OMatch import OMatch
 from SLN import SLN
 from FileReader import *
 
+import numpy as np
+
 
 def main():
     activities = read_activities('data/activities.txt')
@@ -11,16 +13,12 @@ def main():
 
     akMatch = AkMatch(events[:, 1], mappings)
     L = akMatch.find_matches(2, 1)
-    print(L)
 
-    L = [(-1, 1, 5), (-1, 2, 7), (-1, 6, 8), (-1, 3, 11), (-1, 9, 12), (-1, 10, 13)]
-
-    oMatch = OMatch(L, 2, 1, [2, 4, 4, 7, 2, 1])
+    w = np.ones((22, 3), np.int_)
+    oMatch = OMatch(L, 2, 1, w)
     Mw = oMatch.max_weight_sequence()
     print(Mw)
-    sln = SLN(1,1,1,1,1)
-    ed = sln.calc_edit_distance(['', 'j', 'a', 'b', 'c', 'd'], ['', 'e'])
-    print(ed)
+
 
 
 
