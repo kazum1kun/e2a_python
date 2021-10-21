@@ -20,7 +20,8 @@ def main():
     # print(ed)
 
     # read_activities('data/activities.txt')
-    read_events('data/events.txt')
+    # read_events('data/events.txt')
+    read_mappings('data/mappings.txt')
 
 
 if __name__ == '__main__':
