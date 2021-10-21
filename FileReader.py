@@ -77,6 +77,7 @@ def read_mappings(file):
             act, *events = line.strip().split(' ')
             act = int(act)
             events = [ord(e) for e in events]
+            events.insert(0, -1)
 
             if act not in mappings:
                 mappings[act] = [[], events]

@@ -2,27 +2,26 @@ import numpy as np
 
 
 class AkMatch:
-    def __init__(self):
-        self.seq = {1: [[], ['', 'a', 'b']],
-                    2: [[], ['', 'a', 'b', 'c'], ['', 'a', 'b']]}
-        self.E = ['', 'a', 'b', 'a', 'b', 'd', 'c', 'a', 'b', 'c']
+    def __init__(self, E, S):
+        self.E = E
+        self.S = S
 
     # Find the LCS between two input event sequences
-    def find_matches(self, E, A, k):
+    def find_matches(self, A, k):
         # Initialization
-        eta = len(self.seq[A][k]) - 1
+        eta = len(self.S[A][k]) - 1
         L = []
         l = 0
         start = 1
         i = 1
-        m = len(E) - 1
+        m = len(self.E) - 1
         c = np.full((m + 1, eta + 1), -1, dtype=np.dtype(int))
         flag = True
 
         while flag:
             for j in range(0, eta + 1):
                 c[start - 1][j] = 0
-            curr_seq = self.seq[A][k]
+            curr_seq = self.S[A][k]
 
             # Find the LCS of E and the given sequence of events
             while i <= m:
@@ -33,7 +32,7 @@ class AkMatch:
                 # Compare events one by one to build the LCS
                 for j in range(1, eta + 1):
                     # Found an event match
-                    if E[i] == curr_seq[j]:
+                    if self.E[i] == curr_seq[j]:
                         c[i][j] = c[i-1][j-1] + 1
                     # Otherwise, go with the highest neighbor
                     elif c[i-1][j] >= c[i][j-1]:
@@ -49,7 +48,7 @@ class AkMatch:
                     psi_i = np.full((col + 1,), -1, dtype=np.dtype(int))
 
                     while col > 0:
-                        if E[row] == curr_seq[col]:
+                        if self.E[row] == curr_seq[col]:
                             psi_i[col] = row
                             row -= 1
                             col -= 1
