@@ -16,7 +16,6 @@ class OMatch:
 
     # Find a max-weight sequence of compatible matches
     def max_weight_sequence(self, w):
-
         # OPT stores the optimal window selection at each window index
         M_len = len(self.M) - 1
         OPT = np.full((M_len + 1,), -1, np.int_)
@@ -44,7 +43,7 @@ class OMatch:
             else:
                 j -= 1
 
-        return Mw
+        return Mw, self.p
 
     # Calculate the predecessor of a window/match
     def calc_p(self, i):
