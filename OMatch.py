@@ -1,18 +1,32 @@
 import numpy as np
+from AkMatch import AkMatch
 
 
 class OMatch:
     # Convert the input list to the five-tuple as prescribed in the paper
-    def __init__(self, M, i, k):
-        # (i, k, alpha, beta)
-        # the last entry w is OMITTED to save some space and make sure the data syncs
-        self.M = [(i, k, m[1], m[-1]) for m in M]
-        # Sort the tuples according to non-decreasing order of beta
-        self.M.sort(key=lambda x: x[3])
-        # Pseudo-entry to maintain 1-indexed array
-        self.M.insert(0, (-1, -1, -1, -1))
+    def __init__(self, E, S, n, k):
+        akMatch = AkMatch(E, S)
+        values = self.populate_m(akMatch, n, k)
+        M_dt = [('i', np.int_), ('k', np.int_), ('alpha', np.int_), ('beta', np.int_)]
+        self.M = np.array(values, dtype=M_dt)
+        self.M.sort(order='beta')
         # Enumerate the predecessor of a window/match
-        self.p = [self.calc_p(i) for i in range(0, len(M) + 1)]
+        self.p = [self.calc_p(i) for i in range(0, len(self.M) + 1)]
+
+    # Populates the matches for all i, k values
+    @staticmethod
+    def populate_m(akMatch, n, k):
+        # Pseudo-entry to maintain 1-indexed array
+        all_values = [(-1, -1, -1, -1)]
+        for i in range(1, n + 1):
+            for k in range(1, k + 1):
+                M = akMatch.find_matches(i, k)
+                # (i, k, alpha, beta)
+                # the last entry w is OMITTED to save some space and make sure the data syncs
+                values = [(i, k, m[1], m[-1]) for m in M]
+                # Sort the tuples according to non-decreasing order of beta
+                all_values.extend(values)
+        return all_values
 
     # Find a max-weight sequence of compatible matches
     def max_weight_sequence(self, w):

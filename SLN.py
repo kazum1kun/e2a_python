@@ -1,27 +1,24 @@
 import numpy as np
 from OMatch import OMatch
-from AkMatch import AkMatch
 
 
 class SLN:
     def __init__(self, mappings, events):
-        self.akMatch = AkMatch(events[:, 1], mappings)
-        self.oMatch = None
         self.M = None
         self.p = None
-
         self.n = len(mappings)
         # Calculate ni values and the N value
-        ni = [len(activity) - 1 for activity in mappings]
+        ni = [len(mappings[activity]) - 1 for activity in range(1, self.n + 1)]
         self.N = np.sum(ni)
         k = np.max(ni)
         # Make array 1-based
         ni.insert(0, 0)
         self.ni = ni
 
-        self.w = np.zeros((self.n + 1, k + 1), np.int_)
+        self.w = np.zeros((self.n + 1, k + 1), np.float_)
         self.S = mappings
-        self.E = events
+        self.E = events[:, 1]
+        self.oMatch = OMatch(self.E, self.S, self.n, k)
 
     def sln_1d(self, i, k):
         x = 0
@@ -72,12 +69,12 @@ class SLN:
 
             mu = x + sigma
             nu = x + sigma / 2
-            self.w[i, k] = nu
+            self.w[i][k] = nu
             f_new, _ = self.f()
             if f_new < f_opt or (f_new == f_opt and nu == sigma / 2):
                 x_opt = nu
                 f_opt = f_new
-            self.w[i, k] = mu
+            self.w[i][k] = mu
             f_new, _ = self.f()
             if f_new < f_opt:
                 x_opt = mu
@@ -96,7 +93,7 @@ class SLN:
             for k in range(2, ni[i] + 1):
                 self.w[i][k] = 1
         done = False
-        f_opt = np.infty
+        f_opt = self.f()
         Aw = []
 
         # Coordinate descent
@@ -133,9 +130,12 @@ class SLN:
     # Calculates the edit distance between two input sequences. This variant is also called
     # Levenshtein distance as insertions, deletions, and modifications on individual chars are
     # allowed (each with cost of 1)
-    def calc_edit_distance(self, seq1, seq2):
+    @staticmethod
+    def calc_edit_distance(seq1, seq2):
         m = len(seq1)
         n = len(seq2)
+        if m == 0:
+            return n
 
         # dist[i,j] holds the Levenshtein distance between the first i chars of seq1 and first j chars of seq2
         dist = np.zeros((m, n), np.int_)
@@ -170,12 +170,13 @@ class SLN:
         self.M, self.p = self.oMatch.max_weight_sequence(self.w)
         m = len(self.M)
         Aw = np.full((m + 1,), -1, np.int_)
-        # Assign Aw[j] to the corresponding i value
-        for j in range(1, m + 1):
-            Aw[j] = self.M[j][0]
 
         E1 = []
-        for A in Aw:
-            E1.extend(self.S[A][1])
+        # Assign Aw[j] to the corresponding i value
+        if len(self.M) > 1:
+            for j in range(1, m + 1):
+                Aw[j] = self.M[j][0]
+            for A in Aw:
+                E1.extend(self.S[A][1])
 
         return self.calc_edit_distance(E1, self.S), Aw
