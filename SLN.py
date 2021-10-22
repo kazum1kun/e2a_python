@@ -73,6 +73,45 @@ class SLN:
 
         return x_opt, f_opt
 
+    def sln_nd(self, n, k, C, N, ni):
+        # Init the weights for S1s to C and the rest to 1
+        for i in range(1, n + 1):
+            self.w[i][1] = C
+            for k in range(2, ni[i] + 1):
+                self.w[i][k] = 1
+        done = False
+        f_opt = self.f()
+        Aw = []
+
+        # Coordinate descent
+        while not done:
+            # Weight normalization
+            W = 0
+            for i in range(1, n + 1):
+                for k in range(1, ni[i] + 1):
+                    W += self.w[i][k]
+
+            for i in range(1, n + 1):
+                for k in range(1, ni[i] + 1):
+                    self.w[i][k] = N * self.w[i][k] / W
+
+            done = True
+
+            # 1D minimization
+            for i in range(1, n + 1):
+                for k in range(1, ni[i] + 1):
+                    x_old = self.w[i][k]
+                    x_new = self.sln_1d(i, k)
+                    f_new, Aw = self.f()
+
+                    if f_new < f_opt:
+                        done = False
+                        self.w[i][k] = x_new
+                        f_opt = f_new
+                    else:
+                        self.w[i][k] = x_old
+        return self.w, Aw
+
     # Calculates the edit distance between two input sequences. This variant is also called
     # Levenshtein distance as insertions, deletions, and modifications on individual chars are
     # allowed (each with cost of 1)
@@ -121,4 +160,4 @@ class SLN:
         for A in Aw:
             E1.extend(self.S[A][1])
 
-        return self.calc_edit_distance(E1, self.S)
+        return self.calc_edit_distance(E1, self.S), Aw
