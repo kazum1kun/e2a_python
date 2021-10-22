@@ -18,7 +18,7 @@ class SLN:
         self.w = np.zeros((self.n + 1, k + 1), np.float_)
         self.S = mappings
         self.E = events[:, 1]
-        self.oMatch = OMatch(self.E, self.S, self.n, k)
+        self.oMatch = OMatch(self.E, self.S, self.n, self.ni)
 
     def sln_1d(self, i, k):
         x = 0
@@ -36,12 +36,12 @@ class SLN:
             sigma = np.infty
             delta = np.zeros((m,), np.int_)
 
-            for j in range(1, m + 1):
+            for j in range(1, m):
                 # M[j].w is variable (by default theta entries are all zeros)
-                if M[j][0] == i and M[j][1] == k:
+                if M[j]['i'] == i and M[j]['k'] == k:
                     delta[j] = 1
                 # Pre-calc M[j].w for convenience
-                j_weight = self.w[M[j][0], M[j][1]]
+                j_weight = self.w[M[j]['i'], M[j]['k']]
 
                 if j_weight + OPT[p[j]] > OPT[j - 1]:
                     OPT[j] = j_weight + OPT[p[j]]
@@ -52,7 +52,7 @@ class SLN:
                 elif j_weight + OPT[p[j]] < OPT[j - 1]:
                     OPT[j] = OPT[j - 1]
                     a[j] = a[j - 1]
-                    if a[p[j] + delta[j] > a[j - 1]]:
+                    if a[p[j]] + delta[j] > a[j - 1]:
                         sigma = np.min[sigma, (j_weight + OPT[p[j]] - OPT[j - 1]) /
                                        (a[j - 1] - a[p[j] - delta[j]])]
                 else:
@@ -93,7 +93,7 @@ class SLN:
             for k in range(2, ni[i] + 1):
                 self.w[i][k] = 1
         done = False
-        f_opt = self.f()
+        f_opt, _ = self.f()
         Aw = []
 
         # Coordinate descent
@@ -113,10 +113,8 @@ class SLN:
             # 1D minimization
             for i in range(1, n + 1):
                 for k in range(1, ni[i] + 1):
-                    L = self.akMatch.find_matches(i, k)
-                    self.oMatch = OMatch(L, i, k)
                     x_old = self.w[i][k]
-                    x_new = self.sln_1d(i, k)
+                    x_new, _ = self.sln_1d(i, k)
                     f_new, Aw = self.f()
 
                     if f_new < f_opt:
@@ -169,14 +167,14 @@ class SLN:
         # Recalculate M using the updated weights
         self.M, self.p = self.oMatch.max_weight_sequence(self.w)
         m = len(self.M)
-        Aw = np.full((m + 1,), -1, np.int_)
+        Aw = np.full((m,), -1, np.int_)
 
         E1 = []
         # Assign Aw[j] to the corresponding i value
         if len(self.M) > 1:
-            for j in range(1, m + 1):
-                Aw[j] = self.M[j][0]
-            for A in Aw:
+            for j in range(1, m):
+                Aw[j] = self.M[j]['i']
+            for A in Aw[1:]:
                 E1.extend(self.S[A][1])
 
         return self.calc_edit_distance(E1, self.S), Aw

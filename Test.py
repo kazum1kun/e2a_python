@@ -1,8 +1,10 @@
 from SLN import SLN
 from FileReader import *
+import time
 
 
 def main():
+    time.perf_counter()
     activities = read_activities('data/activities.txt')
     events = read_events('data/events.txt')
     mappings = read_mappings('data/mappings.txt')
