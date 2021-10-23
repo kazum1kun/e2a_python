@@ -1,5 +1,6 @@
 import numpy as np
 from OMatch import OMatch
+import Timer
 
 
 class SLN:
@@ -85,6 +86,7 @@ class SLN:
         return x_opt, f_opt
 
     def sln_nd(self, C):
+        Timer.lap('ND SLN started')
         n = self.n
         ni = self.ni
         # Init the weights for S1s to C and the rest to 1
@@ -113,6 +115,7 @@ class SLN:
             # 1D minimization
             for i in range(1, n + 1):
                 for k in range(1, ni[i] + 1):
+                    Timer.lap(f'Optimizing SLN for k={k}, i={i}')
                     x_old = self.w[i][k]
                     x_new, _ = self.sln_1d(i, k)
                     f_new, Aw = self.f()
