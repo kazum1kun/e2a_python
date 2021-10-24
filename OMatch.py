@@ -23,10 +23,10 @@ class OMatch:
         all_values = [(-1, -1, -1, -1)]
         for i in range(1, n + 1):
             for k in range(1, ni[i] + 1):
-                M = akMatch.find_matches(i, k)
+                L = akMatch.find_matches(i, k)
                 # (i, k, alpha, beta)
                 # the last entry w is OMITTED to save some space and make sure the data syncs
-                values = [(i, k, m[1], m[-1]) for m in M]
+                values = [(i, k, l[1], l[-1]) for l in L]
                 # Sort the tuples according to non-decreasing order of beta
                 all_values.extend(values)
         return all_values
@@ -34,15 +34,15 @@ class OMatch:
     # Find a max-weight sequence of compatible matches
     def max_weight_sequence(self, w):
         # OPT stores the optimal window selection at each window index
-        M_len = len(self.M) - 1
-        OPT = np.full((M_len + 1,), -1, np.int_)
+        M_len = len(self.M)
+        OPT = np.full((M_len,), -1, np.int_)
         OPT[0] = 0
 
         # Find the max-weight matches
-        for j in range(1, M_len + 1):
+        for j in range(1, M_len):
             i = self.M[j]['i']
             k = self.M[j]['k']
-            if w[i, k] + OPT[self.p[j]] > OPT[j - 1]:
+            if w[i][k] + OPT[self.p[j]] > OPT[j - 1]:
                 OPT[j] = w[i][k] + OPT[self.p[j]]
             else:
                 OPT[j] = OPT[j - 1]
@@ -50,7 +50,7 @@ class OMatch:
         # Backtrack to find the selected interval
         # Pseudo-element to maintain 1-based array
         Mw = [()]
-        j = M_len
+        j = M_len - 1
         while j > 0:
             i = self.M[j]['i']
             k = self.M[j]['k']

@@ -5,7 +5,6 @@ import Timer
 
 class SLN:
     def __init__(self, mappings, events):
-        self.M = None
         self.p = None
         self.n = len(mappings)
         # Calculate ni values and the N value
@@ -20,6 +19,7 @@ class SLN:
         self.S = mappings
         self.E = events[:, 1]
         self.oMatch = OMatch(self.E, self.S, self.n, self.ni)
+        self.M = self.oMatch.M
 
     def sln_1d(self, i, k):
         x = 0
@@ -41,21 +41,21 @@ class SLN:
                 # M[j].w is variable (by default theta entries are all zeros)
                 if M[j]['i'] == i and M[j]['k'] == k:
                     delta[j] = 1
-                # Pre-calc M[j].w for convenience
+                # Pre-store M[j].w for convenience
                 j_weight = self.w[M[j]['i'], M[j]['k']]
 
                 if j_weight + OPT[p[j]] > OPT[j - 1]:
                     OPT[j] = j_weight + OPT[p[j]]
                     a[j] = a[p[j]] + delta[j]
-                    if a[p[j] + delta[j] < a[j - 1]]:
-                        sigma = np.min[sigma, (j_weight + OPT[p[j]] - OPT[j - 1]) /
-                                       (a[j - 1] - a[p[j] - delta[j]])]
+                    if a[p[j]] + delta[j] < a[j - 1]:
+                        sigma = np.min([sigma, (j_weight + OPT[p[j]] - OPT[j - 1]) /
+                                       (a[j - 1] - a[p[j]] - delta[j])])
                 elif j_weight + OPT[p[j]] < OPT[j - 1]:
                     OPT[j] = OPT[j - 1]
                     a[j] = a[j - 1]
                     if a[p[j]] + delta[j] > a[j - 1]:
-                        sigma = np.min[sigma, (j_weight + OPT[p[j]] - OPT[j - 1]) /
-                                       (a[j - 1] - a[p[j] - delta[j]])]
+                        sigma = np.min([sigma, (j_weight + OPT[p[j]] - OPT[j - 1]) /
+                                       (a[j - 1] - a[p[j]] - delta[j])])
                 else:
                     if a[p[j]] + delta[j] <= a[j - 1]:
                         OPT[j] = OPT[j - 1]
@@ -115,7 +115,7 @@ class SLN:
             # 1D minimization
             for i in range(1, n + 1):
                 for k in range(1, ni[i] + 1):
-                    Timer.lap(f'Optimizing SLN for k={k}, i={i}')
+                    Timer.lap(f'Optimizing SLN for i={i}, k={k}')
                     x_old = self.w[i][k]
                     x_new, _ = self.sln_1d(i, k)
                     f_new, Aw = self.f()
@@ -168,16 +168,16 @@ class SLN:
     # given events
     def f(self):
         # Recalculate M using the updated weights
-        self.M, self.p = self.oMatch.max_weight_sequence(self.w)
-        m = len(self.M)
+        Mw, self.p = self.oMatch.max_weight_sequence(self.w)
+        m = len(Mw)
         Aw = np.full((m,), -1, np.int_)
 
         E1 = []
         # Assign Aw[j] to the corresponding i value
-        if len(self.M) > 1:
+        if len(Mw) > 1:
             for j in range(1, m):
-                Aw[j] = self.M[j]['i']
+                Aw[j] = Mw[j]['i']
             for A in Aw[1:]:
-                E1.extend(self.S[A][1])
+                E1.extend(self.S[A][1][1:])
 
-        return self.calc_edit_distance(E1, self.S), Aw
+        return self.calc_edit_distance(E1, self.E[1:]), Aw
