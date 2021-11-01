@@ -1,6 +1,7 @@
 import numpy as np
 from OMatch import OMatch
 import Timer
+import nltk
 
 
 class SLN:
@@ -21,21 +22,26 @@ class SLN:
         self.oMatch = OMatch(self.E, self.S, self.n, self.ni)
         self.M = self.oMatch.M
 
+        self.f_called = -1
+
     def sln_1d(self, i, k):
         x = 0
         x_opt = 0
         self.w[i][k] = x
-        f_opt, _ = self.f()
-        p = self.p
+        f_opt = self.f()
+        A_old = self.get_aw()
         M = self.M
         done = False
+        m = len(self.M)
+        p = self.p
+        itr_num = 1
 
         while not done:
-            m = len(self.M)
             OPT = np.zeros((m,), np.int_)
             a = np.zeros((m,), np.int_)
             sigma = np.infty
             delta = np.zeros((m,), np.int_)
+            Aw_diff = False
 
             for j in range(1, m):
                 # M[j].w is variable (by default theta entries are all zeros)
@@ -71,17 +77,31 @@ class SLN:
             mu = x + sigma
             nu = x + sigma / 2
             self.w[i][k] = nu
-            f_new, _ = self.f()
-            if f_new < f_opt or (f_new == f_opt and nu == sigma / 2):
-                x_opt = nu
-                f_opt = f_new
+            A_new = self.get_aw()
+
+            if not np.array_equal(A_new, A_old) or nu == sigma / 2:
+                Aw_diff = True
+                f_new = self.f()
+                A_old = A_new
+                if f_new < f_opt or (f_new == f_opt and nu == sigma / 2):
+                    x_opt = nu
+                    f_opt = f_new
+
             self.w[i][k] = mu
-            f_new, _ = self.f()
-            if f_new < f_opt:
-                x_opt = mu
-                f_opt = f_new
+            A_new = self.get_aw()
+            if not np.array_equal(A_new, A_old):
+                Aw_diff = True
+                f_new = self.f()
+                A_old = A_new
+                if f_new < f_opt:
+                    x_opt = mu
+                    f_opt = f_new
+
             if not done:
                 x = mu
+
+            print(f'Inner Iteration {itr_num}, i={i}, k={k}, Aw_diff={Aw_diff}, f_opt={f_opt}, f_new={f_new}')
+            itr_num += 1
 
         return x_opt, f_opt
 
@@ -95,8 +115,8 @@ class SLN:
             for k in range(2, ni[i] + 1):
                 self.w[i][k] = 1
         done = False
-        f_opt, _ = self.f()
-        Aw = []
+        f_opt = self.f()
+        itr_num = 1
 
         # Coordinate descent
         while not done:
@@ -115,10 +135,10 @@ class SLN:
             # 1D minimization
             for i in range(1, n + 1):
                 for k in range(1, ni[i] + 1):
-                    Timer.lap(f'Optimizing SLN for i={i}, k={k}')
+                    print(f'\n===========Iteration {itr_num}, optimizing SLN for {i=}, {k=}===========')
                     x_old = self.w[i][k]
                     x_new, _ = self.sln_1d(i, k)
-                    f_new, Aw = self.f()
+                    f_new = self.f()
 
                     if f_new < f_opt:
                         done = False
@@ -126,7 +146,10 @@ class SLN:
                         f_opt = f_new
                     else:
                         self.w[i][k] = x_old
-        return self.w, Aw
+                    Timer.lap(f'Done, f is called {self.f_called} times for this fixed i, k')
+                    self.f_called = 0
+            itr_num += 1
+        return self.w, self.get_aw()
 
     # Calculates the edit distance between two input sequences. This variant is also called
     # Levenshtein distance as insertions, deletions, and modifications on individual chars are
@@ -164,20 +187,25 @@ class SLN:
 
         return dist[m - 1][n - 1]
 
-    # Using given Mw, obtain a corresponding device event sequence and calculates the distance between the sequence and
-    # given events
+    # Calculate the distance between the sequence and given events
     def f(self):
+        self.f_called += 1
+        Aw = self.get_aw()
+        E1 = []
+        for A in Aw[1:]:
+            E1.extend(self.S[A][1][1:])
+
+        return nltk.edit_distance(E1, self.E[1:])
+
+    # Using given Mw, obtain a corresponding device event sequence
+    def get_aw(self):
         # Recalculate M using the updated weights
         Mw, self.p = self.oMatch.max_weight_sequence(self.w)
         m = len(Mw)
         Aw = np.full((m,), -1, np.int_)
 
-        E1 = []
         # Assign Aw[j] to the corresponding i value
-        if len(Mw) > 1:
-            for j in range(1, m):
-                Aw[j] = Mw[j]['i']
-            for A in Aw[1:]:
-                E1.extend(self.S[A][1][1:])
+        for j in range(1, m):
+            Aw[j] = Mw[j]['i']
 
-        return self.calc_edit_distance(E1, self.E[1:]), Aw
+        return Aw

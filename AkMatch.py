@@ -59,7 +59,8 @@ class AkMatch:
                     L.append(psi_i)
                     start = psi_i[1] + 1
                     i = start
-                    flag = True
+                    if i <= m:
+                        flag = True
                     break
                 i += 1
         return L
