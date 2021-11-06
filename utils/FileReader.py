@@ -85,3 +85,25 @@ def read_mappings(file):
                 mappings[act].append(events)
 
         return mappings
+
+
+# Same as read_mappings but without the added pseudo-entries for 1-based arrays
+def read_mappings_0based(file):
+    with open(file, 'r') as map_file:
+        # Skip the first line
+        map_file.readline()
+        mappings = {}
+
+        for line in map_file:
+            # The first entry is an activity and the following entries are the resulting events
+            act, *events = line.strip().split(' ')
+            act = int(act)
+
+            mappings[0] = []
+
+            if act not in mappings:
+                mappings[act] = [events]
+            else:
+                mappings[act].append(events)
+
+        return mappings

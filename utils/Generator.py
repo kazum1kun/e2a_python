@@ -1,27 +1,44 @@
-from FileReader import read_mappings
+import random
 
-def main(file, limit):
-    all_tokens = []
-    scanned = set()
+from FileReader import read_mappings_0based
 
-    with open(file, 'r') as infile:
-        infile.readline()
 
-        for line in infile:
-            tokens = line.strip().split(' ')
+def main(file, number, extension='', generate_partial=False):
+    mappings = read_mappings_0based(file)
+    n = len(mappings)
+    activity_output = [0]
+    events_output = [0]
+    time_counter = 0
 
-            if int(tokens[0]) >= limit:
-                break
+    # Generate a random sequence of activities
+    rand_activities = [random.randint(1, n - 1) for _ in range(number)]
 
-            if not tokens[0] in scanned:
-                all_tokens.extend(tokens[1:])
-                scanned.add(tokens[0])
+    for activity in rand_activities:
+        activity_output.append(f'{time_counter} {activity}')
+        # Generate a partial sequence if the flag is on
+        if generate_partial:
+            ni = len(mappings[activity])
+            sub_sequence = random.randint(0, ni - 1)
+        else:
+            sub_sequence = 0
 
-    counter = 1
-    for token in all_tokens:
-        print(f'{counter} {token}')
-        counter += 1
+        sequence = mappings[activity][sub_sequence]
+
+        for i in range(len(sequence)):
+            events_output.append(f'{time_counter} {sequence[i]}')
+            time_counter += 1
+
+    activity_output[0] = str(len(activity_output) - 1)
+    events_output[0] = str(len(events_output) - 1)
+
+    with open(f'activities{extension}.txt', 'w') as activity_file:
+        for e in activity_output:
+            activity_file.write(e + '\n')
+
+    with open(f'events{extension}.txt', 'w') as events_file:
+        for e in events_output:
+            events_file.write(e + '\n')
 
 
 if __name__ == '__main__':
-    main('../data/mappings/mappings-reduced.txt', 16)
+    main('../data/mappings/mappings-reduced.txt', 5)
