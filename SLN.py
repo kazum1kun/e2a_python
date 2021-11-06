@@ -1,6 +1,6 @@
 import numpy as np
 from OMatch import OMatch
-import Timer
+from utils import Timer
 import nltk
 
 
@@ -48,26 +48,26 @@ class SLN:
                 if M[j]['i'] == i and M[j]['k'] == k:
                     delta[j] = 1
                 # Pre-store M[j].w for convenience
-                j_weight = self.w[M[j]['i'], M[j]['k']]
+                Mj_w = self.w[M[j]['i']][M[j]['k']]
 
-                if j_weight + OPT[p[j]] > OPT[j - 1]:
-                    OPT[j] = j_weight + OPT[p[j]]
+                if Mj_w + OPT[p[j]] > OPT[j - 1]:
+                    OPT[j] = Mj_w + OPT[p[j]]
                     a[j] = a[p[j]] + delta[j]
                     if a[p[j]] + delta[j] < a[j - 1]:
-                        sigma = np.min([sigma, (j_weight + OPT[p[j]] - OPT[j - 1]) /
+                        sigma = np.min([sigma, (Mj_w + OPT[p[j]] - OPT[j - 1]) /
                                        (a[j - 1] - a[p[j]] - delta[j])])
-                elif j_weight + OPT[p[j]] < OPT[j - 1]:
+                elif Mj_w + OPT[p[j]] < OPT[j - 1]:
                     OPT[j] = OPT[j - 1]
                     a[j] = a[j - 1]
                     if a[p[j]] + delta[j] > a[j - 1]:
-                        sigma = np.min([sigma, (j_weight + OPT[p[j]] - OPT[j - 1]) /
+                        sigma = np.min([sigma, (Mj_w + OPT[p[j]] - OPT[j - 1]) /
                                        (a[j - 1] - a[p[j]] - delta[j])])
                 else:
                     if a[p[j]] + delta[j] <= a[j - 1]:
                         OPT[j] = OPT[j - 1]
                         a[j] = a[j - 1]
                     else:
-                        OPT[j] = j_weight + OPT[p[j]]
+                        OPT[j] = Mj_w + OPT[p[j]]
                         a[j] = a[p[j]] + delta[j]
 
             if sigma == np.infty:
@@ -100,7 +100,7 @@ class SLN:
             if not done:
                 x = mu
 
-            print(f'Inner Iteration {itr_num}, i={i}, k={k}, Aw_diff={Aw_diff}, f_opt={f_opt}, f_new={f_new}')
+            print(f'Inner Iteration {itr_num}, {i=}, {k=}, {Aw_diff=}, {f_opt=}, {f_new=}')
             itr_num += 1
 
         return x_opt, f_opt
@@ -137,17 +137,22 @@ class SLN:
                 for k in range(1, ni[i] + 1):
                     print(f'\n===========Iteration {itr_num}, optimizing SLN for {i=}, {k=}===========')
                     x_old = self.w[i][k]
-                    x_new, _ = self.sln_1d(i, k)
-                    f_new = self.f()
-
+                    x_new, f_new = self.sln_1d(i, k)
+                    print(f'After optimizing, {f_new=}, {f_opt=}')
                     if f_new < f_opt:
                         done = False
                         self.w[i][k] = x_new
                         f_opt = f_new
                     else:
                         self.w[i][k] = x_old
-                    Timer.lap(f'Done, f is called {self.f_called} times for this fixed i, k')
+                    Timer.lap(f'Done, f is called {self.f_called} times for {i=}, {k=}')
                     self.f_called = 0
+
+                    print(self.w)
+                    for j in range(1, len(self.w)):
+                        if self.w[j][1] == 0:
+                            print(f'w[{j}][1] value is 0, exiting')
+                            return
             itr_num += 1
         return self.w, self.get_aw()
 

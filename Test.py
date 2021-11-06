@@ -1,6 +1,6 @@
 from SLN import SLN
-from FileReader import *
-import Timer
+from utils.FileReader import *
+from utils import Timer
 
 
 def main():
@@ -11,7 +11,8 @@ def main():
     Timer.lap('Text read finished.')
 
     sln = SLN(mappings, events)
-    w, Aw = sln.sln_nd(1)
+    w, Aw = sln.sln_nd(10)
+    print(w)
     print(Aw)
 
 

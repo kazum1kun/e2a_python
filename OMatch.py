@@ -1,6 +1,6 @@
 import numpy as np
 
-import Timer
+from utils import Timer
 from AkMatch import AkMatch
 
 
