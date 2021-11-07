@@ -31,14 +31,14 @@ def main(file, number, extension='', generate_partial=False):
     activity_output[0] = str(len(activity_output) - 1)
     events_output[0] = str(len(events_output) - 1)
 
-    with open(f'activities{extension}.txt', 'w') as activity_file:
+    with open(f'../data/activities/activities{extension}.txt', 'w') as activity_file:
         for e in activity_output:
             activity_file.write(e + '\n')
 
-    with open(f'events{extension}.txt', 'w') as events_file:
+    with open(f'../data/events/events{extension}.txt', 'w') as events_file:
         for e in events_output:
             events_file.write(e + '\n')
 
 
 if __name__ == '__main__':
-    main('../data/mappings/mappings-reduced.txt', 5)
+    main('../data/mappings/mappings-reduced.txt', 5, extension='-test')

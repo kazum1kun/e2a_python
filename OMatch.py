@@ -1,7 +1,7 @@
 import numpy as np
 
-from utils import Timer
 from AkMatch import AkMatch
+from utils import Timer
 
 
 class OMatch:
@@ -48,8 +48,7 @@ class OMatch:
                 OPT[j] = OPT[j - 1]
 
         # Backtrack to find the selected interval
-        # Pseudo-element to maintain 1-based array
-        Mw = [()]
+        Mw = []
         j = M_len - 1
         while j > 0:
             i = self.M[j]['i']
@@ -59,6 +58,10 @@ class OMatch:
                 j = self.p[j]
             else:
                 j -= 1
+
+        Mw.reverse()
+        # Pseudo-element to maintain 1-based array
+        Mw.insert(0, ())
 
         return Mw, self.p
 

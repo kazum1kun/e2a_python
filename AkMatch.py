@@ -33,12 +33,12 @@ class AkMatch:
                 for j in range(1, eta + 1):
                     # Found an event match
                     if self.E[i] == curr_seq[j]:
-                        c[i][j] = c[i-1][j-1] + 1
+                        c[i][j] = c[i - 1][j - 1] + 1
                     # Otherwise, go with the highest neighbor
-                    elif c[i-1][j] >= c[i][j-1]:
-                        c[i][j] = c[i-1][j]
+                    elif c[i - 1][j] >= c[i][j - 1]:
+                        c[i][j] = c[i - 1][j]
                     else:
-                        c[i][j] = c[i][j-1]
+                        c[i][j] = c[i][j - 1]
 
                 if c[i][eta] == eta:
                     # Found a full match, backtrack to find the solution
@@ -52,7 +52,7 @@ class AkMatch:
                             psi_i[col] = row
                             row -= 1
                             col -= 1
-                        elif c[row - 1][col] >= c[row][col-1]:
+                        elif c[row - 1][col] >= c[row][col - 1]:
                             row -= 1
                         else:
                             col -= 1

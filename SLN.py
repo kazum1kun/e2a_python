@@ -1,7 +1,8 @@
+import nltk
 import numpy as np
+
 from OMatch import OMatch
 from utils import Timer
-import nltk
 
 
 class SLN:
@@ -55,13 +56,13 @@ class SLN:
                     a[j] = a[p[j]] + delta[j]
                     if a[p[j]] + delta[j] < a[j - 1]:
                         sigma = np.min([sigma, (Mj_w + OPT[p[j]] - OPT[j - 1]) /
-                                       (a[j - 1] - a[p[j]] - delta[j])])
+                                        (a[j - 1] - a[p[j]] - delta[j])])
                 elif Mj_w + OPT[p[j]] < OPT[j - 1]:
                     OPT[j] = OPT[j - 1]
                     a[j] = a[j - 1]
                     if a[p[j]] + delta[j] > a[j - 1]:
                         sigma = np.min([sigma, (Mj_w + OPT[p[j]] - OPT[j - 1]) /
-                                       (a[j - 1] - a[p[j]] - delta[j])])
+                                        (a[j - 1] - a[p[j]] - delta[j])])
                 else:
                     if a[p[j]] + delta[j] <= a[j - 1]:
                         OPT[j] = OPT[j - 1]
