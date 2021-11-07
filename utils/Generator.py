@@ -23,6 +23,8 @@ def main(file, number, extension='', generate_partial=False):
             sub_sequence = 0
 
         sequence = mappings[activity][sub_sequence]
+        if sub_sequence != 0:
+            print(f'{activity} is using subsequence {sub_sequence}')
 
         for i in range(len(sequence)):
             events_output.append(f'{time_counter} {sequence[i]}')
@@ -41,4 +43,4 @@ def main(file, number, extension='', generate_partial=False):
 
 
 if __name__ == '__main__':
-    main('../data/mappings/mappings-test.txt', 5, extension='-test')
+    main('../data/mappings/mappings.txt', 5, extension='-test2', generate_partial=True)
