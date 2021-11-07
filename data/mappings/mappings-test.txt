@@ -1,9 +1,9 @@
 8
-1 K O C T U D A
-1 O C T U D A
-2 K P C T U D A Q
-2 P C T U D A Q
-3 K O N
-3 O N
-4 E Y F X
-5 R H
+1 A B C D E F
+1 B C D E
+2 B C D F G
+2 B C D F
+3 C D
+3 C
+4 C D E F
+5 A B C

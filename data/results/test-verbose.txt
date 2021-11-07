@@ -1,2435 +1,396 @@
 Text read finished.
 Time elapsed: 0.00
 OMatch initialization done.
-Time elapsed: 0.01
+Time elapsed: 0.00
 ND SLN started
-Time elapsed: 0.01
+Time elapsed: 0.00
 
-ND SLN Init finished, current optimal value is 3
+ND SLN Init finished, current optimal value is 12
 w value is
 [[ 0.  0.  0.]
  [ 0. 10.  1.]
  [ 0. 10.  1.]
  [ 0. 10.  1.]
- [ 0. 10.  1.]
- [ 0. 10.  1.]
- [ 0. 10.  1.]
- [ 0. 10.  1.]
- [ 0. 10.  1.]
- [ 0. 10.  1.]
- [ 0. 10.  1.]
- [ 0. 10.  1.]
- [ 0. 10.  1.]
- [ 0. 10.  1.]
- [ 0. 10.  1.]
- [ 0. 10.  0.]
- [ 0. 10.  0.]
- [ 0. 10.  0.]
- [ 0. 10.  0.]
- [ 0. 10.  0.]
  [ 0. 10.  0.]
  [ 0. 10.  0.]]
 
 ============Iteration 1, optimizing SLN for i=1, k=1============
-Inner Iteration 1   finished, i=1 , k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
+Inner Iteration 1   finished, i=1 , k=1, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
 
-Iteration 1 done. After optimizing, f_new=7, f_opt=3
+Iteration 1 done. After optimizing, f_new=3, f_opt=12
 
 f is called 2 times for i=1, k=1
 Time elapsed: 0.01
 
 The w value after this iteration is
-[[0.      0.      0.     ]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]]
+[[0.         0.         0.        ]
+ [0.         1.         0.1509434 ]
+ [0.         1.50943396 0.1509434 ]
+ [0.         1.50943396 0.1509434 ]
+ [0.         1.50943396 0.        ]
+ [0.         1.50943396 0.        ]]
 
 ============Iteration 1, optimizing SLN for i=1, k=2============
-Inner Iteration 1   finished, i=1 , k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
+Inner Iteration 1   finished, i=1 , k=2, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
 
-Iteration 1 done. After optimizing, f_new=7, f_opt=3
+Inner Iteration 2   finished, i=1 , k=2, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  1  3]
 
-f is called 2 times for i=1, k=2
+Iteration 1 done. After optimizing, f_new=3, f_opt=3
+
+f is called 3 times for i=1, k=2
 Time elapsed: 0.01
 
 The w value after this iteration is
-[[0.      0.      0.     ]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]]
+[[0.         0.         0.        ]
+ [0.         1.         0.1509434 ]
+ [0.         1.50943396 0.1509434 ]
+ [0.         1.50943396 0.1509434 ]
+ [0.         1.50943396 0.        ]
+ [0.         1.50943396 0.        ]]
 
 ============Iteration 1, optimizing SLN for i=2, k=1============
-Inner Iteration 1   finished, i=2 , k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
+Inner Iteration 1   finished, i=2 , k=1, Aw_diff=True , f_opt=12 , f_new=12
+Aw_new=[-1  3  3  3  3  3]
 
-Iteration 1 done. After optimizing, f_new=7, f_opt=3
+Inner Iteration 2   finished, i=2 , k=1, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
 
-f is called 2 times for i=2, k=1
+Iteration 1 done. After optimizing, f_new=3, f_opt=3
+
+f is called 3 times for i=2, k=1
 Time elapsed: 0.01
 
 The w value after this iteration is
-[[0.      0.      0.     ]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]]
+[[0.         0.         0.        ]
+ [0.         1.         0.1509434 ]
+ [0.         1.50943396 0.1509434 ]
+ [0.         1.50943396 0.1509434 ]
+ [0.         1.50943396 0.        ]
+ [0.         1.50943396 0.        ]]
 
 ============Iteration 1, optimizing SLN for i=2, k=2============
-Inner Iteration 1   finished, i=2 , k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
+Inner Iteration 1   finished, i=2 , k=2, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
 
-Iteration 1 done. After optimizing, f_new=7, f_opt=3
+Inner Iteration 2   finished, i=2 , k=2, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
+
+Inner Iteration 3   finished, i=2 , k=2, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
+
+Inner Iteration 4   finished, i=2 , k=2, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
+
+Iteration 1 done. After optimizing, f_new=3, f_opt=3
 
 f is called 2 times for i=2, k=2
 Time elapsed: 0.01
 
 The w value after this iteration is
-[[0.      0.      0.     ]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]]
+[[0.         0.         0.        ]
+ [0.         1.         0.1509434 ]
+ [0.         1.50943396 0.1509434 ]
+ [0.         1.50943396 0.1509434 ]
+ [0.         1.50943396 0.        ]
+ [0.         1.50943396 0.        ]]
 
 ============Iteration 1, optimizing SLN for i=3, k=1============
-Inner Iteration 1   finished, i=3 , k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
+Inner Iteration 1   finished, i=3 , k=1, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  1  3]
 
-Iteration 1 done. After optimizing, f_new=7, f_opt=3
+Inner Iteration 2   finished, i=3 , k=1, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  1  3]
 
-f is called 2 times for i=3, k=1
+Inner Iteration 3   finished, i=3 , k=1, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  1  3]
+
+Inner Iteration 4   finished, i=3 , k=1, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  1  3]
+
+Inner Iteration 5   finished, i=3 , k=1, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  1  3]
+
+Inner Iteration 6   finished, i=3 , k=1, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  1  3]
+
+Inner Iteration 7   finished, i=3 , k=1, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
+
+Inner Iteration 8   finished, i=3 , k=1, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
+
+Inner Iteration 9   finished, i=3 , k=1, Aw_diff=True , f_opt=3  , f_new=12
+Aw_new=[-1  3  3  3  3  3]
+
+Inner Iteration 10  finished, i=3 , k=1, Aw_diff=False, f_opt=3  , f_new=12
+Aw_new=[-1  3  3  3  3  3]
+
+Iteration 1 done. After optimizing, f_new=3, f_opt=3
+
+f is called 4 times for i=3, k=1
 Time elapsed: 0.02
 
 The w value after this iteration is
-[[0.      0.      0.     ]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]]
+[[0.         0.         0.        ]
+ [0.         1.         0.1509434 ]
+ [0.         1.50943396 0.1509434 ]
+ [0.         1.50943396 0.1509434 ]
+ [0.         1.50943396 0.        ]
+ [0.         1.50943396 0.        ]]
 
 ============Iteration 1, optimizing SLN for i=3, k=2============
-Inner Iteration 1   finished, i=3 , k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
+Inner Iteration 1   finished, i=3 , k=2, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
 
-Iteration 1 done. After optimizing, f_new=7, f_opt=3
+Inner Iteration 2   finished, i=3 , k=2, Aw_diff=True , f_opt=3  , f_new=12
+Aw_new=[-1  3  3  3  3  3]
 
-f is called 2 times for i=3, k=2
-Time elapsed: 0.03
+Inner Iteration 3   finished, i=3 , k=2, Aw_diff=False, f_opt=3  , f_new=12
+Aw_new=[-1  3  3  3  3  3]
+
+Iteration 1 done. After optimizing, f_new=3, f_opt=3
+
+f is called 3 times for i=3, k=2
+Time elapsed: 0.02
 
 The w value after this iteration is
-[[0.      0.      0.     ]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]]
+[[0.         0.         0.        ]
+ [0.         1.         0.1509434 ]
+ [0.         1.50943396 0.1509434 ]
+ [0.         1.50943396 0.1509434 ]
+ [0.         1.50943396 0.        ]
+ [0.         1.50943396 0.        ]]
 
 ============Iteration 1, optimizing SLN for i=4, k=1============
-Inner Iteration 1   finished, i=4 , k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
+Inner Iteration 1   finished, i=4 , k=1, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
 
-Iteration 1 done. After optimizing, f_new=7, f_opt=3
+Iteration 1 done. After optimizing, f_new=3, f_opt=3
 
 f is called 2 times for i=4, k=1
 Time elapsed: 0.03
 
 The w value after this iteration is
-[[0.      0.      0.     ]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]]
-
-============Iteration 1, optimizing SLN for i=4, k=2============
-Inner Iteration 1   finished, i=4 , k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 1 done. After optimizing, f_new=7, f_opt=3
-
-f is called 2 times for i=4, k=2
-Time elapsed: 0.03
-
-The w value after this iteration is
-[[0.      0.      0.     ]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]]
+[[0.         0.         0.        ]
+ [0.         1.         0.1509434 ]
+ [0.         1.50943396 0.1509434 ]
+ [0.         1.50943396 0.1509434 ]
+ [0.         1.50943396 0.        ]
+ [0.         1.50943396 0.        ]]
 
 ============Iteration 1, optimizing SLN for i=5, k=1============
-Inner Iteration 1   finished, i=5 , k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
+Inner Iteration 1   finished, i=5 , k=1, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
 
-Iteration 1 done. After optimizing, f_new=7, f_opt=3
+Iteration 1 done. After optimizing, f_new=3, f_opt=3
 
 f is called 2 times for i=5, k=1
 Time elapsed: 0.03
 
 The w value after this iteration is
-[[0.      0.      0.     ]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]]
-
-============Iteration 1, optimizing SLN for i=5, k=2============
-Inner Iteration 1   finished, i=5 , k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 1 done. After optimizing, f_new=7, f_opt=3
-
-f is called 2 times for i=5, k=2
-Time elapsed: 0.04
-
-The w value after this iteration is
-[[0.      0.      0.     ]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]]
-
-============Iteration 1, optimizing SLN for i=6, k=1============
-Inner Iteration 1   finished, i=6 , k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 1 done. After optimizing, f_new=7, f_opt=3
-
-f is called 2 times for i=6, k=1
-Time elapsed: 0.04
-
-The w value after this iteration is
-[[0.      0.      0.     ]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.15625]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]
- [0.      1.5625  0.     ]]
-
-============Iteration 1, optimizing SLN for i=6, k=2============
-Inner Iteration 1   finished, i=6 , k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Inner Iteration 2   finished, i=6 , k=2, Aw_diff=False, f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Inner Iteration 3   finished, i=6 , k=2, Aw_diff=False, f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Inner Iteration 4   finished, i=6 , k=2, Aw_diff=False, f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Inner Iteration 5   finished, i=6 , k=2, Aw_diff=False, f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Inner Iteration 6   finished, i=6 , k=2, Aw_diff=False, f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Inner Iteration 7   finished, i=6 , k=2, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Inner Iteration 8   finished, i=6 , k=2, Aw_diff=False, f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=3
-
-f is called 3 times for i=6, k=2
-Time elapsed: 0.04
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=7, k=1============
-Inner Iteration 1   finished, i=7 , k=1, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=7, k=1
-Time elapsed: 0.05
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=7, k=2============
-Inner Iteration 1   finished, i=7 , k=2, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=7, k=2
-Time elapsed: 0.05
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=8, k=1============
-Inner Iteration 1   finished, i=8 , k=1, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=8, k=1
-Time elapsed: 0.06
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=8, k=2============
-Inner Iteration 1   finished, i=8 , k=2, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=8, k=2
-Time elapsed: 0.06
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=9, k=1============
-Inner Iteration 1   finished, i=9 , k=1, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=9, k=1
-Time elapsed: 0.06
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=9, k=2============
-Inner Iteration 1   finished, i=9 , k=2, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=9, k=2
-Time elapsed: 0.07
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=10, k=1============
-Inner Iteration 1   finished, i=10, k=1, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=10, k=1
-Time elapsed: 0.07
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=10, k=2============
-Inner Iteration 1   finished, i=10, k=2, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Inner Iteration 2   finished, i=10, k=2, Aw_diff=True , f_opt=2  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 3 times for i=10, k=2
-Time elapsed: 0.07
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=11, k=1============
-Inner Iteration 1   finished, i=11, k=1, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=11, k=1
-Time elapsed: 0.07
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=11, k=2============
-Inner Iteration 1   finished, i=11, k=2, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=11, k=2
-Time elapsed: 0.08
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=12, k=1============
-Inner Iteration 1   finished, i=12, k=1, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=12, k=1
-Time elapsed: 0.08
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=12, k=2============
-Inner Iteration 1   finished, i=12, k=2, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=12, k=2
-Time elapsed: 0.09
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=13, k=1============
-Inner Iteration 1   finished, i=13, k=1, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=13, k=1
-Time elapsed: 0.09
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=13, k=2============
-Inner Iteration 1   finished, i=13, k=2, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=13, k=2
-Time elapsed: 0.09
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=14, k=1============
-Inner Iteration 1   finished, i=14, k=1, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=14, k=1
-Time elapsed: 0.10
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=14, k=2============
-Inner Iteration 1   finished, i=14, k=2, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=14, k=2
-Time elapsed: 0.10
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=15, k=1============
-Inner Iteration 1   finished, i=15, k=1, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=15, k=1
-Time elapsed: 0.10
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=16, k=1============
-Inner Iteration 1   finished, i=16, k=1, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=16, k=1
-Time elapsed: 0.11
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=17, k=1============
-Inner Iteration 1   finished, i=17, k=1, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=17, k=1
-Time elapsed: 0.11
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=18, k=1============
-Inner Iteration 1   finished, i=18, k=1, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Inner Iteration 2   finished, i=18, k=1, Aw_diff=True , f_opt=2  , f_new=3
-Aw_new=[-1 21 18 10 17  6]
-
-Inner Iteration 3   finished, i=18, k=1, Aw_diff=False, f_opt=2  , f_new=3
-Aw_new=[-1 21 18 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 3 times for i=18, k=1
-Time elapsed: 0.12
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=19, k=1============
-Inner Iteration 1   finished, i=19, k=1, Aw_diff=True , f_opt=3  , f_new=3
-Aw_new=[-1 21 18 10 17  6]
-
-Inner Iteration 2   finished, i=19, k=1, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 3 times for i=19, k=1
-Time elapsed: 0.12
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=20, k=1============
-Inner Iteration 1   finished, i=20, k=1, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=20, k=1
-Time elapsed: 0.12
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
-
-============Iteration 1, optimizing SLN for i=21, k=1============
-Inner Iteration 1   finished, i=21, k=1, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 1 done. After optimizing, f_new=2, f_opt=2
-
-f is called 2 times for i=21, k=1
-Time elapsed: 0.13
-
-The w value after this iteration is
-[[0.       0.       0.      ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   1.015625]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.15625 ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]
- [0.       1.5625   0.      ]]
+[[0.         0.         0.        ]
+ [0.         1.         0.1509434 ]
+ [0.         1.50943396 0.1509434 ]
+ [0.         1.50943396 0.1509434 ]
+ [0.         1.50943396 0.        ]
+ [0.         1.50943396 0.        ]]
 
 ============Iteration 2, optimizing SLN for i=1, k=1============
-Inner Iteration 1   finished, i=1 , k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
+Inner Iteration 1   finished, i=1 , k=1, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
 
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
+Iteration 2 done. After optimizing, f_new=3, f_opt=3
 
 f is called 2 times for i=1, k=1
-Time elapsed: 0.13
+Time elapsed: 0.03
 
 The w value after this iteration is
 [[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
+ [0.         1.06801008 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.        ]
+ [0.         1.61209068 0.        ]]
 
 ============Iteration 2, optimizing SLN for i=1, k=2============
-Inner Iteration 1   finished, i=1 , k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
+Inner Iteration 1   finished, i=1 , k=2, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
 
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
+Inner Iteration 2   finished, i=1 , k=2, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  1  3]
 
-f is called 2 times for i=1, k=2
-Time elapsed: 0.13
+Iteration 2 done. After optimizing, f_new=3, f_opt=3
+
+f is called 3 times for i=1, k=2
+Time elapsed: 0.03
 
 The w value after this iteration is
 [[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
+ [0.         1.06801008 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.        ]
+ [0.         1.61209068 0.        ]]
 
 ============Iteration 2, optimizing SLN for i=2, k=1============
-Inner Iteration 1   finished, i=2 , k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
+Inner Iteration 1   finished, i=2 , k=1, Aw_diff=True , f_opt=12 , f_new=12
+Aw_new=[-1  3  3  3  3  3]
 
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
+Inner Iteration 2   finished, i=2 , k=1, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
 
-f is called 2 times for i=2, k=1
-Time elapsed: 0.13
+Iteration 2 done. After optimizing, f_new=3, f_opt=3
+
+f is called 3 times for i=2, k=1
+Time elapsed: 0.04
 
 The w value after this iteration is
 [[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
+ [0.         1.06801008 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.        ]
+ [0.         1.61209068 0.        ]]
 
 ============Iteration 2, optimizing SLN for i=2, k=2============
-Inner Iteration 1   finished, i=2 , k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
+Inner Iteration 1   finished, i=2 , k=2, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
 
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
+Inner Iteration 2   finished, i=2 , k=2, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
+
+Inner Iteration 3   finished, i=2 , k=2, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
+
+Inner Iteration 4   finished, i=2 , k=2, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
+
+Iteration 2 done. After optimizing, f_new=3, f_opt=3
 
 f is called 2 times for i=2, k=2
-Time elapsed: 0.15
+Time elapsed: 0.04
 
 The w value after this iteration is
 [[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
+ [0.         1.06801008 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.        ]
+ [0.         1.61209068 0.        ]]
 
 ============Iteration 2, optimizing SLN for i=3, k=1============
-Inner Iteration 1   finished, i=3 , k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
+Inner Iteration 1   finished, i=3 , k=1, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  1  3]
 
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
+Inner Iteration 2   finished, i=3 , k=1, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  1  3]
 
-f is called 2 times for i=3, k=1
-Time elapsed: 0.15
+Inner Iteration 3   finished, i=3 , k=1, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  1  3]
+
+Inner Iteration 4   finished, i=3 , k=1, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  1  3]
+
+Inner Iteration 5   finished, i=3 , k=1, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  1  3]
+
+Inner Iteration 6   finished, i=3 , k=1, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  1  3]
+
+Inner Iteration 7   finished, i=3 , k=1, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
+
+Inner Iteration 8   finished, i=3 , k=1, Aw_diff=False, f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
+
+Inner Iteration 9   finished, i=3 , k=1, Aw_diff=True , f_opt=3  , f_new=12
+Aw_new=[-1  3  3  3  3  3]
+
+Inner Iteration 10  finished, i=3 , k=1, Aw_diff=False, f_opt=3  , f_new=12
+Aw_new=[-1  3  3  3  3  3]
+
+Iteration 2 done. After optimizing, f_new=3, f_opt=3
+
+f is called 4 times for i=3, k=1
+Time elapsed: 0.05
 
 The w value after this iteration is
 [[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
+ [0.         1.06801008 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.        ]
+ [0.         1.61209068 0.        ]]
 
 ============Iteration 2, optimizing SLN for i=3, k=2============
-Inner Iteration 1   finished, i=3 , k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
+Inner Iteration 1   finished, i=3 , k=2, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
 
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
+Inner Iteration 2   finished, i=3 , k=2, Aw_diff=True , f_opt=3  , f_new=12
+Aw_new=[-1  3  3  3  3  3]
 
-f is called 2 times for i=3, k=2
-Time elapsed: 0.15
+Inner Iteration 3   finished, i=3 , k=2, Aw_diff=False, f_opt=3  , f_new=12
+Aw_new=[-1  3  3  3  3  3]
+
+Iteration 2 done. After optimizing, f_new=3, f_opt=3
+
+f is called 3 times for i=3, k=2
+Time elapsed: 0.05
 
 The w value after this iteration is
 [[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
+ [0.         1.06801008 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.        ]
+ [0.         1.61209068 0.        ]]
 
 ============Iteration 2, optimizing SLN for i=4, k=1============
-Inner Iteration 1   finished, i=4 , k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
+Inner Iteration 1   finished, i=4 , k=1, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
 
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
+Iteration 2 done. After optimizing, f_new=3, f_opt=3
 
 f is called 2 times for i=4, k=1
-Time elapsed: 0.15
+Time elapsed: 0.05
 
 The w value after this iteration is
 [[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=4, k=2============
-Inner Iteration 1   finished, i=4 , k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=4, k=2
-Time elapsed: 0.16
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
+ [0.         1.06801008 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.        ]
+ [0.         1.61209068 0.        ]]
 
 ============Iteration 2, optimizing SLN for i=5, k=1============
-Inner Iteration 1   finished, i=5 , k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
+Inner Iteration 1   finished, i=5 , k=1, Aw_diff=True , f_opt=3  , f_new=3
+Aw_new=[-1  2  2  2  3  3]
 
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
+Iteration 2 done. After optimizing, f_new=3, f_opt=3
 
 f is called 2 times for i=5, k=1
-Time elapsed: 0.16
+Time elapsed: 0.05
 
 The w value after this iteration is
 [[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=5, k=2============
-Inner Iteration 1   finished, i=5 , k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=5, k=2
-Time elapsed: 0.17
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=6, k=1============
-Inner Iteration 1   finished, i=6 , k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=6, k=1
-Time elapsed: 0.17
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=6, k=2============
-Inner Iteration 1   finished, i=6 , k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Inner Iteration 2   finished, i=6 , k=2, Aw_diff=False, f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Inner Iteration 3   finished, i=6 , k=2, Aw_diff=False, f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Inner Iteration 4   finished, i=6 , k=2, Aw_diff=False, f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Inner Iteration 5   finished, i=6 , k=2, Aw_diff=False, f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Inner Iteration 6   finished, i=6 , k=2, Aw_diff=False, f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Inner Iteration 7   finished, i=6 , k=2, Aw_diff=True , f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Inner Iteration 8   finished, i=6 , k=2, Aw_diff=False, f_opt=2  , f_new=2
-Aw_new=[-1 21 19 10 17  6]
-
-Iteration 2 done. After optimizing, f_new=2, f_opt=2
-
-f is called 3 times for i=6, k=2
-Time elapsed: 0.18
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=7, k=1============
-Inner Iteration 1   finished, i=7 , k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=7, k=1
-Time elapsed: 0.18
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=7, k=2============
-Inner Iteration 1   finished, i=7 , k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=7, k=2
-Time elapsed: 0.18
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=8, k=1============
-Inner Iteration 1   finished, i=8 , k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=8, k=1
-Time elapsed: 0.19
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=8, k=2============
-Inner Iteration 1   finished, i=8 , k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=8, k=2
-Time elapsed: 0.20
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=9, k=1============
-Inner Iteration 1   finished, i=9 , k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=9, k=1
-Time elapsed: 0.20
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=9, k=2============
-Inner Iteration 1   finished, i=9 , k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=9, k=2
-Time elapsed: 0.20
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=10, k=1============
-Inner Iteration 1   finished, i=10, k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=10, k=1
-Time elapsed: 0.21
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=10, k=2============
-Inner Iteration 1   finished, i=10, k=2, Aw_diff=True , f_opt=3  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=3, f_opt=2
-
-f is called 2 times for i=10, k=2
-Time elapsed: 0.21
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=11, k=1============
-Inner Iteration 1   finished, i=11, k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=11, k=1
-Time elapsed: 0.21
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=11, k=2============
-Inner Iteration 1   finished, i=11, k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=11, k=2
-Time elapsed: 0.22
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=12, k=1============
-Inner Iteration 1   finished, i=12, k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=12, k=1
-Time elapsed: 0.23
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=12, k=2============
-Inner Iteration 1   finished, i=12, k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=12, k=2
-Time elapsed: 0.23
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=13, k=1============
-Inner Iteration 1   finished, i=13, k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=13, k=1
-Time elapsed: 0.23
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=13, k=2============
-Inner Iteration 1   finished, i=13, k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=13, k=2
-Time elapsed: 0.23
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=14, k=1============
-Inner Iteration 1   finished, i=14, k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=14, k=1
-Time elapsed: 0.24
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=14, k=2============
-Inner Iteration 1   finished, i=14, k=2, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=14, k=2
-Time elapsed: 0.24
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=15, k=1============
-Inner Iteration 1   finished, i=15, k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=15, k=1
-Time elapsed: 0.25
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=16, k=1============
-Inner Iteration 1   finished, i=16, k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=16, k=1
-Time elapsed: 0.25
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=17, k=1============
-Inner Iteration 1   finished, i=17, k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=17, k=1
-Time elapsed: 0.26
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=18, k=1============
-Inner Iteration 1   finished, i=18, k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Inner Iteration 2   finished, i=18, k=1, Aw_diff=True , f_opt=7  , f_new=8
-Aw_new=[-1 21 18 10 17 10]
-
-Inner Iteration 3   finished, i=18, k=1, Aw_diff=False, f_opt=7  , f_new=8
-Aw_new=[-1 21 18 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 3 times for i=18, k=1
-Time elapsed: 0.26
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=19, k=1============
-Inner Iteration 1   finished, i=19, k=1, Aw_diff=True , f_opt=8  , f_new=8
-Aw_new=[-1 21 18 10 17 10]
-
-Inner Iteration 2   finished, i=19, k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 3 times for i=19, k=1
-Time elapsed: 0.26
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=20, k=1============
-Inner Iteration 1   finished, i=20, k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=20, k=1
-Time elapsed: 0.26
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
-
-============Iteration 2, optimizing SLN for i=21, k=1============
-Inner Iteration 1   finished, i=21, k=1, Aw_diff=True , f_opt=7  , f_new=7
-Aw_new=[-1 21 19 10 17 10]
-
-Iteration 2 done. After optimizing, f_new=7, f_opt=2
-
-f is called 2 times for i=21, k=1
-Time elapsed: 0.27
-
-The w value after this iteration is
-[[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
+ [0.         1.06801008 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.        ]
+ [0.         1.61209068 0.        ]]
 
 The final weight matrix is
 [[0.         0.         0.        ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.9912854 ]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.15250545]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]
- [0.         1.52505447 0.        ]]
+ [0.         1.06801008 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.16120907]
+ [0.         1.61209068 0.        ]
+ [0.         1.61209068 0.        ]]
 
 The final activities calculated is
-[21 19 10 17 10]
+[2 2 2 3 3]
 
 The calculated activities are 1 edits away from the actual activities
-
-Process finished with exit code 0

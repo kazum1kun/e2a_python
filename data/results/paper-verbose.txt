@@ -1,0 +1,678 @@
+Text read finished.
+Time elapsed: 0.00
+OMatch initialization done.
+Time elapsed: 0.00
+ND SLN started
+Time elapsed: 0.00
+
+ND SLN Init finished, current optimal value is 2
+w value is
+[[0. 0. 0.]
+ [0. 1. 0.]
+ [0. 1. 1.]]
+
+============Iteration 1, optimizing SLN for i=1, k=1============
+1D SLN starting for k=1, i=1
+Line 1:	current f_opt=1
+		Aw=[-1  2  2  2]
+
+--------Inner iteration 1 starting, i=1, k=1--------
+Line 3: j=1
+Line 4: True, delta[1]=1
+Line 22: True, new OPT[1] is 0, new a[1] is 1
+
+Line 3: j=2
+Line 4: False, delta[2]=0
+Line 8: True, new OPT[2] is 1, new a[2] is 0
+Line 11: sigma is updated, new value is 1.000
+
+Line 3: j=3
+Line 4: True, delta[3]=1
+Line 22: True, new OPT[3] is 1, new a[3] is 1
+
+Line 3: j=4
+Line 4: False, delta[4]=0
+Line 8: True, new OPT[4] is 2, new a[4] is 0
+Line 11: sigma is updated, new value is 1.000
+
+Line 3: j=5
+Line 4: False, delta[5]=0
+Line 19: True, new OPT[5] is 2, new a[5] is 0
+
+Line 3: j=6
+Line 4: True, delta[6]=1
+Line 22: True, new OPT[6] is 2, new a[6] is 1
+
+Line 3: j=7
+Line 4: False, delta[7]=0
+Line 8: True, new OPT[7] is 3, new a[7] is 0
+Line 11: sigma is updated, new value is 1.000
+
+Line 3: j=8
+Line 4: False, delta[8]=0
+Line 19: True, new OPT[8] is 3, new a[8] is 0
+
+Line 25: sigma=1.000
+Line 26: mu=1.000, nu=0.500
+Inner Iteration 1   finished, i=1 , k=1, Aw_diff=True , f_opt=1  , f_new=2  
+Aw_new=[-1  1  1  1]
+
+--------Inner iteration 2 starting, i=1, k=1--------
+Line 3: j=1
+Line 4: True, delta[1]=1
+Line 8: True, new OPT[1] is 1, new a[1] is 1
+Line 11: sigma not updated
+
+Line 3: j=2
+Line 4: False, delta[2]=0
+Line 19: True, new OPT[2] is 1, new a[2] is 1
+
+Line 3: j=3
+Line 4: True, delta[3]=1
+Line 8: True, new OPT[3] is 2, new a[3] is 2
+Line 11: sigma not updated
+
+Line 3: j=4
+Line 4: False, delta[4]=0
+Line 19: True, new OPT[4] is 2, new a[4] is 2
+
+Line 3: j=5
+Line 4: False, delta[5]=0
+Line 19: True, new OPT[5] is 2, new a[5] is 2
+
+Line 3: j=6
+Line 4: True, delta[6]=1
+Line 8: True, new OPT[6] is 3, new a[6] is 3
+Line 11: sigma not updated
+
+Line 3: j=7
+Line 4: False, delta[7]=0
+Line 19: True, new OPT[7] is 3, new a[7] is 3
+
+Line 3: j=8
+Line 4: False, delta[8]=0
+Line 19: True, new OPT[8] is 3, new a[8] is 3
+
+Line 25: sigma=2.000
+Line 26: mu=3.000, nu=2.000
+Inner Iteration 2   finished, i=1 , k=1, Aw_diff=False, f_opt=1  , f_new=2  
+Aw_new=[-1  1  1  1]
+
+Iteration 1 done. After optimizing, f_new=1, f_opt=2
+
+f is called 3 times for i=1, k=1
+Time elapsed: 0.00
+
+The w value after this iteration is
+[[0.  0.  0. ]
+ [0.  0.5 0. ]
+ [0.  1.  1. ]]
+
+============Iteration 1, optimizing SLN for i=2, k=1============
+1D SLN starting for k=1, i=2
+Line 1:	current f_opt=1
+		Aw=[-1  2  2  2]
+
+--------Inner iteration 1 starting, i=2, k=1--------
+Line 3: j=1
+Line 4: False, delta[1]=0
+Line 8: True, new OPT[1] is 0, new a[1] is 0
+Line 11: sigma not updated
+
+Line 3: j=2
+Line 4: False, delta[2]=0
+Line 8: True, new OPT[2] is 1, new a[2] is 0
+Line 11: sigma not updated
+
+Line 3: j=3
+Line 4: False, delta[3]=0
+Line 8: True, new OPT[3] is 1, new a[3] is 0
+Line 11: sigma not updated
+
+Line 3: j=4
+Line 4: False, delta[4]=0
+Line 8: True, new OPT[4] is 2, new a[4] is 0
+Line 11: sigma not updated
+
+Line 3: j=5
+Line 4: True, delta[5]=1
+Line 13: True, new OPT[5] is 2, new a[5] is 0
+Line 16: sigma is updated, new value is 1.000
+
+Line 3: j=6
+Line 4: False, delta[6]=0
+Line 8: True, new OPT[6] is 2, new a[6] is 0
+Line 11: sigma not updated
+
+Line 3: j=7
+Line 4: False, delta[7]=0
+Line 8: True, new OPT[7] is 3, new a[7] is 0
+Line 11: sigma not updated
+
+Line 3: j=8
+Line 4: True, delta[8]=1
+Line 13: True, new OPT[8] is 3, new a[8] is 0
+Line 16: sigma is updated, new value is 1.000
+
+Line 25: sigma=1.000
+Line 26: mu=1.000, nu=0.500
+Inner Iteration 1   finished, i=2 , k=1, Aw_diff=True , f_opt=1  , f_new=1  
+Aw_new=[-1  2  2  2]
+
+--------Inner iteration 2 starting, i=2, k=1--------
+Line 3: j=1
+Line 4: False, delta[1]=0
+Line 8: True, new OPT[1] is 0, new a[1] is 0
+Line 11: sigma not updated
+
+Line 3: j=2
+Line 4: False, delta[2]=0
+Line 8: True, new OPT[2] is 1, new a[2] is 0
+Line 11: sigma not updated
+
+Line 3: j=3
+Line 4: False, delta[3]=0
+Line 8: True, new OPT[3] is 1, new a[3] is 0
+Line 11: sigma not updated
+
+Line 3: j=4
+Line 4: False, delta[4]=0
+Line 8: True, new OPT[4] is 2, new a[4] is 0
+Line 11: sigma not updated
+
+Line 3: j=5
+Line 4: True, delta[5]=1
+Line 22: True, new OPT[5] is 2, new a[5] is 1
+
+Line 3: j=6
+Line 4: False, delta[6]=0
+Line 8: True, new OPT[6] is 2, new a[6] is 1
+Line 11: sigma not updated
+
+Line 3: j=7
+Line 4: False, delta[7]=0
+Line 8: True, new OPT[7] is 3, new a[7] is 1
+Line 11: sigma not updated
+
+Line 3: j=8
+Line 4: True, delta[8]=1
+Line 22: True, new OPT[8] is 3, new a[8] is 2
+
+Line 25: sigma=2.000
+Line 26: mu=3.000, nu=2.000
+Inner Iteration 2   finished, i=2 , k=1, Aw_diff=False, f_opt=1  , f_new=1  
+Aw_new=[-1  2  2  2]
+
+Iteration 1 done. After optimizing, f_new=1, f_opt=1
+
+f is called 2 times for i=2, k=1
+Time elapsed: 0.01
+
+The w value after this iteration is
+[[0.  0.  0. ]
+ [0.  0.5 0. ]
+ [0.  1.  1. ]]
+
+============Iteration 1, optimizing SLN for i=2, k=2============
+1D SLN starting for k=2, i=2
+Line 1:	current f_opt=0
+		Aw=[-1  1  2  2]
+
+--------Inner iteration 1 starting, i=2, k=2--------
+Line 3: j=1
+Line 4: False, delta[1]=0
+Line 8: True, new OPT[1] is 0, new a[1] is 0
+Line 11: sigma not updated
+
+Line 3: j=2
+Line 4: True, delta[2]=1
+Line 22: True, new OPT[2] is 0, new a[2] is 1
+
+Line 3: j=3
+Line 4: False, delta[3]=0
+Line 8: True, new OPT[3] is 0, new a[3] is 1
+Line 11: sigma not updated
+
+Line 3: j=4
+Line 4: True, delta[4]=1
+Line 22: True, new OPT[4] is 0, new a[4] is 2
+
+Line 3: j=5
+Line 4: False, delta[5]=0
+Line 8: True, new OPT[5] is 1, new a[5] is 1
+Line 11: sigma is updated, new value is 1.000
+
+Line 3: j=6
+Line 4: False, delta[6]=0
+Line 8: True, new OPT[6] is 1, new a[6] is 1
+Line 11: sigma not updated
+
+Line 3: j=7
+Line 4: True, delta[7]=1
+Line 22: True, new OPT[7] is 1, new a[7] is 2
+
+Line 3: j=8
+Line 4: False, delta[8]=0
+Line 8: True, new OPT[8] is 2, new a[8] is 1
+Line 11: sigma is updated, new value is 1.000
+
+Line 25: sigma=1.000
+Line 26: mu=1.000, nu=0.500
+Inner Iteration 1   finished, i=2 , k=2, Aw_diff=True , f_opt=0  , f_new=1  
+Aw_new=[-1  2  2  2]
+
+--------Inner iteration 2 starting, i=2, k=2--------
+Line 3: j=1
+Line 4: False, delta[1]=0
+Line 8: True, new OPT[1] is 0, new a[1] is 0
+Line 11: sigma not updated
+
+Line 3: j=2
+Line 4: True, delta[2]=1
+Line 8: True, new OPT[2] is 1, new a[2] is 1
+Line 11: sigma not updated
+
+Line 3: j=3
+Line 4: False, delta[3]=0
+Line 8: True, new OPT[3] is 1, new a[3] is 1
+Line 11: sigma not updated
+
+Line 3: j=4
+Line 4: True, delta[4]=1
+Line 8: True, new OPT[4] is 2, new a[4] is 2
+Line 11: sigma not updated
+
+Line 3: j=5
+Line 4: False, delta[5]=0
+Line 19: True, new OPT[5] is 2, new a[5] is 2
+
+Line 3: j=6
+Line 4: False, delta[6]=0
+Line 8: True, new OPT[6] is 2, new a[6] is 2
+Line 11: sigma not updated
+
+Line 3: j=7
+Line 4: True, delta[7]=1
+Line 8: True, new OPT[7] is 3, new a[7] is 3
+Line 11: sigma not updated
+
+Line 3: j=8
+Line 4: False, delta[8]=0
+Line 19: True, new OPT[8] is 3, new a[8] is 3
+
+Line 25: sigma=2.000
+Line 26: mu=3.000, nu=2.000
+Inner Iteration 2   finished, i=2 , k=2, Aw_diff=False, f_opt=0  , f_new=1  
+Aw_new=[-1  2  2  2]
+
+Iteration 1 done. After optimizing, f_new=0, f_opt=1
+
+f is called 2 times for i=2, k=2
+Time elapsed: 0.02
+
+The w value after this iteration is
+[[0.  0.  0. ]
+ [0.  0.5 0. ]
+ [0.  1.  0. ]]
+
+============Iteration 2, optimizing SLN for i=1, k=1============
+1D SLN starting for k=1, i=1
+Line 1:	current f_opt=2
+		Aw=[-1  2  2]
+
+--------Inner iteration 1 starting, i=1, k=1--------
+Line 3: j=1
+Line 4: True, delta[1]=1
+Line 22: True, new OPT[1] is 0, new a[1] is 1
+
+Line 3: j=2
+Line 4: False, delta[2]=0
+Line 19: True, new OPT[2] is 0, new a[2] is 1
+
+Line 3: j=3
+Line 4: True, delta[3]=1
+Line 22: True, new OPT[3] is 0, new a[3] is 2
+
+Line 3: j=4
+Line 4: False, delta[4]=0
+Line 19: True, new OPT[4] is 0, new a[4] is 2
+
+Line 3: j=5
+Line 4: False, delta[5]=0
+Line 8: True, new OPT[5] is 2, new a[5] is 1
+Line 11: sigma is updated, new value is 2.000
+
+Line 3: j=6
+Line 4: True, delta[6]=1
+Line 22: True, new OPT[6] is 2, new a[6] is 2
+
+Line 3: j=7
+Line 4: False, delta[7]=0
+Line 19: True, new OPT[7] is 2, new a[7] is 2
+
+Line 3: j=8
+Line 4: False, delta[8]=0
+Line 8: True, new OPT[8] is 4, new a[8] is 1
+Line 11: sigma is updated, new value is 2.000
+
+Line 25: sigma=2.000
+Line 26: mu=2.000, nu=1.000
+Inner Iteration 1   finished, i=1 , k=1, Aw_diff=True , f_opt=0  , f_new=2  
+Aw_new=[-1  1  1  1]
+
+--------Inner iteration 2 starting, i=1, k=1--------
+Line 3: j=1
+Line 4: True, delta[1]=1
+Line 8: True, new OPT[1] is 2, new a[1] is 1
+Line 11: sigma not updated
+
+Line 3: j=2
+Line 4: False, delta[2]=0
+Line 13: True, new OPT[2] is 2, new a[2] is 1
+Line 16: sigma not updated
+
+Line 3: j=3
+Line 4: True, delta[3]=1
+Line 8: True, new OPT[3] is 4, new a[3] is 2
+Line 11: sigma not updated
+
+Line 3: j=4
+Line 4: False, delta[4]=0
+Line 13: True, new OPT[4] is 4, new a[4] is 2
+Line 16: sigma not updated
+
+Line 3: j=5
+Line 4: False, delta[5]=0
+Line 19: True, new OPT[5] is 4, new a[5] is 2
+
+Line 3: j=6
+Line 4: True, delta[6]=1
+Line 8: True, new OPT[6] is 6, new a[6] is 3
+Line 11: sigma not updated
+
+Line 3: j=7
+Line 4: False, delta[7]=0
+Line 13: True, new OPT[7] is 6, new a[7] is 3
+Line 16: sigma not updated
+
+Line 3: j=8
+Line 4: False, delta[8]=0
+Line 19: True, new OPT[8] is 6, new a[8] is 3
+
+Line 25: sigma=2.000
+Line 26: mu=4.000, nu=3.000
+Inner Iteration 2   finished, i=1 , k=1, Aw_diff=False, f_opt=0  , f_new=2  
+Aw_new=[-1  1  1  1]
+
+Iteration 2 done. After optimizing, f_new=0, f_opt=0
+
+f is called 3 times for i=1, k=1
+Time elapsed: 0.02
+
+The w value after this iteration is
+[[0. 0. 0.]
+ [0. 1. 0.]
+ [0. 2. 0.]]
+
+============Iteration 2, optimizing SLN for i=2, k=1============
+1D SLN starting for k=1, i=2
+Line 1:	current f_opt=2
+		Aw=[-1  1  1  1]
+
+--------Inner iteration 1 starting, i=2, k=1--------
+Line 3: j=1
+Line 4: False, delta[1]=0
+Line 8: True, new OPT[1] is 1, new a[1] is 0
+Line 11: sigma not updated
+
+Line 3: j=2
+Line 4: False, delta[2]=0
+Line 13: True, new OPT[2] is 1, new a[2] is 0
+Line 16: sigma not updated
+
+Line 3: j=3
+Line 4: False, delta[3]=0
+Line 8: True, new OPT[3] is 2, new a[3] is 0
+Line 11: sigma not updated
+
+Line 3: j=4
+Line 4: False, delta[4]=0
+Line 13: True, new OPT[4] is 2, new a[4] is 0
+Line 16: sigma not updated
+
+Line 3: j=5
+Line 4: True, delta[5]=1
+Line 13: True, new OPT[5] is 2, new a[5] is 0
+Line 16: sigma is updated, new value is 1.000
+
+Line 3: j=6
+Line 4: False, delta[6]=0
+Line 8: True, new OPT[6] is 3, new a[6] is 0
+Line 11: sigma not updated
+
+Line 3: j=7
+Line 4: False, delta[7]=0
+Line 13: True, new OPT[7] is 3, new a[7] is 0
+Line 16: sigma not updated
+
+Line 3: j=8
+Line 4: True, delta[8]=1
+Line 13: True, new OPT[8] is 3, new a[8] is 0
+Line 16: sigma is updated, new value is 1.000
+
+Line 25: sigma=1.000
+Line 26: mu=1.000, nu=0.500
+Inner Iteration 1   finished, i=2 , k=1, Aw_diff=True , f_opt=2  , f_new=2  
+Aw_new=[-1  1  1  1]
+
+--------Inner iteration 2 starting, i=2, k=1--------
+Line 3: j=1
+Line 4: False, delta[1]=0
+Line 8: True, new OPT[1] is 1, new a[1] is 0
+Line 11: sigma not updated
+
+Line 3: j=2
+Line 4: False, delta[2]=0
+Line 13: True, new OPT[2] is 1, new a[2] is 0
+Line 16: sigma not updated
+
+Line 3: j=3
+Line 4: False, delta[3]=0
+Line 8: True, new OPT[3] is 2, new a[3] is 0
+Line 11: sigma not updated
+
+Line 3: j=4
+Line 4: False, delta[4]=0
+Line 13: True, new OPT[4] is 2, new a[4] is 0
+Line 16: sigma not updated
+
+Line 3: j=5
+Line 4: True, delta[5]=1
+Line 22: True, new OPT[5] is 2, new a[5] is 1
+
+Line 3: j=6
+Line 4: False, delta[6]=0
+Line 8: True, new OPT[6] is 3, new a[6] is 1
+Line 11: sigma not updated
+
+Line 3: j=7
+Line 4: False, delta[7]=0
+Line 13: True, new OPT[7] is 3, new a[7] is 1
+Line 16: sigma not updated
+
+Line 3: j=8
+Line 4: True, delta[8]=1
+Line 22: True, new OPT[8] is 3, new a[8] is 2
+
+Line 25: sigma=2.000
+Line 26: mu=3.000, nu=2.000
+Inner Iteration 2   finished, i=2 , k=1, Aw_diff=True , f_opt=0  , f_new=0  
+Aw_new=[-1  1  2  2]
+
+Iteration 2 done. After optimizing, f_new=0, f_opt=0
+
+f is called 3 times for i=2, k=1
+Time elapsed: 0.04
+
+The w value after this iteration is
+[[0. 0. 0.]
+ [0. 1. 0.]
+ [0. 2. 0.]]
+
+============Iteration 2, optimizing SLN for i=2, k=2============
+1D SLN starting for k=2, i=2
+Line 1:	current f_opt=0
+		Aw=[-1  1  2  2]
+
+--------Inner iteration 1 starting, i=2, k=2--------
+Line 3: j=1
+Line 4: False, delta[1]=0
+Line 8: True, new OPT[1] is 1, new a[1] is 0
+Line 11: sigma not updated
+
+Line 3: j=2
+Line 4: True, delta[2]=1
+Line 13: True, new OPT[2] is 1, new a[2] is 0
+Line 16: sigma is updated, new value is 1.000
+
+Line 3: j=3
+Line 4: False, delta[3]=0
+Line 8: True, new OPT[3] is 2, new a[3] is 0
+Line 11: sigma not updated
+
+Line 3: j=4
+Line 4: True, delta[4]=1
+Line 13: True, new OPT[4] is 2, new a[4] is 0
+Line 16: sigma is updated, new value is 1.000
+
+Line 3: j=5
+Line 4: False, delta[5]=0
+Line 8: True, new OPT[5] is 3, new a[5] is 0
+Line 11: sigma not updated
+
+Line 3: j=6
+Line 4: False, delta[6]=0
+Line 8: True, new OPT[6] is 4, new a[6] is 0
+Line 11: sigma not updated
+
+Line 3: j=7
+Line 4: True, delta[7]=1
+Line 13: True, new OPT[7] is 4, new a[7] is 0
+Line 16: sigma is updated, new value is 1.000
+
+Line 3: j=8
+Line 4: False, delta[8]=0
+Line 8: True, new OPT[8] is 5, new a[8] is 0
+Line 11: sigma not updated
+
+Line 25: sigma=1.000
+Line 26: mu=1.000, nu=0.500
+Inner Iteration 1   finished, i=2 , k=2, Aw_diff=True , f_opt=0  , f_new=0  
+Aw_new=[-1  1  2  2]
+
+--------Inner iteration 2 starting, i=2, k=2--------
+Line 3: j=1
+Line 4: False, delta[1]=0
+Line 8: True, new OPT[1] is 1, new a[1] is 0
+Line 11: sigma not updated
+
+Line 3: j=2
+Line 4: True, delta[2]=1
+Line 22: True, new OPT[2] is 1, new a[2] is 1
+
+Line 3: j=3
+Line 4: False, delta[3]=0
+Line 8: True, new OPT[3] is 2, new a[3] is 1
+Line 11: sigma not updated
+
+Line 3: j=4
+Line 4: True, delta[4]=1
+Line 22: True, new OPT[4] is 2, new a[4] is 2
+
+Line 3: j=5
+Line 4: False, delta[5]=0
+Line 8: True, new OPT[5] is 3, new a[5] is 1
+Line 11: sigma is updated, new value is 1.000
+
+Line 3: j=6
+Line 4: False, delta[6]=0
+Line 8: True, new OPT[6] is 4, new a[6] is 1
+Line 11: sigma not updated
+
+Line 3: j=7
+Line 4: True, delta[7]=1
+Line 22: True, new OPT[7] is 4, new a[7] is 2
+
+Line 3: j=8
+Line 4: False, delta[8]=0
+Line 8: True, new OPT[8] is 5, new a[8] is 1
+Line 11: sigma is updated, new value is 1.000
+
+Line 25: sigma=1.000
+Line 26: mu=2.000, nu=1.500
+Inner Iteration 2   finished, i=2 , k=2, Aw_diff=True , f_opt=0  , f_new=1  
+Aw_new=[-1  2  2  2]
+
+--------Inner iteration 3 starting, i=2, k=2--------
+Line 3: j=1
+Line 4: False, delta[1]=0
+Line 8: True, new OPT[1] is 1, new a[1] is 0
+Line 11: sigma not updated
+
+Line 3: j=2
+Line 4: True, delta[2]=1
+Line 8: True, new OPT[2] is 2, new a[2] is 1
+Line 11: sigma not updated
+
+Line 3: j=3
+Line 4: False, delta[3]=0
+Line 8: True, new OPT[3] is 3, new a[3] is 1
+Line 11: sigma not updated
+
+Line 3: j=4
+Line 4: True, delta[4]=1
+Line 8: True, new OPT[4] is 4, new a[4] is 2
+Line 11: sigma not updated
+
+Line 3: j=5
+Line 4: False, delta[5]=0
+Line 19: True, new OPT[5] is 4, new a[5] is 2
+
+Line 3: j=6
+Line 4: False, delta[6]=0
+Line 8: True, new OPT[6] is 5, new a[6] is 2
+Line 11: sigma not updated
+
+Line 3: j=7
+Line 4: True, delta[7]=1
+Line 8: True, new OPT[7] is 6, new a[7] is 3
+Line 11: sigma not updated
+
+Line 3: j=8
+Line 4: False, delta[8]=0
+Line 19: True, new OPT[8] is 6, new a[8] is 3
+
+Line 25: sigma=2.000
+Line 26: mu=4.000, nu=3.000
+Inner Iteration 3   finished, i=2 , k=2, Aw_diff=False, f_opt=0  , f_new=1  
+Aw_new=[-1  2  2  2]
+
+Iteration 2 done. After optimizing, f_new=0, f_opt=0
+
+f is called 3 times for i=2, k=2
+Time elapsed: 0.05
+
+The w value after this iteration is
+[[0. 0. 0.]
+ [0. 1. 0.]
+ [0. 2. 0.]]
+
+The final weight matrix is
+[[0. 0. 0.]
+ [0. 1. 0.]
+ [0. 2. 0.]]
+
+The final activities calculated is
+[1 2 2]
+
+The calculated activities are 0 edits away from the actual activities

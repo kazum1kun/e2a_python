@@ -43,4 +43,4 @@ def main(file, number, extension='', generate_partial=False):
 
 
 if __name__ == '__main__':
-    main('../data/mappings/mappings.txt', 5, extension='-test2', generate_partial=True)
+    main('../data/mappings/mappings-test.txt', 5, extension='-test2', generate_partial=True)
