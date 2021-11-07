@@ -1,3 +1,5 @@
+import logging as log
+
 import nltk
 
 from SLN import SLN
@@ -6,8 +8,10 @@ from utils.FileReader import *
 
 
 def main():
-    file_ext = '-reduced'
-    mapping_ext = ''
+    log.basicConfig(format='%(message)s', level=log.INFO)
+
+    file_ext = '-test'
+    mapping_ext = '-test'
     activities = read_activities(f'data/activities/activities{file_ext}.txt')
     events = read_events(f'data/events/events{file_ext}.txt')
     mappings = read_mappings(f'data/mappings/mappings{mapping_ext}.txt')

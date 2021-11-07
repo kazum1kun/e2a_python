@@ -1,3 +1,5 @@
+import logging as log
+
 import nltk
 import numpy as np
 
@@ -31,6 +33,11 @@ class SLN:
         self.w[i][k] = x
         f_opt = self.f()
         A_old = self.get_aw()
+
+        log.debug(f'1D SLN starting for {k=}, {i=}')
+        log.debug(f'Line 1:\tcurrent {f_opt=}\n'
+                  f'\t\tAw={A_old}\n')
+
         M = self.M
         done = False
         m = len(self.M)
@@ -38,6 +45,7 @@ class SLN:
         itr_num = 1
 
         while not done:
+            log.debug(f'--------Inner iteration {itr_num} starting, {i=}, {k=}--------')
             OPT = np.zeros((m,), np.int_)
             a = np.zeros((m,), np.int_)
             sigma = np.infty
@@ -45,38 +53,54 @@ class SLN:
             Aw_diff = False
 
             for j in range(1, m):
+                log.debug(f'Line 3: {j=}')
                 # M[j].w is variable (by default theta entries are all zeros)
                 if M[j]['i'] == i and M[j]['k'] == k:
+                    log.debug(f'Line 4: True, delta[{j}]=1')
                     delta[j] = 1
+                else:
+                    log.debug(f'Line 4: False, delta[{j}]=0')
                 # Pre-store M[j].w for convenience
                 Mj_w = self.w[M[j]['i']][M[j]['k']]
 
                 if Mj_w + OPT[p[j]] > OPT[j - 1]:
                     OPT[j] = Mj_w + OPT[p[j]]
                     a[j] = a[p[j]] + delta[j]
+                    log.debug(f'Line 8: True, new OPT[{j}] is {OPT[j]}, new a[{j}] is {a[j]}')
                     if a[p[j]] + delta[j] < a[j - 1]:
                         sigma = np.min([sigma, (Mj_w + OPT[p[j]] - OPT[j - 1]) /
                                         (a[j - 1] - a[p[j]] - delta[j])])
+                        log.debug(f'Line 11: sigma is updated, new value is {sigma :.3f}\n')
+                    else:
+                        log.debug(f'Line 11: sigma not updated\n')
                 elif Mj_w + OPT[p[j]] < OPT[j - 1]:
                     OPT[j] = OPT[j - 1]
                     a[j] = a[j - 1]
+                    log.debug(f'Line 13: True, new OPT[{j}] is {OPT[j]}, new a[{j}] is {a[j]}')
                     if a[p[j]] + delta[j] > a[j - 1]:
                         sigma = np.min([sigma, (Mj_w + OPT[p[j]] - OPT[j - 1]) /
                                         (a[j - 1] - a[p[j]] - delta[j])])
+                        log.debug(f'Line 16: sigma is updated, new value is {sigma :.3f}\n')
+                    else:
+                        log.debug(f'Line 16: sigma not updated\n')
                 else:
                     if a[p[j]] + delta[j] <= a[j - 1]:
                         OPT[j] = OPT[j - 1]
                         a[j] = a[j - 1]
+                        log.debug(f'Line 19: True, new OPT[{j}] is {OPT[j]}, new a[{j}] is {a[j]}\n')
                     else:
                         OPT[j] = Mj_w + OPT[p[j]]
                         a[j] = a[p[j]] + delta[j]
+                        log.debug(f'Line 22: True, new OPT[{j}] is {OPT[j]}, new a[{j}] is {a[j]}\n')
 
             if sigma == np.infty:
                 sigma = 2
                 done = True
-
             mu = x + sigma
             nu = x + sigma / 2
+            log.debug(f'Line 25: {sigma=:.3f}')
+            log.debug(f'Line 26: {mu=:.3f}, {nu=:.3f}')
+
             self.w[i][k] = nu
             A_new = self.get_aw()
 
@@ -101,7 +125,9 @@ class SLN:
             if not done:
                 x = mu
 
-            print(f'Inner Iteration {itr_num}, {i=}, {k=}, {Aw_diff=}, {f_opt=}, {f_new=}')
+            log.info(f'Inner Iteration {itr_num: <3} finished, {i=: <2}, {k=}, '
+                     f'Aw_diff={Aw_diff.__repr__(): <5}, {f_opt=: <3}, {f_new=: <3}\n'
+                     f'Aw_new={A_new}\n')
             itr_num += 1
 
         return x_opt, f_opt
@@ -118,6 +144,10 @@ class SLN:
         done = False
         f_opt = self.f()
         itr_num = 1
+
+        log.info(f'\nND SLN Init finished, current optimal value is {f_opt}\n'
+                 'w value is')
+        log.info(self.w)
 
         # Coordinate descent
         while not done:
@@ -136,24 +166,24 @@ class SLN:
             # 1D minimization
             for i in range(1, n + 1):
                 for k in range(1, ni[i] + 1):
-                    print(f'\n===========Iteration {itr_num}, optimizing SLN for {i=}, {k=}===========')
+                    log.info(f'\n============Iteration {itr_num}, optimizing SLN for {i=}, {k=}============')
                     x_old = self.w[i][k]
                     x_new, f_new = self.sln_1d(i, k)
-                    print(f'After optimizing, {f_new=}, {f_opt=}')
+                    log.info(f'Iteration {itr_num} done. After optimizing, {f_new=}, {f_opt=}\n')
                     if f_new < f_opt:
                         done = False
                         self.w[i][k] = x_new
                         f_opt = f_new
                     else:
                         self.w[i][k] = x_old
-                    Timer.lap(f'Done, f is called {self.f_called} times for {i=}, {k=}')
+                    Timer.lap(f'f is called {self.f_called} times for {i=}, {k=}')
                     self.f_called = 0
 
-                    print(self.w)
+                    log.info('\nThe w value after this iteration is')
+                    log.info(self.w)
                     for j in range(1, len(self.w)):
                         if self.w[j][1] == 0:
-                            print(f'w[{j}][1] value is 0, exiting')
-                            return
+                            log.warning(f'w[{j}][1] value is 0')
             itr_num += 1
         return self.w, self.get_aw()
 
