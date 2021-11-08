@@ -126,8 +126,9 @@ class SLN:
                 x = mu
 
             log.info(f'Inner Iteration {itr_num: <3} finished, {i=: <2}, {k=}, '
-                     f'Aw_diff={Aw_diff.__repr__(): <5}, {f_opt=: <3}, {f_new=: <3}\n'
-                     f'Aw_new={A_new}\n')
+                     f'Aw_diff={Aw_diff.__repr__(): <5}, {f_opt=: <3}, {f_new=: <3}')
+            log.debug(f'\nAw_new={A_new}\n')
+
             itr_num += 1
 
         return x_opt, f_opt
@@ -151,16 +152,16 @@ class SLN:
 
         # Coordinate descent
         while not done:
-            # Weight normalization
-            W = 0
-            for i in range(1, n + 1):
-                for k in range(1, ni[i] + 1):
-                    W += self.w[i][k]
-
-            for i in range(1, n + 1):
-                for k in range(1, ni[i] + 1):
-                    self.w[i][k] = self.N * self.w[i][k] / W
-
+            # # Weight normalization
+            # W = 0
+            # for i in range(1, n + 1):
+            #     for k in range(1, ni[i] + 1):
+            #         W += self.w[i][k]
+            #
+            # for i in range(1, n + 1):
+            #     for k in range(1, ni[i] + 1):
+            #         self.w[i][k] = self.N * self.w[i][k] / W
+            #
             done = True
 
             # 1D minimization

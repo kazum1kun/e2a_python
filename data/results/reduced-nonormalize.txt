@@ -1,0 +1,4518 @@
+Text read finished.
+Time elapsed: 0.02
+OMatch initialization done.
+Time elapsed: 0.59
+ND SLN started
+Time elapsed: 0.59
+
+ND SLN Init finished, current optimal value is 571
+w value is
+[[0. 0. 0.]
+ [0. 1. 1.]
+ [0. 1. 1.]
+ [0. 1. 1.]
+ [0. 1. 1.]
+ [0. 1. 1.]
+ [0. 1. 1.]
+ [0. 1. 1.]
+ [0. 1. 1.]
+ [0. 1. 1.]
+ [0. 1. 1.]
+ [0. 1. 1.]
+ [0. 1. 1.]
+ [0. 1. 1.]
+ [0. 1. 1.]
+ [0. 1. 0.]
+ [0. 1. 0.]
+ [0. 1. 0.]
+ [0. 1. 0.]
+ [0. 1. 0.]
+ [0. 1. 0.]
+ [0. 1. 0.]]
+
+============Iteration 1, optimizing SLN for i=1, k=1============
+Inner Iteration 1   finished, i=1 , k=1, Aw_diff=True , f_opt=571, f_new=571
+Inner Iteration 2   finished, i=1 , k=1, Aw_diff=True , f_opt=499, f_new=502
+Inner Iteration 3   finished, i=1 , k=1, Aw_diff=True , f_opt=499, f_new=507
+Inner Iteration 4   finished, i=1 , k=1, Aw_diff=True , f_opt=499, f_new=524
+Inner Iteration 5   finished, i=1 , k=1, Aw_diff=False, f_opt=499, f_new=524
+Inner Iteration 6   finished, i=1 , k=1, Aw_diff=True , f_opt=499, f_new=539
+Inner Iteration 7   finished, i=1 , k=1, Aw_diff=True , f_opt=499, f_new=576
+Inner Iteration 8   finished, i=1 , k=1, Aw_diff=True , f_opt=499, f_new=602
+Inner Iteration 9   finished, i=1 , k=1, Aw_diff=False, f_opt=499, f_new=602
+Iteration 1 done. After optimizing, f_new=499, f_opt=571
+
+f is called 9 times for i=1, k=1
+Time elapsed: 17.57
+
+The w value after this iteration is
+[[0.  0.  0. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]]
+
+============Iteration 1, optimizing SLN for i=1, k=2============
+Inner Iteration 1   finished, i=1 , k=2, Aw_diff=True , f_opt=499, f_new=499
+Inner Iteration 2   finished, i=1 , k=2, Aw_diff=True , f_opt=499, f_new=505
+Inner Iteration 3   finished, i=1 , k=2, Aw_diff=True , f_opt=499, f_new=510
+Inner Iteration 4   finished, i=1 , k=2, Aw_diff=True , f_opt=499, f_new=527
+Inner Iteration 5   finished, i=1 , k=2, Aw_diff=False, f_opt=499, f_new=527
+Inner Iteration 6   finished, i=1 , k=2, Aw_diff=True , f_opt=499, f_new=542
+Inner Iteration 7   finished, i=1 , k=2, Aw_diff=True , f_opt=499, f_new=565
+Inner Iteration 8   finished, i=1 , k=2, Aw_diff=True , f_opt=499, f_new=591
+Inner Iteration 9   finished, i=1 , k=2, Aw_diff=False, f_opt=499, f_new=591
+Iteration 1 done. After optimizing, f_new=499, f_opt=499
+
+f is called 8 times for i=1, k=2
+Time elapsed: 31.48
+
+The w value after this iteration is
+[[0.  0.  0. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]]
+
+============Iteration 1, optimizing SLN for i=2, k=1============
+Inner Iteration 1   finished, i=2 , k=1, Aw_diff=True , f_opt=499, f_new=499
+Inner Iteration 2   finished, i=2 , k=1, Aw_diff=False, f_opt=499, f_new=499
+Inner Iteration 3   finished, i=2 , k=1, Aw_diff=True , f_opt=499, f_new=572
+Inner Iteration 4   finished, i=2 , k=1, Aw_diff=True , f_opt=499, f_new=613
+Inner Iteration 5   finished, i=2 , k=1, Aw_diff=True , f_opt=499, f_new=656
+Inner Iteration 6   finished, i=2 , k=1, Aw_diff=True , f_opt=499, f_new=701
+Inner Iteration 7   finished, i=2 , k=1, Aw_diff=False, f_opt=499, f_new=701
+Inner Iteration 8   finished, i=2 , k=1, Aw_diff=True , f_opt=499, f_new=754
+Inner Iteration 9   finished, i=2 , k=1, Aw_diff=False, f_opt=499, f_new=754
+Iteration 1 done. After optimizing, f_new=499, f_opt=499
+
+f is called 7 times for i=2, k=1
+Time elapsed: 42.32
+
+The w value after this iteration is
+[[0.  0.  0. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]]
+
+============Iteration 1, optimizing SLN for i=2, k=2============
+Inner Iteration 1   finished, i=2 , k=2, Aw_diff=True , f_opt=499, f_new=499
+Inner Iteration 2   finished, i=2 , k=2, Aw_diff=False, f_opt=499, f_new=499
+Inner Iteration 3   finished, i=2 , k=2, Aw_diff=True , f_opt=499, f_new=572
+Inner Iteration 4   finished, i=2 , k=2, Aw_diff=True , f_opt=499, f_new=613
+Inner Iteration 5   finished, i=2 , k=2, Aw_diff=True , f_opt=499, f_new=656
+Inner Iteration 6   finished, i=2 , k=2, Aw_diff=True , f_opt=499, f_new=701
+Inner Iteration 7   finished, i=2 , k=2, Aw_diff=False, f_opt=499, f_new=701
+Inner Iteration 8   finished, i=2 , k=2, Aw_diff=True , f_opt=499, f_new=754
+Inner Iteration 9   finished, i=2 , k=2, Aw_diff=False, f_opt=499, f_new=754
+Iteration 1 done. After optimizing, f_new=499, f_opt=499
+
+f is called 7 times for i=2, k=2
+Time elapsed: 53.22
+
+The w value after this iteration is
+[[0.  0.  0. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]]
+
+============Iteration 1, optimizing SLN for i=3, k=1============
+Inner Iteration 1   finished, i=3 , k=1, Aw_diff=True , f_opt=499, f_new=499
+Inner Iteration 2   finished, i=3 , k=1, Aw_diff=True , f_opt=455, f_new=457
+Inner Iteration 3   finished, i=3 , k=1, Aw_diff=False, f_opt=455, f_new=457
+Inner Iteration 4   finished, i=3 , k=1, Aw_diff=True , f_opt=455, f_new=485
+Inner Iteration 5   finished, i=3 , k=1, Aw_diff=False, f_opt=455, f_new=485
+Inner Iteration 6   finished, i=3 , k=1, Aw_diff=True , f_opt=455, f_new=548
+Inner Iteration 7   finished, i=3 , k=1, Aw_diff=False, f_opt=455, f_new=548
+Inner Iteration 8   finished, i=3 , k=1, Aw_diff=True , f_opt=455, f_new=588
+Inner Iteration 9   finished, i=3 , k=1, Aw_diff=False, f_opt=455, f_new=588
+Inner Iteration 10  finished, i=3 , k=1, Aw_diff=True , f_opt=455, f_new=640
+Inner Iteration 11  finished, i=3 , k=1, Aw_diff=False, f_opt=455, f_new=640
+Iteration 1 done. After optimizing, f_new=455, f_opt=499
+
+f is called 8 times for i=3, k=1
+Time elapsed: 67.12
+
+The w value after this iteration is
+[[0.  0.  0. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]]
+
+============Iteration 1, optimizing SLN for i=3, k=2============
+Inner Iteration 1   finished, i=3 , k=2, Aw_diff=True , f_opt=455, f_new=455
+Inner Iteration 2   finished, i=3 , k=2, Aw_diff=True , f_opt=455, f_new=457
+Inner Iteration 3   finished, i=3 , k=2, Aw_diff=False, f_opt=455, f_new=457
+Inner Iteration 4   finished, i=3 , k=2, Aw_diff=True , f_opt=455, f_new=485
+Inner Iteration 5   finished, i=3 , k=2, Aw_diff=False, f_opt=455, f_new=485
+Inner Iteration 6   finished, i=3 , k=2, Aw_diff=True , f_opt=455, f_new=548
+Inner Iteration 7   finished, i=3 , k=2, Aw_diff=True , f_opt=455, f_new=589
+Inner Iteration 8   finished, i=3 , k=2, Aw_diff=True , f_opt=455, f_new=629
+Inner Iteration 9   finished, i=3 , k=2, Aw_diff=False, f_opt=455, f_new=629
+Iteration 1 done. After optimizing, f_new=455, f_opt=455
+
+f is called 7 times for i=3, k=2
+Time elapsed: 79.60
+
+The w value after this iteration is
+[[0.  0.  0. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]]
+
+============Iteration 1, optimizing SLN for i=4, k=1============
+Inner Iteration 1   finished, i=4 , k=1, Aw_diff=True , f_opt=455, f_new=455
+Inner Iteration 2   finished, i=4 , k=1, Aw_diff=True , f_opt=455, f_new=456
+Inner Iteration 3   finished, i=4 , k=1, Aw_diff=False, f_opt=455, f_new=456
+Inner Iteration 4   finished, i=4 , k=1, Aw_diff=True , f_opt=455, f_new=597
+Inner Iteration 5   finished, i=4 , k=1, Aw_diff=True , f_opt=455, f_new=646
+Inner Iteration 6   finished, i=4 , k=1, Aw_diff=False, f_opt=455, f_new=646
+Inner Iteration 7   finished, i=4 , k=1, Aw_diff=True , f_opt=455, f_new=699
+Inner Iteration 8   finished, i=4 , k=1, Aw_diff=True , f_opt=455, f_new=764
+Inner Iteration 9   finished, i=4 , k=1, Aw_diff=True , f_opt=455, f_new=824
+Inner Iteration 10  finished, i=4 , k=1, Aw_diff=False, f_opt=455, f_new=824
+Iteration 1 done. After optimizing, f_new=455, f_opt=455
+
+f is called 9 times for i=4, k=1
+Time elapsed: 93.71
+
+The w value after this iteration is
+[[0.  0.  0. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]]
+
+============Iteration 1, optimizing SLN for i=4, k=2============
+Inner Iteration 1   finished, i=4 , k=2, Aw_diff=True , f_opt=455, f_new=455
+Inner Iteration 2   finished, i=4 , k=2, Aw_diff=False, f_opt=455, f_new=455
+Inner Iteration 3   finished, i=4 , k=2, Aw_diff=True , f_opt=455, f_new=596
+Inner Iteration 4   finished, i=4 , k=2, Aw_diff=True , f_opt=455, f_new=645
+Inner Iteration 5   finished, i=4 , k=2, Aw_diff=False, f_opt=455, f_new=645
+Inner Iteration 6   finished, i=4 , k=2, Aw_diff=True , f_opt=455, f_new=698
+Inner Iteration 7   finished, i=4 , k=2, Aw_diff=True , f_opt=455, f_new=763
+Inner Iteration 8   finished, i=4 , k=2, Aw_diff=True , f_opt=455, f_new=823
+Inner Iteration 9   finished, i=4 , k=2, Aw_diff=False, f_opt=455, f_new=823
+Iteration 1 done. After optimizing, f_new=455, f_opt=455
+
+f is called 9 times for i=4, k=2
+Time elapsed: 108.05
+
+The w value after this iteration is
+[[0.  0.  0. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]]
+
+============Iteration 1, optimizing SLN for i=5, k=1============
+Inner Iteration 1   finished, i=5 , k=1, Aw_diff=True , f_opt=455, f_new=455
+Inner Iteration 2   finished, i=5 , k=1, Aw_diff=True , f_opt=411, f_new=413
+Inner Iteration 3   finished, i=5 , k=1, Aw_diff=True , f_opt=411, f_new=436
+Inner Iteration 4   finished, i=5 , k=1, Aw_diff=True , f_opt=411, f_new=453
+Inner Iteration 5   finished, i=5 , k=1, Aw_diff=False, f_opt=411, f_new=453
+Inner Iteration 6   finished, i=5 , k=1, Aw_diff=True , f_opt=411, f_new=476
+Inner Iteration 7   finished, i=5 , k=1, Aw_diff=False, f_opt=411, f_new=476
+Iteration 1 done. After optimizing, f_new=411, f_opt=455
+
+f is called 8 times for i=5, k=1
+Time elapsed: 123.26
+
+The w value after this iteration is
+[[0.  0.  0. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]]
+
+============Iteration 1, optimizing SLN for i=5, k=2============
+Inner Iteration 1   finished, i=5 , k=2, Aw_diff=True , f_opt=411, f_new=411
+Inner Iteration 2   finished, i=5 , k=2, Aw_diff=True , f_opt=411, f_new=413
+Inner Iteration 3   finished, i=5 , k=2, Aw_diff=True , f_opt=411, f_new=436
+Inner Iteration 4   finished, i=5 , k=2, Aw_diff=True , f_opt=411, f_new=453
+Inner Iteration 5   finished, i=5 , k=2, Aw_diff=False, f_opt=411, f_new=453
+Inner Iteration 6   finished, i=5 , k=2, Aw_diff=True , f_opt=411, f_new=476
+Inner Iteration 7   finished, i=5 , k=2, Aw_diff=False, f_opt=411, f_new=476
+Inner Iteration 8   finished, i=5 , k=2, Aw_diff=True , f_opt=411, f_new=517
+Inner Iteration 9   finished, i=5 , k=2, Aw_diff=False, f_opt=411, f_new=517
+Iteration 1 done. After optimizing, f_new=411, f_opt=411
+
+f is called 8 times for i=5, k=2
+Time elapsed: 138.42
+
+The w value after this iteration is
+[[0.  0.  0. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]]
+
+============Iteration 1, optimizing SLN for i=6, k=1============
+Inner Iteration 1   finished, i=6 , k=1, Aw_diff=True , f_opt=411, f_new=411
+Inner Iteration 2   finished, i=6 , k=1, Aw_diff=False, f_opt=411, f_new=411
+Inner Iteration 3   finished, i=6 , k=1, Aw_diff=True , f_opt=411, f_new=438
+Inner Iteration 4   finished, i=6 , k=1, Aw_diff=True , f_opt=411, f_new=542
+Inner Iteration 5   finished, i=6 , k=1, Aw_diff=False, f_opt=411, f_new=542
+Inner Iteration 6   finished, i=6 , k=1, Aw_diff=True , f_opt=411, f_new=598
+Inner Iteration 7   finished, i=6 , k=1, Aw_diff=True , f_opt=411, f_new=668
+Iteration 1 done. After optimizing, f_new=411, f_opt=411
+
+f is called 7 times for i=6, k=1
+Time elapsed: 150.70
+
+The w value after this iteration is
+[[0.  0.  0. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]]
+
+============Iteration 1, optimizing SLN for i=6, k=2============
+Inner Iteration 1   finished, i=6 , k=2, Aw_diff=True , f_opt=411, f_new=411
+Inner Iteration 2   finished, i=6 , k=2, Aw_diff=False, f_opt=411, f_new=411
+Inner Iteration 3   finished, i=6 , k=2, Aw_diff=True , f_opt=411, f_new=438
+Inner Iteration 4   finished, i=6 , k=2, Aw_diff=True , f_opt=411, f_new=542
+Inner Iteration 5   finished, i=6 , k=2, Aw_diff=False, f_opt=411, f_new=542
+Inner Iteration 6   finished, i=6 , k=2, Aw_diff=True , f_opt=411, f_new=598
+Inner Iteration 7   finished, i=6 , k=2, Aw_diff=True , f_opt=411, f_new=668
+Iteration 1 done. After optimizing, f_new=411, f_opt=411
+
+f is called 7 times for i=6, k=2
+Time elapsed: 163.22
+
+The w value after this iteration is
+[[0.  0.  0. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.5 1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  1. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]
+ [0.  1.  0. ]]
+
+============Iteration 1, optimizing SLN for i=7, k=1============
+Inner Iteration 1   finished, i=7 , k=1, Aw_diff=True , f_opt=411, f_new=411
+Inner Iteration 2   finished, i=7 , k=1, Aw_diff=True , f_opt=401, f_new=401
+Inner Iteration 3   finished, i=7 , k=1, Aw_diff=True , f_opt=401, f_new=477
+Inner Iteration 4   finished, i=7 , k=1, Aw_diff=True , f_opt=401, f_new=494
+Inner Iteration 5   finished, i=7 , k=1, Aw_diff=True , f_opt=401, f_new=559
+Inner Iteration 6   finished, i=7 , k=1, Aw_diff=True , f_opt=401, f_new=575
+Inner Iteration 7   finished, i=7 , k=1, Aw_diff=False, f_opt=401, f_new=575
+Inner Iteration 8   finished, i=7 , k=1, Aw_diff=True , f_opt=401, f_new=601
+Inner Iteration 9   finished, i=7 , k=1, Aw_diff=False, f_opt=401, f_new=601
+Iteration 1 done. After optimizing, f_new=401, f_opt=411
+
+f is called 8 times for i=7, k=1
+Time elapsed: 177.73
+
+The w value after this iteration is
+[[0.   0.   0.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.25 1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]]
+
+============Iteration 1, optimizing SLN for i=7, k=2============
+Inner Iteration 1   finished, i=7 , k=2, Aw_diff=True , f_opt=401, f_new=401
+Inner Iteration 2   finished, i=7 , k=2, Aw_diff=False, f_opt=401, f_new=401
+Inner Iteration 3   finished, i=7 , k=2, Aw_diff=True , f_opt=401, f_new=487
+Inner Iteration 4   finished, i=7 , k=2, Aw_diff=True , f_opt=401, f_new=504
+Inner Iteration 5   finished, i=7 , k=2, Aw_diff=True , f_opt=401, f_new=569
+Inner Iteration 6   finished, i=7 , k=2, Aw_diff=True , f_opt=401, f_new=585
+Inner Iteration 7   finished, i=7 , k=2, Aw_diff=False, f_opt=401, f_new=585
+Iteration 1 done. After optimizing, f_new=401, f_opt=401
+
+f is called 6 times for i=7, k=2
+Time elapsed: 188.52
+
+The w value after this iteration is
+[[0.   0.   0.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.25 1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]]
+
+============Iteration 1, optimizing SLN for i=8, k=1============
+Inner Iteration 1   finished, i=8 , k=1, Aw_diff=True , f_opt=401, f_new=401
+Inner Iteration 2   finished, i=8 , k=1, Aw_diff=True , f_opt=401, f_new=471
+Inner Iteration 3   finished, i=8 , k=1, Aw_diff=True , f_opt=401, f_new=527
+Inner Iteration 4   finished, i=8 , k=1, Aw_diff=True , f_opt=401, f_new=586
+Inner Iteration 5   finished, i=8 , k=1, Aw_diff=False, f_opt=401, f_new=586
+Inner Iteration 6   finished, i=8 , k=1, Aw_diff=True , f_opt=401, f_new=649
+Inner Iteration 7   finished, i=8 , k=1, Aw_diff=False, f_opt=401, f_new=649
+Inner Iteration 8   finished, i=8 , k=1, Aw_diff=True , f_opt=401, f_new=719
+Inner Iteration 9   finished, i=8 , k=1, Aw_diff=False, f_opt=401, f_new=719
+Iteration 1 done. After optimizing, f_new=401, f_opt=401
+
+f is called 7 times for i=8, k=1
+Time elapsed: 200.60
+
+The w value after this iteration is
+[[0.   0.   0.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.25 1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]]
+
+============Iteration 1, optimizing SLN for i=8, k=2============
+Inner Iteration 1   finished, i=8 , k=2, Aw_diff=True , f_opt=401, f_new=401
+Inner Iteration 2   finished, i=8 , k=2, Aw_diff=True , f_opt=401, f_new=471
+Inner Iteration 3   finished, i=8 , k=2, Aw_diff=True , f_opt=401, f_new=527
+Inner Iteration 4   finished, i=8 , k=2, Aw_diff=True , f_opt=401, f_new=586
+Inner Iteration 5   finished, i=8 , k=2, Aw_diff=False, f_opt=401, f_new=586
+Inner Iteration 6   finished, i=8 , k=2, Aw_diff=True , f_opt=401, f_new=649
+Inner Iteration 7   finished, i=8 , k=2, Aw_diff=False, f_opt=401, f_new=649
+Inner Iteration 8   finished, i=8 , k=2, Aw_diff=True , f_opt=401, f_new=719
+Inner Iteration 9   finished, i=8 , k=2, Aw_diff=False, f_opt=401, f_new=719
+Iteration 1 done. After optimizing, f_new=401, f_opt=401
+
+f is called 7 times for i=8, k=2
+Time elapsed: 212.51
+
+The w value after this iteration is
+[[0.   0.   0.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.25 1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]]
+
+============Iteration 1, optimizing SLN for i=9, k=1============
+Inner Iteration 1   finished, i=9 , k=1, Aw_diff=True , f_opt=401, f_new=401
+Inner Iteration 2   finished, i=9 , k=1, Aw_diff=False, f_opt=401, f_new=401
+Inner Iteration 3   finished, i=9 , k=1, Aw_diff=False, f_opt=401, f_new=401
+Inner Iteration 4   finished, i=9 , k=1, Aw_diff=False, f_opt=401, f_new=401
+Inner Iteration 5   finished, i=9 , k=1, Aw_diff=True , f_opt=401, f_new=571
+Inner Iteration 6   finished, i=9 , k=1, Aw_diff=False, f_opt=401, f_new=571
+Inner Iteration 7   finished, i=9 , k=1, Aw_diff=True , f_opt=401, f_new=582
+Inner Iteration 8   finished, i=9 , k=1, Aw_diff=False, f_opt=401, f_new=582
+Iteration 1 done. After optimizing, f_new=401, f_opt=401
+
+f is called 4 times for i=9, k=1
+Time elapsed: 219.92
+
+The w value after this iteration is
+[[0.   0.   0.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.25 1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]]
+
+============Iteration 1, optimizing SLN for i=9, k=2============
+Inner Iteration 1   finished, i=9 , k=2, Aw_diff=True , f_opt=392, f_new=401
+Inner Iteration 2   finished, i=9 , k=2, Aw_diff=False, f_opt=392, f_new=401
+Inner Iteration 3   finished, i=9 , k=2, Aw_diff=False, f_opt=392, f_new=401
+Inner Iteration 4   finished, i=9 , k=2, Aw_diff=False, f_opt=392, f_new=401
+Inner Iteration 5   finished, i=9 , k=2, Aw_diff=True , f_opt=392, f_new=571
+Inner Iteration 6   finished, i=9 , k=2, Aw_diff=False, f_opt=392, f_new=571
+Iteration 1 done. After optimizing, f_new=392, f_opt=401
+
+f is called 4 times for i=9, k=2
+Time elapsed: 227.67
+
+The w value after this iteration is
+[[0.   0.   0.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.25 1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   0.5 ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]]
+
+============Iteration 1, optimizing SLN for i=10, k=1============
+Inner Iteration 1   finished, i=10, k=1, Aw_diff=True , f_opt=392, f_new=392
+Inner Iteration 2   finished, i=10, k=1, Aw_diff=True , f_opt=392, f_new=602
+Inner Iteration 3   finished, i=10, k=1, Aw_diff=True , f_opt=392, f_new=608
+Iteration 1 done. After optimizing, f_new=392, f_opt=392
+
+f is called 5 times for i=10, k=1
+Time elapsed: 236.65
+
+The w value after this iteration is
+[[0.   0.   0.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.25 1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   0.5 ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]]
+
+============Iteration 1, optimizing SLN for i=10, k=2============
+Inner Iteration 1   finished, i=10, k=2, Aw_diff=True , f_opt=381, f_new=392
+Inner Iteration 2   finished, i=10, k=2, Aw_diff=True , f_opt=381, f_new=581
+Iteration 1 done. After optimizing, f_new=381, f_opt=392
+
+f is called 4 times for i=10, k=2
+Time elapsed: 244.41
+
+The w value after this iteration is
+[[0.   0.   0.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.5  1.  ]
+ [0.   1.   1.  ]
+ [0.   1.25 1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   0.5 ]
+ [0.   1.   0.5 ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   1.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]
+ [0.   1.   0.  ]]
+
+============Iteration 1, optimizing SLN for i=11, k=1============
+Inner Iteration 1   finished, i=11, k=1, Aw_diff=True , f_opt=381, f_new=381
+Inner Iteration 2   finished, i=11, k=1, Aw_diff=True , f_opt=247, f_new=247
+Inner Iteration 3   finished, i=11, k=1, Aw_diff=False, f_opt=247, f_new=247
+Inner Iteration 4   finished, i=11, k=1, Aw_diff=False, f_opt=247, f_new=247
+Inner Iteration 5   finished, i=11, k=1, Aw_diff=False, f_opt=247, f_new=247
+Inner Iteration 6   finished, i=11, k=1, Aw_diff=False, f_opt=247, f_new=247
+Inner Iteration 7   finished, i=11, k=1, Aw_diff=True , f_opt=247, f_new=255
+Inner Iteration 8   finished, i=11, k=1, Aw_diff=True , f_opt=247, f_new=258
+Inner Iteration 9   finished, i=11, k=1, Aw_diff=False, f_opt=247, f_new=258
+Inner Iteration 10  finished, i=11, k=1, Aw_diff=False, f_opt=247, f_new=258
+Inner Iteration 11  finished, i=11, k=1, Aw_diff=False, f_opt=247, f_new=258
+Inner Iteration 12  finished, i=11, k=1, Aw_diff=False, f_opt=247, f_new=258
+Inner Iteration 13  finished, i=11, k=1, Aw_diff=False, f_opt=247, f_new=258
+Iteration 1 done. After optimizing, f_new=247, f_opt=381
+
+f is called 5 times for i=11, k=1
+Time elapsed: 255.70
+
+The w value after this iteration is
+[[0.    0.    0.   ]
+ [0.    1.5   1.   ]
+ [0.    1.    1.   ]
+ [0.    1.5   1.   ]
+ [0.    1.    1.   ]
+ [0.    1.5   1.   ]
+ [0.    1.    1.   ]
+ [0.    1.25  1.   ]
+ [0.    1.    1.   ]
+ [0.    1.    0.5  ]
+ [0.    1.    0.5  ]
+ [0.    1.125 1.   ]
+ [0.    1.    1.   ]
+ [0.    1.    1.   ]
+ [0.    1.    1.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]]
+
+============Iteration 1, optimizing SLN for i=11, k=2============
+Inner Iteration 1   finished, i=11, k=2, Aw_diff=True , f_opt=247, f_new=247
+Inner Iteration 2   finished, i=11, k=2, Aw_diff=True , f_opt=244, f_new=244
+Inner Iteration 3   finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 4   finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 5   finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 6   finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 7   finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 8   finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 9   finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 10  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 11  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 12  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 13  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 14  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 15  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 16  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 17  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 18  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 19  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 20  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=244
+Inner Iteration 21  finished, i=11, k=2, Aw_diff=True , f_opt=244, f_new=247
+Inner Iteration 22  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 23  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 24  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 25  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 26  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 27  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 28  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 29  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 30  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 31  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 32  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 33  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 34  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 35  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 36  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 37  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 38  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 39  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 40  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 41  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 42  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 43  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 44  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 45  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 46  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 47  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Inner Iteration 48  finished, i=11, k=2, Aw_diff=False, f_opt=244, f_new=247
+Iteration 1 done. After optimizing, f_new=244, f_opt=247
+
+f is called 4 times for i=11, k=2
+Time elapsed: 265.70
+
+The w value after this iteration is
+[[0.    0.    0.   ]
+ [0.    1.5   1.   ]
+ [0.    1.    1.   ]
+ [0.    1.5   1.   ]
+ [0.    1.    1.   ]
+ [0.    1.5   1.   ]
+ [0.    1.    1.   ]
+ [0.    1.25  1.   ]
+ [0.    1.    1.   ]
+ [0.    1.    0.5  ]
+ [0.    1.    0.5  ]
+ [0.    1.125 1.125]
+ [0.    1.    1.   ]
+ [0.    1.    1.   ]
+ [0.    1.    1.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]]
+
+============Iteration 1, optimizing SLN for i=12, k=1============
+Inner Iteration 1   finished, i=12, k=1, Aw_diff=True , f_opt=244, f_new=244
+Inner Iteration 2   finished, i=12, k=1, Aw_diff=True , f_opt=119, f_new=119
+Inner Iteration 3   finished, i=12, k=1, Aw_diff=True , f_opt=119, f_new=152
+Inner Iteration 4   finished, i=12, k=1, Aw_diff=True , f_opt=119, f_new=170
+Inner Iteration 5   finished, i=12, k=1, Aw_diff=False, f_opt=119, f_new=170
+Inner Iteration 6   finished, i=12, k=1, Aw_diff=True , f_opt=119, f_new=238
+Inner Iteration 7   finished, i=12, k=1, Aw_diff=False, f_opt=119, f_new=238
+Inner Iteration 8   finished, i=12, k=1, Aw_diff=False, f_opt=119, f_new=238
+Iteration 1 done. After optimizing, f_new=119, f_opt=244
+
+f is called 6 times for i=12, k=1
+Time elapsed: 280.42
+
+The w value after this iteration is
+[[0.    0.    0.   ]
+ [0.    1.5   1.   ]
+ [0.    1.    1.   ]
+ [0.    1.5   1.   ]
+ [0.    1.    1.   ]
+ [0.    1.5   1.   ]
+ [0.    1.    1.   ]
+ [0.    1.25  1.   ]
+ [0.    1.    1.   ]
+ [0.    1.    0.5  ]
+ [0.    1.    0.5  ]
+ [0.    1.125 1.125]
+ [0.    1.5   1.   ]
+ [0.    1.    1.   ]
+ [0.    1.    1.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]]
+
+============Iteration 1, optimizing SLN for i=12, k=2============
+Inner Iteration 1   finished, i=12, k=2, Aw_diff=True , f_opt=119, f_new=119
+Inner Iteration 2   finished, i=12, k=2, Aw_diff=False, f_opt=119, f_new=119
+Inner Iteration 3   finished, i=12, k=2, Aw_diff=True , f_opt=119, f_new=137
+Inner Iteration 4   finished, i=12, k=2, Aw_diff=True , f_opt=119, f_new=155
+Inner Iteration 5   finished, i=12, k=2, Aw_diff=True , f_opt=119, f_new=223
+Inner Iteration 6   finished, i=12, k=2, Aw_diff=False, f_opt=119, f_new=223
+Inner Iteration 7   finished, i=12, k=2, Aw_diff=False, f_opt=119, f_new=223
+Iteration 1 done. After optimizing, f_new=119, f_opt=119
+
+f is called 6 times for i=12, k=2
+Time elapsed: 295.77
+
+The w value after this iteration is
+[[0.    0.    0.   ]
+ [0.    1.5   1.   ]
+ [0.    1.    1.   ]
+ [0.    1.5   1.   ]
+ [0.    1.    1.   ]
+ [0.    1.5   1.   ]
+ [0.    1.    1.   ]
+ [0.    1.25  1.   ]
+ [0.    1.    1.   ]
+ [0.    1.    0.5  ]
+ [0.    1.    0.5  ]
+ [0.    1.125 1.125]
+ [0.    1.5   1.   ]
+ [0.    1.    1.   ]
+ [0.    1.    1.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]
+ [0.    1.    0.   ]]
+
+============Iteration 1, optimizing SLN for i=13, k=1============
+Inner Iteration 1   finished, i=13, k=1, Aw_diff=True , f_opt=119, f_new=119
+Inner Iteration 2   finished, i=13, k=1, Aw_diff=True , f_opt=75 , f_new=75
+Inner Iteration 3   finished, i=13, k=1, Aw_diff=False, f_opt=75 , f_new=75
+Inner Iteration 4   finished, i=13, k=1, Aw_diff=False, f_opt=75 , f_new=75
+Inner Iteration 5   finished, i=13, k=1, Aw_diff=False, f_opt=75 , f_new=75
+Inner Iteration 6   finished, i=13, k=1, Aw_diff=False, f_opt=75 , f_new=75
+Inner Iteration 7   finished, i=13, k=1, Aw_diff=False, f_opt=75 , f_new=75
+Inner Iteration 8   finished, i=13, k=1, Aw_diff=False, f_opt=75 , f_new=75
+Inner Iteration 9   finished, i=13, k=1, Aw_diff=True , f_opt=75 , f_new=101
+Inner Iteration 10  finished, i=13, k=1, Aw_diff=True , f_opt=75 , f_new=100
+Inner Iteration 11  finished, i=13, k=1, Aw_diff=False, f_opt=75 , f_new=100
+Inner Iteration 12  finished, i=13, k=1, Aw_diff=False, f_opt=75 , f_new=100
+Inner Iteration 13  finished, i=13, k=1, Aw_diff=True , f_opt=75 , f_new=112
+Inner Iteration 14  finished, i=13, k=1, Aw_diff=False, f_opt=75 , f_new=112
+Iteration 1 done. After optimizing, f_new=75, f_opt=119
+
+f is called 6 times for i=13, k=1
+Time elapsed: 311.63
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 1, optimizing SLN for i=13, k=2============
+Inner Iteration 1   finished, i=13, k=2, Aw_diff=True , f_opt=75 , f_new=75
+Inner Iteration 2   finished, i=13, k=2, Aw_diff=False, f_opt=75 , f_new=75
+Inner Iteration 3   finished, i=13, k=2, Aw_diff=False, f_opt=75 , f_new=75
+Inner Iteration 4   finished, i=13, k=2, Aw_diff=False, f_opt=75 , f_new=75
+Inner Iteration 5   finished, i=13, k=2, Aw_diff=False, f_opt=75 , f_new=75
+Inner Iteration 6   finished, i=13, k=2, Aw_diff=False, f_opt=75 , f_new=75
+Inner Iteration 7   finished, i=13, k=2, Aw_diff=False, f_opt=75 , f_new=75
+Inner Iteration 8   finished, i=13, k=2, Aw_diff=False, f_opt=75 , f_new=75
+Inner Iteration 9   finished, i=13, k=2, Aw_diff=True , f_opt=75 , f_new=104
+Inner Iteration 10  finished, i=13, k=2, Aw_diff=True , f_opt=75 , f_new=103
+Inner Iteration 11  finished, i=13, k=2, Aw_diff=False, f_opt=75 , f_new=103
+Inner Iteration 12  finished, i=13, k=2, Aw_diff=False, f_opt=75 , f_new=103
+Inner Iteration 13  finished, i=13, k=2, Aw_diff=False, f_opt=75 , f_new=103
+Inner Iteration 14  finished, i=13, k=2, Aw_diff=False, f_opt=75 , f_new=103
+Iteration 1 done. After optimizing, f_new=75, f_opt=75
+
+f is called 4 times for i=13, k=2
+Time elapsed: 322.38
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 1, optimizing SLN for i=14, k=1============
+Inner Iteration 1   finished, i=14, k=1, Aw_diff=True , f_opt=75 , f_new=75
+Inner Iteration 2   finished, i=14, k=1, Aw_diff=True , f_opt=68 , f_new=68
+Inner Iteration 3   finished, i=14, k=1, Aw_diff=True , f_opt=68 , f_new=128
+Inner Iteration 4   finished, i=14, k=1, Aw_diff=True , f_opt=68 , f_new=138
+Inner Iteration 5   finished, i=14, k=1, Aw_diff=False, f_opt=68 , f_new=138
+Iteration 1 done. After optimizing, f_new=68, f_opt=75
+
+f is called 5 times for i=14, k=1
+Time elapsed: 335.70
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 1, optimizing SLN for i=14, k=2============
+Inner Iteration 1   finished, i=14, k=2, Aw_diff=True , f_opt=69 , f_new=69
+Inner Iteration 2   finished, i=14, k=2, Aw_diff=True , f_opt=68 , f_new=68
+Inner Iteration 3   finished, i=14, k=2, Aw_diff=True , f_opt=68 , f_new=70
+Inner Iteration 4   finished, i=14, k=2, Aw_diff=True , f_opt=68 , f_new=112
+Inner Iteration 5   finished, i=14, k=2, Aw_diff=True , f_opt=68 , f_new=122
+Iteration 1 done. After optimizing, f_new=68, f_opt=68
+
+f is called 6 times for i=14, k=2
+Time elapsed: 351.87
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 1, optimizing SLN for i=15, k=1============
+Inner Iteration 1   finished, i=15, k=1, Aw_diff=True , f_opt=68 , f_new=68
+Inner Iteration 2   finished, i=15, k=1, Aw_diff=True , f_opt=68 , f_new=68
+Iteration 1 done. After optimizing, f_new=68, f_opt=68
+
+f is called 3 times for i=15, k=1
+Time elapsed: 359.84
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 1, optimizing SLN for i=16, k=1============
+Inner Iteration 1   finished, i=16, k=1, Aw_diff=True , f_opt=68 , f_new=68
+Inner Iteration 2   finished, i=16, k=1, Aw_diff=False, f_opt=68 , f_new=68
+Iteration 1 done. After optimizing, f_new=68, f_opt=68
+
+f is called 3 times for i=16, k=1
+Time elapsed: 367.87
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 1, optimizing SLN for i=17, k=1============
+Inner Iteration 1   finished, i=17, k=1, Aw_diff=True , f_opt=68 , f_new=68
+Iteration 1 done. After optimizing, f_new=68, f_opt=68
+
+f is called 2 times for i=17, k=1
+Time elapsed: 373.15
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 1, optimizing SLN for i=18, k=1============
+Inner Iteration 1   finished, i=18, k=1, Aw_diff=True , f_opt=50 , f_new=68
+Inner Iteration 2   finished, i=18, k=1, Aw_diff=False, f_opt=50 , f_new=68
+Iteration 1 done. After optimizing, f_new=50, f_opt=68
+
+f is called 3 times for i=18, k=1
+Time elapsed: 381.20
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 1, optimizing SLN for i=19, k=1============
+Inner Iteration 1   finished, i=19, k=1, Aw_diff=True , f_opt=50 , f_new=50
+Iteration 1 done. After optimizing, f_new=50, f_opt=50
+
+f is called 2 times for i=19, k=1
+Time elapsed: 386.54
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 1, optimizing SLN for i=20, k=1============
+Inner Iteration 1   finished, i=20, k=1, Aw_diff=True , f_opt=50 , f_new=50
+Iteration 1 done. After optimizing, f_new=50, f_opt=50
+
+f is called 2 times for i=20, k=1
+Time elapsed: 391.89
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 1, optimizing SLN for i=21, k=1============
+Inner Iteration 1   finished, i=21, k=1, Aw_diff=True , f_opt=50 , f_new=50
+Iteration 1 done. After optimizing, f_new=50, f_opt=50
+
+f is called 2 times for i=21, k=1
+Time elapsed: 397.22
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=1, k=1============
+Inner Iteration 1   finished, i=1 , k=1, Aw_diff=True , f_opt=113, f_new=113
+Inner Iteration 2   finished, i=1 , k=1, Aw_diff=True , f_opt=50 , f_new=58
+Inner Iteration 3   finished, i=1 , k=1, Aw_diff=True , f_opt=50 , f_new=88
+Inner Iteration 4   finished, i=1 , k=1, Aw_diff=True , f_opt=50 , f_new=106
+Inner Iteration 5   finished, i=1 , k=1, Aw_diff=True , f_opt=50 , f_new=133
+Inner Iteration 6   finished, i=1 , k=1, Aw_diff=False, f_opt=50 , f_new=133
+Inner Iteration 7   finished, i=1 , k=1, Aw_diff=True , f_opt=50 , f_new=191
+Inner Iteration 8   finished, i=1 , k=1, Aw_diff=True , f_opt=50 , f_new=229
+Inner Iteration 9   finished, i=1 , k=1, Aw_diff=False, f_opt=50 , f_new=229
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 9 times for i=1, k=1
+Time elapsed: 420.42
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=1, k=2============
+Inner Iteration 1   finished, i=1 , k=2, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 2   finished, i=1 , k=2, Aw_diff=True , f_opt=50 , f_new=65
+Inner Iteration 3   finished, i=1 , k=2, Aw_diff=True , f_opt=50 , f_new=95
+Inner Iteration 4   finished, i=1 , k=2, Aw_diff=True , f_opt=50 , f_new=113
+Inner Iteration 5   finished, i=1 , k=2, Aw_diff=True , f_opt=50 , f_new=140
+Inner Iteration 6   finished, i=1 , k=2, Aw_diff=False, f_opt=50 , f_new=140
+Inner Iteration 7   finished, i=1 , k=2, Aw_diff=True , f_opt=50 , f_new=175
+Inner Iteration 8   finished, i=1 , k=2, Aw_diff=True , f_opt=50 , f_new=213
+Inner Iteration 9   finished, i=1 , k=2, Aw_diff=False, f_opt=50 , f_new=213
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 8 times for i=1, k=2
+Time elapsed: 441.06
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=2, k=1============
+Inner Iteration 1   finished, i=2 , k=1, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 2   finished, i=2 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 3   finished, i=2 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 4   finished, i=2 , k=1, Aw_diff=True , f_opt=50 , f_new=261
+Inner Iteration 5   finished, i=2 , k=1, Aw_diff=False, f_opt=50 , f_new=261
+Inner Iteration 6   finished, i=2 , k=1, Aw_diff=True , f_opt=50 , f_new=339
+Inner Iteration 7   finished, i=2 , k=1, Aw_diff=False, f_opt=50 , f_new=339
+Inner Iteration 8   finished, i=2 , k=1, Aw_diff=True , f_opt=50 , f_new=424
+Inner Iteration 9   finished, i=2 , k=1, Aw_diff=False, f_opt=50 , f_new=424
+Inner Iteration 10  finished, i=2 , k=1, Aw_diff=False, f_opt=50 , f_new=424
+Inner Iteration 11  finished, i=2 , k=1, Aw_diff=True , f_opt=50 , f_new=510
+Inner Iteration 12  finished, i=2 , k=1, Aw_diff=False, f_opt=50 , f_new=510
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 6 times for i=2, k=1
+Time elapsed: 454.64
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=2, k=2============
+Inner Iteration 1   finished, i=2 , k=2, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 2   finished, i=2 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 3   finished, i=2 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 4   finished, i=2 , k=2, Aw_diff=True , f_opt=50 , f_new=261
+Inner Iteration 5   finished, i=2 , k=2, Aw_diff=False, f_opt=50 , f_new=261
+Inner Iteration 6   finished, i=2 , k=2, Aw_diff=True , f_opt=50 , f_new=339
+Inner Iteration 7   finished, i=2 , k=2, Aw_diff=False, f_opt=50 , f_new=339
+Inner Iteration 8   finished, i=2 , k=2, Aw_diff=True , f_opt=50 , f_new=424
+Inner Iteration 9   finished, i=2 , k=2, Aw_diff=False, f_opt=50 , f_new=424
+Inner Iteration 10  finished, i=2 , k=2, Aw_diff=False, f_opt=50 , f_new=424
+Inner Iteration 11  finished, i=2 , k=2, Aw_diff=True , f_opt=50 , f_new=510
+Inner Iteration 12  finished, i=2 , k=2, Aw_diff=False, f_opt=50 , f_new=510
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 6 times for i=2, k=2
+Time elapsed: 468.16
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=3, k=1============
+Inner Iteration 1   finished, i=3 , k=1, Aw_diff=True , f_opt=94 , f_new=94
+Inner Iteration 2   finished, i=3 , k=1, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 3   finished, i=3 , k=1, Aw_diff=True , f_opt=50 , f_new=56
+Inner Iteration 4   finished, i=3 , k=1, Aw_diff=False, f_opt=50 , f_new=56
+Inner Iteration 5   finished, i=3 , k=1, Aw_diff=True , f_opt=50 , f_new=97
+Inner Iteration 6   finished, i=3 , k=1, Aw_diff=True , f_opt=50 , f_new=142
+Inner Iteration 7   finished, i=3 , k=1, Aw_diff=True , f_opt=50 , f_new=187
+Inner Iteration 8   finished, i=3 , k=1, Aw_diff=False, f_opt=50 , f_new=187
+Inner Iteration 9   finished, i=3 , k=1, Aw_diff=True , f_opt=50 , f_new=243
+Inner Iteration 10  finished, i=3 , k=1, Aw_diff=False, f_opt=50 , f_new=243
+Inner Iteration 11  finished, i=3 , k=1, Aw_diff=True , f_opt=50 , f_new=316
+Inner Iteration 12  finished, i=3 , k=1, Aw_diff=False, f_opt=50 , f_new=316
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 9 times for i=3, k=1
+Time elapsed: 490.82
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=3, k=2============
+Inner Iteration 1   finished, i=3 , k=2, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 2   finished, i=3 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 3   finished, i=3 , k=2, Aw_diff=True , f_opt=50 , f_new=56
+Inner Iteration 4   finished, i=3 , k=2, Aw_diff=False, f_opt=50 , f_new=56
+Inner Iteration 5   finished, i=3 , k=2, Aw_diff=True , f_opt=50 , f_new=97
+Inner Iteration 6   finished, i=3 , k=2, Aw_diff=True , f_opt=50 , f_new=142
+Inner Iteration 7   finished, i=3 , k=2, Aw_diff=True , f_opt=50 , f_new=187
+Inner Iteration 8   finished, i=3 , k=2, Aw_diff=True , f_opt=50 , f_new=244
+Inner Iteration 9   finished, i=3 , k=2, Aw_diff=True , f_opt=50 , f_new=300
+Inner Iteration 10  finished, i=3 , k=2, Aw_diff=False, f_opt=50 , f_new=300
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 8 times for i=3, k=2
+Time elapsed: 511.23
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=4, k=1============
+Inner Iteration 1   finished, i=4 , k=1, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 2   finished, i=4 , k=1, Aw_diff=True , f_opt=50 , f_new=55
+Inner Iteration 3   finished, i=4 , k=1, Aw_diff=False, f_opt=50 , f_new=55
+Inner Iteration 4   finished, i=4 , k=1, Aw_diff=False, f_opt=50 , f_new=55
+Inner Iteration 5   finished, i=4 , k=1, Aw_diff=True , f_opt=50 , f_new=275
+Inner Iteration 6   finished, i=4 , k=1, Aw_diff=False, f_opt=50 , f_new=275
+Inner Iteration 7   finished, i=4 , k=1, Aw_diff=True , f_opt=50 , f_new=356
+Inner Iteration 8   finished, i=4 , k=1, Aw_diff=False, f_opt=50 , f_new=356
+Inner Iteration 9   finished, i=4 , k=1, Aw_diff=True , f_opt=50 , f_new=444
+Inner Iteration 10  finished, i=4 , k=1, Aw_diff=True , f_opt=50 , f_new=541
+Inner Iteration 11  finished, i=4 , k=1, Aw_diff=False, f_opt=50 , f_new=541
+Inner Iteration 12  finished, i=4 , k=1, Aw_diff=True , f_opt=50 , f_new=630
+Inner Iteration 13  finished, i=4 , k=1, Aw_diff=False, f_opt=50 , f_new=630
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 8 times for i=4, k=1
+Time elapsed: 529.25
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=4, k=2============
+Inner Iteration 1   finished, i=4 , k=2, Aw_diff=True , f_opt=56 , f_new=56
+Inner Iteration 2   finished, i=4 , k=2, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 3   finished, i=4 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 4   finished, i=4 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 5   finished, i=4 , k=2, Aw_diff=True , f_opt=50 , f_new=270
+Inner Iteration 6   finished, i=4 , k=2, Aw_diff=False, f_opt=50 , f_new=270
+Inner Iteration 7   finished, i=4 , k=2, Aw_diff=True , f_opt=50 , f_new=351
+Inner Iteration 8   finished, i=4 , k=2, Aw_diff=False, f_opt=50 , f_new=351
+Inner Iteration 9   finished, i=4 , k=2, Aw_diff=True , f_opt=50 , f_new=439
+Inner Iteration 10  finished, i=4 , k=2, Aw_diff=True , f_opt=50 , f_new=536
+Inner Iteration 11  finished, i=4 , k=2, Aw_diff=False, f_opt=50 , f_new=536
+Inner Iteration 12  finished, i=4 , k=2, Aw_diff=True , f_opt=50 , f_new=625
+Inner Iteration 13  finished, i=4 , k=2, Aw_diff=False, f_opt=50 , f_new=625
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 8 times for i=4, k=2
+Time elapsed: 547.08
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=5, k=1============
+Inner Iteration 1   finished, i=5 , k=1, Aw_diff=True , f_opt=94 , f_new=94
+Inner Iteration 2   finished, i=5 , k=1, Aw_diff=True , f_opt=50 , f_new=56
+Inner Iteration 3   finished, i=5 , k=1, Aw_diff=True , f_opt=50 , f_new=128
+Inner Iteration 4   finished, i=5 , k=1, Aw_diff=True , f_opt=50 , f_new=154
+Inner Iteration 5   finished, i=5 , k=1, Aw_diff=False, f_opt=50 , f_new=154
+Inner Iteration 6   finished, i=5 , k=1, Aw_diff=True , f_opt=50 , f_new=184
+Inner Iteration 7   finished, i=5 , k=1, Aw_diff=False, f_opt=50 , f_new=184
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 8 times for i=5, k=1
+Time elapsed: 567.76
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=5, k=2============
+Inner Iteration 1   finished, i=5 , k=2, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 2   finished, i=5 , k=2, Aw_diff=True , f_opt=50 , f_new=56
+Inner Iteration 3   finished, i=5 , k=2, Aw_diff=True , f_opt=50 , f_new=128
+Inner Iteration 4   finished, i=5 , k=2, Aw_diff=True , f_opt=50 , f_new=154
+Inner Iteration 5   finished, i=5 , k=2, Aw_diff=False, f_opt=50 , f_new=154
+Inner Iteration 6   finished, i=5 , k=2, Aw_diff=True , f_opt=50 , f_new=184
+Inner Iteration 7   finished, i=5 , k=2, Aw_diff=False, f_opt=50 , f_new=184
+Inner Iteration 8   finished, i=5 , k=2, Aw_diff=True , f_opt=50 , f_new=241
+Inner Iteration 9   finished, i=5 , k=2, Aw_diff=False, f_opt=50 , f_new=241
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 8 times for i=5, k=2
+Time elapsed: 588.32
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=6, k=1============
+Inner Iteration 1   finished, i=6 , k=1, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 2   finished, i=6 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 3   finished, i=6 , k=1, Aw_diff=True , f_opt=50 , f_new=113
+Inner Iteration 4   finished, i=6 , k=1, Aw_diff=False, f_opt=50 , f_new=113
+Inner Iteration 5   finished, i=6 , k=1, Aw_diff=True , f_opt=50 , f_new=184
+Inner Iteration 6   finished, i=6 , k=1, Aw_diff=False, f_opt=50 , f_new=184
+Inner Iteration 7   finished, i=6 , k=1, Aw_diff=True , f_opt=50 , f_new=265
+Inner Iteration 8   finished, i=6 , k=1, Aw_diff=True , f_opt=50 , f_new=346
+Inner Iteration 9   finished, i=6 , k=1, Aw_diff=True , f_opt=50 , f_new=443
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 7 times for i=6, k=1
+Time elapsed: 605.09
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=6, k=2============
+Inner Iteration 1   finished, i=6 , k=2, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 2   finished, i=6 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 3   finished, i=6 , k=2, Aw_diff=True , f_opt=50 , f_new=113
+Inner Iteration 4   finished, i=6 , k=2, Aw_diff=False, f_opt=50 , f_new=113
+Inner Iteration 5   finished, i=6 , k=2, Aw_diff=True , f_opt=50 , f_new=184
+Inner Iteration 6   finished, i=6 , k=2, Aw_diff=False, f_opt=50 , f_new=184
+Inner Iteration 7   finished, i=6 , k=2, Aw_diff=True , f_opt=50 , f_new=265
+Inner Iteration 8   finished, i=6 , k=2, Aw_diff=True , f_opt=50 , f_new=346
+Inner Iteration 9   finished, i=6 , k=2, Aw_diff=True , f_opt=50 , f_new=443
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 7 times for i=6, k=2
+Time elapsed: 621.86
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=7, k=1============
+Inner Iteration 1   finished, i=7 , k=1, Aw_diff=True , f_opt=60 , f_new=60
+Inner Iteration 2   finished, i=7 , k=1, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 3   finished, i=7 , k=1, Aw_diff=True , f_opt=50 , f_new=131
+Inner Iteration 4   finished, i=7 , k=1, Aw_diff=True , f_opt=50 , f_new=191
+Inner Iteration 5   finished, i=7 , k=1, Aw_diff=True , f_opt=50 , f_new=237
+Inner Iteration 6   finished, i=7 , k=1, Aw_diff=True , f_opt=50 , f_new=261
+Inner Iteration 7   finished, i=7 , k=1, Aw_diff=False, f_opt=50 , f_new=261
+Inner Iteration 8   finished, i=7 , k=1, Aw_diff=True , f_opt=50 , f_new=291
+Inner Iteration 9   finished, i=7 , k=1, Aw_diff=False, f_opt=50 , f_new=291
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 8 times for i=7, k=1
+Time elapsed: 642.10
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=7, k=2============
+Inner Iteration 1   finished, i=7 , k=2, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 2   finished, i=7 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 3   finished, i=7 , k=2, Aw_diff=True , f_opt=50 , f_new=145
+Inner Iteration 4   finished, i=7 , k=2, Aw_diff=True , f_opt=50 , f_new=205
+Inner Iteration 5   finished, i=7 , k=2, Aw_diff=True , f_opt=50 , f_new=251
+Inner Iteration 6   finished, i=7 , k=2, Aw_diff=True , f_opt=50 , f_new=275
+Inner Iteration 7   finished, i=7 , k=2, Aw_diff=False, f_opt=50 , f_new=275
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 6 times for i=7, k=2
+Time elapsed: 658.25
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=8, k=1============
+Inner Iteration 1   finished, i=8 , k=1, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 2   finished, i=8 , k=1, Aw_diff=True , f_opt=50 , f_new=120
+Inner Iteration 3   finished, i=8 , k=1, Aw_diff=False, f_opt=50 , f_new=120
+Inner Iteration 4   finished, i=8 , k=1, Aw_diff=True , f_opt=50 , f_new=277
+Inner Iteration 5   finished, i=8 , k=1, Aw_diff=False, f_opt=50 , f_new=277
+Inner Iteration 6   finished, i=8 , k=1, Aw_diff=False, f_opt=50 , f_new=277
+Inner Iteration 7   finished, i=8 , k=1, Aw_diff=True , f_opt=50 , f_new=369
+Inner Iteration 8   finished, i=8 , k=1, Aw_diff=False, f_opt=50 , f_new=369
+Inner Iteration 9   finished, i=8 , k=1, Aw_diff=False, f_opt=50 , f_new=369
+Inner Iteration 10  finished, i=8 , k=1, Aw_diff=True , f_opt=50 , f_new=462
+Inner Iteration 11  finished, i=8 , k=1, Aw_diff=False, f_opt=50 , f_new=462
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 6 times for i=8, k=1
+Time elapsed: 674.07
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=8, k=2============
+Inner Iteration 1   finished, i=8 , k=2, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 2   finished, i=8 , k=2, Aw_diff=True , f_opt=50 , f_new=120
+Inner Iteration 3   finished, i=8 , k=2, Aw_diff=False, f_opt=50 , f_new=120
+Inner Iteration 4   finished, i=8 , k=2, Aw_diff=True , f_opt=50 , f_new=277
+Inner Iteration 5   finished, i=8 , k=2, Aw_diff=False, f_opt=50 , f_new=277
+Inner Iteration 6   finished, i=8 , k=2, Aw_diff=False, f_opt=50 , f_new=277
+Inner Iteration 7   finished, i=8 , k=2, Aw_diff=True , f_opt=50 , f_new=369
+Inner Iteration 8   finished, i=8 , k=2, Aw_diff=False, f_opt=50 , f_new=369
+Inner Iteration 9   finished, i=8 , k=2, Aw_diff=False, f_opt=50 , f_new=369
+Inner Iteration 10  finished, i=8 , k=2, Aw_diff=True , f_opt=50 , f_new=462
+Inner Iteration 11  finished, i=8 , k=2, Aw_diff=False, f_opt=50 , f_new=462
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 6 times for i=8, k=2
+Time elapsed: 689.93
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=9, k=1============
+Inner Iteration 1   finished, i=9 , k=1, Aw_diff=True , f_opt=58 , f_new=58
+Inner Iteration 2   finished, i=9 , k=1, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 3   finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 4   finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 5   finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 6   finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 7   finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 8   finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 9   finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 10  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 11  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 12  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 13  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 14  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 15  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 16  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 17  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 18  finished, i=9 , k=1, Aw_diff=True , f_opt=50 , f_new=398
+Inner Iteration 19  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=398
+Inner Iteration 20  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=398
+Inner Iteration 21  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=398
+Inner Iteration 22  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=398
+Inner Iteration 23  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=398
+Inner Iteration 24  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=398
+Inner Iteration 25  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=398
+Inner Iteration 26  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=398
+Inner Iteration 27  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=398
+Inner Iteration 28  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=398
+Inner Iteration 29  finished, i=9 , k=1, Aw_diff=True , f_opt=50 , f_new=413
+Inner Iteration 30  finished, i=9 , k=1, Aw_diff=False, f_opt=50 , f_new=413
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 5 times for i=9, k=1
+Time elapsed: 703.88
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=9, k=2============
+Inner Iteration 1   finished, i=9 , k=2, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 2   finished, i=9 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 3   finished, i=9 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 4   finished, i=9 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 5   finished, i=9 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 6   finished, i=9 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 7   finished, i=9 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 8   finished, i=9 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 9   finished, i=9 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 10  finished, i=9 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 11  finished, i=9 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 12  finished, i=9 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 13  finished, i=9 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 14  finished, i=9 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 15  finished, i=9 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 16  finished, i=9 , k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 17  finished, i=9 , k=2, Aw_diff=True , f_opt=50 , f_new=410
+Inner Iteration 18  finished, i=9 , k=2, Aw_diff=False, f_opt=50 , f_new=410
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 3 times for i=9, k=2
+Time elapsed: 712.49
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=10, k=1============
+Inner Iteration 1   finished, i=10, k=1, Aw_diff=True , f_opt=51 , f_new=51
+Inner Iteration 2   finished, i=10, k=1, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 3   finished, i=10, k=1, Aw_diff=True , f_opt=50 , f_new=234
+Inner Iteration 4   finished, i=10, k=1, Aw_diff=True , f_opt=50 , f_new=403
+Inner Iteration 5   finished, i=10, k=1, Aw_diff=True , f_opt=50 , f_new=413
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 6 times for i=10, k=1
+Time elapsed: 728.94
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=10, k=2============
+Inner Iteration 1   finished, i=10, k=2, Aw_diff=True , f_opt=50 , f_new=61
+Inner Iteration 2   finished, i=10, k=2, Aw_diff=True , f_opt=50 , f_new=249
+Inner Iteration 3   finished, i=10, k=2, Aw_diff=True , f_opt=50 , f_new=381
+Inner Iteration 4   finished, i=10, k=2, Aw_diff=False, f_opt=50 , f_new=381
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 5 times for i=10, k=2
+Time elapsed: 743.34
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=11, k=1============
+Inner Iteration 1   finished, i=11, k=1, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 2   finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 3   finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 4   finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 5   finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 6   finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 7   finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 8   finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 9   finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 10  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 11  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 12  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 13  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 14  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 15  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 16  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 17  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 18  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 19  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 20  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 21  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 22  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 23  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 24  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 25  finished, i=11, k=1, Aw_diff=True , f_opt=50 , f_new=60
+Inner Iteration 26  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=60
+Inner Iteration 27  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=60
+Inner Iteration 28  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=60
+Inner Iteration 29  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=60
+Inner Iteration 30  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=60
+Inner Iteration 31  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=60
+Inner Iteration 32  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=60
+Inner Iteration 33  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=60
+Inner Iteration 34  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=60
+Inner Iteration 35  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=60
+Inner Iteration 36  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=60
+Inner Iteration 37  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=60
+Inner Iteration 38  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=60
+Inner Iteration 39  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=60
+Inner Iteration 40  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=60
+Inner Iteration 41  finished, i=11, k=1, Aw_diff=True , f_opt=50 , f_new=67
+Inner Iteration 42  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 43  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 44  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 45  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 46  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 47  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 48  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 49  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 50  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 51  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 52  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 53  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 54  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 55  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 56  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 57  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 58  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 59  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 60  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 61  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 62  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 63  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 64  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 65  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 66  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 67  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 68  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 69  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 70  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 71  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 72  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 73  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 74  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 75  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 76  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 77  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 78  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 79  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 80  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 81  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 82  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 83  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 84  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 85  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 86  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 87  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 88  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 89  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 90  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 91  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 92  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 93  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 94  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 95  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 96  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 97  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 98  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 99  finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 100 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 101 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 102 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 103 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 104 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 105 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 106 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 107 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 108 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 109 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 110 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 111 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 112 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 113 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 114 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 115 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Inner Iteration 116 finished, i=11, k=1, Aw_diff=False, f_opt=50 , f_new=67
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 4 times for i=11, k=1
+Time elapsed: 757.38
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=11, k=2============
+Inner Iteration 1   finished, i=11, k=2, Aw_diff=True , f_opt=53 , f_new=53
+Inner Iteration 2   finished, i=11, k=2, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 3   finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 4   finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 5   finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 6   finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 7   finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 8   finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 9   finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 10  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 11  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 12  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 13  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 14  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 15  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 16  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 17  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 18  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 19  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 20  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 21  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 22  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 23  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 24  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 25  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 26  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 27  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 28  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 29  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 30  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 31  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 32  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 33  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 34  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 35  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 36  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 37  finished, i=11, k=2, Aw_diff=True , f_opt=50 , f_new=57
+Inner Iteration 38  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 39  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 40  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 41  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 42  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 43  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 44  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 45  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 46  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 47  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 48  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 49  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 50  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 51  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 52  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 53  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 54  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 55  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 56  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 57  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 58  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 59  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 60  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 61  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 62  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 63  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 64  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 65  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 66  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 67  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 68  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 69  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 70  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 71  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 72  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 73  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 74  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 75  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 76  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 77  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 78  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 79  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 80  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 81  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 82  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 83  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 84  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 85  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 86  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 87  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 88  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 89  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 90  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 91  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 92  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 93  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 94  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 95  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 96  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 97  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 98  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 99  finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 100 finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 101 finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 102 finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 103 finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Inner Iteration 104 finished, i=11, k=2, Aw_diff=False, f_opt=50 , f_new=57
+Iteration 2 done. After optimizing, f_new=50, f_opt=50
+
+f is called 4 times for i=11, k=2
+Time elapsed: 771.21
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     1.5    1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=12, k=1============
+Inner Iteration 1   finished, i=12, k=1, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 2   finished, i=12, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 3   finished, i=12, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 4   finished, i=12, k=1, Aw_diff=True , f_opt=25 , f_new=58
+Inner Iteration 5   finished, i=12, k=1, Aw_diff=False, f_opt=25 , f_new=58
+Inner Iteration 6   finished, i=12, k=1, Aw_diff=True , f_opt=25 , f_new=84
+Inner Iteration 7   finished, i=12, k=1, Aw_diff=False, f_opt=25 , f_new=84
+Inner Iteration 8   finished, i=12, k=1, Aw_diff=True , f_opt=25 , f_new=162
+Inner Iteration 9   finished, i=12, k=1, Aw_diff=False, f_opt=25 , f_new=162
+Inner Iteration 10  finished, i=12, k=1, Aw_diff=False, f_opt=25 , f_new=162
+Iteration 2 done. After optimizing, f_new=25, f_opt=50
+
+f is called 6 times for i=12, k=1
+Time elapsed: 789.07
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=12, k=2============
+Inner Iteration 1   finished, i=12, k=2, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=12, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=12, k=2, Aw_diff=True , f_opt=25 , f_new=43
+Inner Iteration 4   finished, i=12, k=2, Aw_diff=False, f_opt=25 , f_new=43
+Inner Iteration 5   finished, i=12, k=2, Aw_diff=True , f_opt=25 , f_new=69
+Inner Iteration 6   finished, i=12, k=2, Aw_diff=False, f_opt=25 , f_new=69
+Inner Iteration 7   finished, i=12, k=2, Aw_diff=True , f_opt=25 , f_new=147
+Inner Iteration 8   finished, i=12, k=2, Aw_diff=False, f_opt=25 , f_new=147
+Inner Iteration 9   finished, i=12, k=2, Aw_diff=False, f_opt=25 , f_new=147
+Iteration 2 done. After optimizing, f_new=25, f_opt=25
+
+f is called 6 times for i=12, k=2
+Time elapsed: 807.24
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=13, k=1============
+Inner Iteration 1   finished, i=13, k=1, Aw_diff=True , f_opt=69 , f_new=69
+Inner Iteration 2   finished, i=13, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 4   finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 5   finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 6   finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 7   finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 8   finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 9   finished, i=13, k=1, Aw_diff=True , f_opt=25 , f_new=51
+Inner Iteration 10  finished, i=13, k=1, Aw_diff=True , f_opt=25 , f_new=54
+Inner Iteration 11  finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=54
+Inner Iteration 12  finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=54
+Inner Iteration 13  finished, i=13, k=1, Aw_diff=True , f_opt=25 , f_new=66
+Inner Iteration 14  finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=66
+Iteration 2 done. After optimizing, f_new=25, f_opt=25
+
+f is called 6 times for i=13, k=1
+Time elapsed: 825.52
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=13, k=2============
+Inner Iteration 1   finished, i=13, k=2, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 4   finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 5   finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 6   finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 7   finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 8   finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 9   finished, i=13, k=2, Aw_diff=True , f_opt=25 , f_new=54
+Inner Iteration 10  finished, i=13, k=2, Aw_diff=True , f_opt=25 , f_new=57
+Inner Iteration 11  finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=57
+Inner Iteration 12  finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=57
+Inner Iteration 13  finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=57
+Inner Iteration 14  finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=57
+Iteration 2 done. After optimizing, f_new=25, f_opt=25
+
+f is called 4 times for i=13, k=2
+Time elapsed: 838.04
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=14, k=1============
+Inner Iteration 1   finished, i=14, k=1, Aw_diff=True , f_opt=57 , f_new=57
+Inner Iteration 2   finished, i=14, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=14, k=1, Aw_diff=True , f_opt=25 , f_new=110
+Inner Iteration 4   finished, i=14, k=1, Aw_diff=True , f_opt=25 , f_new=120
+Inner Iteration 5   finished, i=14, k=1, Aw_diff=False, f_opt=25 , f_new=120
+Iteration 2 done. After optimizing, f_new=25, f_opt=25
+
+f is called 5 times for i=14, k=1
+Time elapsed: 853.10
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=14, k=2============
+Inner Iteration 1   finished, i=14, k=2, Aw_diff=True , f_opt=26 , f_new=26
+Inner Iteration 2   finished, i=14, k=2, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=14, k=2, Aw_diff=True , f_opt=25 , f_new=27
+Inner Iteration 4   finished, i=14, k=2, Aw_diff=True , f_opt=25 , f_new=94
+Inner Iteration 5   finished, i=14, k=2, Aw_diff=True , f_opt=25 , f_new=104
+Iteration 2 done. After optimizing, f_new=25, f_opt=25
+
+f is called 6 times for i=14, k=2
+Time elapsed: 871.40
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=15, k=1============
+Inner Iteration 1   finished, i=15, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=15, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Iteration 2 done. After optimizing, f_new=25, f_opt=25
+
+f is called 3 times for i=15, k=1
+Time elapsed: 880.80
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=16, k=1============
+Inner Iteration 1   finished, i=16, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=16, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Iteration 2 done. After optimizing, f_new=25, f_opt=25
+
+f is called 3 times for i=16, k=1
+Time elapsed: 890.33
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=17, k=1============
+Inner Iteration 1   finished, i=17, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Iteration 2 done. After optimizing, f_new=25, f_opt=25
+
+f is called 2 times for i=17, k=1
+Time elapsed: 896.66
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=18, k=1============
+Inner Iteration 1   finished, i=18, k=1, Aw_diff=True , f_opt=25 , f_new=43
+Inner Iteration 2   finished, i=18, k=1, Aw_diff=False, f_opt=25 , f_new=43
+Iteration 2 done. After optimizing, f_new=25, f_opt=25
+
+f is called 3 times for i=18, k=1
+Time elapsed: 905.98
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=19, k=1============
+Inner Iteration 1   finished, i=19, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Iteration 2 done. After optimizing, f_new=25, f_opt=25
+
+f is called 2 times for i=19, k=1
+Time elapsed: 912.13
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=20, k=1============
+Inner Iteration 1   finished, i=20, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Iteration 2 done. After optimizing, f_new=25, f_opt=25
+
+f is called 2 times for i=20, k=1
+Time elapsed: 918.41
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 2, optimizing SLN for i=21, k=1============
+Inner Iteration 1   finished, i=21, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Iteration 2 done. After optimizing, f_new=25, f_opt=25
+
+f is called 2 times for i=21, k=1
+Time elapsed: 924.61
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=1, k=1============
+Inner Iteration 1   finished, i=1 , k=1, Aw_diff=True , f_opt=88 , f_new=88
+Inner Iteration 2   finished, i=1 , k=1, Aw_diff=True , f_opt=25 , f_new=33
+Inner Iteration 3   finished, i=1 , k=1, Aw_diff=True , f_opt=25 , f_new=47
+Inner Iteration 4   finished, i=1 , k=1, Aw_diff=True , f_opt=25 , f_new=64
+Inner Iteration 5   finished, i=1 , k=1, Aw_diff=True , f_opt=25 , f_new=83
+Inner Iteration 6   finished, i=1 , k=1, Aw_diff=True , f_opt=25 , f_new=111
+Inner Iteration 7   finished, i=1 , k=1, Aw_diff=True , f_opt=25 , f_new=134
+Inner Iteration 8   finished, i=1 , k=1, Aw_diff=True , f_opt=25 , f_new=170
+Inner Iteration 9   finished, i=1 , k=1, Aw_diff=True , f_opt=25 , f_new=209
+Inner Iteration 10  finished, i=1 , k=1, Aw_diff=False, f_opt=25 , f_new=209
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 11 times for i=1, k=1
+Time elapsed: 957.40
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=1, k=2============
+Inner Iteration 1   finished, i=1 , k=2, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=1 , k=2, Aw_diff=True , f_opt=25 , f_new=40
+Inner Iteration 3   finished, i=1 , k=2, Aw_diff=True , f_opt=25 , f_new=54
+Inner Iteration 4   finished, i=1 , k=2, Aw_diff=True , f_opt=25 , f_new=71
+Inner Iteration 5   finished, i=1 , k=2, Aw_diff=True , f_opt=25 , f_new=90
+Inner Iteration 6   finished, i=1 , k=2, Aw_diff=True , f_opt=25 , f_new=118
+Inner Iteration 7   finished, i=1 , k=2, Aw_diff=False, f_opt=25 , f_new=118
+Inner Iteration 8   finished, i=1 , k=2, Aw_diff=True , f_opt=25 , f_new=154
+Inner Iteration 9   finished, i=1 , k=2, Aw_diff=True , f_opt=25 , f_new=193
+Inner Iteration 10  finished, i=1 , k=2, Aw_diff=False, f_opt=25 , f_new=193
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 9 times for i=1, k=2
+Time elapsed: 984.16
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=2, k=1============
+Inner Iteration 1   finished, i=2 , k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=2 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=2 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 4   finished, i=2 , k=1, Aw_diff=True , f_opt=25 , f_new=236
+Inner Iteration 5   finished, i=2 , k=1, Aw_diff=False, f_opt=25 , f_new=236
+Inner Iteration 6   finished, i=2 , k=1, Aw_diff=True , f_opt=25 , f_new=314
+Inner Iteration 7   finished, i=2 , k=1, Aw_diff=False, f_opt=25 , f_new=314
+Inner Iteration 8   finished, i=2 , k=1, Aw_diff=True , f_opt=25 , f_new=399
+Inner Iteration 9   finished, i=2 , k=1, Aw_diff=False, f_opt=25 , f_new=399
+Inner Iteration 10  finished, i=2 , k=1, Aw_diff=False, f_opt=25 , f_new=399
+Inner Iteration 11  finished, i=2 , k=1, Aw_diff=True , f_opt=25 , f_new=485
+Inner Iteration 12  finished, i=2 , k=1, Aw_diff=False, f_opt=25 , f_new=485
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 6 times for i=2, k=1
+Time elapsed: 1000.21
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=2, k=2============
+Inner Iteration 1   finished, i=2 , k=2, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=2 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=2 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 4   finished, i=2 , k=2, Aw_diff=True , f_opt=25 , f_new=236
+Inner Iteration 5   finished, i=2 , k=2, Aw_diff=False, f_opt=25 , f_new=236
+Inner Iteration 6   finished, i=2 , k=2, Aw_diff=True , f_opt=25 , f_new=314
+Inner Iteration 7   finished, i=2 , k=2, Aw_diff=False, f_opt=25 , f_new=314
+Inner Iteration 8   finished, i=2 , k=2, Aw_diff=True , f_opt=25 , f_new=399
+Inner Iteration 9   finished, i=2 , k=2, Aw_diff=False, f_opt=25 , f_new=399
+Inner Iteration 10  finished, i=2 , k=2, Aw_diff=False, f_opt=25 , f_new=399
+Inner Iteration 11  finished, i=2 , k=2, Aw_diff=True , f_opt=25 , f_new=485
+Inner Iteration 12  finished, i=2 , k=2, Aw_diff=False, f_opt=25 , f_new=485
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 6 times for i=2, k=2
+Time elapsed: 1016.22
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=3, k=1============
+Inner Iteration 1   finished, i=3 , k=1, Aw_diff=True , f_opt=69 , f_new=69
+Inner Iteration 2   finished, i=3 , k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=3 , k=1, Aw_diff=True , f_opt=25 , f_new=31
+Inner Iteration 4   finished, i=3 , k=1, Aw_diff=False, f_opt=25 , f_new=31
+Inner Iteration 5   finished, i=3 , k=1, Aw_diff=True , f_opt=25 , f_new=74
+Inner Iteration 6   finished, i=3 , k=1, Aw_diff=True , f_opt=25 , f_new=121
+Inner Iteration 7   finished, i=3 , k=1, Aw_diff=True , f_opt=25 , f_new=168
+Inner Iteration 8   finished, i=3 , k=1, Aw_diff=False, f_opt=25 , f_new=168
+Inner Iteration 9   finished, i=3 , k=1, Aw_diff=True , f_opt=25 , f_new=226
+Inner Iteration 10  finished, i=3 , k=1, Aw_diff=False, f_opt=25 , f_new=226
+Inner Iteration 11  finished, i=3 , k=1, Aw_diff=True , f_opt=25 , f_new=301
+Inner Iteration 12  finished, i=3 , k=1, Aw_diff=False, f_opt=25 , f_new=301
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 9 times for i=3, k=1
+Time elapsed: 1042.37
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=3, k=2============
+Inner Iteration 1   finished, i=3 , k=2, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=3 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=3 , k=2, Aw_diff=True , f_opt=25 , f_new=31
+Inner Iteration 4   finished, i=3 , k=2, Aw_diff=False, f_opt=25 , f_new=31
+Inner Iteration 5   finished, i=3 , k=2, Aw_diff=True , f_opt=25 , f_new=74
+Inner Iteration 6   finished, i=3 , k=2, Aw_diff=True , f_opt=25 , f_new=121
+Inner Iteration 7   finished, i=3 , k=2, Aw_diff=True , f_opt=25 , f_new=168
+Inner Iteration 8   finished, i=3 , k=2, Aw_diff=True , f_opt=25 , f_new=227
+Inner Iteration 9   finished, i=3 , k=2, Aw_diff=True , f_opt=25 , f_new=285
+Inner Iteration 10  finished, i=3 , k=2, Aw_diff=False, f_opt=25 , f_new=285
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 8 times for i=3, k=2
+Time elapsed: 1065.53
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=4, k=1============
+Inner Iteration 1   finished, i=4 , k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=4 , k=1, Aw_diff=True , f_opt=25 , f_new=30
+Inner Iteration 3   finished, i=4 , k=1, Aw_diff=False, f_opt=25 , f_new=30
+Inner Iteration 4   finished, i=4 , k=1, Aw_diff=False, f_opt=25 , f_new=30
+Inner Iteration 5   finished, i=4 , k=1, Aw_diff=True , f_opt=25 , f_new=250
+Inner Iteration 6   finished, i=4 , k=1, Aw_diff=False, f_opt=25 , f_new=250
+Inner Iteration 7   finished, i=4 , k=1, Aw_diff=True , f_opt=25 , f_new=331
+Inner Iteration 8   finished, i=4 , k=1, Aw_diff=False, f_opt=25 , f_new=331
+Inner Iteration 9   finished, i=4 , k=1, Aw_diff=True , f_opt=25 , f_new=419
+Inner Iteration 10  finished, i=4 , k=1, Aw_diff=True , f_opt=25 , f_new=516
+Inner Iteration 11  finished, i=4 , k=1, Aw_diff=False, f_opt=25 , f_new=516
+Inner Iteration 12  finished, i=4 , k=1, Aw_diff=True , f_opt=25 , f_new=605
+Inner Iteration 13  finished, i=4 , k=1, Aw_diff=False, f_opt=25 , f_new=605
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 8 times for i=4, k=1
+Time elapsed: 1086.09
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=4, k=2============
+Inner Iteration 1   finished, i=4 , k=2, Aw_diff=True , f_opt=31 , f_new=31
+Inner Iteration 2   finished, i=4 , k=2, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=4 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 4   finished, i=4 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 5   finished, i=4 , k=2, Aw_diff=True , f_opt=25 , f_new=245
+Inner Iteration 6   finished, i=4 , k=2, Aw_diff=False, f_opt=25 , f_new=245
+Inner Iteration 7   finished, i=4 , k=2, Aw_diff=True , f_opt=25 , f_new=326
+Inner Iteration 8   finished, i=4 , k=2, Aw_diff=False, f_opt=25 , f_new=326
+Inner Iteration 9   finished, i=4 , k=2, Aw_diff=True , f_opt=25 , f_new=414
+Inner Iteration 10  finished, i=4 , k=2, Aw_diff=True , f_opt=25 , f_new=511
+Inner Iteration 11  finished, i=4 , k=2, Aw_diff=False, f_opt=25 , f_new=511
+Inner Iteration 12  finished, i=4 , k=2, Aw_diff=True , f_opt=25 , f_new=600
+Inner Iteration 13  finished, i=4 , k=2, Aw_diff=False, f_opt=25 , f_new=600
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 8 times for i=4, k=2
+Time elapsed: 1106.80
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=5, k=1============
+Inner Iteration 1   finished, i=5 , k=1, Aw_diff=True , f_opt=69 , f_new=69
+Inner Iteration 2   finished, i=5 , k=1, Aw_diff=True , f_opt=25 , f_new=31
+Inner Iteration 3   finished, i=5 , k=1, Aw_diff=True , f_opt=25 , f_new=103
+Inner Iteration 4   finished, i=5 , k=1, Aw_diff=False, f_opt=25 , f_new=103
+Inner Iteration 5   finished, i=5 , k=1, Aw_diff=True , f_opt=25 , f_new=130
+Inner Iteration 6   finished, i=5 , k=1, Aw_diff=False, f_opt=25 , f_new=130
+Inner Iteration 7   finished, i=5 , k=1, Aw_diff=True , f_opt=25 , f_new=161
+Inner Iteration 8   finished, i=5 , k=1, Aw_diff=False, f_opt=25 , f_new=161
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 8 times for i=5, k=1
+Time elapsed: 1131.56
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=5, k=2============
+Inner Iteration 1   finished, i=5 , k=2, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=5 , k=2, Aw_diff=True , f_opt=25 , f_new=31
+Inner Iteration 3   finished, i=5 , k=2, Aw_diff=True , f_opt=25 , f_new=103
+Inner Iteration 4   finished, i=5 , k=2, Aw_diff=False, f_opt=25 , f_new=103
+Inner Iteration 5   finished, i=5 , k=2, Aw_diff=True , f_opt=25 , f_new=130
+Inner Iteration 6   finished, i=5 , k=2, Aw_diff=False, f_opt=25 , f_new=130
+Inner Iteration 7   finished, i=5 , k=2, Aw_diff=True , f_opt=25 , f_new=161
+Inner Iteration 8   finished, i=5 , k=2, Aw_diff=False, f_opt=25 , f_new=161
+Inner Iteration 9   finished, i=5 , k=2, Aw_diff=True , f_opt=25 , f_new=220
+Inner Iteration 10  finished, i=5 , k=2, Aw_diff=False, f_opt=25 , f_new=220
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 8 times for i=5, k=2
+Time elapsed: 1155.79
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=6, k=1============
+Inner Iteration 1   finished, i=6 , k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=6 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=6 , k=1, Aw_diff=True , f_opt=25 , f_new=97
+Inner Iteration 4   finished, i=6 , k=1, Aw_diff=False, f_opt=25 , f_new=97
+Inner Iteration 5   finished, i=6 , k=1, Aw_diff=True , f_opt=25 , f_new=168
+Inner Iteration 6   finished, i=6 , k=1, Aw_diff=False, f_opt=25 , f_new=168
+Inner Iteration 7   finished, i=6 , k=1, Aw_diff=True , f_opt=25 , f_new=249
+Inner Iteration 8   finished, i=6 , k=1, Aw_diff=True , f_opt=25 , f_new=330
+Inner Iteration 9   finished, i=6 , k=1, Aw_diff=True , f_opt=25 , f_new=427
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 7 times for i=6, k=1
+Time elapsed: 1175.41
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=6, k=2============
+Inner Iteration 1   finished, i=6 , k=2, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=6 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=6 , k=2, Aw_diff=True , f_opt=25 , f_new=97
+Inner Iteration 4   finished, i=6 , k=2, Aw_diff=False, f_opt=25 , f_new=97
+Inner Iteration 5   finished, i=6 , k=2, Aw_diff=True , f_opt=25 , f_new=168
+Inner Iteration 6   finished, i=6 , k=2, Aw_diff=False, f_opt=25 , f_new=168
+Inner Iteration 7   finished, i=6 , k=2, Aw_diff=True , f_opt=25 , f_new=249
+Inner Iteration 8   finished, i=6 , k=2, Aw_diff=True , f_opt=25 , f_new=330
+Inner Iteration 9   finished, i=6 , k=2, Aw_diff=True , f_opt=25 , f_new=427
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 7 times for i=6, k=2
+Time elapsed: 1195.05
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=7, k=1============
+Inner Iteration 1   finished, i=7 , k=1, Aw_diff=True , f_opt=35 , f_new=35
+Inner Iteration 2   finished, i=7 , k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=7 , k=1, Aw_diff=True , f_opt=25 , f_new=106
+Inner Iteration 4   finished, i=7 , k=1, Aw_diff=True , f_opt=25 , f_new=143
+Inner Iteration 5   finished, i=7 , k=1, Aw_diff=True , f_opt=25 , f_new=188
+Inner Iteration 6   finished, i=7 , k=1, Aw_diff=True , f_opt=25 , f_new=238
+Inner Iteration 7   finished, i=7 , k=1, Aw_diff=False, f_opt=25 , f_new=238
+Inner Iteration 8   finished, i=7 , k=1, Aw_diff=True , f_opt=25 , f_new=268
+Inner Iteration 9   finished, i=7 , k=1, Aw_diff=False, f_opt=25 , f_new=268
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 8 times for i=7, k=1
+Time elapsed: 1218.59
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=7, k=2============
+Inner Iteration 1   finished, i=7 , k=2, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=7 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=7 , k=2, Aw_diff=True , f_opt=25 , f_new=120
+Inner Iteration 4   finished, i=7 , k=2, Aw_diff=True , f_opt=25 , f_new=157
+Inner Iteration 5   finished, i=7 , k=2, Aw_diff=True , f_opt=25 , f_new=202
+Inner Iteration 6   finished, i=7 , k=2, Aw_diff=True , f_opt=25 , f_new=252
+Inner Iteration 7   finished, i=7 , k=2, Aw_diff=False, f_opt=25 , f_new=252
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 6 times for i=7, k=2
+Time elapsed: 1236.20
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=8, k=1============
+Inner Iteration 1   finished, i=8 , k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=8 , k=1, Aw_diff=True , f_opt=25 , f_new=95
+Inner Iteration 3   finished, i=8 , k=1, Aw_diff=False, f_opt=25 , f_new=95
+Inner Iteration 4   finished, i=8 , k=1, Aw_diff=True , f_opt=25 , f_new=252
+Inner Iteration 5   finished, i=8 , k=1, Aw_diff=False, f_opt=25 , f_new=252
+Inner Iteration 6   finished, i=8 , k=1, Aw_diff=False, f_opt=25 , f_new=252
+Inner Iteration 7   finished, i=8 , k=1, Aw_diff=True , f_opt=25 , f_new=344
+Inner Iteration 8   finished, i=8 , k=1, Aw_diff=False, f_opt=25 , f_new=344
+Inner Iteration 9   finished, i=8 , k=1, Aw_diff=False, f_opt=25 , f_new=344
+Inner Iteration 10  finished, i=8 , k=1, Aw_diff=True , f_opt=25 , f_new=437
+Inner Iteration 11  finished, i=8 , k=1, Aw_diff=False, f_opt=25 , f_new=437
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 6 times for i=8, k=1
+Time elapsed: 1253.15
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=8, k=2============
+Inner Iteration 1   finished, i=8 , k=2, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=8 , k=2, Aw_diff=True , f_opt=25 , f_new=95
+Inner Iteration 3   finished, i=8 , k=2, Aw_diff=False, f_opt=25 , f_new=95
+Inner Iteration 4   finished, i=8 , k=2, Aw_diff=True , f_opt=25 , f_new=252
+Inner Iteration 5   finished, i=8 , k=2, Aw_diff=False, f_opt=25 , f_new=252
+Inner Iteration 6   finished, i=8 , k=2, Aw_diff=False, f_opt=25 , f_new=252
+Inner Iteration 7   finished, i=8 , k=2, Aw_diff=True , f_opt=25 , f_new=344
+Inner Iteration 8   finished, i=8 , k=2, Aw_diff=False, f_opt=25 , f_new=344
+Inner Iteration 9   finished, i=8 , k=2, Aw_diff=False, f_opt=25 , f_new=344
+Inner Iteration 10  finished, i=8 , k=2, Aw_diff=True , f_opt=25 , f_new=437
+Inner Iteration 11  finished, i=8 , k=2, Aw_diff=False, f_opt=25 , f_new=437
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 6 times for i=8, k=2
+Time elapsed: 1270.03
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=9, k=1============
+Inner Iteration 1   finished, i=9 , k=1, Aw_diff=True , f_opt=33 , f_new=33
+Inner Iteration 2   finished, i=9 , k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 4   finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 5   finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 6   finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 7   finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 8   finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 9   finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 10  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 11  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 12  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 13  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 14  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 15  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 16  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 17  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 18  finished, i=9 , k=1, Aw_diff=True , f_opt=25 , f_new=373
+Inner Iteration 19  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=373
+Inner Iteration 20  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=373
+Inner Iteration 21  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=373
+Inner Iteration 22  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=373
+Inner Iteration 23  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=373
+Inner Iteration 24  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=373
+Inner Iteration 25  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=373
+Inner Iteration 26  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=373
+Inner Iteration 27  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=373
+Inner Iteration 28  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=373
+Inner Iteration 29  finished, i=9 , k=1, Aw_diff=True , f_opt=25 , f_new=388
+Inner Iteration 30  finished, i=9 , k=1, Aw_diff=False, f_opt=25 , f_new=388
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 5 times for i=9, k=1
+Time elapsed: 1284.98
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=9, k=2============
+Inner Iteration 1   finished, i=9 , k=2, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=9 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=9 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 4   finished, i=9 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 5   finished, i=9 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 6   finished, i=9 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 7   finished, i=9 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 8   finished, i=9 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 9   finished, i=9 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 10  finished, i=9 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 11  finished, i=9 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 12  finished, i=9 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 13  finished, i=9 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 14  finished, i=9 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 15  finished, i=9 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 16  finished, i=9 , k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 17  finished, i=9 , k=2, Aw_diff=True , f_opt=25 , f_new=385
+Inner Iteration 18  finished, i=9 , k=2, Aw_diff=False, f_opt=25 , f_new=385
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 3 times for i=9, k=2
+Time elapsed: 1294.01
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=10, k=1============
+Inner Iteration 1   finished, i=10, k=1, Aw_diff=True , f_opt=26 , f_new=26
+Inner Iteration 2   finished, i=10, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=10, k=1, Aw_diff=True , f_opt=25 , f_new=209
+Inner Iteration 4   finished, i=10, k=1, Aw_diff=True , f_opt=25 , f_new=403
+Inner Iteration 5   finished, i=10, k=1, Aw_diff=True , f_opt=25 , f_new=413
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 6 times for i=10, k=1
+Time elapsed: 1310.93
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=10, k=2============
+Inner Iteration 1   finished, i=10, k=2, Aw_diff=True , f_opt=25 , f_new=36
+Inner Iteration 2   finished, i=10, k=2, Aw_diff=True , f_opt=25 , f_new=224
+Inner Iteration 3   finished, i=10, k=2, Aw_diff=True , f_opt=25 , f_new=381
+Inner Iteration 4   finished, i=10, k=2, Aw_diff=False, f_opt=25 , f_new=381
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 5 times for i=10, k=2
+Time elapsed: 1325.78
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=11, k=1============
+Inner Iteration 1   finished, i=11, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 4   finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 5   finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 6   finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 7   finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 8   finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 9   finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 10  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 11  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 12  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 13  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 14  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 15  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 16  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 17  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 18  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 19  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 20  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 21  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 22  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 23  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 24  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 25  finished, i=11, k=1, Aw_diff=True , f_opt=25 , f_new=35
+Inner Iteration 26  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=35
+Inner Iteration 27  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=35
+Inner Iteration 28  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=35
+Inner Iteration 29  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=35
+Inner Iteration 30  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=35
+Inner Iteration 31  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=35
+Inner Iteration 32  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=35
+Inner Iteration 33  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=35
+Inner Iteration 34  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=35
+Inner Iteration 35  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=35
+Inner Iteration 36  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=35
+Inner Iteration 37  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=35
+Inner Iteration 38  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=35
+Inner Iteration 39  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=35
+Inner Iteration 40  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=35
+Inner Iteration 41  finished, i=11, k=1, Aw_diff=True , f_opt=25 , f_new=42
+Inner Iteration 42  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 43  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 44  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 45  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 46  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 47  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 48  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 49  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 50  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 51  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 52  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 53  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 54  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 55  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 56  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 57  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 58  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 59  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 60  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 61  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 62  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 63  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 64  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 65  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 66  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 67  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 68  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 69  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 70  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 71  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 72  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 73  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 74  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 75  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 76  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 77  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 78  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 79  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 80  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 81  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 82  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 83  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 84  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 85  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 86  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 87  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 88  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 89  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 90  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 91  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 92  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 93  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 94  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 95  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 96  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 97  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 98  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 99  finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 100 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 101 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 102 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 103 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 104 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 105 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 106 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 107 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 108 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 109 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 110 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 111 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 112 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 113 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 114 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 115 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Inner Iteration 116 finished, i=11, k=1, Aw_diff=False, f_opt=25 , f_new=42
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 4 times for i=11, k=1
+Time elapsed: 1340.73
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=11, k=2============
+Inner Iteration 1   finished, i=11, k=2, Aw_diff=True , f_opt=28 , f_new=28
+Inner Iteration 2   finished, i=11, k=2, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 4   finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 5   finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 6   finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 7   finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 8   finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 9   finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 10  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 11  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 12  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 13  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 14  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 15  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 16  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 17  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 18  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 19  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 20  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 21  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 22  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 23  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 24  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 25  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 26  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 27  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 28  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 29  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 30  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 31  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 32  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 33  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 34  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 35  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 36  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 37  finished, i=11, k=2, Aw_diff=True , f_opt=25 , f_new=32
+Inner Iteration 38  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 39  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 40  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 41  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 42  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 43  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 44  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 45  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 46  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 47  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 48  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 49  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 50  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 51  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 52  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 53  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 54  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 55  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 56  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 57  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 58  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 59  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 60  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 61  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 62  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 63  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 64  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 65  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 66  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 67  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 68  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 69  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 70  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 71  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 72  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 73  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 74  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 75  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 76  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 77  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 78  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 79  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 80  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 81  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 82  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 83  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 84  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 85  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 86  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 87  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 88  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 89  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 90  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 91  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 92  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 93  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 94  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 95  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 96  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 97  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 98  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 99  finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 100 finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 101 finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 102 finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 103 finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Inner Iteration 104 finished, i=11, k=2, Aw_diff=False, f_opt=25 , f_new=32
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 4 times for i=11, k=2
+Time elapsed: 1355.22
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=12, k=1============
+Inner Iteration 1   finished, i=12, k=1, Aw_diff=True , f_opt=50 , f_new=50
+Inner Iteration 2   finished, i=12, k=1, Aw_diff=False, f_opt=50 , f_new=50
+Inner Iteration 3   finished, i=12, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 4   finished, i=12, k=1, Aw_diff=True , f_opt=25 , f_new=58
+Inner Iteration 5   finished, i=12, k=1, Aw_diff=False, f_opt=25 , f_new=58
+Inner Iteration 6   finished, i=12, k=1, Aw_diff=True , f_opt=25 , f_new=84
+Inner Iteration 7   finished, i=12, k=1, Aw_diff=False, f_opt=25 , f_new=84
+Inner Iteration 8   finished, i=12, k=1, Aw_diff=True , f_opt=25 , f_new=162
+Inner Iteration 9   finished, i=12, k=1, Aw_diff=False, f_opt=25 , f_new=162
+Inner Iteration 10  finished, i=12, k=1, Aw_diff=False, f_opt=25 , f_new=162
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 6 times for i=12, k=1
+Time elapsed: 1373.75
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=12, k=2============
+Inner Iteration 1   finished, i=12, k=2, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=12, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=12, k=2, Aw_diff=True , f_opt=25 , f_new=43
+Inner Iteration 4   finished, i=12, k=2, Aw_diff=False, f_opt=25 , f_new=43
+Inner Iteration 5   finished, i=12, k=2, Aw_diff=True , f_opt=25 , f_new=69
+Inner Iteration 6   finished, i=12, k=2, Aw_diff=False, f_opt=25 , f_new=69
+Inner Iteration 7   finished, i=12, k=2, Aw_diff=True , f_opt=25 , f_new=147
+Inner Iteration 8   finished, i=12, k=2, Aw_diff=False, f_opt=25 , f_new=147
+Inner Iteration 9   finished, i=12, k=2, Aw_diff=False, f_opt=25 , f_new=147
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 6 times for i=12, k=2
+Time elapsed: 1392.47
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=13, k=1============
+Inner Iteration 1   finished, i=13, k=1, Aw_diff=True , f_opt=69 , f_new=69
+Inner Iteration 2   finished, i=13, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 4   finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 5   finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 6   finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 7   finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 8   finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 9   finished, i=13, k=1, Aw_diff=True , f_opt=25 , f_new=51
+Inner Iteration 10  finished, i=13, k=1, Aw_diff=True , f_opt=25 , f_new=54
+Inner Iteration 11  finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=54
+Inner Iteration 12  finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=54
+Inner Iteration 13  finished, i=13, k=1, Aw_diff=True , f_opt=25 , f_new=66
+Inner Iteration 14  finished, i=13, k=1, Aw_diff=False, f_opt=25 , f_new=66
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 6 times for i=13, k=1
+Time elapsed: 1411.69
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=13, k=2============
+Inner Iteration 1   finished, i=13, k=2, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 4   finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 5   finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 6   finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 7   finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 8   finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=25
+Inner Iteration 9   finished, i=13, k=2, Aw_diff=True , f_opt=25 , f_new=54
+Inner Iteration 10  finished, i=13, k=2, Aw_diff=True , f_opt=25 , f_new=57
+Inner Iteration 11  finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=57
+Inner Iteration 12  finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=57
+Inner Iteration 13  finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=57
+Inner Iteration 14  finished, i=13, k=2, Aw_diff=False, f_opt=25 , f_new=57
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 4 times for i=13, k=2
+Time elapsed: 1424.77
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=14, k=1============
+Inner Iteration 1   finished, i=14, k=1, Aw_diff=True , f_opt=57 , f_new=57
+Inner Iteration 2   finished, i=14, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=14, k=1, Aw_diff=True , f_opt=25 , f_new=110
+Inner Iteration 4   finished, i=14, k=1, Aw_diff=True , f_opt=25 , f_new=120
+Inner Iteration 5   finished, i=14, k=1, Aw_diff=False, f_opt=25 , f_new=120
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 5 times for i=14, k=1
+Time elapsed: 1440.42
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=14, k=2============
+Inner Iteration 1   finished, i=14, k=2, Aw_diff=True , f_opt=26 , f_new=26
+Inner Iteration 2   finished, i=14, k=2, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 3   finished, i=14, k=2, Aw_diff=True , f_opt=25 , f_new=27
+Inner Iteration 4   finished, i=14, k=2, Aw_diff=True , f_opt=25 , f_new=94
+Inner Iteration 5   finished, i=14, k=2, Aw_diff=True , f_opt=25 , f_new=104
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 6 times for i=14, k=2
+Time elapsed: 1459.58
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=15, k=1============
+Inner Iteration 1   finished, i=15, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=15, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 3 times for i=15, k=1
+Time elapsed: 1469.30
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=16, k=1============
+Inner Iteration 1   finished, i=16, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Inner Iteration 2   finished, i=16, k=1, Aw_diff=False, f_opt=25 , f_new=25
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 3 times for i=16, k=1
+Time elapsed: 1478.98
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=17, k=1============
+Inner Iteration 1   finished, i=17, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 2 times for i=17, k=1
+Time elapsed: 1485.46
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=18, k=1============
+Inner Iteration 1   finished, i=18, k=1, Aw_diff=True , f_opt=25 , f_new=43
+Inner Iteration 2   finished, i=18, k=1, Aw_diff=False, f_opt=25 , f_new=43
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 3 times for i=18, k=1
+Time elapsed: 1495.20
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=19, k=1============
+Inner Iteration 1   finished, i=19, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 2 times for i=19, k=1
+Time elapsed: 1501.69
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=20, k=1============
+Inner Iteration 1   finished, i=20, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 2 times for i=20, k=1
+Time elapsed: 1508.18
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+============Iteration 3, optimizing SLN for i=21, k=1============
+Inner Iteration 1   finished, i=21, k=1, Aw_diff=True , f_opt=25 , f_new=25
+Iteration 3 done. After optimizing, f_new=25, f_opt=25
+
+f is called 2 times for i=21, k=1
+Time elapsed: 1514.54
+
+The w value after this iteration is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+The final weight matrix is
+[[0.     0.     0.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     1.    ]
+ [0.     1.25   1.    ]
+ [0.     1.     1.    ]
+ [0.     1.     0.5   ]
+ [0.     1.     0.5   ]
+ [0.     1.125  1.125 ]
+ [0.     2.     1.    ]
+ [0.     1.0625 1.    ]
+ [0.     1.5    1.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     0.5    0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]
+ [0.     1.     0.    ]]
+
+The final activities calculated is
+[15 21 16 18 18 13  9  7 20 19 17 11  1 11  5 11  3 12  2 12  4 12  6 14
+  8 10 16 15 13  9  7 11  1 11  3 11  5 16 15 21 16 11  2 14  8 10 12  2
+ 12  4 12  6 15 18 18 20 19 17 16 15 21 11  5 16 15 21 18 18 20 19 16 13
+  7 11  1 11  3 10 12  2 12  4 12  6 17 14  9  8 15 21 16 11  5 15 13  7
+  9 18 18 20 19 11  1 11  3 17 11  4 14  8 10 12  2 12  4 12  6 15 21 20
+ 19 18 18 16 13  7  9 11  1 11  3 11  5 17 13  9  9 12  6 14  8 10 12  2
+ 12  4 12  6 13  7  9 15 21 20 19 18 18 16 17 11  1 11  3 11  5 10 14  8
+ 12  2 12  4 12  6 18 11  5 15 21 18 18 20 19 17 16 13  7  9 11  1 11  3
+ 10 12  2 12  4 12  6 14  8 13  9  7 15 21 18 18 20 19 16 17 11  5 11  3
+ 11  1 14 10  8 12  6 12  4 12  2 15 21 16 15 18 18 13 20 19 17 16  7  9
+ 11  5 11  3 11  1 11  2 12  6 12  4 14 10  8 13  9  7 15 18]
+
+The calculated activities are 2 edits away from the actual activities
