@@ -34,26 +34,32 @@ class SLN:
         f_opt = self.f()
         A_old = self.get_aw()
 
-        log.debug(f'1D SLN starting for {k=}, {i=}')
-        log.debug(f'Line 1:\tcurrent {f_opt=}\n'
-                  f'\t\tAw={A_old}\n')
-
         M = self.M
         done = False
         m = len(self.M)
         p = self.p
         itr_num = 1
 
+        log.debug(f'1D SLN starting for {k=}, {i=}')
+        log.debug(f'Line 1:\tcurrent {f_opt=}\n'
+                  f'\t\tAw={A_old}\n')
+        log.debug('Current M value is: \n')
+        log.debug(f'{M}\n')
+        log.debug('Calculated Mw is:\n')
+        log.debug(f'{self.Mw}')
+        log.debug('Current w values are:\n'
+                  f'{self.w}')
+
         while not done:
             log.debug(f'--------Inner iteration {itr_num} starting, {i=}, {k=}--------')
-            OPT = np.zeros((m,), np.int_)
+            OPT = np.zeros((m,), np.float_)
             a = np.zeros((m,), np.int_)
             sigma = np.infty
             delta = np.zeros((m,), np.int_)
             Aw_diff = False
 
             for j in range(1, m):
-                log.debug(f'Line 3: {j=}')
+                log.debug(f'Line 3: {j=}, {M[j]=}')
                 # M[j].w is variable (by default theta entries are all zeros)
                 if M[j]['i'] == i and M[j]['k'] == k:
                     log.debug(f'Line 4: True, delta[{j}]=1')
@@ -68,6 +74,8 @@ class SLN:
                     a[j] = a[p[j]] + delta[j]
                     log.debug(f'Line 8: True, new OPT[{j}] is {OPT[j]}, new a[{j}] is {a[j]}')
                     if a[p[j]] + delta[j] < a[j - 1]:
+                        log.debug(
+                            f'{sigma=}, M[j].w={Mj_w}, {OPT[p[j]]=}, {OPT[j-1]=}, {a[j-1]=}, {a[p[j]]=}, {delta[j]=}, {p[j]=}')
                         sigma = np.min([sigma, (Mj_w + OPT[p[j]] - OPT[j - 1]) /
                                         (a[j - 1] - a[p[j]] - delta[j])])
                         log.debug(f'Line 11: sigma is updated, new value is {sigma :.3f}\n')
@@ -78,6 +86,8 @@ class SLN:
                     a[j] = a[j - 1]
                     log.debug(f'Line 13: True, new OPT[{j}] is {OPT[j]}, new a[{j}] is {a[j]}')
                     if a[p[j]] + delta[j] > a[j - 1]:
+                        log.debug(
+                            f'{sigma=}, M[j].w={Mj_w}, {OPT[p[j]]=}, {OPT[j-1]=}, {a[j-1]=}, {a[p[j]]=}, {delta[j]=}, {p[j]=}')
                         sigma = np.min([sigma, (Mj_w + OPT[p[j]] - OPT[j - 1]) /
                                         (a[j - 1] - a[p[j]] - delta[j])])
                         log.debug(f'Line 16: sigma is updated, new value is {sigma :.3f}\n')
@@ -152,16 +162,16 @@ class SLN:
 
         # Coordinate descent
         while not done:
-            # # Weight normalization
-            # W = 0
-            # for i in range(1, n + 1):
-            #     for k in range(1, ni[i] + 1):
-            #         W += self.w[i][k]
-            #
-            # for i in range(1, n + 1):
-            #     for k in range(1, ni[i] + 1):
-            #         self.w[i][k] = self.N * self.w[i][k] / W
-            #
+            # Weight normalization
+            W = 0
+            for i in range(1, n + 1):
+                for k in range(1, ni[i] + 1):
+                    W += self.w[i][k]
+
+            for i in range(1, n + 1):
+                for k in range(1, ni[i] + 1):
+                    self.w[i][k] = self.N * self.w[i][k] / W
+
             done = True
 
             # 1D minimization
@@ -186,7 +196,7 @@ class SLN:
                         if self.w[j][1] == 0:
                             log.warning(f'w[{j}][1] value is 0')
             itr_num += 1
-        return self.w, self.get_aw()
+        return self.w, self.get_aw(), f_opt
 
     # Calculates the edit distance between two input sequences. This variant is also called
     # Levenshtein distance as insertions, deletions, and modifications on individual chars are
@@ -239,6 +249,7 @@ class SLN:
         # Recalculate M using the updated weights
         Mw, self.p = self.oMatch.max_weight_sequence(self.w)
         m = len(Mw)
+        self.Mw = Mw
         Aw = np.full((m,), -1, np.int_)
 
         # Assign Aw[j] to the corresponding i value
