@@ -10,7 +10,7 @@ from utils.FileReader import *
 def main():
     log.basicConfig(format='%(message)s', level=log.INFO)
 
-    file_ext = '-reduced10'
+    file_ext = '-reduced'
     mapping_ext = ''
     activities = read_activities(f'data/activities/activities{file_ext}.txt')
     events = read_events(f'data/events/events{file_ext}.txt')

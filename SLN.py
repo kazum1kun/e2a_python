@@ -49,6 +49,7 @@ class SLN:
         log.debug(f'{self.Mw}')
         log.debug('Current w values are:\n'
                   f'{self.w}')
+        log.debug(f'Current p values are: {p}')
 
         while not done:
             log.debug(f'--------Inner iteration {itr_num} starting, {i=}, {k=}--------')
