@@ -38,7 +38,7 @@ class SLN:
         done = False
         m = len(self.M)
         p = self.p
-        itr_num = 1
+        itr_num = 0
 
         log.debug(f'1D SLN starting for {k=}, {i=}')
         log.debug(f'Line 1:\tcurrent {f_opt=}\n'
@@ -47,19 +47,20 @@ class SLN:
         log.debug(f'{M}\n')
         log.debug('Calculated Mw is:\n')
         log.debug(f'{self.Mw}')
-        log.debug('Current w values are:\n'
-                  f'{self.w}')
         log.debug(f'Current p values are: {p}')
 
         while not done:
+            itr_num += 1
             log.debug(f'--------Inner iteration {itr_num} starting, {i=}, {k=}--------')
+            log.debug('Current w values are:\n'
+                      f'{self.w}')
             OPT = np.zeros((m,), np.float_)
             a = np.zeros((m,), np.int_)
             sigma = np.infty
             delta = np.zeros((m,), np.int_)
-            Aw_diff = False
 
             for j in range(1, m):
+                # log.info(f'{i=}, {k=}, {j=}')
                 log.debug(f'Line 3: {j=}, {M[j]=}')
                 # M[j].w is variable (by default theta entries are all zeros)
                 if M[j]['i'] == i and M[j]['k'] == k:
@@ -136,12 +137,8 @@ class SLN:
             if not done:
                 x = mu
 
-            log.info(f'Inner Iteration {itr_num: <3} finished, {i=: <2}, {k=}, '
-                     f'Aw_diff={Aw_diff.__repr__(): <5}, {f_opt=: <3}, {f_new=: <3}')
+            # log.info(f'Inner Iteration {itr_num: <3} finished, {i=: <2}, {k=}, {f_opt=: <3}')
             log.debug(f'\nAw_new={A_new}\n')
-
-            itr_num += 1
-
         return x_opt, f_opt
 
     def sln_nd(self, C):
@@ -155,7 +152,7 @@ class SLN:
                 self.w[i][k] = 1
         done = False
         f_opt = self.f()
-        itr_num = 1
+        itr_num = 0
 
         log.info(f'\nND SLN Init finished, current optimal value is {f_opt}\n'
                  'w value is')
@@ -168,51 +165,49 @@ class SLN:
             self.w = self.N * self.w / W
 
             done = True
+            itr_num += 1
+            log.info(f'\n========================ITERATION {itr_num}========================')
 
             # 1D minimization
             for i in range(1, n + 1):
                 for k in range(1, ni[i] + 1):
-                    log.info(f'\n============Iteration {itr_num}, optimizing SLN for {i=}, {k=}============')
                     x_old = self.w[i][k]
                     x_new, f_new = self.sln_1d(i, k)
-                    log.info(f'Iteration {itr_num} done. After optimizing, {f_new=}, {f_opt=}\n')
                     if f_new < f_opt:
-                        done = False
                         self.w[i][k] = x_new
+                        log.info(f'******f_opt changed, {f_new=}, {i=}, {k=}******')
                         f_opt = f_new
+                        if f_opt > 0:
+                            done = False
                     else:
                         self.w[i][k] = x_old
-                    Timer.lap(f'f is called {self.f_called} times for {i=}, {k=}')
                     self.f_called = 0
 
-                    log.info('\nThe w value after this iteration is')
-                    log.info(self.w)
                     for j in range(1, len(self.w)):
                         if self.w[j][1] == 0:
                             log.warning(f'w[{j}][1] value is 0')
-            itr_num += 1
+                    Timer.lap(f'{i=}, {k=} finished')
+
+                    if f_opt == 0:
+                        log.info('f_opt has reached zero, ending optimization')
+                        return self.w, self.get_aw(), f_opt
+            log.info(f'After ITERATION {itr_num}, {f_opt=}')
         return self.w, self.get_aw(), f_opt
 
     # Calculate the distance between the sequence and given events
     def f(self):
         self.f_called += 1
         Aw = self.get_aw()
-        E1 = []
+        E_calc = []
         for A in Aw[1:]:
-            E1.extend(self.S[A][1][1:])
+            E_calc.extend(self.S[A[0]][A[1]][1:])
 
-        return nltk.edit_distance(E1, self.E[1:])
+        return nltk.edit_distance(E_calc, self.E[1:])
 
     # Using given Mw, obtain a corresponding device event sequence
     def get_aw(self):
         # Recalculate M using the updated weights
         Mw, self.p = self.oMatch.max_weight_sequence(self.w)
-        m = len(Mw)
         self.Mw = Mw
-        Aw = np.full((m,), -1, np.int_)
 
-        # Assign Aw[j] to the corresponding i value
-        for j in range(1, m):
-            Aw[j] = Mw[j]['i']
-
-        return Aw
+        return Mw

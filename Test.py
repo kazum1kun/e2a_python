@@ -10,7 +10,7 @@ from utils.FileReader import *
 def main():
     log.basicConfig(format='%(message)s', level=log.INFO)
 
-    file_ext = '-reduced'
+    file_ext = '-reduced400'
     mapping_ext = ''
     activities = read_activities(f'data/activities/activities{file_ext}.txt')
     events = read_events(f'data/events/events{file_ext}.txt')
@@ -24,7 +24,7 @@ def main():
     print(f'\nThe final {f_opt=}')
     print('\nThe final activities calculated is')
     print(Aw[1:])
-    diff = nltk.edit_distance(Aw[1:], activities[1:, 1])
+    diff = nltk.edit_distance(Aw[1:][0], activities[1:, 1])
     print(f'\nThe calculated activities are {diff} edits away from the actual activities')
 
 
