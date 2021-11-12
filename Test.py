@@ -10,7 +10,7 @@ from utils.FileReader import *
 def main():
     log.basicConfig(format='%(message)s', level=log.INFO)
 
-    file_ext = '-reduced400'
+    file_ext = '-real300'
     mapping_ext = ''
     activities = read_activities(f'data/activities/activities{file_ext}.txt')
     events = read_events(f'data/events/events{file_ext}.txt')
@@ -18,13 +18,13 @@ def main():
     Timer.lap('Text read finished.')
 
     sln = SLN(mappings, events)
-    w, Aw, f_opt = sln.sln_nd(2)
-    print('\nThe final weight matrix is')
-    print(w)
-    print(f'\nThe final {f_opt=}')
+    _, Aw, f_opt = sln.sln_nd(2)
+    Timer.lap('Finished!')
+    print(f'\nThe final f_opt={f_opt}')
     print('\nThe final activities calculated is')
-    print(Aw[1:])
-    diff = nltk.edit_distance(Aw[1:][0], activities[1:, 1])
+    activities_calc = [x[0] for x in Aw[1:]]
+    print(activities_calc)
+    diff = nltk.edit_distance(activities_calc, activities[1:, 1])
     print(f'\nThe calculated activities are {diff} edits away from the actual activities')
 
 

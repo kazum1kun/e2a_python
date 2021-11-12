@@ -116,8 +116,7 @@ class SLN:
             self.w[i][k] = nu
             A_new = self.get_aw()
 
-            if not np.array_equal(A_new, A_old) or nu == sigma / 2:
-                Aw_diff = True
+            if not np.array_equal(A_new[1:], A_old[1:]) or nu == sigma / 2:
                 f_new = self.f()
                 A_old = A_new
                 if f_new < f_opt or (f_new == f_opt and nu == sigma / 2):
@@ -126,8 +125,7 @@ class SLN:
 
             self.w[i][k] = mu
             A_new = self.get_aw()
-            if not np.array_equal(A_new, A_old):
-                Aw_diff = True
+            if not np.array_equal(A_new[1:], A_old[1:]):
                 f_new = self.f()
                 A_old = A_new
                 if f_new < f_opt:
