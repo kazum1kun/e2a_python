@@ -2,30 +2,26 @@ import logging as log
 
 import nltk
 import numpy as np
-
 from OMatch import OMatch
+
 from utils import Timer
 
 
 class SLN:
-    def __init__(self, mappings, events):
+    def __init__(self, mappings, events, ni):
         self.p = None
         self.n = len(mappings)
         # Calculate ni values and the N value
-        ni = [len(mappings[activity]) - 1 for activity in range(1, self.n + 1)]
         self.N = np.sum(ni)
         k = np.max(ni)
         # Make array 1-based
-        ni.insert(0, 0)
         self.ni = ni
 
         self.w = np.zeros((self.n + 1, k + 1), np.float_)
         self.S = mappings
-        self.E = events[:, 1]
+        self.E = events
         self.oMatch = OMatch(self.E, self.S, self.n, self.ni)
         self.M = self.oMatch.M
-
-        self.f_called = -1
 
     def sln_1d(self, i, k):
         x = 0
@@ -116,8 +112,7 @@ class SLN:
             self.w[i][k] = nu
             A_new = self.get_aw()
 
-            if not np.array_equal(A_new, A_old) or nu == sigma / 2:
-                Aw_diff = True
+            if not np.array_equal(A_new[1:], A_old[1:]) or nu == sigma / 2:
                 f_new = self.f()
                 A_old = A_new
                 if f_new < f_opt or (f_new == f_opt and nu == sigma / 2):
@@ -126,8 +121,7 @@ class SLN:
 
             self.w[i][k] = mu
             A_new = self.get_aw()
-            if not np.array_equal(A_new, A_old):
-                Aw_diff = True
+            if not np.array_equal(A_new[1:], A_old[1:]):
                 f_new = self.f()
                 A_old = A_new
                 if f_new < f_opt:
@@ -142,7 +136,7 @@ class SLN:
         return x_opt, f_opt
 
     def sln_nd(self, C):
-        Timer.lap('ND SLN started')
+        # Timer.lap('ND SLN started')
         n = self.n
         ni = self.ni
         # Init the weights for S1s to C and the rest to 1
@@ -154,9 +148,9 @@ class SLN:
         f_opt = self.f()
         itr_num = 0
 
-        log.info(f'\nND SLN Init finished, current optimal value is {f_opt}\n'
-                 'w value is')
-        log.info(self.w)
+        # log.info(f'\nND SLN Init finished, current optimal value is {f_opt}\n'
+                 # 'w value is')
+        # log.info(self.w)
 
         # Coordinate descent
         while not done:
@@ -166,7 +160,7 @@ class SLN:
 
             done = True
             itr_num += 1
-            log.info(f'\n========================ITERATION {itr_num}========================')
+            # log.info(f'\n========================ITERATION {itr_num}========================')
 
             # 1D minimization
             for i in range(1, n + 1):
@@ -175,28 +169,26 @@ class SLN:
                     x_new, f_new = self.sln_1d(i, k)
                     if f_new < f_opt:
                         self.w[i][k] = x_new
-                        log.info(f'******f_opt changed, {f_new=}, {i=}, {k=}******')
+                        # log.info(f'******f_opt changed, {f_new=}, {i=}, {k=}******')
                         f_opt = f_new
                         if f_opt > 0:
                             done = False
                     else:
                         self.w[i][k] = x_old
-                    self.f_called = 0
 
                     for j in range(1, len(self.w)):
                         if self.w[j][1] == 0:
                             log.warning(f'w[{j}][1] value is 0')
-                    Timer.lap(f'{i=}, {k=} finished')
+                    # Timer.lap(f'{i=}, {k=} finished')
 
                     if f_opt == 0:
-                        log.info('f_opt has reached zero, ending optimization')
+                        # log.info('f_opt has reached zero, ending optimization')
                         return self.w, self.get_aw(), f_opt
-            log.info(f'After ITERATION {itr_num}, {f_opt=}')
+            # log.info(f'After ITERATION {itr_num}, {f_opt=}')
         return self.w, self.get_aw(), f_opt
 
     # Calculate the distance between the sequence and given events
     def f(self):
-        self.f_called += 1
         Aw = self.get_aw()
         E_calc = []
         for A in Aw[1:]:
