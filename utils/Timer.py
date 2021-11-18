@@ -1,5 +1,5 @@
-import time
 import logging as log
+import time
 
 start = time.perf_counter()
 

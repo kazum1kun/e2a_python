@@ -1,7 +1,6 @@
 import numpy as np
 
 from AkMatch import AkMatch
-from utils import Timer
 
 
 class OMatch:

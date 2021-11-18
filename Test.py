@@ -1,11 +1,12 @@
 import logging as log
+
 import editdistance
 from tqdm import tqdm
 
+from OMatch import OMatch
 from SLN import SLN
 from utils import Timer
 from utils.FileReader import *
-from OMatch import OMatch
 
 
 def main():
@@ -68,7 +69,7 @@ def split_events(M, E):
     candidates = np.argwhere(deg == 0).flatten() + 1
 
     # Create intervals based on the candidates
-    intervals = [(candidates[i] + 1, candidates[i+1]) for i in range(0, len(candidates) - 1)]
+    intervals = [(candidates[i] + 1, candidates[i + 1]) for i in range(0, len(candidates) - 1)]
     intervals.insert(0, (1, candidates[0]))
 
     # Create segments of the event using the interval
