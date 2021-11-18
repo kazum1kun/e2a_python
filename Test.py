@@ -1,15 +1,11 @@
 import logging as log
-import time
-
-import nltk
+import editdistance
 from tqdm import tqdm
 
 from SLN import SLN
 from utils import Timer
 from utils.FileReader import *
 from OMatch import OMatch
-
-import difflib
 
 
 def main():
@@ -33,38 +29,33 @@ def main():
     Timer.lap('OMatch initialization done')
     segments, intervals = split_events(oMatch.M, events[:, 1])
     Timer.lap('Segmentation finished')
+
     f_opt_total = 0
     counter = 0
     Aw_all = []
-    full = []
-    for i in activities[1:, 1]:
-        full.append(i)
-    print(full)
 
+    # Much faster version that separates input into different segments. Accuracy may suffer for a little bit.
     segments_bar = tqdm(segments)
     for segment, interval in zip(segments_bar, intervals):
         counter += 1
         segments_bar.set_description(f'Processing segments, current f_opt={f_opt_total}')
-        # start = time.perf_counter()
         sln = SLN(mappings, segment, ni)
         _, Aw, f_opt = sln.sln_nd(1)
         f_opt_total += f_opt
         Aw_all.extend(Aw[1:])
 
-        # print(f'Segment {counter: >3}, [{intervals[counter-1][0]:>5},{intervals[counter-1][1]: <5}] '
-        #       f'(len={intervals[counter-1][1] - intervals[counter-1][0] + 1: >3}), '
-        #       f'{f_opt=:>2}, cumulative f_opt={f_opt_total:>3}, spent {time.perf_counter() - start:.2f} seconds')
-
-        # calc_diff(segment, Aw, mappings)
-
-        # print('\n----------------------------------------------')
+    # Non-separating version
+    # sln = SLN(mappings, events[:, 1], ni)
+    # _, Aw, f_opt = sln.sln_nd(1)
+    # f_opt_total += f_opt
+    # Aw_all.extend(Aw[1:])
 
     Timer.lap('Finished!')
     print(f'\nThe final f_opt={f_opt_total}')
     print('\nThe final activities calculated is')
     activities_calc = [x[0] for x in Aw_all]
     print(activities_calc)
-    diff = nltk.edit_distance(activities_calc, activities[1:, 1])
+    diff = editdistance.eval(activities_calc, activities[1:, 1])
     print(f'\nThe calculated activities are {diff} edits away from the actual activities')
 
 
@@ -84,26 +75,6 @@ def split_events(M, E):
     segments = [np.insert(E[i[0]:i[1] + 1].copy(), 0, 0) for i in intervals]
 
     return segments, intervals
-
-
-def calc_diff(E_truth, Aw_new, S):
-    E_truth_chr = [chr(event) for event in E_truth[1:]]
-    E_truth_str = ''.join(E_truth_chr)
-
-    events_new = ''
-    E_new = []
-    for A in Aw_new[1:]:
-        events = S[A[0]][A[1]][1:]
-        events_chr = [chr(event) for event in events]
-        events_str = ''.join(events_chr)
-        E_new.append(events_str)
-        events_new = ''.join(E_new)
-
-    m = difflib.SequenceMatcher(a=E_truth_str, b=events_new)
-
-    for tag, i1, i2, j1, j2 in m.get_opcodes():
-        print('{:7}   a[{}:{}] --> b[{}:{}] {!r:>8} --> {!r}'.format(
-            tag, i1, i2, j1, j2, E_truth_str[i1:i2], events_new[j1:j2]))
 
 
 if __name__ == '__main__':

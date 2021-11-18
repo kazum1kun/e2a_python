@@ -1,10 +1,8 @@
 import logging as log
 
-import nltk
+import editdistance
 import numpy as np
 from OMatch import OMatch
-
-from utils import Timer
 
 
 class SLN:
@@ -36,78 +34,46 @@ class SLN:
         p = self.p
         itr_num = 0
 
-        log.debug(f'1D SLN starting for {k=}, {i=}')
-        log.debug(f'Line 1:\tcurrent {f_opt=}\n'
-                  f'\t\tAw={A_old}\n')
-        log.debug('Current M value is: \n')
-        log.debug(f'{M}\n')
-        log.debug('Calculated Mw is:\n')
-        log.debug(f'{self.Mw}')
-        log.debug(f'Current p values are: {p}')
-
         while not done:
             itr_num += 1
-            log.debug(f'--------Inner iteration {itr_num} starting, {i=}, {k=}--------')
-            log.debug('Current w values are:\n'
-                      f'{self.w}')
             OPT = np.zeros((m,), np.float_)
             a = np.zeros((m,), np.int_)
             sigma = np.infty
             delta = np.zeros((m,), np.int_)
 
             for j in range(1, m):
-                # log.info(f'{i=}, {k=}, {j=}')
-                log.debug(f'Line 3: {j=}, {M[j]=}')
-                # M[j].w is variable (by default theta entries are all zeros)
                 if M[j]['i'] == i and M[j]['k'] == k:
-                    log.debug(f'Line 4: True, delta[{j}]=1')
                     delta[j] = 1
-                else:
-                    log.debug(f'Line 4: False, delta[{j}]=0')
+
                 # Pre-store M[j].w for convenience
                 Mj_w = self.w[M[j]['i']][M[j]['k']]
 
                 if Mj_w + OPT[p[j]] > OPT[j - 1]:
                     OPT[j] = Mj_w + OPT[p[j]]
                     a[j] = a[p[j]] + delta[j]
-                    log.debug(f'Line 8: True, new OPT[{j}] is {OPT[j]}, new a[{j}] is {a[j]}')
+
                     if a[p[j]] + delta[j] < a[j - 1]:
-                        log.debug(
-                            f'{sigma=}, M[j].w={Mj_w}, {OPT[p[j]]=}, {OPT[j-1]=}, {a[j-1]=}, {a[p[j]]=}, {delta[j]=}, {p[j]=}')
                         sigma = np.min([sigma, (Mj_w + OPT[p[j]] - OPT[j - 1]) /
                                         (a[j - 1] - a[p[j]] - delta[j])])
-                        log.debug(f'Line 11: sigma is updated, new value is {sigma :.3f}\n')
-                    else:
-                        log.debug(f'Line 11: sigma not updated\n')
                 elif Mj_w + OPT[p[j]] < OPT[j - 1]:
                     OPT[j] = OPT[j - 1]
                     a[j] = a[j - 1]
-                    log.debug(f'Line 13: True, new OPT[{j}] is {OPT[j]}, new a[{j}] is {a[j]}')
                     if a[p[j]] + delta[j] > a[j - 1]:
-                        log.debug(
-                            f'{sigma=}, M[j].w={Mj_w}, {OPT[p[j]]=}, {OPT[j-1]=}, {a[j-1]=}, {a[p[j]]=}, {delta[j]=}, {p[j]=}')
                         sigma = np.min([sigma, (Mj_w + OPT[p[j]] - OPT[j - 1]) /
                                         (a[j - 1] - a[p[j]] - delta[j])])
-                        log.debug(f'Line 16: sigma is updated, new value is {sigma :.3f}\n')
-                    else:
-                        log.debug(f'Line 16: sigma not updated\n')
                 else:
                     if a[p[j]] + delta[j] <= a[j - 1]:
                         OPT[j] = OPT[j - 1]
                         a[j] = a[j - 1]
-                        log.debug(f'Line 19: True, new OPT[{j}] is {OPT[j]}, new a[{j}] is {a[j]}\n')
                     else:
                         OPT[j] = Mj_w + OPT[p[j]]
                         a[j] = a[p[j]] + delta[j]
-                        log.debug(f'Line 22: True, new OPT[{j}] is {OPT[j]}, new a[{j}] is {a[j]}\n')
 
             if sigma == np.infty:
                 sigma = 2
                 done = True
             mu = x + sigma
             nu = x + sigma / 2
-            log.debug(f'Line 25: {sigma=:.3f}')
-            log.debug(f'Line 26: {mu=:.3f}, {nu=:.3f}')
 
             self.w[i][k] = nu
             A_new = self.get_aw()
@@ -131,8 +97,6 @@ class SLN:
             if not done:
                 x = mu
 
-            # log.info(f'Inner Iteration {itr_num: <3} finished, {i=: <2}, {k=}, {f_opt=: <3}')
-            log.debug(f'\nAw_new={A_new}\n')
         return x_opt, f_opt
 
     def sln_nd(self, C):
@@ -148,10 +112,6 @@ class SLN:
         f_opt = self.f()
         itr_num = 0
 
-        # log.info(f'\nND SLN Init finished, current optimal value is {f_opt}\n'
-                 # 'w value is')
-        # log.info(self.w)
-
         # Coordinate descent
         while not done:
             # Weight normalization
@@ -160,7 +120,6 @@ class SLN:
 
             done = True
             itr_num += 1
-            # log.info(f'\n========================ITERATION {itr_num}========================')
 
             # 1D minimization
             for i in range(1, n + 1):
@@ -169,7 +128,6 @@ class SLN:
                     x_new, f_new = self.sln_1d(i, k)
                     if f_new < f_opt:
                         self.w[i][k] = x_new
-                        # log.info(f'******f_opt changed, {f_new=}, {i=}, {k=}******')
                         f_opt = f_new
                         if f_opt > 0:
                             done = False
@@ -179,12 +137,9 @@ class SLN:
                     for j in range(1, len(self.w)):
                         if self.w[j][1] == 0:
                             log.warning(f'w[{j}][1] value is 0')
-                    # Timer.lap(f'{i=}, {k=} finished')
 
                     if f_opt == 0:
-                        # log.info('f_opt has reached zero, ending optimization')
                         return self.w, self.get_aw(), f_opt
-            # log.info(f'After ITERATION {itr_num}, {f_opt=}')
         return self.w, self.get_aw(), f_opt
 
     # Calculate the distance between the sequence and given events
@@ -194,7 +149,7 @@ class SLN:
         for A in Aw[1:]:
             E_calc.extend(self.S[A[0]][A[1]][1:])
 
-        return nltk.edit_distance(E_calc, self.E[1:])
+        return editdistance.eval(E_calc, self.E[1:])
 
     # Using given Mw, obtain a corresponding device event sequence
     def get_aw(self):
