@@ -14,7 +14,6 @@ class OMatch:
         self.M.sort(order='beta')
         # Enumerate the predecessor of a window/match
         self.p = [self.calc_p(i) for i in range(0, len(self.M))]
-        Timer.lap('OMatch initialization done.')
 
     # Populates the matches for all i, k values
     @staticmethod

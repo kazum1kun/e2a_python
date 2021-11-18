@@ -8,7 +8,7 @@ def main(file, number, extension='', generate_partial=False):
     n = len(mappings)
     activity_output = [0]
     events_output = [0]
-    time_counter = 0
+    time_counter = 1
 
     # Generate a random sequence of activities
     rand_activities = [random.randint(1, n - 1) for _ in range(number)]
@@ -43,4 +43,4 @@ def main(file, number, extension='', generate_partial=False):
 
 
 if __name__ == '__main__':
-    main('../data/mappings/mappings.txt', 400, extension='-reduced400', generate_partial=True)
+    main('../data/mappings/mappings.txt', 600, extension='-600', generate_partial=True)
