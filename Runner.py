@@ -41,7 +41,8 @@ def main():
     # Create a pool of worker threads and distribute the segments to these workers
     pool = Pool()
     # results = pool.starmap(process_segment_partial, zip(range(len(segments)), segments))
-    results = list(tqdm(pool.imap_unordered(process_segment_partial, indexed_segments), total=len(segments)))
+    results = list(tqdm(pool.imap_unordered(process_segment_partial, indexed_segments), total=len(segments),
+                        desc='Processing segments...'))
     pool.close()
     pool.join()
 
