@@ -1,4 +1,6 @@
+import functools
 import logging as log
+from multiprocessing import Pool
 
 import editdistance
 from tqdm import tqdm
@@ -12,7 +14,7 @@ from utils.FileReader import *
 def main():
     log.basicConfig(format='%(message)s', level=log.INFO)
 
-    file_ext = '-revised'
+    file_ext = ''
     mapping_ext = '-q'
     activities = read_activities(f'data/activities/activities{file_ext}.txt')
     events = read_events(f'data/events/events{file_ext}.txt')
@@ -31,19 +33,38 @@ def main():
     segments, intervals = split_events(oMatch.M, events[:, 1])
     Timer.lap('Segmentation finished')
 
+    C = 1
+    process_segment_partial = functools.partial(process_segment, C, mappings, ni)
+    # Generator to compact the arguments for the imap function since it takes only one argument
+    indexed_segments = ([i, segment] for i, segment in zip(range(len(segments)), segments))
+
+    # Create a pool of worker threads and distribute the segments to these workers
+    pool = Pool()
+    # results = pool.starmap(process_segment_partial, zip(range(len(segments)), segments))
+    results = list(tqdm(pool.imap_unordered(process_segment_partial, indexed_segments), total=len(segments)))
+    pool.close()
+    pool.join()
+
+    # Update the f_opt_total and unpack the results
     f_opt_total = 0
-    counter = 0
     Aw_all = []
 
+    # Sort the results according to the index
+    results.sort(key=lambda x: x[0])
+    for res in results:
+        f_opt_total += res[1]
+        if res[2]:
+            Aw_all.extend(res[2])
+
     # Much faster version that separates input into different segments. Accuracy may suffer for a little bit.
-    segments_bar = tqdm(segments)
-    for segment, interval in zip(segments_bar, intervals):
-        counter += 1
-        segments_bar.set_description(f'Processing segments, current f_opt={f_opt_total}')
-        sln = SLN(mappings, segment, ni)
-        _, Aw, f_opt = sln.sln_nd(1)
-        f_opt_total += f_opt
-        Aw_all.extend(Aw[1:])
+    # segments_bar = tqdm(segments)
+    # for segment, interval in zip(segments_bar, intervals):
+    # counter += 1
+    # segments_bar.set_description(f'Processing segments, current f_opt={f_opt_total}')
+    # sln = SLN(mappings, segment, ni)
+    # _, Aw, f_opt = sln.sln_nd(1)
+    # f_opt_total += f_opt
+    # Aw_all.extend(Aw[1:])
 
     # Non-separating version
     # sln = SLN(mappings, events[:, 1], ni)
@@ -76,6 +97,13 @@ def split_events(M, E):
     segments = [np.insert(E[i[0]:i[1] + 1].copy(), 0, 0) for i in intervals]
 
     return segments, intervals
+
+
+def process_segment(C, mappings, ni, indexed_segment):
+    sln = SLN(mappings, indexed_segment[1], ni)
+    _, Aw, f_opt = sln.sln_nd(C)
+
+    return indexed_segment[0], f_opt, Aw[1:]
 
 
 if __name__ == '__main__':
