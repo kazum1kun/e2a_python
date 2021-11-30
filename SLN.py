@@ -156,6 +156,5 @@ class SLN:
     def get_aw(self):
         # Recalculate M using the updated weights
         Mw, self.p = self.oMatch.max_weight_sequence(self.w)
-        self.Mw = Mw
 
         return Mw

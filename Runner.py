@@ -28,11 +28,15 @@ def main():
     ni.insert(0, 0)
     ni = ni
 
+    f_opt_total = 0
+    Aw_all = []
+
     oMatch = OMatch(events[:, 1], mappings, n, ni)
     Timer.lap('OMatch initialization done')
     segments, intervals = split_events(oMatch.M, events[:, 1])
     Timer.lap('Segmentation finished')
 
+    # Multithreading version - by far the fastest and same accuracy as separating version
     C = 1
     process_segment_partial = functools.partial(process_segment, C, mappings, ni)
     # Generator to compact the arguments for the imap function since it takes only one argument
@@ -45,10 +49,6 @@ def main():
                         desc='Processing segments...'))
     pool.close()
     pool.join()
-
-    # Update the f_opt_total and unpack the results
-    f_opt_total = 0
-    Aw_all = []
 
     # Sort the results according to the index
     results.sort(key=lambda x: x[0])
