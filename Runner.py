@@ -16,6 +16,7 @@ def main():
 
     file_ext = ''
     mapping_ext = '-q'
+    C = 1
     activities = read_activities(f'data/activities/activities{file_ext}.txt')
     events = read_events(f'data/events/events{file_ext}.txt')
     mappings = read_mappings(f'data/mappings/mappings{mapping_ext}.txt')
@@ -37,7 +38,6 @@ def main():
     Timer.lap('Segmentation finished')
 
     # Multithreading version - by far the fastest and same accuracy as separating version
-    C = 1
     process_segment_partial = functools.partial(process_segment, C, mappings, ni)
     # Generator to compact the arguments for the imap function since it takes only one argument
     indexed_segments = ([i, segment] for i, segment in zip(range(len(segments)), segments))
@@ -63,13 +63,13 @@ def main():
     # counter += 1
     # segments_bar.set_description(f'Processing segments, current f_opt={f_opt_total}')
     # sln = SLN(mappings, segment, ni)
-    # _, Aw, f_opt = sln.sln_nd(1)
+    # _, Aw, f_opt = sln.sln_nd(C)
     # f_opt_total += f_opt
     # Aw_all.extend(Aw[1:])
 
     # Non-separating version
     # sln = SLN(mappings, events[:, 1], ni)
-    # _, Aw, f_opt = sln.sln_nd(1)
+    # _, Aw, f_opt = sln.sln_nd(C)
     # f_opt_total += f_opt
     # Aw_all.extend(Aw[1:])
 
