@@ -1,0 +1,11 @@
+AQ A
+AL B C D
+DW E F
+KM G
+RC H I J
+RD K J M N
+RS O P Q
+SC R S
+TC T U
+TB V W
+TP X Y

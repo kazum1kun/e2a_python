@@ -1,10 +1,12 @@
 import logging as log
 import time
 
-start = time.perf_counter()
 
+class Timer:
+    def __init__(self):
+        self.start = time.perf_counter()
 
-def lap(message):
-    curr = time.perf_counter()
-    log.info(f'{message}\n'
-             f'Time elapsed: {curr - start:.2f}')
+    def lap(self, message):
+        curr = time.perf_counter()
+        log.info(f'{message}\n'
+                 f'Time elapsed: {curr - self.start:.5f}')

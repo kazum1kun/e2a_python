@@ -107,3 +107,18 @@ def read_mappings_0based(file):
                 mappings[act].append(events)
 
         return mappings
+
+
+# Read the device-event mappings
+def read_device_event(file):
+    with open(file, 'r') as map_file:
+        mappings = {}
+        for line in map_file:
+            act, *events = line.strip().split(' ')
+
+            if act not in mappings:
+                mappings[act] = events
+            else:
+                mappings[act].append(events)
+
+    return mappings
