@@ -85,7 +85,8 @@ def run_e2a(data_ext, map_ext, C=1, method='seg_multi'):
     activities_calc = [x[0] for x in Aw_all]
     # print(activities_calc)
     diff = editdistance.eval(activities_calc, activities[1:, 1])
-    print(f'\nThe calculated activities are {diff} edits away from the actual activities')
+    print(f'\nActivity edit distance: {diff}\n'
+          f'Event edit distance: {f_opt_total}')
 
     calc_counter = Counter(activities_calc)
     actual_counter = Counter(activities[1:, 1])

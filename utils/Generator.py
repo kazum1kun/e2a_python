@@ -4,6 +4,7 @@ import random
 from FileReader import read_mappings_0based, read_device_event
 
 
+# Generate test cases using the preferences specified by the user
 def generate_testcase(normal_file, failed_file, number, extension='', generate_partial=False, generate_fail=False):
     mappings_normal = read_mappings_0based(normal_file)
     mappings_failed = read_mappings_0based(failed_file)
@@ -70,6 +71,7 @@ def generate_testcase(normal_file, failed_file, number, extension='', generate_p
                 events_file.write(e + '\n')
 
 
+# Generate mappings with device failures, that is, events related to failed devices are removed
 def generate_mappings(map_file, de_file, extension='', device_failures=()):
     mappings = read_mappings_0based(map_file)
     device_event = read_device_event(de_file)
