@@ -1,11 +1,12 @@
 import logging
 import random
 
-from FileReader import read_mappings_0based, read_device_event
+from FileReader import read_mappings_0based, read_device_event, read_activities
 
 
 # Generate test cases using the preferences specified by the user
-def generate_testcase(normal_file, failed_file, number, extension='', generate_partial=False, generate_fail=False):
+def generate_testcase(normal_file, failed_file, number, extension='',
+                      generate_partial=False, generate_fail=False, prob_src=None):
     mappings_normal = read_mappings_0based(normal_file)
     mappings_failed = read_mappings_0based(failed_file)
     n = len(mappings_normal)
@@ -16,7 +17,13 @@ def generate_testcase(normal_file, failed_file, number, extension='', generate_p
     time_counter_failed = 1
 
     # Generate a random sequence of activities
-    rand_activities = [random.randint(1, n - 1) for _ in range(number)]
+    # If prob_src is set, then generate the activity sequence based on the source probability distribution
+    # (rather than completely random)
+    if prob_src:
+        src_activities = read_activities(prob_src)[1:, 1]
+        rand_activities = [random.choice(src_activities) for _ in range(number)]
+    else:
+        rand_activities = [random.randint(1, n - 1) for _ in range(number)]
 
     for activity in rand_activities:
 
@@ -106,7 +113,8 @@ def generate_mappings(map_file, de_file, extension='', device_failures=()):
 if __name__ == '__main__':
     generate_testcase(normal_file='../data/mappings/mappings-q.txt',
                       failed_file='../data/mappings/mappings-synth_aqtcfail.txt',
-                      number=100000, extension='-synth100000', generate_partial=True, generate_fail=True)
+                      number=10000, extension='-synthtest10000', generate_partial=True, generate_fail=True,
+                      prob_src='../data/activities/activities-real2959.txt')
 
     # generate_mappings('../data/mappings/mappings-q.txt', '../data/device_event/e2a.txt',
     #                   extension='-synth_aqtcfail', device_failures=('AQ', 'TC'))

@@ -1,0 +1,80 @@
+79
+1 K O N L M C T U C A
+1 O N L M C T U C A
+1 K O N L M C C
+1 O N L M C C
+2 K P N L M C T U C A Q
+2 P N L M C T U C A Q
+2 K P N L M C T U C A
+2 P N L M C T U C A
+2 K P N L M C C Q
+2 P N L M C C Q
+2 K P N L M C C
+2 P N L M C C
+3 K O B T U D A
+3 O B T U D A
+3 K O B D
+3 O B D
+4 K P B T U D A Q
+4 P B T U D A Q
+4 K P B T U D A
+4 P B T U D A
+4 K P B D Q
+4 P B D Q
+4 K P B D
+4 P B D
+5 K O C T U D A
+5 O C T U D A
+5 K O C D
+5 O C D
+6 K P C T U D A Q
+6 P C T U D A Q
+6 K P C T U D A
+6 P C T U D A
+6 K P C D Q
+6 P C D Q
+6 K P C D
+6 P C D
+7 K O N
+7 O N
+8 K P N Q
+8 P N Q
+8 K P N
+8 P N
+9 K O
+9 O
+10 K P Q
+10 P Q
+10 K P
+10 P
+11 A C T U K O C
+11 A C T U O C
+11 C K O C
+11 C O C
+12 A C T U K P C Q
+12 A C T U P C Q
+12 A C T U K P C
+12 A C T U P C
+12 C K P C Q
+12 C P C Q
+12 C K P C
+12 C P C
+13 A C T U K O
+13 A C T U O
+13 C K O
+13 C O
+14 A C T U K P Q
+14 A C T U P Q
+14 A C T U K P
+14 A C T U P
+14 C K P Q
+14 C P Q
+14 C K P
+14 C P
+15 G V
+16 G W
+17 I J
+18 H
+19 R H
+20 H S
+21 E Y F X
