@@ -80,31 +80,40 @@ def generate_testcase(normal_file, failed_file, number, extension='',
 
 # Generate mappings with device failures, that is, events related to failed devices are removed
 def generate_mappings(map_file, de_file, extension='', device_failures=()):
-    mappings = read_mappings_0based(map_file)
+    mappings_failed = read_mappings_0based(map_file)
+    mappings_combined = read_mappings_0based(map_file)
     device_event = read_device_event(de_file)
 
     # If device failure is on, remove the events that are related to the device
     if device_failures:
         removed_events = [event for dev in device_failures for event in device_event[dev]]
-        new_mapping = ['0\n']
+        failed_mapping = ['0\n']
+        combined_mapping = ['0\n']
 
-        for activity, events_list in mappings.items():
+        for activity, events_list in mappings_failed.items():
             new_list = [[event for event in events if event not in removed_events] for events in events_list]
             # Remove duplicates
-            mappings[activity].clear()
-            [mappings[activity].append(events) for events in new_list if events not in mappings[activity]]
+            mappings_failed[activity].clear()
+            [mappings_failed[activity].append(events) for events in new_list if events not in mappings_failed[activity]]
+            [mappings_combined[activity].append(events) for events in new_list if events not in mappings_combined[activity]]
 
             # Ignore the first one, not usable
             if activity != 0:
-                for pattern in mappings[activity]:
-                    new_mapping.append(f'{activity} {" ".join(pattern)}\n')
+                for pattern in mappings_failed[activity]:
+                    failed_mapping.append(f'{activity} {" ".join(pattern)}\n')
+                for pattern in mappings_combined[activity]:
+                    combined_mapping.append(f'{activity} {" ".join(pattern)}\n')
 
         # Update the counter on top of the file
-        new_mapping[0] = f'{len(new_mapping) - 1}\n'
+        failed_mapping[0] = f'{len(failed_mapping) - 1}\n'
+        combined_mapping[0] = f'{len(combined_mapping) - 1}\n'
 
         # Write the updated mapping back to the file
         with open(f'../data/mappings/mappings{extension}.txt', 'w') as mapping_file:
-            for line in new_mapping:
+            for line in failed_mapping:
+                mapping_file.write(line)
+        with open(f'../data/mappings/mappings{extension}_combined.txt', 'w') as mapping_file:
+            for line in combined_mapping:
                 mapping_file.write(line)
     else:
         logging.warning('No device specified to fail, exiting...')
