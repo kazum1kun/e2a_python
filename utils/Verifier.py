@@ -1,7 +1,7 @@
 from FileReader import read_activities
 from collections import Counter
 
-s1 = read_activities('../data/activities/activities-real2959.txt')[1:, 1]
+s1 = read_activities('../data/activities/real/activities-real2959.txt')[1:, 1]
 s2 = read_activities('../data/activities/activities-synthtest10000.txt')[1:, 1]
 
 c1 = Counter(s1)

@@ -1,12 +1,17 @@
 import logging
+import os.path
 import random
 
 from FileReader import read_mappings_0based, read_device_event, read_activities
 
 
 # Generate test cases using the preferences specified by the user
-def generate_testcase(normal_file, failed_file, number, extension='',
-                      generate_partial=False, generate_fail=False, prob_src=None):
+def generate_testcase(normal_file, failed_file, number,
+                      generate_partial=False, generate_fail=False, prob_src=None, rand_seed=None,
+                      folder='.', filename='default'):
+    # If seed is set, then generate patterns according to this seed
+    if rand_seed:
+        random.seed(rand_seed)
     mappings_normal = read_mappings_0based(normal_file)
     mappings_failed = read_mappings_0based(failed_file)
     n = len(mappings_normal)
@@ -61,19 +66,28 @@ def generate_testcase(normal_file, failed_file, number, extension='',
     events_output[0] = str(len(events_output) - 1)
     events_failed_output[0] = str(len(events_failed_output) - 1)
 
-    with open(f'../data/activities/activities{extension}.txt', 'w') as activity_file:
+    activities_folder = f'../data/activities/synth/{folder}'
+    events_folder = f'../data/events/synth/{folder}.txt'
+
+    # Make sure the output folder exists, if not create it
+    if not os.path.exists(activities_folder):
+        os.mkdir(activities_folder)
+    if not os.path.exists(events_folder):
+        os.mkdir(events_folder)
+
+    with open(f'{activities_folder}/{filename}.txt', 'w') as activity_file:
         for e in activity_output:
             activity_file.write(e + '\n')
 
-    with open(f'../data/events/events{extension}.txt', 'w') as events_file:
+    with open(f'{events_folder}/{filename}.txt', 'w') as events_file:
         for e in events_output:
             events_file.write(e + '\n')
 
     if generate_fail:
-        with open(f'../data/activities/activities{extension}_aqtcfail.txt', 'w') as activity_file:
+        with open(f'{activities_folder}/{filename}_aqtcfail.txt', 'w') as activity_file:
             for e in activity_output:
                 activity_file.write(e + '\n')
-        with open(f'../data/events/events{extension}_aqtcfail.txt', 'w') as events_file:
+        with open(f'{activities_folder}/{filename}_aqtcfail.txt', 'w') as events_file:
             for e in events_failed_output:
                 events_file.write(e + '\n')
 
@@ -120,10 +134,14 @@ def generate_mappings(map_file, de_file, extension='', device_failures=()):
 
 
 if __name__ == '__main__':
-    generate_testcase(normal_file='../data/mappings/mappings-q.txt',
-                      failed_file='../data/mappings/mappings-synth_aqtcfail.txt',
-                      number=10000, extension='-synthtest10000', generate_partial=True, generate_fail=True,
-                      prob_src='../data/activities/activities-real2959.txt')
+    for act_len in [100, 200, 300, 1000, 10000]:
+        for itr in range(10):
+            seed = act_len * 10000 + itr
+            generate_testcase(normal_file='../data/mappings/mappings-q.txt',
+                              failed_file='../data/mappings/mappings-synth_aqtcfail.txt',
+                              number=10000, generate_partial=True, generate_fail=True,
+                              prob_src='../data/activities/real/activities-real2959.txt', rand_seed=seed,
+                              folder=str(act_len), filename=str(itr))
 
     # generate_mappings('../data/mappings/mappings-q.txt', '../data/device_event/e2a.txt',
     #                   extension='-synth_aqtcfail', device_failures=('AQ', 'TC'))
