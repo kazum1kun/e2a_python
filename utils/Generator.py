@@ -67,7 +67,7 @@ def generate_testcase(normal_file, failed_file, number,
     events_failed_output[0] = str(len(events_failed_output) - 1)
 
     activities_folder = f'../data/activities/synth/{folder}'
-    events_folder = f'../data/events/synth/{folder}.txt'
+    events_folder = f'../data/events/synth/{folder}'
 
     # Make sure the output folder exists, if not create it
     if not os.path.exists(activities_folder):
@@ -87,7 +87,7 @@ def generate_testcase(normal_file, failed_file, number,
         with open(f'{activities_folder}/{filename}_aqtcfail.txt', 'w') as activity_file:
             for e in activity_output:
                 activity_file.write(e + '\n')
-        with open(f'{activities_folder}/{filename}_aqtcfail.txt', 'w') as events_file:
+        with open(f'{events_folder}/{filename}_aqtcfail.txt', 'w') as events_file:
             for e in events_failed_output:
                 events_file.write(e + '\n')
 
@@ -109,7 +109,8 @@ def generate_mappings(map_file, de_file, extension='', device_failures=()):
             # Remove duplicates
             mappings_failed[activity].clear()
             [mappings_failed[activity].append(events) for events in new_list if events not in mappings_failed[activity]]
-            [mappings_combined[activity].append(events) for events in new_list if events not in mappings_combined[activity]]
+            [mappings_combined[activity].append(events) for events in new_list if
+             events not in mappings_combined[activity]]
 
             # Ignore the first one, not usable
             if activity != 0:
@@ -134,14 +135,14 @@ def generate_mappings(map_file, de_file, extension='', device_failures=()):
 
 
 if __name__ == '__main__':
-    for act_len in [100, 200, 300, 1000, 10000]:
+    for act_len in [387, 1494, 2959, 10000, 100000]:
         for itr in range(10):
             seed = act_len * 10000 + itr
-            generate_testcase(normal_file='../data/mappings/mappings-q.txt',
-                              failed_file='../data/mappings/mappings-synth_aqtcfail.txt',
-                              number=10000, generate_partial=True, generate_fail=True,
-                              prob_src='../data/activities/real/activities-real2959.txt', rand_seed=seed,
+            generate_testcase(normal_file='../data/mappings/with_q.txt',
+                              failed_file='../data/mappings/synth_aqtcfail.txt',
+                              number=act_len, generate_partial=True, generate_fail=True,
+                              prob_src='../data/activities/real/2959.txt', rand_seed=seed,
                               folder=str(act_len), filename=str(itr))
 
-    # generate_mappings('../data/mappings/mappings-q.txt', '../data/device_event/e2a.txt',
+    # generate_mappings('../data/mappings/with_q.txt', '../data/device_event/e2a.txt',
     #                   extension='-synth_aqtcfail', device_failures=('AQ', 'TC'))

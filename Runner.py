@@ -12,16 +12,14 @@ from utils.FileReader import *
 from utils.Timer import Timer
 
 
-def run_e2a(data_ext, map_ext, C=1, method='seg_multi'):
+def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi'):
     timer = Timer()
-    log.basicConfig(format='%(message)s', level=log.INFO)
-
-    file_ext = data_ext
-    mapping_ext = map_ext
+    log.basicConfig(format='%(message)s', level=log.WARNING)
     C = C
-    activities = read_activities(f'data/activities/activities{file_ext}.txt')
-    events = read_events(f'data/events/events{file_ext}.txt')
-    mappings = read_mappings(f'data/mappings/mappings{mapping_ext}.txt')
+
+    activities = read_activities(act_file)
+    events = read_events(event_file)
+    mappings = read_mappings(map_file)
     timer.lap('Text read finished')
 
     log.info(f'Activity length: {len(activities) - 1}, event length {len(events) - 1}')
@@ -51,7 +49,7 @@ def run_e2a(data_ext, map_ext, C=1, method='seg_multi'):
             pool = Pool()
             # results = pool.starmap(process_segment_partial, zip(range(len(segments)), segments))
             results = list(tqdm(pool.imap_unordered(process_segment_partial, indexed_segments), total=len(segments),
-                                desc='Processing segments...'))
+                                desc='Processing segments...', disable=True))
             pool.close()
             pool.join()
 
@@ -79,21 +77,19 @@ def run_e2a(data_ext, map_ext, C=1, method='seg_multi'):
         f_opt_total += f_opt
         Aw_all.extend(Aw[1:])
 
+    fin_time = timer.get_elapsed()
     timer.lap('Finished!')
-    print(f'\nThe final f_opt={f_opt_total}')
     # print('\nThe final activities calculated is')
     activities_calc = [x[0] for x in Aw_all]
     # print(activities_calc)
     diff = editdistance.eval(activities_calc, activities[1:, 1])
-    print(f'\nActivity edit distance: {diff}\n'
-          f'Event edit distance: {f_opt_total}')
 
     calc_counter = Counter(activities_calc)
     actual_counter = Counter(activities[1:, 1])
     calc_counter.subtract(actual_counter)
     # Remove zeroes
     diff_counter = {k: v for k, v in calc_counter.items() if v != 0}
-    print(f'\nCalc minus actual is\n{diff_counter}')
+    # print(f'\nCalc minus actual is\n{diff_counter}')
     missed = 0
     extra = 0
     for _, v in diff_counter.items():
@@ -101,10 +97,10 @@ def run_e2a(data_ext, map_ext, C=1, method='seg_multi'):
             missed -= v
         if v > 0:
             extra += v
-    print(f'\nActivity missed: {missed}, activity extra: {extra}')
+    # print(f'\nActivity missed: {missed}, activity extra: {extra}')
 
     error_pct = diff / len(activities[1:, 1])
-    print(f'Accuracy is {1 - error_pct :.5f}')
+    return fin_time, f_opt_total, diff, missed, extra, error_pct
 
 
 # Splits the input events into smaller blocks based on the parameter and make sure none of the events are interrupted
@@ -132,9 +128,61 @@ def process_segment(C, mappings, ni, indexed_segment):
     return indexed_segment[0], f_opt, Aw[1:]
 
 
+def main():
+    input_types = ['real', 'normal', 'fail']
+    for input_type in input_types:
+        if input_type == 'real' or input_type == 'normal':
+            mapping = 'data/mappings/with_q.txt'
+        else:
+            mapping = 'data/mappings/synth_combined.txt'
+
+        if input_type == 'real':
+            progress_bar = tqdm(range(3), desc='Processing real test cases...')
+            for length in [387, 1494, 2959]:
+                activity_file = f'data/activities/real/{length}.txt'
+                event_file = f'data/events/real/{length}.txt'
+                res = run_e2a(activity_file, event_file, mapping)
+
+                print(f'\n\nType: {input_type} length: {length}\n'
+                      f'Time: {res[0]:.5f}, Missed: {res[3]:.5f}, Extra: {res[4]:.5f}, ED (Act): {res[2]:.5f}, '
+                      f'ED (Event): {res[1]:.5f}, Acc: {1 - res[5]:.5f}')
+                print('====================================================')
+                progress_bar.update(1)
+        else:
+            progress_bar = tqdm(range(100), desc='Processing synth test cases...')
+            for length in [387, 1494, 2959, 10000, 100000]:
+                time = []
+                missed = []
+                extra = []
+                ed_act = []
+                ed_event = []
+                acc = []
+
+                for itr in range(10):
+                    if input_type == 'normal':
+                        activity_file = f'data/activities/synth/{length}/{itr}.txt'
+                        event_file = f'data/events/synth/{length}/{itr}.txt'
+                    else:
+                        activity_file = f'data/activities/synth/{length}/{itr}_aqtcfail.txt'
+                        event_file = f'data/events/synth/{length}/{itr}_aqtcfail.txt'
+                    res = run_e2a(activity_file, event_file, mapping)
+                    time.append(res[0])
+                    ed_event.append(res[1])
+                    ed_act.append(res[2])
+                    missed.append(res[3])
+                    extra.append(res[4])
+                    acc.append(1 - res[5])
+
+                print(f'\n\nType: {input_type} length: {length}\n'
+                      f'Time: avg={np.mean(time):.5f}, median={np.median(time):.5f}, min={np.min(time):.5f}, max={np.max(time):.5f}, var={np.std(time):.5f}\n'
+                      f'Missed: avg={np.mean(missed):.5f}, median={np.median(missed):.5f}, min={np.min(missed):.5f}, max={np.max(missed):.5f}, var={np.std(missed):.5f}\n'
+                      f'Extra: avg={np.mean(extra):.5f}, median={np.median(extra):.5f}, min={np.min(extra):.5f}, max={np.max(extra):.5f}, var={np.std(extra):.5f}\n'
+                      f'ED (Act): avg={np.mean(ed_act):.5f}, median={np.median(ed_act):.5f}, min={np.min(ed_act):.5f}, max={np.max(ed_act):.5f}, var={np.std(ed_act):.5f}\n'
+                      f'ED (Event): avg={np.mean(ed_event):.5f}, median={np.median(ed_event):.5f}, min={np.min(ed_event):.5f}, max={np.max(ed_event):.5f}, var={np.std(ed_event):.5f}\n'
+                      f'Acc: avg={np.mean(acc):.5f}, median={np.median(acc):.5f}, min={np.min(acc):.5f}, max={np.max(acc):.5f}, var={np.std(acc):.5f}')
+                print('====================================================')
+                progress_bar.update(10)
+
+
 if __name__ == '__main__':
-    for num in [100, 333, 1000, 2959, 10000, 30000, 100000]:
-        run_e2a(f'-synth{num}', '-q')
-        print('===================================================')
-    for num in [100, 333, 1000, 2959, 10000, 30000, 100000]:
-        run_e2a(f'-synth{num}_aqtcfail', '-synth_aqtcfail')
+    main()

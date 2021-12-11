@@ -10,3 +10,7 @@ class Timer:
         curr = time.perf_counter()
         log.info(f'{message}\n'
                  f'Time elapsed: {curr - self.start:.5f}')
+
+    def get_elapsed(self):
+        curr = time.perf_counter()
+        return curr - self.start
