@@ -33,4 +33,4 @@ def calc_avg_event_length(folder_names, events_num):
         print(f'Len = {folder}, avg = {avg}, avg_mf = {avg_mf}')
 
 
-calc_avg_event_length([387, 1494, 2959, 10000, 100000], 10)
+calc_avg_event_length([387, 1494, 2959, 10000, 30000], 1)
