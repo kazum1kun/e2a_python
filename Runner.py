@@ -149,7 +149,7 @@ def main():
                       f'ED (Event): {res[1]:.5f}, Acc: {1 - res[5]:.5f}')
                 print('====================================================')
         else:
-            for length in [10000, 30000]:
+            for length in [2959]:
                 time = []
                 missed = []
                 extra = []
@@ -157,7 +157,7 @@ def main():
                 ed_event = []
                 acc = []
 
-                for itr in range(40, 100):
+                for itr in range(100):
                     if not os.path.exists(f'data/output/synth/{length}'):
                         os.mkdir(f'data/output/synth/{length}')
 
@@ -189,6 +189,15 @@ def main():
                       f'ED (Event): avg={np.mean(ed_event):.5f}, median={np.median(ed_event):.5f}, min={np.min(ed_event):.5f}, max={np.max(ed_event):.5f}, std={np.std(ed_event):.5f}\n'
                       f'Acc: avg={np.mean(acc):.5f}, median={np.median(acc):.5f}, min={np.min(acc):.5f}, max={np.max(acc):.5f}, std={np.std(acc):.5f}')
                 print('====================================================')
+
+                # Save the output file
+                if input_type == 'normal':
+                    acc_output = f'data/output/synth/{length}_acc.txt'
+                else:
+                    acc_output = f'data/output/synth/{length}_acc_aqtcfail.txt'
+
+                with open(acc_output, 'w') as outfile:
+                    outfile.write(acc.__repr__())
 
 
 if __name__ == '__main__':
