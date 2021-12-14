@@ -16,21 +16,15 @@ def verify_distribution():
 
 
 def calc_avg_event_length(folder_names, events_num):
+    import numpy as np
     for folder in folder_names:
-        total = 0
-        total_mf = 0
+        len_normal = []
+        len_mf = []
         for num in range(events_num):
             with open(f'../data/events/synth/{folder}/{num}.txt') as file:
-                length = int(file.readline())
-                total += length
+                len_normal.append(int(file.readline()))
             with open(f'../data/events/synth/{folder}/{num}_aqtcfail.txt') as file:
-                length = int(file.readline())
-                total_mf += length
+                len_mf.append(int(file.readline()))
 
-        avg = total / events_num
-        avg_mf = total_mf / events_num
-
-        print(f'Len = {folder}, avg = {avg}, avg_mf = {avg_mf}')
-
-
-calc_avg_event_length([387, 1494, 2959, 10000, 30000], 1)
+        print(f'Len = {folder}, avg = {np.mean(len_normal)}, max = {np.max(len_normal)}, min = {np.min(len_normal)}\n'
+              f'\tavg_mf = {np.mean(len_mf)}, max_mf = {np.max(len_mf)}, min_mf = {np.min(len_mf)}')

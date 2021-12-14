@@ -130,7 +130,7 @@ def process_segment(C, mappings, ni, indexed_segment):
 
 
 def main():
-    progress_bar = tqdm(range(400), desc='Processing synth test cases...')
+    progress_bar = tqdm(range(1000), desc='Processing synth test cases...')
     input_types = ['normal', 'fail']
     for input_type in input_types:
         if input_type == 'real' or input_type == 'normal':
@@ -149,7 +149,7 @@ def main():
                       f'ED (Event): {res[1]:.5f}, Acc: {1 - res[5]:.5f}')
                 print('====================================================')
         else:
-            for length in [10000, 30000]:
+            for length in [387, 1494, 2959, 10000, 30000]:
                 time = []
                 missed = []
                 extra = []
@@ -157,18 +157,18 @@ def main():
                 ed_event = []
                 acc = []
 
-                for itr in range(40, 100):
+                for itr in range(100):
                     if not os.path.exists(f'data/output/synth/{length}'):
                         os.mkdir(f'data/output/synth/{length}')
 
                     if input_type == 'normal':
                         activity_file = f'data/activities/synth/{length}/{itr}.txt'
                         event_file = f'data/events/synth/{length}/{itr}.txt'
-                        diff_output = f'data/output/synth/{length}/{itr}.txt'
+
                     else:
                         activity_file = f'data/activities/synth/{length}/{itr}_aqtcfail.txt'
                         event_file = f'data/events/synth/{length}/{itr}_aqtcfail.txt'
-                        diff_output = f'data/output/synth/{length}/{itr}_aqtcfail.txt'
+
                     res = run_e2a(activity_file, event_file, mapping)
                     time.append(res[0])
                     ed_event.append(res[1])
@@ -177,8 +177,6 @@ def main():
                     extra.append(res[4])
                     acc.append(1 - res[5])
 
-                    # with open(diff_output, 'w') as out_file:
-                    #     out_file.write(res[6].__repr__())
                     progress_bar.update(1)
 
                 print(f'\n\nType: {input_type} length: {length}\n'
