@@ -135,7 +135,7 @@ def generate_mappings(map_file, de_file, extension='', device_failures=()):
 
 
 if __name__ == '__main__':
-    for act_len in [387, 1494, 2959, 10000, 30000]:
+    for act_len in [10000]:
         for itr in range(100):
             seed = act_len * 10000 + itr
             generate_testcase(normal_file='../data/mappings/with_q.txt',
