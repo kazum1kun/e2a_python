@@ -149,7 +149,7 @@ def main():
                       f'ED (Event): {res[1]:.5f}, Acc: {1 - res[5]:.5f}')
                 print('====================================================')
         else:
-            for length in [387, 1494, 2959, 10000, 30000]:
+            for length in [10000, 30000]:
                 time = []
                 missed = []
                 extra = []
@@ -157,7 +157,7 @@ def main():
                 ed_event = []
                 acc = []
 
-                for itr in range(1):
+                for itr in range(40, 100):
                     if not os.path.exists(f'data/output/synth/{length}'):
                         os.mkdir(f'data/output/synth/{length}')
 

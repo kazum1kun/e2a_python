@@ -10,7 +10,7 @@ __pycache__/
 # Generated test data
 data/activities/synth/
 data/events/synth/
-data*.zip
+*.zip
 
 
 # Distribution / packaging
