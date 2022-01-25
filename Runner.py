@@ -131,7 +131,7 @@ def process_segment(C, mappings, ni, indexed_segment):
 
 def main():
     progress_bar = tqdm(range(1000), desc='Processing synth test cases...')
-    input_types = ['normal', 'fail']
+    input_types = ['real', 'normal', 'fail']
     for input_type in input_types:
         if input_type == 'real' or input_type == 'normal':
             mapping = 'data/mappings/with_q.txt'
