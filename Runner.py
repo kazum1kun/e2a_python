@@ -1,21 +1,21 @@
 import functools
 import logging as log
-import os
 from collections import Counter
-from multiprocessing import Pool
+from multiprocessing import Pool, cpu_count
 
 import editdistance
 from tqdm import tqdm
+import numpy as np
 
 from OMatch import OMatch
 from SLN import SLN
 from utils.FileReader import *
 from utils.Timer import Timer
+from k_missing.KGenerator import compare
 
 
-def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi'):
+def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi', max_cpu=1.0):
     timer = Timer()
-    log.basicConfig(format='%(message)s', level=log.WARNING)
     C = C
 
     activities = read_activities(act_file)
@@ -46,7 +46,7 @@ def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi'):
             indexed_segments = ([i, segment] for i, segment in zip(range(len(segments)), segments))
 
             # Create a pool of worker threads and distribute the segments to these workers
-            pool = Pool()
+            pool = Pool(max(int(cpu_count() * max_cpu), 1))
             # results = pool.starmap(process_segment_partial, zip(range(len(segments)), segments))
             results = list(tqdm(pool.imap_unordered(process_segment_partial, indexed_segments), total=len(segments),
                                 desc='Processing segments...', disable=True))
@@ -79,28 +79,58 @@ def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi'):
 
     fin_time = timer.get_elapsed()
     timer.lap('Finished!')
-    # print('\nThe final activities calculated is')
     activities_calc = [x[0] for x in Aw_all]
-    # print(activities_calc)
-    diff = editdistance.eval(activities_calc, activities[1:, 1])
 
-    calc_counter = Counter(activities_calc)
-    actual_counter = Counter(activities[1:, 1])
-    calc_counter.subtract(actual_counter)
-    # Remove zeroes
-    diff_counter = {k: v for k, v in calc_counter.items() if v != 0}
+    print(activities_calc)
+    print(_)
+    print(f_opt_total)
 
-    missed = 0
-    extra = 0
-    for _, v in diff_counter.items():
-        if v < 0:
-            missed -= v
-        if v > 0:
-            extra += v
-    # print(f'\nActivity missed: {missed}, activity extra: {extra}')
+    sequences = read_mappings_list(map_file)
+    sequence_mapping = compare(sequences)
+    sequences_dict = {}
+    for entry in sequences:
+        sequences_dict[entry[0]] = entry[1]
 
-    error_pct = diff / len(activities[1:, 1])
-    return fin_time, f_opt_total, diff, missed, extra, error_pct, diff_counter
+    prob_matches = []
+    for aw in Aw_all:
+        possible_matches = sequence_mapping[sequences_dict[tuple(aw)[:2]]]
+        if len(possible_matches) > 1:
+            prob_matches.append([idx[0] for idx in possible_matches])
+        else:
+            prob_matches.append(possible_matches[0][0])
+
+    # Tally the lengths of the solution space
+    lengths = {}
+    total = 0
+    for match in prob_matches:
+        if isinstance(match, list):
+            length = len(match)
+        else:
+            length = 1
+        total += length
+
+        if length in lengths:
+            lengths[length] += 1
+        else:
+            lengths[length] = 1
+
+    lengths_sorted = sorted(lengths.items())
+    avg = total / len(prob_matches)
+
+    # Strict mode: matches have to be exact to count as correct
+    # In order to do so, replace all the activities we are uncertain to act -1,
+    # so it's guaranteed to be counted as wrong
+    matches_strict = [act if isinstance(act, int) else -1 for act in prob_matches]
+    diff_strict, missed_strict, extra_strict, error_pct_strict = get_diff(matches_strict, activities[1:, 1])
+
+    # Lax mode: for any matches it is only necessary to include it in the guesses to be count as correct
+    diff_lax, missed_lax, extra_lax, error_pct_lax = calc_ed(prob_matches, activities[1:, 1], strict_mode=True)
+
+    print(f'Match stats: {avg=:.2f}, dist={lengths_sorted}\n')
+    print(f'Strict: {diff_strict=}, {missed_strict=}, {extra_strict=}, {error_pct_strict=:.2f}\n'
+          f'Lax: {diff_lax=}, {missed_lax=}, {extra_lax=}, {error_pct_lax=:.2f}')
+
+    # return fin_time, f_opt_total, diff, missed, extra, error_pct, diff_counter
 
 
 # Splits the input events into smaller blocks based on the parameter and make sure none of the events are interrupted
@@ -128,64 +158,162 @@ def process_segment(C, mappings, ni, indexed_segment):
     return indexed_segment[0], f_opt, Aw[1:]
 
 
+def get_diff(calculated, actual):
+    diff = editdistance.eval(calculated, actual)
+
+    calc_counter = Counter(calculated)
+    actual_counter = Counter(actual)
+    calc_counter.subtract(actual_counter)
+    # Remove zeroes
+    diff_counter = {k: v for k, v in calc_counter.items() if v != 0}
+
+    missed = 0
+    extra = 0
+    for _, v in diff_counter.items():
+        if v < 0:
+            missed -= v
+        if v > 0:
+            extra += v
+
+    error_pct = diff / len(actual)
+    return diff, missed, extra, error_pct
+
+
+def calc_ed(prob_match, actual, strict_mode):
+    m = len(prob_match)
+    n = len(actual)
+    c = np.zeros((m + 1, n + 1))
+
+    for j in range(0, n + 1):
+        c[0, j] = j
+    for i in range(0, m + 1):
+        c[i, 0] = i
+
+    missed = 0
+    extra = 0
+
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if isinstance(prob_match[i - 1], int) and prob_match[i - 1] == actual[j - 1] or \
+               isinstance(prob_match[i - 1], list) and not strict_mode and actual[j - 1] in prob_match[i - 1]:
+                c[i, j] = c[i - 1, j - 1]
+            else:
+                c[i, j] = np.min((c[i-1, j-1], c[i, j-1], c[i-1, j])) + 1
+
+    error_pct = c[m, n] / n
+
+    return c[m, n], missed, extra, error_pct
+
+# def approximate_lax_dist(prob_match, actual, tolerance):
+#     idx_actual = 0
+#     idx_match = 0
+#     match = 0
+#     miss = 0
+#     extra = 0
+#
+#     for act in actual:
+#         for i in range(tolerance):
+#             temp_idx = idx_match + i
+#             if temp_idx < len(prob_match):
+#                 if (isinstance(prob_match[temp_idx], int) and act == prob_match[temp_idx]) or \
+#                         (isinstance(prob_match[temp_idx], list) and act in prob_match[temp_idx]):
+#                     match += 1
+#                     idx_match = temp_idx + 1
+#                     break
+#                 else:
+#                     miss += 1
+#                     break
+#         if idx_actual - idx_match == tolerance:
+#             idx_match += tolerance
+#             extra += tolerance
+#
+#         idx_actual += 1
+#     extra += len(prob_match) - idx_match
+#
+#     diff = len(actual) - match
+#     error_pct = diff / len(actual)
+#
+#     return diff, miss, extra, error_pct
+
+
 def main():
-    progress_bar = tqdm(range(1000), desc='Processing synth test cases...')
-    input_types = ['real', 'normal', 'fail']
-    for input_type in input_types:
-        if input_type == 'real' or input_type == 'normal':
-            mapping = 'data/mappings/with_q.txt'
-        else:
-            mapping = 'data/mappings/synth_combined.txt'
+    log.basicConfig(filename='debug.log', format='%(message)s', level=log.DEBUG)
 
-        if input_type == 'real':
-            for length in [387, 1494, 2959]:
-                activity_file = f'data/activities/real/{length}.txt'
-                event_file = f'data/events/real/{length}.txt'
-                res = run_e2a(activity_file, event_file, mapping)
+    mapping = f'data/mappings/examples/example_5.txt'
+    act_file = f'data/activities/examples/example_5.txt'
+    event_file = f'data/events/examples/example_5_alt.txt'
 
-                print(f'\n\nType: {input_type} length: {length}\n'
-                      f'Time: {res[0]:.5f}, Missed: {res[3]:.5f}, Extra: {res[4]:.5f}, ED (Act): {res[2]:.5f}, '
-                      f'ED (Event): {res[1]:.5f}, Acc: {1 - res[5]:.5f}')
-                print('====================================================')
-        else:
-            for length in [387, 1494, 2959, 10000, 30000]:
-                time = []
-                missed = []
-                extra = []
-                ed_act = []
-                ed_event = []
-                acc = []
+    run_e2a(act_file, event_file, mapping, method='mono', max_cpu=0.8)
 
-                for itr in range(100):
-                    if not os.path.exists(f'data/output/synth/{length}'):
-                        os.mkdir(f'data/output/synth/{length}')
 
-                    if input_type == 'normal':
-                        activity_file = f'data/activities/synth/{length}/{itr}.txt'
-                        event_file = f'data/events/synth/{length}/{itr}.txt'
-
-                    else:
-                        activity_file = f'data/activities/synth/{length}/{itr}_aqtcfail.txt'
-                        event_file = f'data/events/synth/{length}/{itr}_aqtcfail.txt'
-
-                    res = run_e2a(activity_file, event_file, mapping)
-                    time.append(res[0])
-                    ed_event.append(res[1])
-                    ed_act.append(res[2])
-                    missed.append(res[3])
-                    extra.append(res[4])
-                    acc.append(1 - res[5])
-
-                    progress_bar.update(1)
-
-                print(f'\n\nType: {input_type} length: {length}\n'
-                      f'Time: avg={np.mean(time):.5f}, median={np.median(time):.5f}, min={np.min(time):.5f}, max={np.max(time):.5f}, std={np.std(time):.5f}\n'
-                      f'Missed: avg={np.mean(missed):.5f}, median={np.median(missed):.5f}, min={np.min(missed):.5f}, max={np.max(missed):.5f}, std={np.std(missed):.5f}\n'
-                      f'Extra: avg={np.mean(extra):.5f}, median={np.median(extra):.5f}, min={np.min(extra):.5f}, max={np.max(extra):.5f}, std={np.std(extra):.5f}\n'
-                      f'ED (Act): avg={np.mean(ed_act):.5f}, median={np.median(ed_act):.5f}, min={np.min(ed_act):.5f}, max={np.max(ed_act):.5f}, std={np.std(ed_act):.5f}\n'
-                      f'ED (Event): avg={np.mean(ed_event):.5f}, median={np.median(ed_event):.5f}, min={np.min(ed_event):.5f}, max={np.max(ed_event):.5f}, std={np.std(ed_event):.5f}\n'
-                      f'Acc: avg={np.mean(acc):.5f}, median={np.median(acc):.5f}, min={np.min(acc):.5f}, max={np.max(acc):.5f}, std={np.std(acc):.5f}')
-                print('====================================================')
+    #
+    # for device in ['AL', 'AQ', 'DW', 'KM', 'RC', 'RD', 'RS', 'SC', 'TB', 'TC', 'TP']:
+    #     for length in [387, 1494, 2959]:
+    #         print(f'\nProcessing {device}, length: {length}')
+    #         mapping = f'data/mappings/k_missing/{device}_fail.txt'
+    #         act_file = f'data/activities/synth/dev_fails/{device}_{length}.txt'
+    #         event_file = f'data/events/synth/dev_fails/{device}_{length}.txt'
+    #
+    #         run_e2a(act_file, event_file, mapping, max_cpu=0.8)
+    # progress_bar = tqdm(range(1000), desc='Processing synth test cases...')
+    # # input_types = ['real', 'normal', 'fail']
+    # input_types = ['normal']
+    # for input_type in input_types:
+    #     if input_type == 'real' or input_type == 'normal':
+    #         mapping = 'data/mappings/with_q.txt'
+    #     else:
+    #         mapping = 'data/mappings/synth_combined.txt'
+    #
+    #     if input_type == 'real':
+    #         for length in [387, 1494, 2959]:
+    #             activity_file = f'data/activities/real/{length}.txt'
+    #             event_file = f'data/events/real/{length}.txt'
+    #             res = run_e2a(activity_file, event_file, mapping)
+    #
+    #             print(f'\n\nType: {input_type} length: {length}\n'
+    #                   f'Time: {res[0]:.5f}, Missed: {res[3]:.5f}, Extra: {res[4]:.5f}, ED (Act): {res[2]:.5f}, '
+    #                   f'ED (Event): {res[1]:.5f}, Acc: {1 - res[5]:.5f}')
+    #             print('====================================================')
+    #     else:
+    #         # for length in [387, 1494, 2959, 10000, 30000]:
+    #         for length in [387]:
+    #             time = []
+    #             missed = []
+    #             extra = []
+    #             ed_act = []
+    #             ed_event = []
+    #             acc = []
+    #
+    #             for itr in range(100):
+    #                 if not os.path.exists(f'data/output/synth/{length}'):
+    #                     os.mkdir(f'data/output/synth/{length}')
+    #
+    #                 if input_type == 'normal':
+    #                     activity_file = f'data/activities/synth/{length}/{itr}.txt'
+    #                     event_file = f'data/events/synth/{length}/{itr}.txt'
+    #
+    #                 else:
+    #                     activity_file = f'data/activities/synth/{length}/{itr}_aqtcfail.txt'
+    #                     event_file = f'data/events/synth/{length}/{itr}_aqtcfail.txt'
+    #
+    #                 res = run_e2a(activity_file, event_file, mapping)
+    #                 time.append(res[0])
+    #                 ed_event.append(res[1])
+    #                 ed_act.append(res[2])
+    #                 missed.append(res[3])
+    #                 extra.append(res[4])
+    #                 acc.append(1 - res[5])
+    #
+    #                 progress_bar.update(1)
+    #
+    #             print(f'\n\nType: {input_type} length: {length}\n'
+    #                   f'Time: avg={np.mean(time):.5f}, median={np.median(time):.5f}, min={np.min(time):.5f}, max={np.max(time):.5f}, std={np.std(time):.5f}\n'
+    #                   f'Missed: avg={np.mean(missed):.5f}, median={np.median(missed):.5f}, min={np.min(missed):.5f}, max={np.max(missed):.5f}, std={np.std(missed):.5f}\n'
+    #                   f'Extra: avg={np.mean(extra):.5f}, median={np.median(extra):.5f}, min={np.min(extra):.5f}, max={np.max(extra):.5f}, std={np.std(extra):.5f}\n'
+    #                   f'ED (Act): avg={np.mean(ed_act):.5f}, median={np.median(ed_act):.5f}, min={np.min(ed_act):.5f}, max={np.max(ed_act):.5f}, std={np.std(ed_act):.5f}\n'
+    #                   f'ED (Event): avg={np.mean(ed_event):.5f}, median={np.median(ed_event):.5f}, min={np.min(ed_event):.5f}, max={np.max(ed_event):.5f}, std={np.std(ed_event):.5f}\n'
+    #                   f'Acc: avg={np.mean(acc):.5f}, median={np.median(acc):.5f}, min={np.min(acc):.5f}, max={np.max(acc):.5f}, std={np.std(acc):.5f}')
+    #             print('====================================================')
 
 
 if __name__ == '__main__':

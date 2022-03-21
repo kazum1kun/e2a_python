@@ -1,3 +1,5 @@
+import re
+
 import numpy as np
 
 
@@ -74,8 +76,9 @@ def read_mappings(file):
 
         for line in map_file:
             # The first entry is an activity and the following entries are the resulting events
-            act, *events = line.strip().split(' ')
-            act = int(act)
+            act, sub, *events = line.strip().split(' ')
+            act = re.findall(r'\d+', act)
+            act = int(act[0])
             events = [ord(e) for e in events]
             events.insert(0, -1)
 
@@ -96,8 +99,9 @@ def read_mappings_0based(file):
 
         for line in map_file:
             # The first entry is an activity and the following entries are the resulting events
-            act, *events = line.strip().split(' ')
-            act = int(act)
+            act, sub, *events = line.strip().split(' ')
+            act = re.findall(r'\d+', act)
+            act = int(act[0])
 
             mappings[0] = []
 
@@ -122,3 +126,14 @@ def read_device_event(file):
                 mappings[act].append(events)
 
     return mappings
+
+
+# Read in events as list of lists
+def read_mappings_list(file):
+    with open(file, 'r') as map_file:
+        map_file.readline()
+        mappings = []
+        for line in map_file:
+            idx, sub_idx, *activities = line.strip().split(' ')
+            mappings.append([(int(re.findall(r'\d+', idx)[0]), int(re.findall(r'\d+', sub_idx)[0])), tuple(activities)])
+        return mappings

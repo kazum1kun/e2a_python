@@ -35,8 +35,15 @@ class SLN:
         p = self.p
         itr_num = 0
 
+        log.debug(f'{i=}, {k=}')
+        log.debug(f'w={self.w}')
+        log.debug(f'Aw={A_old}')
+        log.debug(f'f(A_w)={f_opt}\n')
+
         while not done:
             itr_num += 1
+
+            log.debug(f'Iteration {itr_num}')
             OPT = np.zeros((m,), np.float_)
             a = np.zeros((m,), np.int_)
             sigma = np.infty
@@ -46,6 +53,7 @@ class SLN:
                 if M[j]['i'] == i and M[j]['k'] == k:
                     delta[j] = 1
 
+                log.debug(f'{j=}, delta[j]={delta[j]}')
                 # Pre-store M[j].w for convenience
                 Mj_w = self.w[M[j]['i']][M[j]['k']]
 
@@ -56,25 +64,34 @@ class SLN:
                     if a[p[j]] + delta[j] < a[j - 1]:
                         sigma = np.min([sigma, (Mj_w + OPT[p[j]] - OPT[j - 1]) /
                                         (a[j - 1] - a[p[j]] - delta[j])])
+                    log.debug(f'Line 8: true')
+                    log.debug(f'{OPT[j]=}, {a[j]=}, {sigma=}\n')
                 elif Mj_w + OPT[p[j]] < OPT[j - 1]:
                     OPT[j] = OPT[j - 1]
                     a[j] = a[j - 1]
                     if a[p[j]] + delta[j] > a[j - 1]:
                         sigma = np.min([sigma, (Mj_w + OPT[p[j]] - OPT[j - 1]) /
                                         (a[j - 1] - a[p[j]] - delta[j])])
+                    log.debug('Line 13: true')
+                    log.debug(f'{OPT[j]=}, {a[j]=}, {sigma=}\n')
                 else:
                     if a[p[j]] + delta[j] <= a[j - 1]:
                         OPT[j] = OPT[j - 1]
                         a[j] = a[j - 1]
+                        log.debug('Line 19: true')
+                        log.debug(f'{OPT[j]=}, {a[j]=}\n')
                     else:
                         OPT[j] = Mj_w + OPT[p[j]]
                         a[j] = a[p[j]] + delta[j]
+                        log.debug('Line 23: true')
+                        log.debug(f'{OPT[j]=}, {a[j]=}\n')
 
             if sigma == np.infty:
                 sigma = 2
                 done = True
             mu = x + sigma
             nu = x + sigma / 2
+            log.debug(f'New {sigma=}, {mu=}, {nu=}\n')
 
             self.w[i][k] = nu
             A_new = self.get_aw()
@@ -85,6 +102,7 @@ class SLN:
                 if f_new < f_opt or (f_new == f_opt and nu == sigma / 2):
                     x_opt = nu
                     f_opt = f_new
+                log.debug(f'A_new changed: {A_new=}\n')
 
             self.w[i][k] = mu
             A_new = self.get_aw()
@@ -94,6 +112,7 @@ class SLN:
                 if f_new < f_opt:
                     x_opt = mu
                     f_opt = f_new
+                log.debug(f'A_new changed: {A_new=}\n')
 
             if not done:
                 x = mu
