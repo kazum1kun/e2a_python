@@ -3,14 +3,15 @@ import numpy as np
 
 class WindowMatch:
     def __init__(self, E, S):
-        self.E = E
+        self.event_time = E[:, 0]
+        self.event_seq = E[:, 1]
         self.S = S
 
     # Find the LCS between two input event sequences
     def find_matches(self, A, theta_d, theta_c):
-        curr_seq = self.S[A][1]
-        n = len(curr_seq) - 1
-        m = len(self.E) - 1
+        activity_seq = self.S[A][1]
+        n = len(activity_seq) - 1
+        m = len(self.event_seq) - 1
         M = set()
 
         # Init the solution matrix
@@ -21,15 +22,22 @@ class WindowMatch:
 
         # Define the window
         w_s = 1
-        w_e = theta_d
+        w_e = 0
 
         while w_e <= m:
+            if w_s > w_e:
+                # Find the biggest window that satisfy the time constraint
+                w_e = w_s
+                while w_e + 1 <= m and self.event_time[w_e + 1] - self.event_time[w_s] <= theta_d:
+                    w_e += 1
+                if w_e > m:
+                    break
             c[:] = 0
             # Iterate through events
             while i <= w_e:
                 for j in range(n + 1):
                     # Found an event match
-                    if self.E[i] == curr_seq[j]:
+                    if self.event_seq[i] == activity_seq[j]:
                         c[i, j] = c[i - 1, j - 1] + 1
                     # Otherwise, use the highest neighbor
                     else:
@@ -46,7 +54,7 @@ class WindowMatch:
 
                 # Backtrack to reconstruct the match
                 while col > 0:
-                    if self.E[row] == curr_seq[col]:
+                    if self.event_seq[row] == activity_seq[col]:
                         m_l.insert(0, row)
                         row -= 1
                         col -= 1
@@ -61,7 +69,9 @@ class WindowMatch:
 
             w_s += 1
             i = w_s
-            w_e += 1
+            # Check if the time is within the limit
+            if w_e + 1 < m and self.event_time[w_e + 1] - self.event_time[w_s] <= theta_d:
+                w_e += 1
 
         # Covert the set back to a list and sort it according to its first event
         M_list = list(M)
