@@ -22,16 +22,15 @@ class WindowMatch:
 
         # Define the window
         w_s = 1
-        w_e = 0
+        w_e = 1
 
         while w_e <= m:
-            if w_s > w_e:
-                # Find the biggest window that satisfy the time constraint
-                w_e = w_s
-                while w_e + 1 <= m and self.event_time[w_e + 1] - self.event_time[w_s] <= theta_d:
-                    w_e += 1
-                if w_e > m:
-                    break
+            # Find the biggest window that satisfy the time constraint
+            w_e = w_s
+            while w_e + 1 <= m and self.event_time[w_e + 1] - self.event_time[w_s] <= theta_d:
+                w_e += 1
+            if w_e > m:
+                break
             c[:] = 0
             # Iterate through events
             while i <= w_e:
