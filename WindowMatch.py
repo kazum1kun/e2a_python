@@ -26,11 +26,8 @@ class WindowMatch:
 
         while w_e <= m:
             # Find the biggest window that satisfy the time constraint
-            w_e = w_s
             while w_e + 1 <= m and self.event_time[w_e + 1] - self.event_time[w_s] <= theta_d:
                 w_e += 1
-            if w_e > m:
-                break
             c[:] = 0
             # Iterate through events
             while i <= w_e:
@@ -66,11 +63,10 @@ class WindowMatch:
                         col -= 1
                 M.add(tuple(m_l))
 
+            # Slide the window forward
             w_s += 1
             i = w_s
-            # Check if the time is within the limit
-            if w_e + 1 < m and self.event_time[w_e + 1] - self.event_time[w_s] <= theta_d:
-                w_e += 1
+            w_e = w_s
 
         # Covert the set back to a list and sort it according to its first event
         M_list = list(M)
