@@ -29,7 +29,6 @@ def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi'):
     ni = [len(mappings[activity]) - 1 for activity in range(1, n + 1)]
     # Make array 1-based
     ni.insert(0, 0)
-    ni = ni
 
     f_opt_total = 0
     Aw_all = []
