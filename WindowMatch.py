@@ -16,7 +16,6 @@ class WindowMatch:
 
         # Init the solution matrix
         c = np.full((m + 1, n + 1), 0, np.int_)
-        l = 0
 
         # Starting point of the next match
         w_s = 1
@@ -30,7 +29,7 @@ class WindowMatch:
             c[:] = 0
             # Iterate through events till we exceed time allowed
             while i <= m and self.event_time[i] <= end_time:
-                for j in range(n + 1):
+                for j in range(1, n + 1):
                     # Found an event match
                     if self.event_seq[i] == activity_seq[j]:
                         c[i, j] = c[i - 1, j - 1] + 1
@@ -42,7 +41,6 @@ class WindowMatch:
 
             # Check if the match meets the confidence threshold
             if c[i - 1, n] == n:
-                l += 1
                 row = i - 1
                 col = n
                 m_l = []
@@ -62,6 +60,7 @@ class WindowMatch:
                         col -= 1
                 M.add(tuple(m_l))
 
+            # Push the window forward
             w_s += 1
 
         # Covert the set back to a list and sort it according to its first event
