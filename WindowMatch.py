@@ -26,6 +26,7 @@ class WindowMatch:
                 w_s += 1
             i = w_s
             end_time = self.event_time[w_s] + theta_d
+            last_match = 0
             c[:] = 0
             # Iterate through events till we exceed time allowed
             while i <= m and self.event_time[i] <= end_time:
@@ -33,6 +34,9 @@ class WindowMatch:
                     # Found an event match
                     if self.event_seq[i] == activity_seq[j]:
                         c[i, j] = c[i - 1, j - 1] + 1
+                        # Keep track of the last occurrence of the last event in the activity sequence
+                        if j == n:
+                            last_match = i
                     # Otherwise, use the highest neighbor
                     else:
                         c[i, j] = np.max((c[i - 1, j], c[i, j - 1]))
@@ -47,17 +51,26 @@ class WindowMatch:
 
                 # Backtrack to reconstruct the match
                 while col > 0:
-                    if col == 1:
-                        m_l.insert(0, w_s)
-                        break
-                    if self.event_seq[row] == activity_seq[col]:
-                        m_l.insert(0, row)
-                        row -= 1
+                    # Special treatment for the last item in the match
+                    if col == n:
+                        m_l.insert(0, last_match)
                         col -= 1
-                    elif c[row - 1, col] >= c[row, col - 1]:
                         row -= 1
-                    else:
-                        col -= 1
+                        continue
+                    # Keep going up the rows till number starts to decrease
+                    while c[row - 1, col] == c[row, col]:
+                        row -= 1
+                    m_l.insert(0, row)
+                    row -= 1
+                    col -= 1
+                    # if self.event_seq[row] == activity_seq[col]:
+                    #     m_l.insert(0, row)
+                    #     row -= 1
+                    #     col -= 1
+                    # elif c[row - 1, col] >= c[row, col - 1]:
+                    #     row -= 1
+                    # else:
+                    #     col -= 1
                 M.add(tuple(m_l))
 
             # Push the window forward
