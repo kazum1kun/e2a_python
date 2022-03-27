@@ -8,29 +8,28 @@ class WindowMatch:
         self.S = S
 
     # Find the LCS between two input event sequences
-    def find_matches(self, A, theta_d, theta_c):
-        activity_seq = self.S[A][1]
+    def find_matches(self, A, k, theta_d):
+        activity_seq = self.S[A][k]
         n = len(activity_seq) - 1
         m = len(self.event_seq) - 1
         M = set()
 
         # Init the solution matrix
         c = np.full((m + 1, n + 1), 0, np.int_)
-
-        i = 1
         l = 0
 
-        # Define the window
+        # Starting point of the next match
         w_s = 1
-        w_e = 1
 
-        while w_e <= m:
-            # Find the biggest window that satisfy the time constraint
-            while w_e + 1 <= m and self.event_time[w_e + 1] - self.event_time[w_s] <= theta_d:
-                w_e += 1
+        while w_s <= m:
+            # Search for the next suitable start point
+            while w_s + 1 <= m and self.event_seq[w_s] != activity_seq[1]:
+                w_s += 1
+            i = w_s
+            end_time = self.event_time[w_s] + theta_d
             c[:] = 0
-            # Iterate through events
-            while i <= w_e:
+            # Iterate through events till we exceed time allowed
+            while i <= m and self.event_time[i] <= end_time:
                 for j in range(n + 1):
                     # Found an event match
                     if self.event_seq[i] == activity_seq[j]:
@@ -42,31 +41,28 @@ class WindowMatch:
                 i += 1
 
             # Check if the match meets the confidence threshold
-            if c[w_e, n] / n >= theta_c:
+            if c[i - 1, n] == n:
                 l += 1
-                row = w_e
+                row = i - 1
                 col = n
                 m_l = []
 
                 # Backtrack to reconstruct the match
                 while col > 0:
+                    if col == 1:
+                        m_l.insert(0, w_s)
+                        break
                     if self.event_seq[row] == activity_seq[col]:
                         m_l.insert(0, row)
                         row -= 1
                         col -= 1
-                    elif c[row - 1, col] > c[row, col - 1]:
+                    elif c[row - 1, col] >= c[row, col - 1]:
                         row -= 1
                     else:
                         col -= 1
-
-                    if row < w_s:
-                        col -= 1
                 M.add(tuple(m_l))
 
-            # Slide the window forward
             w_s += 1
-            i = w_s
-            w_e = w_s
 
         # Covert the set back to a list and sort it according to its first event
         M_list = list(M)
