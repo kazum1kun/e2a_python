@@ -1,7 +1,9 @@
 import functools
 import logging as log
+import os
 from collections import Counter
-from multiprocessing import Pool, cpu_count
+from multiprocessing import Pool
+import psutil
 
 import editdistance
 from tqdm import tqdm
@@ -10,11 +12,12 @@ import numpy as np
 from OMatch import OMatch
 from SLN import SLN
 from utils.FileReader import *
+from utils.FileWriter import *
 from utils.Timer import Timer
 from k_missing.KGenerator import compare
 
 
-def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi', max_cpu=1.0):
+def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi'):
     timer = Timer()
     C = C
 
@@ -47,7 +50,8 @@ def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi', max_cpu=1.0
             indexed_segments = ([i, segment] for i, segment in zip(range(len(segments)), segments))
 
             # Create a pool of worker threads and distribute the segments to these workers
-            pool = Pool(max(int(cpu_count() * max_cpu), 1))
+            pool = Pool()
+
             # results = pool.starmap(process_segment_partial, zip(range(len(segments)), segments))
             results = list(tqdm(pool.imap_unordered(process_segment_partial, indexed_segments), total=len(segments),
                                 desc='Processing segments...', disable=True))
@@ -116,22 +120,24 @@ def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi', max_cpu=1.0
     avg = total / len(prob_matches)
 
     # Strict mode: matches have to be exact to count as correct
-    # In order to do so, replace all the activities we are uncertain to act -1,
-    # so it's guaranteed to be counted as wrong
-    matches_strict = [act if isinstance(act, int) else -1 for act in prob_matches]
     diff_strict, missed_strict, extra_strict, error_pct_strict = \
         calc_ed(prob_matches, activities[1:, 1], strict_mode=True)
 
     # Lax mode: for any matches it is only necessary to include it in the guesses to be count as correct
     diff_lax, missed_lax, extra_lax, error_pct_lax = calc_ed(prob_matches, activities[1:, 1], strict_mode=False)
 
-    print(f'Match stats: {avg=:.2f}, dist={lengths_sorted}\n')
-    print(f'Strict: {diff_strict=}, {missed_strict=}, {extra_strict=}, {error_pct_strict=:.2f}\n'
-          f'Lax: {diff_lax=}, {missed_lax=}, {extra_lax=}, {error_pct_lax=:.2f}\n'
-          f'OG Edit Dist: {ed_original}\n')
+    # Return results as a dictionary
+    res = {
+        "avg_length": avg,
+        "length_dist": lengths_sorted,
+        "diff_strict": diff_strict,
+        "diff_lax": diff_lax,
+        "error_strict": error_pct_strict,
+        "error_lax": error_pct_lax,
+        "diff_original":ed_original
+    }
 
-
-    # return fin_time, f_opt_total, diff, missed, extra, error_pct, diff_counter
+    return res
 
 
 # Splits the input events into smaller blocks based on the parameter and make sure none of the events are interrupted
@@ -153,6 +159,9 @@ def split_events(M, E):
 
 
 def process_segment(C, mappings, ni, indexed_segment):
+    # Limit CPU usage by setting its priority to "below normal"
+    pid = psutil.Process(os.getpid())
+    pid.nice(psutil.BELOW_NORMAL_PRIORITY_CLASS)
     sln = SLN(mappings, indexed_segment[1], ni)
     _, Aw, f_opt = sln.sln_nd(C)
 
@@ -238,35 +247,43 @@ def calc_ed(prob_match, actual, strict_mode):
 
 
 def main():
-    log.basicConfig(filename='debug.log', format='%(message)s', level=log.DEBUG)
+    log.basicConfig(filename='debug.log', format='%(message)s', level=log.INFO)
 
-    mapping = f'data/mappings/with_q.txt'
-    for length in [387, 1494, 2959]:
-        act_file = f'data/activities/synth/dev_fails/none_{length}.txt'
-        event_file = f'data/events/synth/dev_fails/none_{length}.txt'
+    progress_bar = tqdm(range(15), desc='Processing synth test cases...')
 
-        print(f'Running original length {length}')
-        run_e2a(act_file, event_file, mapping, max_cpu=0.8)
+    for scenario in ['none', 'RS', 'AL_RS_SC']:
+        mapping_file = f'data/mappings/k_missing/{scenario}_fail.txt'
+        for act_len in [30000]:
+            for itr in range(1):
+                activity_file = f'data/activities/synth/{act_len}/{itr}_{scenario}.txt'
+                event_file = f'data/events/synth/{act_len}/{itr}_{scenario}.txt'
 
-    for activity in ['AQ', 'RS', 'AL_RS_SC']:
-        for length in [387, 1494, 2959]:
-            mapping = f'data/mappings/k_missing/{activity}_fail.txt'
-            act_file = f'data/activities/synth/dev_fails/{activity}_{length}.txt'
-            event_file = f'data/events/synth/dev_fails/{activity}_{length}.txt'
+                res = run_e2a(activity_file, event_file, mapping_file)
+                out_file = f'data/output/synth/{act_len}/{itr}_{scenario}.txt'
+                write_dictionary_json(res, out_file)
 
-            print(f'Running {activity} length {length}')
-            run_e2a(act_file, event_file, mapping, max_cpu=0.8)
+                progress_bar.update(1)
 
 
+    # mapping = f'data/mappings/with_q.txt'
+    # for length in [387, 1494, 2959]:
+    #     act_file = f'data/activities/synth/dev_fails/none_{length}.txt'
+    #     event_file = f'data/events/synth/dev_fails/none_{length}.txt'
     #
-    # for device in ['AL', 'AQ', 'DW', 'KM', 'RC', 'RD', 'RS', 'SC', 'TB', 'TC', 'TP']:
+    #     print(f'Running original length {length}')
+    #     run_e2a(act_file, event_file, mapping, max_cpu=0.8)
+    #
+    # for activity in ['AQ', 'RS', 'AL_RS_SC']:
     #     for length in [387, 1494, 2959]:
-    #         print(f'\nProcessing {device}, length: {length}')
-    #         mapping = f'data/mappings/k_missing/{device}_fail.txt'
-    #         act_file = f'data/activities/synth/dev_fails/{device}_{length}.txt'
-    #         event_file = f'data/events/synth/dev_fails/{device}_{length}.txt'
+    #         mapping = f'data/mappings/k_missing/{activity}_fail.txt'
+    #         act_file = f'data/activities/synth/dev_fails/{activity}_{length}.txt'
+    #         event_file = f'data/events/synth/dev_fails/{activity}_{length}.txt'
     #
+    #         print(f'Running {activity} length {length}')
     #         run_e2a(act_file, event_file, mapping, max_cpu=0.8)
+
+
+
     # progress_bar = tqdm(range(1000), desc='Processing synth test cases...')
     # # input_types = ['real', 'normal', 'fail']
     # input_types = ['normal']

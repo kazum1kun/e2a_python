@@ -163,8 +163,9 @@ if __name__ == '__main__':
         for act_len in [387, 1494, 2959, 10000, 30000]:
             for itr in range(100):
                 seed = act_len * 10000 + itr
-                generate_testcase(normal_file='../data/mappings/with_q.txt',
-                                  number=act_len, generate_partial=True, generate_fail=False,
+                generate_testcase(normal_file=f'../data/mappings/k_missing/{scenario}_fail.txt',
+                                  failed_file=None,
+                                  number=act_len, generate_partial=True,
                                   prob_src='../data/activities/real/2959.txt', rand_seed=seed,
                                   folder=str(act_len), filename=f'{itr}_{scenario}')
 
