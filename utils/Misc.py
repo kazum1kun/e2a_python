@@ -1,3 +1,6 @@
+import json
+import os.path
+
 from FileReader import read_mappings_0based
 
 
@@ -51,20 +54,49 @@ def find_identical_sequences(mapping):
     return act_sequences
 
 
-for device in ['AL', 'AQ', 'DW', 'KM', 'RC', 'RD', 'RS', 'SC', 'TB', 'TC', 'TP', 'AL_RS', 'AL_RS_SC']:
-    file = f'../data/mappings/k_missing/{device}_fail.txt'
-    results = find_identical_sequences(read_mappings_0based(file))
-    # Count # of occurrences of activities for each sequence
-    total_count = 0
-    counter = {}
-    for sequence, activities in results.items():
-        activities_count = len(activities)
-        if activities_count in counter:
-            counter[activities_count] += 1
-        else:
-            counter[activities_count] = 1
-        total_count += activities_count
+# for device in ['AL', 'AQ', 'DW', 'KM', 'RC', 'RD', 'RS', 'SC', 'TB', 'TC', 'TP', 'AL_RS', 'AL_RS_SC']:
+#     file = f'../data/mappings/k_missing/{device}_fail.txt'
+#     results = find_identical_sequences(read_mappings_0based(file))
+#     # Count # of occurrences of activities for each sequence
+#     total_count = 0
+#     counter = {}
+#     for sequence, activities in results.items():
+#         activities_count = len(activities)
+#         if activities_count in counter:
+#             counter[activities_count] += 1
+#         else:
+#             counter[activities_count] = 1
+#         total_count += activities_count
+#
+#     print(f'Device: {device}')
+#     print(f'Avg length = {total_count / len(results)}')
+#     print(counter)
 
-    print(f'Device: {device}')
-    print(f'Avg length = {total_count / len(results)}')
-    print(counter)
+def generate_report(output_folder, suffixes, lengths):
+    for suffix in suffixes:
+        for length in lengths:
+            diff_strict_total = 0
+            diff_lax_total = 0
+            diff_orig_total = 0
+
+            for i in range(1000000):
+                fp = f'{output_folder}/{length}/{i}_{suffix}.json'
+
+                if os.path.exists(fp):
+                    with open(fp) as res_file:
+                        results = json.load(res_file)
+                        diff_strict_total += results["diff_strict"]
+                        diff_lax_total += results["diff_lax"]
+                        diff_orig_total += results["diff_original"]
+
+                else:
+                    print(f'Results for {suffix} Length {length}\n'
+                          f'Avg Strict Diff: {diff_strict_total / i}\n'
+                          f'Avg Lax Diff: {diff_lax_total / i}\n'
+                          f'Avg Orig Diff: {diff_orig_total / i}\n'
+                          f'Sample size: {i}\n')
+                    break
+
+
+generate_report('../data/output/synth', ['none', 'RS', 'AL_RS_SC'], [387, 1494, 2959, 10000])
+
