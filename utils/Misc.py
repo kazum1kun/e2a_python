@@ -1,3 +1,6 @@
+from FileReader import read_mappings_0based
+
+
 def verify_distribution():
     from FileReader import read_activities
     from collections import Counter
@@ -28,3 +31,40 @@ def calc_avg_event_length(folder_names, events_num):
 
         print(f'Len = {folder}, avg = {np.mean(len_normal)}, max = {np.max(len_normal)}, min = {np.min(len_normal)}\n'
               f'\tavg_mf = {np.mean(len_mf)}, max_mf = {np.max(len_mf)}, min_mf = {np.min(len_mf)}')
+
+
+# Check how many event sequences are identical in the given mapping
+def find_identical_sequences(mapping):
+    act_sequences = {}
+    act_idx = 1
+    for act, sequences in mapping.items():
+        ss_idx = 1
+        for subsequence in sequences:
+            ss = tuple(subsequence)
+            if ss in act_sequences:
+                act_sequences[ss].append((act_idx, ss_idx))
+            else:
+                act_sequences[ss] = [(act_idx, ss_idx)]
+            ss_idx += 1
+        act_idx += 1
+
+    return act_sequences
+
+
+for device in ['AL', 'AQ', 'DW', 'KM', 'RC', 'RD', 'RS', 'SC', 'TB', 'TC', 'TP', 'AL_RS', 'AL_RS_SC']:
+    file = f'../data/mappings/k_missing/{device}_fail.txt'
+    results = find_identical_sequences(read_mappings_0based(file))
+    # Count # of occurrences of activities for each sequence
+    total_count = 0
+    counter = {}
+    for sequence, activities in results.items():
+        activities_count = len(activities)
+        if activities_count in counter:
+            counter[activities_count] += 1
+        else:
+            counter[activities_count] = 1
+        total_count += activities_count
+
+    print(f'Device: {device}')
+    print(f'Avg length = {total_count / len(results)}')
+    print(counter)

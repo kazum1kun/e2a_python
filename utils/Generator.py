@@ -115,20 +115,24 @@ def generate_mappings(map_file, de_file, extension='', device_failures=()):
 
             # Ignore the first one, not usable
             if activity != 0:
+                sub = 1
                 for pattern in mappings_failed[activity]:
-                    failed_mapping.append(f'{activity} {" ".join(pattern)}\n')
+                    failed_mapping.append(f'{(activity, sub)} {" ".join(pattern)}\n')
+                    sub += 1
+                sub = 1
                 for pattern in mappings_combined[activity]:
-                    combined_mapping.append(f'{activity} {" ".join(pattern)}\n')
+                    combined_mapping.append(f'{(activity, sub)} {" ".join(pattern)}\n')
+                    sub += 1
 
         # Update the counter on top of the file
         failed_mapping[0] = f'{len(failed_mapping) - 1}\n'
         combined_mapping[0] = f'{len(combined_mapping) - 1}\n'
 
         # Write the updated mapping back to the file
-        with open(f'../data/mappings/mappings{extension}.txt', 'w') as mapping_file:
-            for line in failed_mapping:
-                mapping_file.write(line)
-        with open(f'../data/mappings/mappings{extension}_combined.txt', 'w') as mapping_file:
+        # with open(f'../data/mappings/k_missing/mappings{extension}.txt', 'w') as mapping_file:
+        #     for line in failed_mapping:
+        #         mapping_file.write(line)
+        with open(f'../data/mappings/k_missing/{extension}_fail.txt', 'w') as mapping_file:
             for line in combined_mapping:
                 mapping_file.write(line)
     else:
@@ -145,12 +149,22 @@ if __name__ == '__main__':
     #                           prob_src='../data/activities/real/2959.txt', rand_seed=seed,
     #                           folder=str(act_len), filename=str(itr))
 
-    # generate_mappings('../data/mappings/with_q.txt', '../data/device_event/e2a.txt',
-    #                   extension='-synth_aqtcfail', device_failures=('AQ', 'TC'))
-    for device in ['AL', 'AQ', 'DW', 'KM', 'RC', 'RD', 'RS', 'SC', 'TB', 'TC', 'TP']:
-        for length in [10, 387, 1494, 2959]:
-            generate_testcase(normal_file=f'../data/mappings/k_missing/{device}_fail.txt',
-                              failed_file=None,
-                              number=length, generate_partial=True,
-                              prob_src=None, rand_seed=None,
-                              folder='dev_fails', filename=f'{device}_{length}')
+    # generate_mappings('../data/mappings/k_missing/AL_RS_SC_fail.txt', '../data/device_event/e2a.txt',
+    #                   extension='AL_AQ_RS_SC', device_failures=('AQ',))
+    # for device in ['AL', 'AQ', 'DW', 'KM', 'RC', 'RD', 'RS', 'SC', 'TB', 'TC', 'TP', 'AL_RS', 'AL_RS_SC']:
+    #     for length in [10, 387, 1494, 2959]:
+    #         generate_testcase(normal_file=f'../data/mappings/k_missing/{device}_fail.txt',
+    #                           failed_file=None,
+    #                           number=length, generate_partial=True,
+    #                           prob_src=None, rand_seed=None,
+    #                           folder='dev_fails', filename=f'{device}_{length}')
+    #
+    for scenario in ['none', 'RS', 'AL_RS_SC']:
+        for act_len in [387, 1494, 2959, 10000, 30000]:
+            for itr in range(100):
+                seed = act_len * 10000 + itr
+                generate_testcase(normal_file='../data/mappings/with_q.txt',
+                                  number=act_len, generate_partial=True, generate_fail=False,
+                                  prob_src='../data/activities/real/2959.txt', rand_seed=seed,
+                                  folder=str(act_len), filename=f'{itr}_{scenario}')
+

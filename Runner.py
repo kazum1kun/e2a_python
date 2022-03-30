@@ -81,10 +81,7 @@ def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi', max_cpu=1.0
     fin_time = timer.get_elapsed()
     timer.lap('Finished!')
     activities_calc = [x[0] for x in Aw_all]
-
-    print(activities_calc)
-    print(_)
-    print(f_opt_total)
+    ed_original = editdistance.eval(activities_calc, activities[1:, 1])
 
     sequences = read_mappings_list(map_file)
     sequence_mapping = compare(sequences)
@@ -122,14 +119,17 @@ def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi', max_cpu=1.0
     # In order to do so, replace all the activities we are uncertain to act -1,
     # so it's guaranteed to be counted as wrong
     matches_strict = [act if isinstance(act, int) else -1 for act in prob_matches]
-    diff_strict, missed_strict, extra_strict, error_pct_strict = get_diff(matches_strict, activities[1:, 1])
+    diff_strict, missed_strict, extra_strict, error_pct_strict = \
+        calc_ed(prob_matches, activities[1:, 1], strict_mode=True)
 
     # Lax mode: for any matches it is only necessary to include it in the guesses to be count as correct
-    diff_lax, missed_lax, extra_lax, error_pct_lax = calc_ed(prob_matches, activities[1:, 1], strict_mode=True)
+    diff_lax, missed_lax, extra_lax, error_pct_lax = calc_ed(prob_matches, activities[1:, 1], strict_mode=False)
 
     print(f'Match stats: {avg=:.2f}, dist={lengths_sorted}\n')
     print(f'Strict: {diff_strict=}, {missed_strict=}, {extra_strict=}, {error_pct_strict=:.2f}\n'
-          f'Lax: {diff_lax=}, {missed_lax=}, {extra_lax=}, {error_pct_lax=:.2f}')
+          f'Lax: {diff_lax=}, {missed_lax=}, {extra_lax=}, {error_pct_lax=:.2f}\n'
+          f'OG Edit Dist: {ed_original}\n')
+
 
     # return fin_time, f_opt_total, diff, missed, extra, error_pct, diff_counter
 
@@ -240,11 +240,22 @@ def calc_ed(prob_match, actual, strict_mode):
 def main():
     log.basicConfig(filename='debug.log', format='%(message)s', level=log.DEBUG)
 
-    mapping = f'data/mappings/examples/example_5.txt'
-    act_file = f'data/activities/examples/example_5.txt'
-    event_file = f'data/events/examples/example_5_alt.txt'
+    mapping = f'data/mappings/with_q.txt'
+    for length in [387, 1494, 2959]:
+        act_file = f'data/activities/synth/dev_fails/none_{length}.txt'
+        event_file = f'data/events/synth/dev_fails/none_{length}.txt'
 
-    run_e2a(act_file, event_file, mapping, method='mono', max_cpu=0.8)
+        print(f'Running original length {length}')
+        run_e2a(act_file, event_file, mapping, max_cpu=0.8)
+
+    for activity in ['AQ', 'RS', 'AL_RS_SC']:
+        for length in [387, 1494, 2959]:
+            mapping = f'data/mappings/k_missing/{activity}_fail.txt'
+            act_file = f'data/activities/synth/dev_fails/{activity}_{length}.txt'
+            event_file = f'data/events/synth/dev_fails/{activity}_{length}.txt'
+
+            print(f'Running {activity} length {length}')
+            run_e2a(act_file, event_file, mapping, max_cpu=0.8)
 
 
     #
