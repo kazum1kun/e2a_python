@@ -51,10 +51,12 @@ def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi'):
 
             # Create a pool of worker threads and distribute the segments to these workers
             pool = Pool()
+            num_cpu = psutil.cpu_count() * 2
 
             # results = pool.starmap(process_segment_partial, zip(range(len(segments)), segments))
-            results = list(tqdm(pool.imap_unordered(process_segment_partial, indexed_segments), total=len(segments),
-                                desc='Processing segments...', disable=False))
+            results = list(tqdm(pool.imap_unordered(process_segment_partial, indexed_segments,
+                                                    chunksize=int(len(segments)/num_cpu)),
+                                total=len(segments), desc='Processing segments...', disable=False))
             pool.close()
             pool.join()
 
