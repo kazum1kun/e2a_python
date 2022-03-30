@@ -141,8 +141,8 @@ def compare(sequences, output_file=None):
         return sequence_mapping
 
 
-# result = generate_k_fails('../data/k_missing/full.txt', 1, '../data/k_missing/out_1.txt')
+# result = generate_k_fails('../data/k_missing/original.txt', 1, '../data/k_missing/out_1.txt')
 # compare(result, '../data/k_missing/identical_1.txt')
-# result = generate_dev_fails('../data/k_missing/full.txt', '../data/device_event/e2a.txt', '../data/k_missing/fails.txt')
+# result = generate_dev_fails('../data/k_missing/original.txt', '../data/device_event/e2a.txt', '../data/k_missing/fails.txt')
 # compare(result, '../data/k_missing/identical_fails.txt')
-# generate_one_dev_fails('../data/k_missing/full.txt', '../data/device_event/e2a.txt', '../data/mappings/k_missing')
+# generate_one_dev_fails('../data/k_missing/original.txt', '../data/device_event/e2a.txt', '../data/mappings/k_missing')
