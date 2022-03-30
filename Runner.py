@@ -54,7 +54,7 @@ def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi'):
 
             # results = pool.starmap(process_segment_partial, zip(range(len(segments)), segments))
             results = list(tqdm(pool.imap_unordered(process_segment_partial, indexed_segments), total=len(segments),
-                                desc='Processing segments...', disable=True))
+                                desc='Processing segments...', disable=False))
             pool.close()
             pool.join()
 
@@ -249,21 +249,28 @@ def calc_ed(prob_match, actual, strict_mode):
 def main():
     log.basicConfig(filename='debug.log', format='%(message)s', level=log.INFO)
 
-    progress_bar = tqdm(range(15), desc='Processing synth test cases...')
+    progress_bar = tqdm(range(60), desc='Processing synth test cases...')
 
-    for scenario in ['none', 'RS', 'AL_RS_SC']:
-        mapping_file = f'data/mappings/k_missing/{scenario}_fail.txt'
-        for act_len in [30000]:
-            for itr in range(1):
+    for itr in range(100):
+        for scenario in ['none', 'RS', 'AL_RS_SC']:
+            mapping_file = f'data/mappings/k_missing/{scenario}_fail.txt'
+            for act_len in [387, 1494, 2959, 10000]:
+            # for itr in range(2):
+                out_file = f'data/output/synth/{act_len}/{itr}_{scenario}.json'
+
+                # Skip the entries that are already computed
+                if os.path.exists(out_file):
+                    print(f'Skipping {out_file}')
+                    progress_bar.update(1)
+                    continue
+
                 activity_file = f'data/activities/synth/{act_len}/{itr}_{scenario}.txt'
                 event_file = f'data/events/synth/{act_len}/{itr}_{scenario}.txt'
 
                 res = run_e2a(activity_file, event_file, mapping_file)
-                out_file = f'data/output/synth/{act_len}/{itr}_{scenario}.txt'
                 write_dictionary_json(res, out_file)
 
                 progress_bar.update(1)
-
 
     # mapping = f'data/mappings/with_q.txt'
     # for length in [387, 1494, 2959]:
