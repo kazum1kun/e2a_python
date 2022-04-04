@@ -4,7 +4,6 @@ import os
 from collections import Counter
 from multiprocessing import Pool
 
-import numpy
 import psutil
 
 import editdistance

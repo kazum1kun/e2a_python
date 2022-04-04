@@ -169,7 +169,7 @@ class SLN:
         for A in Aw[1:]:
             E_calc.extend(self.S[A[0]][A[1]][1:])
 
-        return editdistance.eval(E_calc, self.E[1:])
+        return editdistance.eval(E_calc, self.E[:, 1][1:])
 
     # Using given Mw, obtain a corresponding device event sequence
     def get_aw(self):

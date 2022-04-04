@@ -6,9 +6,9 @@ from AkMatch import AkMatch
 from statistics import NormalDist
 
 # Alternative runner which tests AkMatch vs WindowMatch
-act_file = 'data/activities/real/2959.txt'
-event_file = 'data/events/real/2959.txt'
-map_file = 'data/mappings/with_q.txt'
+act_file = '../data/activities/real/2959.txt'
+event_file = '../data/events/real/2959.txt'
+map_file = '../data/mappings/with_q.txt'
 # act_file = 'data/activities/examples/test.txt'
 # event_file = 'data/events/examples/test.txt'
 # map_file = 'data/mappings/examples/test.txt'
