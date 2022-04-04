@@ -32,7 +32,7 @@ class AkMatch:
                 # Compare events one by one to build the LCS
                 for j in range(1, eta + 1):
                     # Found an event match
-                    if self.E[i] == curr_seq[j]:
+                    if self.E[i][1] == curr_seq[j]:
                         c[i][j] = c[i - 1][j - 1] + 1
                     # Otherwise, go with the highest neighbor
                     elif c[i - 1][j] >= c[i][j - 1]:
@@ -48,7 +48,7 @@ class AkMatch:
                     psi_i = np.full((col + 1,), -1, np.int_)
 
                     while col > 0:
-                        if self.E[row] == curr_seq[col]:
+                        if self.E[row][1] == curr_seq[col]:
                             psi_i[col] = row
                             row -= 1
                             col -= 1
@@ -56,7 +56,8 @@ class AkMatch:
                             row -= 1
                         else:
                             col -= 1
-                    L.append(psi_i)
+                    # Save time information
+                    L.append((psi_i, self.E[psi_i[1]][0]))
                     start = psi_i[1] + 1
                     i = start
                     if i <= m:

@@ -14,3 +14,6 @@ class Timer:
     def get_elapsed(self):
         curr = time.perf_counter()
         return curr - self.start
+
+    def reset(self):
+        self.start = time.perf_counter()
