@@ -8,7 +8,7 @@ class OMatch:
     def __init__(self, E, S, n, ni):
         akMatch = AkMatch(E, S)
         values = self.populate_m(akMatch, n, ni)
-        M_dt = [('i', np.int_), ('k', np.int_), ('alpha', np.int_), ('beta', np.int_)]
+        M_dt = [('i', np.int_), ('k', np.int_), ('alpha', np.int_), ('beta', np.int_), ('real_s', np.int_)]
         self.M = np.array(values, dtype=M_dt)
         self.M.sort(order='beta')
         # Enumerate the predecessor of a window/match
@@ -18,13 +18,13 @@ class OMatch:
     @staticmethod
     def populate_m(akMatch, n, ni):
         # Pseudo-entry to maintain 1-indexed array
-        all_values = [(-1, -1, -1, -1)]
+        all_values = [(-1, -1, -1, -1, -1)]
         for i in range(1, n + 1):
             for k in range(1, ni[i] + 1):
                 L = akMatch.find_matches(i, k)
-                # (i, k, alpha, beta)
+                # (i, k, alpha, beta, real_start)
                 # the last entry w is OMITTED to save some space and make sure the data syncs
-                values = [(i, k, l[1], l[-1]) for l in L]
+                values = [(i, k, l[0][1], l[0][-1], l[1]) for l in L]
                 # Sort the tuples according to non-decreasing order of beta
                 all_values.extend(values)
         return all_values

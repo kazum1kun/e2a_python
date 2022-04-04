@@ -3,6 +3,8 @@ import logging as log
 import os
 from collections import Counter
 from multiprocessing import Pool
+
+import numpy
 import psutil
 
 import editdistance
@@ -15,9 +17,10 @@ from utils.FileReader import *
 from utils.FileWriter import *
 from utils.Timer import Timer
 from k_missing.KGenerator import compare
+from utils.EditDistance import EditDistance
 
 
-def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi'):
+def run_e2a(act_file, event_file, map_file, aoi=None, C=1, method='seg_multi'):
     timer = Timer()
     C = C
 
@@ -37,9 +40,9 @@ def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi'):
     Aw_all = []
 
     if method == 'seg_multi' or method == 'seg':
-        oMatch = OMatch(events[:, 1], mappings, n, ni)
+        oMatch = OMatch(events, mappings, n, ni)
         timer.lap('OMatch initialization done')
-        segments, intervals = split_events(oMatch.M, events[:, 1])
+        segments, intervals = split_events(oMatch.M, events)
         timer.lap('Segmentation finished')
 
         if method == 'seg_multi':
@@ -54,8 +57,8 @@ def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi'):
 
             # results = pool.starmap(process_segment_partial, zip(range(len(segments)), segments))
             results = list(tqdm(pool.imap_unordered(process_segment_partial, indexed_segments,
-                                                    chunksize=int(len(segments)/num_cpu)),
-                                total=len(segments), desc='Processing segments...', disable=False))
+                                                    chunksize=np.max((int(len(segments) / num_cpu), 1))),
+                                total=len(segments), desc='Processing segments...', disable=True))
             pool.close()
             pool.join()
 
@@ -83,8 +86,7 @@ def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi'):
         f_opt_total += f_opt
         Aw_all.extend(Aw[1:])
 
-    fin_time = timer.get_elapsed()
-    timer.lap('Finished!')
+    timer.lap('Finished SLN')
     activities_calc = [x[0] for x in Aw_all]
     ed_original = editdistance.eval(activities_calc, activities[1:, 1])
 
@@ -98,16 +100,16 @@ def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi'):
     for aw in Aw_all:
         possible_matches = sequence_mapping[sequences_dict[tuple(aw)[:2]]]
         if len(possible_matches) > 1:
-            prob_matches.append([idx[0] for idx in possible_matches])
+            prob_matches.append(([idx[0] for idx in possible_matches], aw[4]))
         else:
-            prob_matches.append(possible_matches[0][0])
+            prob_matches.append((possible_matches[0][0], aw[4]))
 
     # Tally the lengths of the solution space
     lengths = {}
     total = 0
     for match in prob_matches:
-        if isinstance(match, list):
-            length = len(match)
+        if isinstance(match[0], list):
+            length = len(match[0])
         else:
             length = 1
         total += length
@@ -120,12 +122,18 @@ def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi'):
     lengths_sorted = sorted(lengths.items())
     avg = total / len(prob_matches)
 
+    ed = EditDistance([match[0] for match in prob_matches], activities[:, 1])
+
     # Strict mode: matches have to be exact to count as correct
-    diff_strict, missed_strict, extra_strict, error_pct_strict = \
-        calc_ed(prob_matches, activities[1:, 1], strict_mode=True)
+    # diff_strict, missed_strict, extra_strict, error_pct_strict = \
+    #     calc_ed(prob_matches, activities[1:, 1], strict_mode=True)
+    diff_strict = ed.calc_ed(True)
 
     # Lax mode: for any matches it is only necessary to include it in the guesses to be count as correct
-    diff_lax, missed_lax, extra_lax, error_pct_lax = calc_ed(prob_matches, activities[1:, 1], strict_mode=False)
+    # diff_lax, missed_lax, extra_lax, error_pct_lax = calc_ed(prob_matches, activities[1:, 1], strict_mode=False)
+    diff_lax = ed.calc_ed(False)
+
+    all_occ_timestamps = [int(match[1]) for match in prob_matches if equal_lax_array(match, aoi)]
 
     # Return results as a dictionary
     res = {
@@ -133,12 +141,25 @@ def run_e2a(act_file, event_file, map_file, C=1, method='seg_multi'):
         "length_dist": lengths_sorted,
         "diff_strict": diff_strict,
         "diff_lax": diff_lax,
-        "error_strict": error_pct_strict,
-        "error_lax": error_pct_lax,
-        "diff_original":ed_original
+        "diff_original": ed_original,
+        "all_timestamps": all_occ_timestamps
     }
 
+    timer.lap('All done!')
+    timer.reset()
+
     return res
+
+
+def equal_lax_array(calculated, expected_array):
+    return any([equal_lax(calculated, expected) for expected in expected_array])
+
+
+def equal_lax(calculated, expected):
+    if isinstance(calculated, int):
+        return calculated == expected
+    else:
+        return expected in calculated
 
 
 # Splits the input events into smaller blocks based on the parameter and make sure none of the events are interrupted
@@ -154,7 +175,7 @@ def split_events(M, E):
     intervals.insert(0, (1, candidates[0]))
 
     # Create segments of the event using the interval
-    segments = [np.insert(E[i[0]:i[1] + 1].copy(), 0, 0) for i in intervals]
+    segments = [np.insert(E[i[0]:i[1] + 1].copy(), 0, 0, 0) for i in intervals]
 
     return segments, intervals
 
@@ -190,63 +211,6 @@ def get_diff(calculated, actual):
     return diff, missed, extra, error_pct
 
 
-def calc_ed(prob_match, actual, strict_mode):
-    m = len(prob_match)
-    n = len(actual)
-    c = np.zeros((m + 1, n + 1))
-
-    for j in range(0, n + 1):
-        c[0, j] = j
-    for i in range(0, m + 1):
-        c[i, 0] = i
-
-    missed = 0
-    extra = 0
-
-    for i in range(1, m + 1):
-        for j in range(1, n + 1):
-            if isinstance(prob_match[i - 1], int) and prob_match[i - 1] == actual[j - 1] or \
-               isinstance(prob_match[i - 1], list) and not strict_mode and actual[j - 1] in prob_match[i - 1]:
-                c[i, j] = c[i - 1, j - 1]
-            else:
-                c[i, j] = np.min((c[i-1, j-1], c[i, j-1], c[i-1, j])) + 1
-
-    error_pct = c[m, n] / n
-
-    return c[m, n], missed, extra, error_pct
-
-# def approximate_lax_dist(prob_match, actual, tolerance):
-#     idx_actual = 0
-#     idx_match = 0
-#     match = 0
-#     miss = 0
-#     extra = 0
-#
-#     for act in actual:
-#         for i in range(tolerance):
-#             temp_idx = idx_match + i
-#             if temp_idx < len(prob_match):
-#                 if (isinstance(prob_match[temp_idx], int) and act == prob_match[temp_idx]) or \
-#                         (isinstance(prob_match[temp_idx], list) and act in prob_match[temp_idx]):
-#                     match += 1
-#                     idx_match = temp_idx + 1
-#                     break
-#                 else:
-#                     miss += 1
-#                     break
-#         if idx_actual - idx_match == tolerance:
-#             idx_match += tolerance
-#             extra += tolerance
-#
-#         idx_actual += 1
-#     extra += len(prob_match) - idx_match
-#
-#     diff = len(actual) - match
-#     error_pct = diff / len(actual)
-#
-#     return diff, miss, extra, error_pct
-
-
 def main():
     log.basicConfig(filename='debug.log', format='%(message)s', level=log.INFO)
 
@@ -256,8 +220,7 @@ def main():
         for scenario in ['none', 'RS', 'AL_RS_SC']:
             mapping_file = f'data/mappings/k_missing/{scenario}_fail.txt'
             for act_len in [387, 1494, 2959, 10000]:
-            # for itr in range(2):
-                out_file = f'data/output/synth/{act_len}/{itr}_{scenario}.json'
+                out_file = f'data/output/synth/{act_len}/{itr}_{scenario}_new.json'
 
                 # Skip the entries that are already computed
                 if os.path.exists(out_file):
@@ -268,7 +231,7 @@ def main():
                 activity_file = f'data/activities/synth/{act_len}/{itr}_{scenario}.txt'
                 event_file = f'data/events/synth/{act_len}/{itr}_{scenario}.txt'
 
-                res = run_e2a(activity_file, event_file, mapping_file)
+                res = run_e2a(activity_file, event_file, mapping_file, aoi=[1, 2, 3, 4, 5, 6])
                 write_dictionary_json(res, out_file)
 
                 progress_bar.update(1)
@@ -289,8 +252,6 @@ def main():
     #
     #         print(f'Running {activity} length {length}')
     #         run_e2a(act_file, event_file, mapping, max_cpu=0.8)
-
-
 
     # progress_bar = tqdm(range(1000), desc='Processing synth test cases...')
     # # input_types = ['real', 'normal', 'fail']
