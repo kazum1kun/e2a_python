@@ -1,4 +1,5 @@
 import glob
+from functools import partial
 
 from utils.FileReader import *
 from WindowMatch import WindowMatch
@@ -8,7 +9,7 @@ from statistics import NormalDist
 
 # Get check if the given activity occurred near the given timestamp
 # NOTE: delta will be applied both ways (forward and backward), effectively resulting in 2*delta search zone
-def check_activity(activities, time, delta, aoi):
+def __check_activity(activities, time, delta, aoi):
     activity_idx = np.where(np.logical_and(activities[:, 1] == aoi,
                                            np.logical_and(activities[:, 0] >= time - delta,
                                                           activities[:, 0] <= time + delta)))[0]
@@ -26,27 +27,63 @@ def check_activity(activities, time, delta, aoi):
 
 
 # Check a sequence of timestamps and compare it against the ground truth
-def check_input(activities, times, aoi, delta):
+def __check_input(activities, times, aoi, delta):
     correct = 0
     incorrect = 0
     duplicate = 0
     used_idx = set()
 
-    for act in aoi:
-        for time in times:
-            act_idx = check_activity(activities, act, time, delta)
-            if act_idx:
-                # Check if WindowMatch found a duplicate
-                if act_idx in used_idx:
-                    correct += 1
-                    duplicate += 1
-                else:
-                    correct += 1
-                    used_idx.add(act_idx)
+    for time in times:
+        check_partial = partial(__check_activity, activities, time, delta)
+        res = list(map(check_partial, aoi))
+
+        if not any(res):
+            incorrect += 1
+        else:
+            act_idx = next(item for item in res if item is not None)
+            if act_idx in used_idx:
+                duplicate += 1
+                correct += 1
             else:
-                incorrect += 1
+                correct += 1
+                used_idx.add(act_idx)
 
     return correct, incorrect, duplicate
+
+
+# Verify whether specific activities did occur on the timestamps specified in the output file
+def __verify_matches(output_file, activity_file, aoi):
+    times = read_json(output_file)["all_timestamps"]
+    activities = read_activities(activity_file)
+
+    expected = np.sum([np.count_nonzero(activities[:, 1] == i) for i in aoi])
+
+    return __check_input(activities, times, aoi, 5), expected
+
+
+def start_verifier():
+    for scenario in ['none', 'RS', 'AL_RS_SC']:
+        for act_len in [387, 1494, 2959, 10000]:
+            all_output = glob.glob(f'data/output/synth/{act_len}/*_{scenario}_new.json')
+            all_acts = glob.glob(f'data/activities/synth/{act_len}/*_{scenario}.txt')
+
+            correct_total = 0
+            incorrect_total = 0
+            expected_total = 0
+            missed_total = 0
+            duplicate_total = 0
+
+            for output, act in zip(all_output, all_acts):
+                aoi = [1, 2, 3, 4, 5, 6]
+                [correct, incorrect, duplicate], expected = __verify_matches(output, act, aoi)
+                correct_total += correct
+                incorrect_total += incorrect
+                expected_total += expected
+                missed_total += expected - (correct - duplicate)
+                duplicate_total += duplicate
+
+            print(f'{scenario=}, {act_len=}, expected = {expected_total}, correct={correct_total}, '
+                  f'duplicate={duplicate_total}, missed={missed_total}, total={correct_total + incorrect_total}')
 
 
 # Run the matching algorithms
@@ -69,28 +106,26 @@ def run_matching(act_file, event_file, map_file, aoi, delta):
     start_ak = set()
 
     for act in aoi:
-        duration = get_expected_duration(act, 0.9999)
+        duration = __get_expected_duration(act, 0.9999)
         for k in range(1, ni[act]):
             # Run the matching on each algorithm and add the timestamps of each match found
             result_wm = wm.find_matches(act, k, duration)
             result_ak = ak.find_matches(act, k)
-            start_wm.add([x[1] for x in result_wm])
-            start_ak.add([x[1] for x in result_ak])
+            start_wm.update([x[1] for x in result_wm])
+            start_ak.update([x[1] for x in result_ak])
 
-    wm_correct, wm_incorrect, wm_duplicate = check_input(activities, start_wm, aoi, delta)
-    ak_correct, ak_incorrect, ak_duplicate = check_input(activities, start_ak, aoi, delta)
-    expected = np.count_nonzero(activities[:, 1] in aoi)
+    wm_correct, wm_incorrect, wm_duplicate = __check_input(activities, start_wm, aoi, delta)
+    ak_correct, ak_incorrect, wm_duplicate = __check_input(activities, start_ak, aoi, delta)
+    expected = np.sum([np.count_nonzero(activities[:, 1] == i) for i in aoi])
 
-    wm_miss = expected - (wm_correct - wm_duplicate)
-    ak_miss = expected - (ak_correct - ak_duplicate)
+    wm_miss = expected - wm_correct
+    ak_miss = expected - ak_correct
 
-    print(f'{wm_correct=}, {wm_duplicate=}, {wm_miss=}, {wm_incorrect=}\n'
-          f'{ak_correct=}, {ak_duplicate=}, {ak_miss=}, {ak_incorrect=}\n'
-          f'{expected=}')
+    return wm_correct, wm_miss, wm_incorrect, ak_correct, ak_miss, ak_incorrect, expected
 
 
 # Get the expected activity duration given a percentile (result centered around mean)
-def get_expected_duration(activity, pct):
+def __get_expected_duration(activity, pct):
     # Hard-coded data from experiment data
     mean = [0, 15.927, 43.086, 10.553, 38.152, 10.553, 35.542]
     std = [0, 1.352, 9.363, 1.016, 8.668, 0.973, 12.047]
@@ -101,28 +136,37 @@ def get_expected_duration(activity, pct):
     return max_duration
 
 
-# Verify whether specific activities did occur on the timestamps specified in the output file
-def verify_matches(output_file, activity_file, aoi):
-    times = read_json(output_file)["all_timestamps"]
-    activities = read_activities(activity_file)
-
-    return check_input(activities, times, aoi, 5)
-
-
-def run_verifier():
+def start_matching():
     for scenario in ['none', 'RS', 'AL_RS_SC']:
         for act_len in [387, 1494, 2959, 10000]:
-            all_output = glob.glob(f'data/output/synth/{act_len}/*_{scenario}_new.json')
             all_acts = glob.glob(f'data/activities/synth/{act_len}/*_{scenario}.txt')
+            all_events = glob.glob(f'data/events/synth/{act_len}/*_{scenario}.txt')
+            mapping = f'data/mappings/k_missing/{scenario}_fail.txt'
+            aoi = [1, 2, 3, 4, 5, 6]
 
-            correct_total = 0
-            incorrect_total = 0
-            duplicate_total = 0
+            wm_correct_total = 0
+            wm_incorrect_total = 0
+            wm_missed_total = 0
+            ak_correct_total = 0
+            ak_incorrect_total = 0
+            ak_missed_total = 0
+            expected_total = 0
 
-            for output, act in zip(all_output, all_acts):
-                correct, incorrect, duplicate = verify_matches(output, act, [1, 2, 3, 4, 5, 6])
-                correct_total += correct
-                incorrect_total += incorrect
-                duplicate_total += duplicate
+            for act, event in zip(all_acts, all_events):
+                wm_correct, wm_miss, wm_incorrect, ak_correct, ak_miss, ak_incorrect, expected = \
+                    run_matching(act, event, mapping, aoi, 5)
 
-            print(f'{scenario=}, {act_len=}, correct={correct_total}, total={correct_total + incorrect_total}')
+                wm_correct_total += wm_correct
+                wm_incorrect_total += wm_incorrect
+                wm_missed_total += ak_miss
+
+                ak_correct_total += ak_correct
+                ak_incorrect_total += ak_incorrect
+                ak_missed_total += ak_miss
+
+                expected_total += expected
+
+            print(f'{scenario=}, {act_len=}\n'
+                  f'{wm_correct_total=}, {wm_missed_total=}, {wm_incorrect_total=}\n'
+                  f'{ak_correct_total=}, {ak_missed_total=}, {ak_incorrect_total=}\n'
+                  f'{expected_total=}')
