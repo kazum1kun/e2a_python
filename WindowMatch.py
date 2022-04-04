@@ -63,15 +63,7 @@ class WindowMatch:
                     m_l.insert(0, row)
                     row -= 1
                     col -= 1
-                    # if self.event_seq[row] == activity_seq[col]:
-                    #     m_l.insert(0, row)
-                    #     row -= 1
-                    #     col -= 1
-                    # elif c[row - 1, col] >= c[row, col - 1]:
-                    #     row -= 1
-                    # else:
-                    #     col -= 1
-                M.add(tuple(m_l))
+                M.add((tuple(m_l), self.event_time[m_l[0]]))
 
             # Push the window forward
             w_s += 1

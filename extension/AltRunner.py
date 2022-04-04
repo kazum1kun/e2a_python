@@ -1,42 +1,15 @@
-import numpy as np
+import glob
 
 from utils.FileReader import *
 from WindowMatch import WindowMatch
 from AkMatch import AkMatch
 from statistics import NormalDist
 
-# Alternative runner which tests AkMatch vs WindowMatch
-act_file = '../data/activities/real/2959.txt'
-event_file = '../data/events/real/2959.txt'
-map_file = '../data/mappings/with_q.txt'
-# act_file = 'data/activities/examples/test.txt'
-# event_file = 'data/events/examples/test.txt'
-# map_file = 'data/mappings/examples/test.txt'
-
-activities = read_activities(act_file)
-events = read_events(event_file)
-mappings = read_mappings(map_file)
-
-wm = WindowMatch(events, mappings)
-ak = AkMatch(events[:, 1], mappings)
-
-
-# Get the expected activity duration given a percentile (result centered around mean)
-def get_expected_duration(activity, pct):
-    # Hard-coded data from experiment data
-    mean = [0, 15.927, 43.086, 10.553, 38.152, 10.553, 35.542]
-    std = [0, 1.352, 9.363, 1.016, 8.668, 0.973, 12.047]
-
-    # Calculate the inverse cdf given the percentile
-    max_duration = NormalDist(mu=mean[activity], sigma=std[activity]).inv_cdf(pct)
-
-    return max_duration
-
 
 # Get check if the given activity occurred near the given timestamp
 # NOTE: delta will be applied both ways (forward and backward), effectively resulting in 2*delta search zone
-def check_activity(activity, time, delta):
-    activity_idx = np.where(np.logical_and(activities[:, 1] == activity,
+def check_activity(activities, time, delta, aoi):
+    activity_idx = np.where(np.logical_and(activities[:, 1] == aoi,
                                            np.logical_and(activities[:, 0] >= time - delta,
                                                           activities[:, 0] <= time + delta)))[0]
 
@@ -52,99 +25,104 @@ def check_activity(activity, time, delta):
     return ret
 
 
+# Check a sequence of timestamps and compare it against the ground truth
+def check_input(activities, times, aoi, delta):
+    correct = 0
+    incorrect = 0
+    duplicate = 0
+    used_idx = set()
+
+    for act in aoi:
+        for time in times:
+            act_idx = check_activity(activities, act, time, delta)
+            if act_idx:
+                # Check if WindowMatch found a duplicate
+                if act_idx in used_idx:
+                    correct += 1
+                    duplicate += 1
+                else:
+                    correct += 1
+                    used_idx.add(act_idx)
+            else:
+                incorrect += 1
+
+    return correct, incorrect, duplicate
+
+
 # Run the matching algorithms
-def run_matching(activities_interested, percentile, time_delta):
+def run_matching(act_file, event_file, map_file, aoi, delta):
+    # Alternative runner which tests AkMatch vs WindowMatch
+    activities = read_activities(act_file)
+    events = read_events(event_file)
+    mappings = read_mappings(map_file)
+
+    wm = WindowMatch(events, mappings)
+    ak = AkMatch(events, mappings)
+
     # Calculate ni values
     ni = [len(mappings[activity]) - 1 for activity in range(1, len(mappings) + 1)]
     # Make array 1-based
     ni.insert(0, 0)
 
-    wm_correct_total = 0
-    ak_correct_total = 0
-    wm_incorrect_total = 0
-    ak_incorrect_total = 0
-    wm_miss_total = 0
-    ak_miss_total = 0
-    wm_duplicate_total = 0
-    ak_duplicate_total = 0
-    expected_total = 0
+    # Using set to prevent dups
+    start_wm = set()
+    start_ak = set()
 
-    # Run the matching on each algorithm and add the results found to their corresponding list
-    for act in activities_interested:
-        duration = get_expected_duration(act, percentile)
-
-        wm_used_idx = set()
-        ak_used_idx = set()
-
-        # Statistics
-        wm_correct = 0
-        ak_correct = 0
-        wm_duplicate = 0
-        ak_duplicate = 0
-        wm_incorrect = 0
-        ak_incorrect = 0
-
+    for act in aoi:
+        duration = get_expected_duration(act, 0.9999)
         for k in range(1, ni[act]):
+            # Run the matching on each algorithm and add the timestamps of each match found
             result_wm = wm.find_matches(act, k, duration)
             result_ak = ak.find_matches(act, k)
+            start_wm.add([x[1] for x in result_wm])
+            start_ak.add([x[1] for x in result_ak])
 
-            # Since we are interested in the start time only, we extract the first entry (corresponding to the
-            # start time of activity). To prevent duplicates, we convert the list to set
-            start_wm = [x[0] for x in result_wm]
-            start_wm = set(start_wm)
-            start_ak = [x[1] for x in result_ak]
-            start_ak = set(start_ak)
+    wm_correct, wm_incorrect, wm_duplicate = check_input(activities, start_wm, aoi, delta)
+    ak_correct, ak_incorrect, ak_duplicate = check_input(activities, start_ak, aoi, delta)
+    expected = np.count_nonzero(activities[:, 1] in aoi)
 
-            # Check if the predicted start time correspond to the activity we wanted
-            for event_idx in start_wm:
-                event_time = events[:, 0][event_idx]
+    wm_miss = expected - (wm_correct - wm_duplicate)
+    ak_miss = expected - (ak_correct - ak_duplicate)
 
-                act_idx = check_activity(act, event_time, time_delta)
-                if act_idx:
-                    # Check if WindowMatch found a duplicate
-                    if act_idx in wm_used_idx:
-                        wm_correct += 1
-                        wm_duplicate += 1
-                    else:
-                        wm_correct += 1
-                        wm_used_idx.add(act_idx)
-                else:
-                    wm_incorrect += 1
-
-            for event_idx in start_ak:
-                event_time = events[:, 0][event_idx]
-
-                act_idx = check_activity(act, event_time, time_delta)
-                if act_idx:
-                    if act_idx in ak_used_idx:
-                        ak_correct += 1
-                        ak_duplicate += 1
-                    else:
-                        ak_correct += 1
-                        ak_used_idx.add(act_idx)
-                else:
-                    ak_incorrect += 1
-
-        # Expected # of occurrences of the activity
-        expected = np.count_nonzero(activities[:, 1] == act)
-
-        wm_miss = expected - (wm_correct - wm_duplicate)
-        ak_miss = expected - (ak_correct - ak_duplicate)
-
-        wm_correct_total += wm_correct
-        ak_correct_total += ak_correct
-        wm_incorrect_total += wm_incorrect
-        ak_incorrect_total += ak_incorrect
-        wm_miss_total += wm_miss
-        ak_miss_total += ak_miss
-        ak_duplicate_total += ak_duplicate
-        wm_duplicate_total += wm_duplicate
-        expected_total += expected
-
-    print(f'{percentile=}')
-    print(f'{wm_correct_total=}, {wm_duplicate_total=}, {wm_miss_total=}, {wm_incorrect_total=}\n'
-          f'{ak_correct_total=}, {ak_duplicate_total=}, {ak_miss_total=}, {ak_incorrect_total=}\n'
-          f'{expected_total=}')
+    print(f'{wm_correct=}, {wm_duplicate=}, {wm_miss=}, {wm_incorrect=}\n'
+          f'{ak_correct=}, {ak_duplicate=}, {ak_miss=}, {ak_incorrect=}\n'
+          f'{expected=}')
 
 
-run_matching([1, 2, 3, 4, 5, 6], percentile=0.999, time_delta=5)
+# Get the expected activity duration given a percentile (result centered around mean)
+def get_expected_duration(activity, pct):
+    # Hard-coded data from experiment data
+    mean = [0, 15.927, 43.086, 10.553, 38.152, 10.553, 35.542]
+    std = [0, 1.352, 9.363, 1.016, 8.668, 0.973, 12.047]
+
+    # Calculate the inverse cdf given the percentile
+    max_duration = NormalDist(mu=mean[activity], sigma=std[activity]).inv_cdf(pct)
+
+    return max_duration
+
+
+# Verify whether specific activities did occur on the timestamps specified in the output file
+def verify_matches(output_file, activity_file, aoi):
+    times = read_json(output_file)["all_timestamps"]
+    activities = read_activities(activity_file)
+
+    return check_input(activities, times, aoi, 5)
+
+
+def run_verifier():
+    for scenario in ['none', 'RS', 'AL_RS_SC']:
+        for act_len in [387, 1494, 2959, 10000]:
+            all_output = glob.glob(f'data/output/synth/{act_len}/*_{scenario}_new.json')
+            all_acts = glob.glob(f'data/activities/synth/{act_len}/*_{scenario}.txt')
+
+            correct_total = 0
+            incorrect_total = 0
+            duplicate_total = 0
+
+            for output, act in zip(all_output, all_acts):
+                correct, incorrect, duplicate = verify_matches(output, act, [1, 2, 3, 4, 5, 6])
+                correct_total += correct
+                incorrect_total += incorrect
+                duplicate_total += duplicate
+
+            print(f'{scenario=}, {act_len=}, correct={correct_total}, total={correct_total + incorrect_total}')

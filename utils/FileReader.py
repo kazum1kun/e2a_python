@@ -1,4 +1,5 @@
 import re
+import json
 
 import numpy as np
 
@@ -11,7 +12,7 @@ import numpy as np
 # where index is between 1 and 21 (the index of the user activity)
 # and time is the time this activity happened.
 #
-# Output: a N+1 by 2 array where the first row is all zeros (to maintain 1-based indexing)
+# Output: an N+1 by 2 array where the first row is all zeros (to maintain 1-based indexing)
 #                                and following rows has (time index) format as in the input
 def read_activities(file):
     with open(file, 'r') as act_file:
@@ -137,3 +138,10 @@ def read_mappings_list(file):
             idx, sub_idx, *activities = line.strip().split(' ')
             mappings.append([(int(re.findall(r'\d+', idx)[0]), int(re.findall(r'\d+', sub_idx)[0])), tuple(activities)])
         return mappings
+
+
+# Read in a json file and return it as a dict
+def read_json(file):
+    with open(file) as json_file:
+        return json.load(json_file)
+
