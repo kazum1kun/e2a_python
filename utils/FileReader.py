@@ -1,5 +1,5 @@
-import re
 import json
+import re
 
 import numpy as np
 
@@ -144,4 +144,3 @@ def read_mappings_list(file):
 def read_json(file):
     with open(file) as json_file:
         return json.load(json_file)
-

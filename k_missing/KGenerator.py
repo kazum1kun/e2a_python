@@ -30,7 +30,7 @@ def generate_k_fails(input_file, k, output_file):
 
             # Remove i events from each entry and add it to the k_missing dictionary
             # This question is equivalent to choosing len(e) - i event combinations from the list w/o replacing
-            combinations = itertools.combinations(entry, len(entry)-i)
+            combinations = itertools.combinations(entry, len(entry) - i)
 
             # Add the combinations to the list
             for c in combinations:
@@ -135,11 +135,11 @@ def compare(sequences, output_file=None):
         with open(output_file, 'w') as file:
             file.write(f'{len(sequence_mapping)}\n')
             # Output according to the number of identifiers attached to a sequence
-            for (sequence, identifiers) in sorted(sequence_mapping.items(), key=lambda item: len(item[1]), reverse=True):
+            for (sequence, identifiers) in sorted(sequence_mapping.items(), key=lambda item: len(item[1]),
+                                                  reverse=True):
                 file.write(f'{" ".join(sequence)} [len={len(identifiers)}] -> {", ".join(map(str, identifiers))}\n')
     else:
         return sequence_mapping
-
 
 # result = generate_k_fails('../data/k_missing/original.txt', 1, '../data/k_missing/out_1.txt')
 # compare(result, '../data/k_missing/identical_1.txt')

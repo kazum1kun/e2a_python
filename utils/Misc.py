@@ -1,8 +1,6 @@
 import json
 import os.path
 
-from FileReader import read_mappings_0based
-
 
 def verify_distribution():
     from FileReader import read_activities
@@ -99,4 +97,3 @@ def generate_report(output_folder, suffixes, lengths):
 
 
 generate_report('../data/output/synth', ['none', 'RS', 'AL_RS_SC'], [387, 1494, 2959, 10000])
-

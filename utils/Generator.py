@@ -177,4 +177,3 @@ if __name__ == '__main__':
                               number=act_len, generate_partial=True, generate_fail=True,
                               prob_src='../data/activities/real/2959.txt', rand_seed=seed,
                               folder=str(act_len), filename=str(itr))
-

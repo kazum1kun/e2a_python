@@ -4,19 +4,17 @@ import os
 from collections import Counter
 from multiprocessing import Pool
 
-import psutil
-
 import editdistance
+import psutil
 from tqdm import tqdm
-import numpy as np
 
 from OMatch import OMatch
 from SLN import SLN
+from k_missing.KGenerator import compare
+from utils.EditDistance import EditDistance
 from utils.FileReader import *
 from utils.FileWriter import *
 from utils.Timer import Timer
-from k_missing.KGenerator import compare
-from utils.EditDistance import EditDistance
 
 
 def run_e2a(act_file, event_file, map_file, aoi=None, C=1, method='seg_multi'):

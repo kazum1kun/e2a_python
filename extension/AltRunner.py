@@ -2,13 +2,13 @@ import glob
 import os
 from functools import partial
 from multiprocessing import Pool
+from statistics import NormalDist
+
 import psutil
 from tqdm import tqdm
 
-from utils.FileReader import *
 from WindowMatch import WindowMatch
-from AkMatch import AkMatch
-from statistics import NormalDist
+from utils.FileReader import *
 
 
 # Get check if the given activity occurred near the given timestamp
@@ -132,7 +132,7 @@ def run_matching(act_event, map_file, aoi, delta):
     # ak_miss = expected - ak_correct
 
     return wm_correct, wm_miss, wm_incorrect, expected
-           # ak_correct, ak_miss, ak_incorrect,
+    # ak_correct, ak_miss, ak_incorrect,
 
 
 # Get the expected activity duration given a percentile (result centered around mean)

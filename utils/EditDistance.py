@@ -1,8 +1,5 @@
-import os
-
 import numpy as np
 import psutil
-from multiprocessing import Pool
 
 
 class EditDistance:
@@ -40,7 +37,7 @@ class EditDistance:
                      self.actual[j] in self.prob_match[i]):
                 self.c[i, j] = self.c[i - 1, j - 1]
             else:
-                self.c[i, j] = np.min((self.c[i-1, j-1], self.c[i, j-1], self.c[i-1, j])) + 1
+                self.c[i, j] = np.min((self.c[i - 1, j - 1], self.c[i, j - 1], self.c[i - 1, j])) + 1
 
             if i == end[0] and j == end[1]:
                 break
