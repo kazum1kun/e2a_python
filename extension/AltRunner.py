@@ -1,5 +1,9 @@
 import glob
+import os
 from functools import partial
+from multiprocessing import Pool
+import psutil
+from tqdm import tqdm
 
 from utils.FileReader import *
 from WindowMatch import WindowMatch
@@ -9,7 +13,7 @@ from statistics import NormalDist
 
 # Get check if the given activity occurred near the given timestamp
 # NOTE: delta will be applied both ways (forward and backward), effectively resulting in 2*delta search zone
-def __check_activity(activities, time, delta, aoi):
+def check_activity(activities, time, delta, aoi):
     activity_idx = np.where(np.logical_and(activities[:, 1] == aoi,
                                            np.logical_and(activities[:, 0] >= time - delta,
                                                           activities[:, 0] <= time + delta)))[0]
@@ -27,14 +31,14 @@ def __check_activity(activities, time, delta, aoi):
 
 
 # Check a sequence of timestamps and compare it against the ground truth
-def __check_input(activities, times, aoi, delta):
+def check_input(activities, times, aoi, delta):
     correct = 0
     incorrect = 0
     duplicate = 0
     used_idx = set()
 
     for time in times:
-        check_partial = partial(__check_activity, activities, time, delta)
+        check_partial = partial(check_activity, activities, time, delta)
         res = list(map(check_partial, aoi))
 
         if not any(res):
@@ -52,13 +56,13 @@ def __check_input(activities, times, aoi, delta):
 
 
 # Verify whether specific activities did occur on the timestamps specified in the output file
-def __verify_matches(output_file, activity_file, aoi):
+def verify_matches(output_file, activity_file, aoi):
     times = read_json(output_file)["all_timestamps"]
     activities = read_activities(activity_file)
 
     expected = np.sum([np.count_nonzero(activities[:, 1] == i) for i in aoi])
 
-    return __check_input(activities, times, aoi, 5), expected
+    return check_input(activities, times, aoi, 5), expected
 
 
 def start_verifier():
@@ -75,7 +79,7 @@ def start_verifier():
 
             for output, act in zip(all_output, all_acts):
                 aoi = [1, 2, 3, 4, 5, 6]
-                [correct, incorrect, duplicate], expected = __verify_matches(output, act, aoi)
+                [correct, incorrect, duplicate], expected = verify_matches(output, act, aoi)
                 correct_total += correct
                 incorrect_total += incorrect
                 expected_total += expected
@@ -87,14 +91,20 @@ def start_verifier():
 
 
 # Run the matching algorithms
-def run_matching(act_file, event_file, map_file, aoi, delta):
+def run_matching(act_event, map_file, aoi, delta):
+    pid = psutil.Process(os.getpid())
+    pid.nice(psutil.BELOW_NORMAL_PRIORITY_CLASS)
+
+    act_file = act_event[0]
+    event_file = act_event[1]
+
     # Alternative runner which tests AkMatch vs WindowMatch
     activities = read_activities(act_file)
     events = read_events(event_file)
     mappings = read_mappings(map_file)
 
     wm = WindowMatch(events, mappings)
-    ak = AkMatch(events, mappings)
+    # ak = AkMatch(events, mappings)
 
     # Calculate ni values
     ni = [len(mappings[activity]) - 1 for activity in range(1, len(mappings) + 1)]
@@ -103,29 +113,30 @@ def run_matching(act_file, event_file, map_file, aoi, delta):
 
     # Using set to prevent dups
     start_wm = set()
-    start_ak = set()
+    # start_ak = set()
 
     for act in aoi:
-        duration = __get_expected_duration(act, 0.9999)
+        duration = get_expected_duration(act, 0.9999)
         for k in range(1, ni[act]):
             # Run the matching on each algorithm and add the timestamps of each match found
             result_wm = wm.find_matches(act, k, duration)
-            result_ak = ak.find_matches(act, k)
+            # result_ak = ak.find_matches(act, k)
             start_wm.update([x[1] for x in result_wm])
-            start_ak.update([x[1] for x in result_ak])
+            # start_ak.update([x[1] for x in result_ak])
 
-    wm_correct, wm_incorrect, wm_duplicate = __check_input(activities, start_wm, aoi, delta)
-    ak_correct, ak_incorrect, wm_duplicate = __check_input(activities, start_ak, aoi, delta)
+    wm_correct, wm_incorrect, wm_duplicate = check_input(activities, start_wm, aoi, delta)
+    # ak_correct, ak_incorrect, wm_duplicate = __check_input(activities, start_ak, aoi, delta)
     expected = np.sum([np.count_nonzero(activities[:, 1] == i) for i in aoi])
 
-    wm_miss = expected - wm_correct
-    ak_miss = expected - ak_correct
+    wm_miss = expected - (wm_correct - wm_duplicate)
+    # ak_miss = expected - ak_correct
 
-    return wm_correct, wm_miss, wm_incorrect, ak_correct, ak_miss, ak_incorrect, expected
+    return wm_correct, wm_miss, wm_incorrect, expected
+           # ak_correct, ak_miss, ak_incorrect,
 
 
 # Get the expected activity duration given a percentile (result centered around mean)
-def __get_expected_duration(activity, pct):
+def get_expected_duration(activity, pct):
     # Hard-coded data from experiment data
     mean = [0, 15.927, 43.086, 10.553, 38.152, 10.553, 35.542]
     std = [0, 1.352, 9.363, 1.016, 8.668, 0.973, 12.047]
@@ -147,26 +158,26 @@ def start_matching():
             wm_correct_total = 0
             wm_incorrect_total = 0
             wm_missed_total = 0
-            ak_correct_total = 0
-            ak_incorrect_total = 0
-            ak_missed_total = 0
+            # ak_correct_total = 0
+            # ak_incorrect_total = 0
+            # ak_missed_total = 0
             expected_total = 0
 
-            for act, event in zip(all_acts, all_events):
-                wm_correct, wm_miss, wm_incorrect, ak_correct, ak_miss, ak_incorrect, expected = \
-                    run_matching(act, event, mapping, aoi, 5)
+            pool = Pool()
+            partial_run = partial(run_matching, map_file=mapping, aoi=aoi, delta=5)
 
-                wm_correct_total += wm_correct
-                wm_incorrect_total += wm_incorrect
-                wm_missed_total += ak_miss
+            results = list(tqdm(pool.imap_unordered(partial_run, zip(all_acts, all_events)),
+                                total=len(all_acts), desc="Processing testcases..."))
 
-                ak_correct_total += ak_correct
-                ak_incorrect_total += ak_incorrect
-                ak_missed_total += ak_miss
+            pool.close()
+            pool.join()
 
-                expected_total += expected
+            wm_correct_total = np.sum([result[0] for result in results])
+            wm_missed_total = np.sum([result[1] for result in results])
+            wm_incorrect_total = np.sum([result[2] for result in results])
+            expected_total = np.sum([result[3] for result in results])
 
             print(f'{scenario=}, {act_len=}\n'
                   f'{wm_correct_total=}, {wm_missed_total=}, {wm_incorrect_total=}\n'
-                  f'{ak_correct_total=}, {ak_missed_total=}, {ak_incorrect_total=}\n'
-                  f'{expected_total=}')
+                  # f'{ak_correct_total=}, {ak_missed_total=}, {ak_incorrect_total=}\n'
+                  f'{expected_total=}\n')
