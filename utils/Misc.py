@@ -78,7 +78,7 @@ def generate_report(output_folder, suffixes, lengths):
             diff_orig_total = 0
 
             for i in range(1000000):
-                fp = f'{output_folder}/{length}/{i}_{suffix}.json'
+                fp = f'{output_folder}/{length}/{i}_{suffix}_new.json'
 
                 if os.path.exists(fp):
                     with open(fp) as res_file:

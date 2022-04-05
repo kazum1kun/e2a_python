@@ -43,7 +43,7 @@ class WindowMatch:
 
                 i += 1
 
-            # Check if the match meets the confidence threshold
+            # Check if a match is found
             if c[i - 1, n] == n:
                 row = i - 1
                 col = n
