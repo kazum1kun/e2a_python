@@ -79,7 +79,7 @@ def run_e2a(act_file, event_file, map_file, aoi=None, C=1, method='seg_multi'):
 
     # Non-separating version
     elif method == 'mono':
-        sln = SLN(mappings, events[:, 1], ni)
+        sln = SLN(mappings, events, ni)
         _, Aw, f_opt = sln.sln_nd(C)
         f_opt_total += f_opt
         Aw_all.extend(Aw[1:])
@@ -131,7 +131,10 @@ def run_e2a(act_file, event_file, map_file, aoi=None, C=1, method='seg_multi'):
     # diff_lax, missed_lax, extra_lax, error_pct_lax = calc_ed(prob_matches, activities[1:, 1], strict_mode=False)
     diff_lax = ed.calc_ed(False)
 
-    all_occ_timestamps = [int(match[1]) for match in prob_matches if equal_lax_array(match, aoi)]
+    if aoi:
+        all_occ_timestamps = [int(match[1]) for match in prob_matches if equal_lax_array(match, aoi)]
+    else:
+        all_occ_timestamps = None
 
     # Return results as a dictionary
     res = {
@@ -140,7 +143,8 @@ def run_e2a(act_file, event_file, map_file, aoi=None, C=1, method='seg_multi'):
         "diff_strict": diff_strict,
         "diff_lax": diff_lax,
         "diff_original": ed_original,
-        "all_timestamps": all_occ_timestamps
+        "all_timestamps": all_occ_timestamps,
+        "aw": Aw_all,
     }
 
     timer.lap('All done!')
