@@ -82,9 +82,6 @@ def check_input_list(activities, times, aoi, delta):
     for time in times:
         check_partial = partial(check_activity, activities, time, delta)
         res = list(map(check_partial, aoi))
-        # # check_partial = partial(check_activity, activities, time, delta)
-        # # res = list(map(check_partial, aoi))
-        # res = check_activity(activities, time, delta, aoi)
 
         if not any(res):
             incorrect += 1
@@ -126,8 +123,7 @@ def verify_matches(output_file, activity_file, aoi):
 
 def start_verifier():
     for scenario in ['none', 'RS', 'AL_RS_SC']:
-        for act_len in [387]:
-        # for act_len in [387, 1494, 2959, 10000]:
+        for act_len in [387, 1494, 2959, 10000]:
             all_output = sorted(glob.glob(f'data/output/synth/{act_len}/*_{scenario}_new.json'))
             all_acts = sorted(glob.glob(f'data/activities/synth/{act_len}/*_{scenario}.txt'))
 
@@ -136,17 +132,13 @@ def start_verifier():
             expected_total = 0
             missed_total = 0
 
-            count = 0
             for output, act in zip(all_output, all_acts):
-                if count > 10:
-                    break
                 aoi = [1, 2, 3, 4, 5, 6]
                 correct, miss, incorrect, expected = verify_matches(output, act, aoi)
                 correct_total += correct
                 incorrect_total += incorrect
                 expected_total += expected
                 missed_total += miss
-                count += 1
 
             print(f'{scenario=}, {act_len=}, expected = {expected_total}, correct={correct_total}, '
                   f'missed={missed_total}, incorrect={incorrect_total}, total={correct_total + incorrect_total}')
@@ -222,41 +214,20 @@ def start_matching():
             mapping = f'data/mappings/k_missing/{scenario}_fail.txt'
             aoi = [1, 2, 3, 4, 5, 6]
 
-            wm_correct_total = 0
-            wm_missed_total = 0
-            wm_incorrect_total = 0
-            expected_total = 0
-            wm_incorrect_adj_total = 0
-            #
-            # pool = Pool()
-            # partial_run = partial(run_matching, mapping, aoi, 5)
-            #
-            #
-            #
-            # results = list(tqdm(pool.imap_unordered(partial_run, zip(all_acts, all_events)),
-            #                     total=len(all_acts), desc="Processing testcases..."))
+            pool = Pool()
+            partial_run = partial(run_matching, mapping, aoi, 5)
+            results = list(tqdm(pool.imap_unordered(partial_run, zip(all_acts, all_events)),
+                                total=len(all_acts), desc="Processing testcases..."))
 
-            # pool.close()
-            # pool.join()
-            pbar = tqdm(range(100))
-            itr = 0
-            for acts_events in zip(all_acts, all_events):
-                wm_correct, wm_miss, wm_incorrect, expected, wm_incorrect_adj = \
-                    run_matching(mapping, aoi, 5, acts_events)
-                wm_correct_total += wm_correct
-                wm_missed_total += wm_miss
-                wm_incorrect_total += wm_incorrect
-                expected_total += expected
-                wm_incorrect_adj_total += wm_incorrect_adj
-                pbar.update(1)
-                itr += 1
+            pool.close()
+            pool.join()
 
-            # wm_correct_total = np.sum([result[0] for result in results])
-            # wm_missed_total = np.sum([result[1] for result in results])
-            # wm_incorrect_total = np.sum([result[2] for result in results])
-            # wm_duplicate_total = np.sum([result[3] for result in results])
-            # expected_total = np.sum([result[4] for result in results])
+            wm_correct_total = np.sum([result[0] for result in results])
+            wm_missed_total = np.sum([result[1] for result in results])
+            wm_incorrect_total = np.sum([result[2] for result in results])
+            expected_total = np.sum([result[3] for result in results])
+            wm_incorrect_adj_total = np.sum([result[4] for result in results])
 
             print(f'{scenario=}, {act_len=}\n'
-                  f'{wm_correct_total=}, {wm_missed_total=}, {wm_incorrect_total=} (adj = {wm_incorrect_adj_total})\n'
+                  f'{wm_correct_total=}, {wm_missed_total=}, {wm_incorrect_total=} (adj = {wm_incorrect_adj_total}), '
                   f'{expected_total=}\n')
