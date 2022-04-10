@@ -1,6 +1,8 @@
 import json
 import os.path
-
+import itertools
+from utils.FileReader import *
+from utils.FileWriter import write_list_txt
 
 
 def verify_distribution():
@@ -80,3 +82,19 @@ def generate_report(output_folder, suffixes, lengths):
 
 
 # generate_report('../data/output/synth', ['none', 'RS', 'AL_RS_SC'], [387, 1494, 2959, 10000])
+# Remove events related to certain device(s) from an activity sequence
+def remove_events(act_file, devices, out_path):
+    events = read_events(act_file)
+    device_event = read_device_event('data/device_event/e2a.txt')
+    removed_events = [ord(event) for device in devices for event in device_event[device]]
+    new_events = []
+
+    for event in events:
+        if event[1] in removed_events:
+            continue
+        new_events.append(f'{event[0]} {chr(int(event[1]))}')
+
+    new_events[0] = f'{len(new_events)}'
+
+    write_list_txt(new_events, out_path)
+

@@ -146,6 +146,17 @@ def start_verifier(delta):
                   f'missed={missed_total}, incorrect={incorrect_total}, total={correct_total + incorrect_total}')
 
 
+def start_verifier_real(delta):
+    for length in [387, 1494, 2959]:
+        output = f'data/output/real/{length}.json'
+        act = f'data/activities/real/{length}.txt'
+
+        aoi = [1, 2, 3, 4, 5, 6]
+        correct, missed, incorrect, expected = verify_matches(output, act, aoi, delta)
+
+        print(f'scenario=real, {length=}, {correct=}, {missed=}, {incorrect=}')
+
+
 # Run the matching algorithms
 def run_matching(map_file, aoi, delta, theta, act_event):
     pid = psutil.Process(os.getpid())
@@ -207,8 +218,7 @@ def get_expected_duration(activity, pct):
 
 
 def start_matching(delta, theta):
-    # for scenario in ['none', 'RS', 'AL_RS_SC']:
-    for scenario in ['AL_RS_SC']:
+    for scenario in ['none', 'RS', 'AL_RS_SC']:
         for act_len in [387, 1494, 2959, 10000]:
             all_acts = sorted(glob.glob(f'data/activities/synth/{act_len}/*_{scenario}.txt'))
             all_events = sorted(glob.glob(f'data/events/synth/{act_len}/*_{scenario}.txt'))
@@ -233,3 +243,24 @@ def start_matching(delta, theta):
             print(f'{scenario=}, {act_len=}\n'
                   f'{wm_correct_total=}, {wm_missed_total=}, {wm_incorrect_total=} (adj = {wm_incorrect_adj_total}), '
                   f'{expected_total=}\n')
+
+
+def start_matching_real(delta, theta):
+    mapping = 'data/mappings/with_q.txt'
+
+    for length in [387, 1494, 2959]:
+        aoi = [1, 2, 3, 4, 5, 6]
+        activities = f'data/activities/real/{length}.txt'
+        events = f'data/events/real/{length}.txt'
+
+        result = run_matching(mapping, aoi, delta, theta, (activities, events))
+
+        wm_correct_total = result[0]
+        wm_missed_total = result[1]
+        wm_incorrect_total = result[2]
+        expected_total = result[3]
+        wm_incorrect_adj_total = result[4]
+
+        print(f'scenario=real, {length=}\n'
+              f'{wm_correct_total=}, {wm_missed_total=}, {wm_incorrect_total=} (adj = {wm_incorrect_adj_total}), '
+              f'{expected_total=}\n')

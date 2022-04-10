@@ -45,7 +45,7 @@ def read_events(file):
     with open(file, 'r') as event_file:
         # Read the first line to obtain the number of lines
         num_events = int(event_file.readline())
-        events = np.zeros((num_events + 1, 2), np.int_)
+        events = np.zeros((num_events + 1, 2), np.float_)
         i = 1
 
         for line in event_file:
