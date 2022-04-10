@@ -2,6 +2,7 @@ import json
 import os.path
 
 
+
 def verify_distribution():
     from FileReader import read_activities
     from collections import Counter
@@ -52,24 +53,6 @@ def find_identical_sequences(mapping):
     return act_sequences
 
 
-# for device in ['AL', 'AQ', 'DW', 'KM', 'RC', 'RD', 'RS', 'SC', 'TB', 'TC', 'TP', 'AL_RS', 'AL_RS_SC']:
-#     file = f'../data/mappings/k_missing/{device}_fail.txt'
-#     results = find_identical_sequences(read_mappings_0based(file))
-#     # Count # of occurrences of activities for each sequence
-#     total_count = 0
-#     counter = {}
-#     for sequence, activities in results.items():
-#         activities_count = len(activities)
-#         if activities_count in counter:
-#             counter[activities_count] += 1
-#         else:
-#             counter[activities_count] = 1
-#         total_count += activities_count
-#
-#     print(f'Device: {device}')
-#     print(f'Avg length = {total_count / len(results)}')
-#     print(counter)
-
 def generate_report(output_folder, suffixes, lengths):
     for suffix in suffixes:
         for length in lengths:
@@ -96,4 +79,4 @@ def generate_report(output_folder, suffixes, lengths):
                     break
 
 
-generate_report('../data/output/synth', ['none', 'RS', 'AL_RS_SC'], [387, 1494, 2959, 10000])
+# generate_report('../data/output/synth', ['none', 'RS', 'AL_RS_SC'], [387, 1494, 2959, 10000])

@@ -144,12 +144,12 @@ def run_e2a(act_file, event_file, map_file, aoi=None, C=1, method='seg_multi'):
         "diff_lax": diff_lax,
         "diff_original": ed_original,
         "all_timestamps": all_occ_timestamps,
-        "possible_matches": prob_matches,
-        "aw": Aw_all,
     }
 
     timer.lap('All done!')
     timer.reset()
+
+    print(Aw_all)
 
     return res
 

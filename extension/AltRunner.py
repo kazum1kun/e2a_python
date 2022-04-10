@@ -7,7 +7,7 @@ from statistics import NormalDist
 import psutil
 from tqdm import tqdm
 
-from WindowMatch import WindowMatch
+from extension.WindowMatch import WindowMatch
 from utils.FileReader import *
 
 
@@ -54,22 +54,24 @@ def check_input(activities, times, aoi, delta):
                 correct += 1
                 used_idx.add(act_idx)
 
-    # Merge incorrect to a bigger window to smooth over data
     incorrect_sorted = sorted(incorrect_idx)
-    if len(incorrect_sorted) == 0:
-        return correct, incorrect, 0
-    start = incorrect_sorted[0]
-    last = incorrect_sorted[0]
-    incorrect_adj = 0
-    for i in range(len(incorrect_sorted)):
-        if (incorrect_sorted[i] - last) <= delta:
+    # Merge incorrect to a bigger window to smooth over data
+    if delta == 0 or len(incorrect_sorted) == 0:
+        incorrect_adj = incorrect
+    else:
+        last = incorrect_sorted[0]
+        incorrect_adj = 0
+        incorrect_current = 0
+        for i in range(len(incorrect_sorted)):
+            if (incorrect_sorted[i] - last) <= delta:
+                last = incorrect_sorted[i]
+                incorrect_current += 1
+                continue
+            incorrect_current = np.ceil(incorrect_current / (delta * 2))
+            incorrect_adj += incorrect_current
             last = incorrect_sorted[i]
-            continue
-        incorrect_adj += (last - start) / (delta * 2)
-        start = incorrect_sorted[i]
-        last = incorrect_sorted[i]
 
-    return correct, incorrect, incorrect_adj
+    return correct, incorrect, int(incorrect_adj)
 
 
 # Check a sequence of timestamps and compare it against the ground truth
@@ -97,7 +99,7 @@ def check_input_list(activities, times, aoi, delta):
 
 
 # Verify whether specific activities did occur on the timestamps specified in the output file
-def verify_matches(output_file, activity_file, aoi):
+def verify_matches(output_file, activity_file, aoi, delta):
     times = read_json(output_file)["all_timestamps"]
     activities = read_activities(activity_file)
 
@@ -107,7 +109,7 @@ def verify_matches(output_file, activity_file, aoi):
     expected_total = 0
 
     # for act in aoi:
-    correct, incorrect = check_input_list(activities, times, aoi, 5)
+    correct, incorrect = check_input_list(activities, times, aoi, delta)
 
     expected = np.sum([np.count_nonzero(activities[:, 1] == i) for i in aoi])
     # expected = np.count_nonzero(activities[:, 1] == act)
@@ -121,7 +123,7 @@ def verify_matches(output_file, activity_file, aoi):
     return ak_correct_total, ak_miss_total, ak_incorrect_total, expected_total
 
 
-def start_verifier():
+def start_verifier(delta):
     for scenario in ['none', 'RS', 'AL_RS_SC']:
         for act_len in [387, 1494, 2959, 10000]:
             all_output = sorted(glob.glob(f'data/output/synth/{act_len}/*_{scenario}_new.json'))
@@ -134,7 +136,7 @@ def start_verifier():
 
             for output, act in zip(all_output, all_acts):
                 aoi = [1, 2, 3, 4, 5, 6]
-                correct, miss, incorrect, expected = verify_matches(output, act, aoi)
+                correct, miss, incorrect, expected = verify_matches(output, act, aoi, delta)
                 correct_total += correct
                 incorrect_total += incorrect
                 expected_total += expected
@@ -145,7 +147,7 @@ def start_verifier():
 
 
 # Run the matching algorithms
-def run_matching(map_file, aoi, delta, act_event):
+def run_matching(map_file, aoi, delta, theta, act_event):
     pid = psutil.Process(os.getpid())
     pid.nice(psutil.BELOW_NORMAL_PRIORITY_CLASS)
 
@@ -174,10 +176,9 @@ def run_matching(map_file, aoi, delta, act_event):
         # Using set to prevent dups
         start_wm = set()
 
-        duration = 20
         for k in range(1, ni[act] + 1):
             # Run the matching on each algorithm and add the timestamps of each match found
-            result_wm = wm.find_matches(act, k, duration)
+            result_wm = wm.find_matches(act, k, theta)
             start_wm.update([x[1] for x in result_wm])
 
         wm_correct, wm_incorrect, wm_incorrect_adj = check_input(activities, start_wm, act, delta)
@@ -205,8 +206,9 @@ def get_expected_duration(activity, pct):
     return max_duration
 
 
-def start_matching():
-    for scenario in ['none', 'RS', 'AL_RS_SC']:
+def start_matching(delta, theta):
+    # for scenario in ['none', 'RS', 'AL_RS_SC']:
+    for scenario in ['AL_RS_SC']:
         for act_len in [387, 1494, 2959, 10000]:
             all_acts = sorted(glob.glob(f'data/activities/synth/{act_len}/*_{scenario}.txt'))
             all_events = sorted(glob.glob(f'data/events/synth/{act_len}/*_{scenario}.txt'))
@@ -215,7 +217,7 @@ def start_matching():
             aoi = [1, 2, 3, 4, 5, 6]
 
             pool = Pool()
-            partial_run = partial(run_matching, mapping, aoi, 5)
+            partial_run = partial(run_matching, mapping, aoi, delta, theta)
             results = list(tqdm(pool.imap_unordered(partial_run, zip(all_acts, all_events)),
                                 total=len(all_acts), desc="Processing testcases..."))
 
