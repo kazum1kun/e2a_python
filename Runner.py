@@ -132,7 +132,7 @@ def run_e2a(act_file, event_file, map_file, aoi=None, C=1, method='seg_multi'):
     diff_lax = ed.calc_ed(False)
 
     if aoi:
-        all_occ_timestamps = [int(match[1]) for match in prob_matches if equal_lax_array(match, aoi)]
+        all_occ_timestamps = [int(match[1]) for match in prob_matches if equal_lax_array(match[0], aoi)]
     else:
         all_occ_timestamps = None
 

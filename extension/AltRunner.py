@@ -66,10 +66,14 @@ def check_input(activities, times, aoi, delta):
             if (incorrect_sorted[i] - last) <= delta:
                 last = incorrect_sorted[i]
                 incorrect_current += 1
-                continue
+            else:
+                incorrect_current = np.ceil(incorrect_current / (delta * 2))
+                incorrect_adj += incorrect_current
+                incorrect_current = 1
+                last = incorrect_sorted[i]
+        if incorrect_current > 0:
             incorrect_current = np.ceil(incorrect_current / (delta * 2))
             incorrect_adj += incorrect_current
-            last = incorrect_sorted[i]
 
     return correct, incorrect, int(incorrect_adj)
 
@@ -154,7 +158,7 @@ def start_verifier_real(delta):
         aoi = [1, 2, 3, 4, 5, 6]
         correct, missed, incorrect, expected = verify_matches(output, act, aoi, delta)
 
-        print(f'scenario=real, {length=}, {correct=}, {missed=}, {incorrect=}')
+        print(f'scenario=real_med, {length=}, {correct=}, {missed=}, {incorrect=}')
 
 
 # Run the matching algorithms
@@ -246,12 +250,12 @@ def start_matching(delta, theta):
 
 
 def start_matching_real(delta, theta):
-    mapping = 'data/mappings/with_q.txt'
+    mapping = 'data/mappings/k_missing/AL_RS_SC_fail.txt'
 
     for length in [387, 1494, 2959]:
         aoi = [1, 2, 3, 4, 5, 6]
         activities = f'data/activities/real/{length}.txt'
-        events = f'data/events/real/{length}.txt'
+        events = f'data/events/real/{length}_AL_RS_SC.txt'
 
         result = run_matching(mapping, aoi, delta, theta, (activities, events))
 

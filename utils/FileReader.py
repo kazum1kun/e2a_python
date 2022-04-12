@@ -41,11 +41,14 @@ def read_activities(file):
 #                                and following rows has (time event) format as in the input
 # NOTE: the given file has time in float, which is converted to int upon reading
 # NOTE 2: event letters are converted to their ASCII values to facilitate processing
-def read_events(file):
+def read_events(file, dtype='int'):
     with open(file, 'r') as event_file:
         # Read the first line to obtain the number of lines
         num_events = int(event_file.readline())
-        events = np.zeros((num_events + 1, 2), np.float_)
+        if dtype == 'int':
+            events = np.zeros((num_events + 1, 2), np.int_)
+        elif dtype == 'float':
+            events = np.zeros((num_events + 1, 2), np.float_)
         i = 1
 
         for line in event_file:
