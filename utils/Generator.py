@@ -1,17 +1,28 @@
 import logging
 import os.path
+
 import numpy as np
 
 from utils.FileReader import read_mappings_0based, read_device_event, read_activities
 from utils.Misc import get_act_stats
+
+# Hard-coded stats from the real input data
+mean = [0, 15.927, 43.086, 10.553, 38.152, 10.553, 35.542, 3.478975000011945, 33.38133303571937, 1.7387140496036957,
+        30.230282142853866, 1.766518000012355, 1.7687680272112853, 8.722998275897634, 34.815031858422515,
+        1.7897369564810146, 1.8035833333142914, 1.7429857143035536, 0.0, 1.7369035714293983, 1.7274778760885676,
+        5.197146551699853]
+std = [0, 1.352, 9.363, 1.016, 8.668, 0.973, 12.047, 0.5724097746240778, 4.576370287335542, 0.43400412044630904,
+       7.6878460794186605, 0.4342020328161984, 0.41127895816118915, 0.8598459123163101, 10.874888589499959,
+       0.41721265354207665, 0.40576106925669286, 0.4239521594901133, 0.0, 0.40925221046208177, 0.4422595859454422,
+       0.6973014127669434]
 
 
 # Generate test cases using the preferences specified by the user
 def generate_testcase(normal_file, failed_file, number,
                       generate_partial=False, prob_src=None, act_seed=None, event_seed=None,
                       folder='.', filename='default'):
-    mean, std = get_act_stats('data/activities/misc/2959_fix.txt', 'data/events/misc/2959_fix.txt',
-                              'data/mappings/with_q.txt')
+    # mean, std = get_act_stats('data/activities/misc/2959_fix.txt', 'data/events/misc/2959_fix.txt',
+    #                           'data/mappings/with_q.txt')
 
     # If seed is set, then generate patterns according to this seed
     if act_seed:
@@ -46,7 +57,7 @@ def generate_testcase(normal_file, failed_file, number,
     for activity in rand_activities:
         # Generate a random activity duration (a random draw from its distribution)
         act_duration = rng_e.normal(mean[activity], std[activity])
-        activity_output.append(f'{time_counter} {activity}')
+        activity_output.append(f'{time_counter:.4f} {activity}')
 
         # Add a small delay between the occurrence of the activity and the first event in the activity
         time_counter += rng_e.uniform(1, 3)
@@ -64,7 +75,7 @@ def generate_testcase(normal_file, failed_file, number,
 
         # Use a Dirichlet distribution to get a list of sub-intervals for the events
         # Note they add up to one, so simply multiply it by the activity duration to get events duration
-        events_duration = np.random.dirichlet(np.ones(len(sequence - 1)) * 10) * act_duration
+        events_duration = np.random.dirichlet(np.ones(len(sequence) - 1) * 10) * act_duration
 
         if failed_file and len(activity_output) / number > 0.5:
             ni = len(mappings_failed[activity])
@@ -81,13 +92,13 @@ def generate_testcase(normal_file, failed_file, number,
                 time_counter_failed += 1
 
         for i in range(len(sequence)):
-            events_output.append(f'{time_counter} {sequence[i]}')
+            events_output.append(f'{time_counter:.4f} {sequence[i]}')
             if i == len(sequence) - 1:
                 continue
             time_counter += events_duration[i]
 
         # Add a random amount of time in between two activities
-        time_counter += rng_e.uniform(2, 10)
+        time_counter += rng_e.uniform(15, 200)
 
     activity_output[0] = str(len(activity_output) - 1)
     events_output[0] = str(len(events_output) - 1)
