@@ -1,6 +1,8 @@
-import json
 import os.path
-import itertools
+
+import numpy
+import numpy as np
+
 from utils.FileReader import *
 from utils.FileWriter import write_list_txt
 
@@ -98,3 +100,55 @@ def remove_events(act_file, devices, out_path):
 
     write_list_txt(new_events, out_path)
 
+
+# Get mean and std of the activities
+def get_act_stats(act_file, event_file, map_file):
+    acts = read_activities(act_file)
+    events = read_events(event_file, 'float')
+    maps = read_mappings(map_file)
+
+    results = {}
+
+    for i in range(1, len(acts)):
+        act_time_s = acts[i][0]
+
+        # Extract the expected starting event in the sequence
+        expected_firsts = [x[1] for x in maps[acts[i][1]][1:]]
+        expected_lasts = [x[-1] for x in maps[acts[i][1]][1:]]
+
+        # Event index that corresponds to the start of the activity
+        event_idx_s = np.where(events[:, 0] > act_time_s)[0][0]
+        event_s = events[event_idx_s][1]
+
+        if event_s in expected_firsts:
+            event_time_s = events[event_idx_s][0]
+            event_time_e = event_time_s
+
+            possible_last_idx = event_idx_s
+            event_idx_e = event_idx_s
+            # Keep expanding the event match until we find a gap (15 seconds according to the experiment)
+            while True:
+                if events[event_idx_e + 1][0] - event_time_e < 10:
+                    event_time_e = events[event_idx_e + 1][0]
+                    if events[event_idx_e + 1][1] in expected_lasts:
+                        possible_last_idx = event_idx_e + 1
+                    event_idx_e += 1
+                else:
+                    # if event_idx_e != possible_last_idx:
+                    #     print(f'deviancy {possible_last_idx - event_idx_e}')
+                    event_time_e = events[possible_last_idx][0]
+                    duration = event_time_e - event_time_s
+                    if acts[i][1] in results:
+                        results[acts[i][1]].append(duration)
+                    else:
+                        results[acts[i][1]] = [duration]
+                    break
+        else:
+            'ppp'
+
+    means = [np.mean(results[i]) for i in range(1, len(results) + 1)]
+    means.insert(0, np.float_(0.0))
+    stds = [np.std(results[i]) for i in range(1, len(results) + 1)]
+    stds.insert(0, np.float_(0.0))
+
+    return means, stds
