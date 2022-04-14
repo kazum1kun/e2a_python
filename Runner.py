@@ -119,30 +119,35 @@ def run_e2a(act_file, event_file, map_file, aoi=None, C=1, method='seg_multi'):
     lengths_sorted = sorted(lengths.items())
     avg = total / len(prob_matches)
 
-    ed = EditDistance([match[0] for match in prob_matches], activities[:, 1])
+    # ed = EditDistance([match[0] for match in prob_matches], activities[:, 1])
 
     # Strict mode: matches have to be exact to count as correct
     # In order to do so, replace all the activities we are uncertain to act -1,
     # so it's guaranteed to be counted as wrong
-    matches_strict = [act[0] if isinstance(act[0], int) else -1 for act in prob_matches]
-    diff_strict = editdistance.eval(matches_strict, activities[1:, 1])
+    # matches_strict = [act[0] if isinstance(act[0], int) else -1 for act in prob_matches]
+    # diff_strict = editdistance.eval(matches_strict, activities[1:, 1])
     # diff_strict = ed.calc_ed(True)
 
     # Lax mode: for any matches it is only necessary to include it in the guesses to be count as correct
-    diff_lax = ed.calc_ed(False)
+    # diff_lax = ed.calc_ed(False)
 
     if aoi:
         all_occ_timestamps = [int(match[1]) for match in prob_matches if equal_lax_array(match[0], aoi)]
     else:
         all_occ_timestamps = None
 
+    # Convert the data types to be JSON-compatible
+    prob_matches = [[[m[0]], int(m[1])] if isinstance(m[0], int) else [m[0], int(m[1])] for m in prob_matches]
+
+
     # Return results as a dictionary
     res = {
         "avg_length": avg,
         "length_dist": lengths_sorted,
-        "diff_strict": diff_strict,
-        "diff_lax": diff_lax,
+        "diff_strict": "skipped",
+        "diff_lax": "skipped",
         "diff_original": ed_original,
+        "matches": prob_matches,
         "all_timestamps": all_occ_timestamps,
     }
 
