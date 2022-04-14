@@ -8,8 +8,6 @@ __pycache__/
 *.so
 
 # Generated test data
-data/activities/synth/
-data/events/synth/
 *.zip
 
 

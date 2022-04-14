@@ -1,7 +1,6 @@
 import functools
 import logging as log
 import os
-from collections import Counter
 from multiprocessing import Pool
 
 import editdistance
@@ -123,12 +122,13 @@ def run_e2a(act_file, event_file, map_file, aoi=None, C=1, method='seg_multi'):
     ed = EditDistance([match[0] for match in prob_matches], activities[:, 1])
 
     # Strict mode: matches have to be exact to count as correct
-    # diff_strict, missed_strict, extra_strict, error_pct_strict = \
-    #     calc_ed(prob_matches, activities[1:, 1], strict_mode=True)
-    diff_strict = ed.calc_ed(True)
+    # In order to do so, replace all the activities we are uncertain to act -1,
+    # so it's guaranteed to be counted as wrong
+    matches_strict = [act[0] if isinstance(act[0], int) else -1 for act in prob_matches]
+    diff_strict = editdistance.eval(matches_strict, activities[1:, 1])
+    # diff_strict = ed.calc_ed(True)
 
     # Lax mode: for any matches it is only necessary to include it in the guesses to be count as correct
-    # diff_lax, missed_lax, extra_lax, error_pct_lax = calc_ed(prob_matches, activities[1:, 1], strict_mode=False)
     diff_lax = ed.calc_ed(False)
 
     if aoi:
@@ -191,61 +191,45 @@ def process_segment(C, mappings, ni, indexed_segment):
     return indexed_segment[0], f_opt, Aw[1:]
 
 
-def get_diff(calculated, actual):
-    diff = editdistance.eval(calculated, actual)
-
-    calc_counter = Counter(calculated)
-    actual_counter = Counter(actual)
-    calc_counter.subtract(actual_counter)
-    # Remove zeroes
-    diff_counter = {k: v for k, v in calc_counter.items() if v != 0}
-
-    missed = 0
-    extra = 0
-    for _, v in diff_counter.items():
-        if v < 0:
-            missed -= v
-        if v > 0:
-            extra += v
-
-    error_pct = diff / len(actual)
-    return diff, missed, extra, error_pct
-
-
 def main():
     log.basicConfig(filename='debug.log', format='%(message)s', level=log.INFO)
 
-    # for itr in range(100):
-    #     for scenario in ['none', 'RS', 'AL_RS_SC']:
-    #         mapping_file = f'data/mappings/k_missing/{scenario}_fail.txt'
-    #         for act_len in [387, 1494, 2959, 10000]:
-    #             out_file = f'data/output/synth/{act_len}/{itr}_{scenario}_new.json'
-    #
-    #             # Skip the entries that are already computed
-    #             if os.path.exists(out_file):
-    #                 print(f'Skipping {out_file}')
-    #                 progress_bar.update(1)
-    #                 continue
-    #
-    #             activity_file = f'data/activities/synth/{act_len}/{itr}_{scenario}.txt'
-    #             event_file = f'data/events/synth/{act_len}/{itr}_{scenario}.txt'
-    #
-    #             res = run_e2a(activity_file, event_file, mapping_file, aoi=[1, 2, 3, 4, 5, 6])
-    #             write_dictionary_json(res, out_file)
-    #
-    #             progress_bar.update(1)
+    progress_bar = tqdm(range(1200), desc='Processing test cases...')
+    for itr in range(100):
+        for scenario in ['none', 'RS', 'AL_RS_SC']:
+            mapping_file = f'data/mappings/k_missing/{scenario}_fail.txt'
+            for act_len in [387]:
+                out_folder = f'data/output/synth/{act_len}_rand'
+                if not os.path.exists(out_folder):
+                    os.mkdir(out_folder)
 
-    mapping = f'data/mappings/with_q.txt'
-    for length in [387, 1494, 2959]:
-        out_file = f'data/output/real/{length}.json'
+                out_file = f'{out_folder}/{itr}_{scenario}.json'
 
-        act_file = f'data/activities/real/{length}.txt'
-        event_file = f'data/events/real/{length}.txt'
+                # Skip the entries that are already computed
+                if os.path.exists(out_file):
+                    print(f'Skipping {out_file}')
+                    progress_bar.update(1)
+                    continue
 
-        print(f'Running original length {length}')
-        res = run_e2a(act_file, event_file, mapping, aoi=[1, 2, 3, 4, 5, 6])
+                activity_file = f'data/activities/synth/{act_len}_rand/{itr}_{scenario}.txt'
+                event_file = f'data/events/synth/{act_len}_rand/{itr}_{scenario}.txt'
 
-        write_dictionary_json(res, out_file)
+                res = run_e2a(activity_file, event_file, mapping_file, aoi=[1, 2, 3, 4, 5, 6])
+                write_dictionary_json(res, out_file)
+
+                progress_bar.update(1)
+
+    # mapping = f'data/mappings/with_q.txt'
+    # for length in [387, 1494, 2959]:
+    #     out_file = f'data/output/real/{length}.json'
+    #
+    #     act_file = f'data/activities/real/{length}.txt'
+    #     event_file = f'data/events/real/{length}.txt'
+    #
+    #     print(f'Running original length {length}')
+    #     res = run_e2a(act_file, event_file, mapping, aoi=[1, 2, 3, 4, 5, 6])
+    #
+    #     write_dictionary_json(res, out_file)
     #
     # for activity in ['AQ', 'RS', 'AL_RS_SC']:
     #     for length in [387, 1494, 2959]:

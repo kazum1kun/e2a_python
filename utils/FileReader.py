@@ -22,7 +22,7 @@ def read_activities(file):
         i = 1
 
         for line in act_file:
-            activities[i][0] = int(line.split(' ')[0])
+            activities[i][0] = float(line.split(' ')[0])
             activities[i][1] = int(line.split(' ')[1])
             i += 1
 
