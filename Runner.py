@@ -198,7 +198,7 @@ def main():
     for itr in range(100):
         for scenario in ['none', 'RS', 'AL_RS_SC']:
             mapping_file = f'data/mappings/k_missing/{scenario}_fail.txt'
-            for act_len in [387]:
+            for act_len in [387, 1494, 2959, 10000]:
                 out_folder = f'data/output/synth/{act_len}_rand'
                 if not os.path.exists(out_folder):
                     os.mkdir(out_folder)
