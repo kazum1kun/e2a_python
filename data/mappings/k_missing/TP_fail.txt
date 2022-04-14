@@ -1,0 +1,23 @@
+22
+(1, 1) K O N L M C T U C A
+(2, 1) K P N L M C T U C A Q
+(3, 1) K O B T U D A
+(4, 1) K P B T U D A Q
+(5, 1) K O C T U D A
+(6, 1) K P C T U D A Q
+(7, 1) K O N
+(8, 1) K P N Q
+(9, 1) K O
+(10, 1) K P Q
+(11, 1) A C T U K O C
+(12, 1) A C T U K P C Q
+(13, 1) A C T U K O
+(14, 1) A C T U K P Q
+(15, 1) G V
+(16, 1) G W
+(17, 1) I J
+(18, 1) H
+(19, 1) R H
+(20, 1) H S
+(21, 1) E Y F X
+(21, 2) E F

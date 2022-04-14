@@ -1,0 +1,76 @@
+75
+(1, 1) K O N L M C T U C A
+(1, 2) O N L M C T U C A
+(1, 3) K N L M C T U C A
+(1, 4) N L M C T U C A
+(2, 1) K P N L M C T U C A Q
+(2, 2) P N L M C T U C A Q
+(2, 3) K P N L M C T U C A
+(2, 4) P N L M C T U C A
+(2, 5) K N L M C T U C A
+(2, 6) N L M C T U C A
+(3, 1) K O B T U D A
+(3, 2) O B T U D A
+(3, 3) K B T U D A
+(3, 4) B T U D A
+(4, 1) K P B T U D A Q
+(4, 2) P B T U D A Q
+(4, 3) K P B T U D A
+(4, 4) P B T U D A
+(4, 5) K B T U D A
+(4, 6) B T U D A
+(5, 1) K O C T U D A
+(5, 2) O C T U D A
+(5, 3) K C T U D A
+(5, 4) C T U D A
+(6, 1) K P C T U D A Q
+(6, 2) P C T U D A Q
+(6, 3) K P C T U D A
+(6, 4) P C T U D A
+(6, 5) K C T U D A
+(6, 6) C T U D A
+(7, 1) K O N
+(7, 2) O N
+(7, 3) K N
+(7, 4) N
+(8, 1) K P N Q
+(8, 2) P N Q
+(8, 3) K P N
+(8, 4) P N
+(8, 5) K N
+(8, 6) N
+(9, 1) K O
+(9, 2) O
+(9, 3) K
+(10, 1) K P Q
+(10, 2) P Q
+(10, 3) K P
+(10, 4) P
+(10, 5) K
+(11, 1) A C T U K O C
+(11, 2) A C T U O C
+(11, 3) A C T U K C
+(11, 4) A C T U C
+(12, 1) A C T U K P C Q
+(12, 2) A C T U P C Q
+(12, 3) A C T U K P C
+(12, 4) A C T U P C
+(12, 5) A C T U K C
+(12, 6) A C T U C
+(13, 1) A C T U K O
+(13, 2) A C T U O
+(13, 3) A C T U K
+(13, 4) A C T U
+(14, 1) A C T U K P Q
+(14, 2) A C T U P Q
+(14, 3) A C T U K P
+(14, 4) A C T U P
+(14, 5) A C T U K
+(14, 6) A C T U
+(15, 1) G V
+(16, 1) G W
+(17, 1) I J
+(18, 1) H
+(19, 1) R H
+(20, 1) H S
+(21, 1) E Y F X
