@@ -31,12 +31,10 @@ def check_activity(activities, time, delta, aoi):
 
 
 # Check a sequence of timestamps and compare it against the ground truth
-def check_input(activities, times, aoi, delta):
+def check_input(activities, times, aoi, delta, incorrect_times):
     correct = 0
-    incorrect = 0
     duplicate = 0
     used_idx = set()
-    incorrect_idx = set()
 
     for time in times:
         # check_partial = partial(check_activity, activities, time, delta)
@@ -44,8 +42,8 @@ def check_input(activities, times, aoi, delta):
         res = check_activity(activities, time, delta, aoi)
 
         if not res:
-            incorrect += 1
-            incorrect_idx.add(time)
+            if time not in incorrect_times:
+                incorrect_times.add(time)
         else:
             act_idx = res
             if act_idx in used_idx:
@@ -54,28 +52,7 @@ def check_input(activities, times, aoi, delta):
                 correct += 1
                 used_idx.add(act_idx)
 
-    incorrect_sorted = sorted(incorrect_idx)
-    # Merge incorrect to a bigger window to smooth over data
-    if delta == 0 or len(incorrect_sorted) == 0:
-        incorrect_adj = incorrect
-    else:
-        last = incorrect_sorted[0]
-        incorrect_adj = 0
-        incorrect_current = 0
-        for i in range(len(incorrect_sorted)):
-            if (incorrect_sorted[i] - last) <= delta:
-                last = incorrect_sorted[i]
-                incorrect_current += 1
-            else:
-                incorrect_current = np.ceil(incorrect_current / (delta * 2))
-                incorrect_adj += incorrect_current
-                incorrect_current = 1
-                last = incorrect_sorted[i]
-        if incorrect_current > 0:
-            incorrect_current = np.ceil(incorrect_current / (delta * 2))
-            incorrect_adj += incorrect_current
-
-    return correct, incorrect, int(incorrect_adj)
+    return correct
 
 
 # Check a sequence of timestamps and compare it against the ground truth
@@ -130,8 +107,8 @@ def verify_matches(output_file, activity_file, aoi, delta):
 def start_verifier(delta):
     for scenario in ['none', 'RS', 'AL_RS_SC']:
         for act_len in [387, 1494, 2959, 10000]:
-            all_output = sorted(glob.glob(f'data/output/synth/{act_len}/*_{scenario}_new.json'))
-            all_acts = sorted(glob.glob(f'data/activities/synth/{act_len}/*_{scenario}.txt'))
+            all_output = sorted(glob.glob(f'data/output/synth/{act_len}_rand/*_{scenario}_new.json'))
+            all_acts = sorted(glob.glob(f'data/activities/synth/{act_len}_rand/*_{scenario}.txt'))
 
             correct_total = 0
             incorrect_total = 0
@@ -183,9 +160,9 @@ def run_matching(map_file, aoi, delta, theta, act_event):
 
     wm_correct_total = 0
     wm_miss_total = 0
-    wm_incorrect_total = 0
     expected_total = 0
-    incorrect_adj_total = 0
+
+    incorrect_times = set()
 
     for act in aoi:
         # Using set to prevent dups
@@ -193,27 +170,53 @@ def run_matching(map_file, aoi, delta, theta, act_event):
 
         for k in range(1, ni[act] + 1):
             # Run the matching on each algorithm and add the timestamps of each match found
-            result_wm = wm.find_matches(act, k, theta)
+            result_wm = wm.find_matches(act, k, theta[act - 1])
             start_wm.update([x[1] for x in result_wm])
 
-        wm_correct, wm_incorrect, wm_incorrect_adj = check_input(activities, start_wm, act, delta)
+        wm_correct = check_input(activities, start_wm, act, delta, incorrect_times)
         expected = np.sum(np.count_nonzero(activities[:, 1] == act))
 
         wm_miss = expected - wm_correct
         wm_correct_total += wm_correct
         wm_miss_total += wm_miss
-        wm_incorrect_total += wm_incorrect
         expected_total += expected
-        incorrect_adj_total += wm_incorrect_adj
 
-    return wm_correct_total, wm_miss_total, wm_incorrect_total, expected_total, incorrect_adj_total
+    incorrect = len(incorrect_times)
+    incorrect_sorted = sorted(incorrect_times)
+    # Merge incorrect to a bigger window to smooth over data
+    if delta == 0 or len(incorrect_sorted) == 0:
+        incorrect_adj = incorrect
+    else:
+        last = incorrect_sorted[0]
+        incorrect_adj = 0
+        incorrect_current = 0
+        for i in range(len(incorrect_sorted)):
+            if (incorrect_sorted[i] - last) <= delta:
+                last = incorrect_sorted[i]
+                incorrect_current += 1
+            else:
+                incorrect_current = np.ceil(incorrect_current / (delta * 2))
+                incorrect_adj += incorrect_current
+                incorrect_current = 1
+                last = incorrect_sorted[i]
+        if incorrect_current > 0:
+            incorrect_current = np.ceil(incorrect_current / (delta * 2))
+            incorrect_adj += incorrect_current
+
+    return wm_correct_total, wm_miss_total, incorrect, expected_total, incorrect_adj
 
 
 # Get the expected activity duration given a percentile (result centered around mean)
 def get_expected_duration(activity, pct):
-    # Hard-coded data from experiment data
-    mean = [0, 15.927, 43.086, 10.553, 38.152, 10.553, 35.542]
-    std = [0, 1.352, 9.363, 1.016, 8.668, 0.973, 12.047]
+    # Hard-coded stats from the real input data
+    mean = [0, 15.927, 43.086, 10.553, 38.152, 10.553, 35.542, 3.478975000011945, 33.38133303571937,
+            1.7387140496036957, 30.230282142853866, 1.766518000012355, 1.7687680272112853, 8.722998275897634,
+            34.815031858422515, 1.7897369564810146, 1.8035833333142914, 1.7429857143035536, 0.0, 1.7369035714293983,
+            1.7274778760885676, 5.197146551699853]
+    std = [0, 1.352, 9.363, 1.016, 8.668, 0.973, 12.047, 0.5724097746240778, 4.576370287335542, 0.43400412044630904,
+           7.6878460794186605, 0.4342020328161984, 0.41127895816118915, 0.8598459123163101, 10.874888589499959,
+           0.41721265354207665, 0.40576106925669286, 0.4239521594901133, 0.0, 0.40925221046208177, 0.4422595859454422,
+           0.6973014127669434]
 
     # Calculate the inverse cdf given the percentile
     max_duration = NormalDist(mu=mean[activity], sigma=std[activity]).inv_cdf(pct)
@@ -224,14 +227,15 @@ def get_expected_duration(activity, pct):
 def start_matching(delta, theta):
     for scenario in ['none', 'RS', 'AL_RS_SC']:
         for act_len in [387, 1494, 2959, 10000]:
-            all_acts = sorted(glob.glob(f'data/activities/synth/{act_len}/*_{scenario}.txt'))
-            all_events = sorted(glob.glob(f'data/events/synth/{act_len}/*_{scenario}.txt'))
+            all_acts = sorted(glob.glob(f'data/activities/synth/{act_len}_rand/*_{scenario}.txt'))
+            all_events = sorted(glob.glob(f'data/events/synth/{act_len}_rand/*_{scenario}.txt'))
 
             mapping = f'data/mappings/k_missing/{scenario}_fail.txt'
             aoi = [1, 2, 3, 4, 5, 6]
+            theta_dist = [get_expected_duration(act, theta) for act in aoi]
 
             pool = Pool()
-            partial_run = partial(run_matching, mapping, aoi, delta, theta)
+            partial_run = partial(run_matching, mapping, aoi, delta, theta_dist)
             results = list(tqdm(pool.imap_unordered(partial_run, zip(all_acts, all_events)),
                                 total=len(all_acts), desc="Processing testcases..."))
 
