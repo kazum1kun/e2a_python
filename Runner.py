@@ -10,7 +10,6 @@ from tqdm import tqdm
 from OMatch import OMatch
 from SLN import SLN
 from k_missing.KGenerator import compare
-from utils.EditDistance import EditDistance
 from utils.FileReader import *
 from utils.FileWriter import *
 from utils.Timer import Timer
@@ -138,7 +137,6 @@ def run_e2a(act_file, event_file, map_file, aoi=None, C=1, method='seg_multi'):
 
     # Convert the data types to be JSON-compatible
     prob_matches = [[[m[0]], int(m[1])] if isinstance(m[0], int) else [m[0], int(m[1])] for m in prob_matches]
-
 
     # Return results as a dictionary
     res = {

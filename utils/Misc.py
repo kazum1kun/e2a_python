@@ -1,8 +1,5 @@
 import os.path
 
-import numpy
-import numpy as np
-
 from utils.FileReader import *
 from utils.FileWriter import write_list_txt
 

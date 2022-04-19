@@ -4,7 +4,6 @@ import os.path
 import numpy as np
 
 from utils.FileReader import read_mappings_0based, read_device_event, read_activities
-from utils.Misc import get_act_stats
 
 # Hard-coded stats from the real input data
 mean = [0, 15.927, 43.086, 10.553, 38.152, 10.553, 35.542, 3.478975000011945, 33.38133303571937, 1.7387140496036957,

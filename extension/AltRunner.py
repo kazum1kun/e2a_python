@@ -106,7 +106,7 @@ def start_verifier(delta):
 
             for output, act in zip(all_output, all_acts):
                 aoi = [1, 2, 3, 4, 5, 6]
-                correct, miss, incorrect= verify_matches(output, act, aoi, delta)
+                correct, miss, incorrect = verify_matches(output, act, aoi, delta)
                 correct_total += correct
                 incorrect_total += incorrect
                 missed_total += miss

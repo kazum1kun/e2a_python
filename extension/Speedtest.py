@@ -1,6 +1,8 @@
-from Runner import run_e2a
-from tqdm import tqdm
 import time
+
+from tqdm import tqdm
+
+from Runner import run_e2a
 
 progress_bar = tqdm(range(40), desc='Processing test cases...')
 scenario = 'none'
@@ -29,5 +31,5 @@ for act_len in [387, 1494, 2959]:
 
         progress_bar.update(1)
 
-    print(f'act_len = {act_len}, multi avg={sum(time_multi)/len(time_multi)}, '
-          f'single avg={sum(time_single)/len(time_single)}')
+    print(f'act_len = {act_len}, multi avg={sum(time_multi) / len(time_multi)}, '
+          f'single avg={sum(time_single) / len(time_single)}')
