@@ -193,7 +193,7 @@ def process_segment(C, mappings, ni, indexed_segment):
     if os_ == 'Windows':
         pid.nice(psutil.BELOW_NORMAL_PRIORITY_CLASS)
     else:
-        pid.nice(-10)
+        pid.nice(0)
     sln = SLN(mappings, indexed_segment[1], ni)
     _, Aw, f_opt = sln.sln_nd(C)
 
