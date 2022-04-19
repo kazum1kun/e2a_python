@@ -58,16 +58,16 @@ def check_input(activities, times, aoi, delta, incorrect_times):
 # Check a sequence of timestamps and compare it against the ground truth
 def check_input_list(activities, times, aoi, delta):
     correct = 0
-    incorrect = 0
     duplicate = 0
     used_idx = set()
+    incorrect_times = set()
 
     for time in times:
         check_partial = partial(check_activity, activities, time, delta)
         res = list(map(check_partial, aoi))
 
         if not any(res):
-            incorrect += 1
+            incorrect_times.add(time)
         else:
             act_idx = next(item for item in res if item is not None)
             if act_idx in used_idx:
@@ -76,7 +76,10 @@ def check_input_list(activities, times, aoi, delta):
                 correct += 1
                 used_idx.add(act_idx)
 
-    return correct, incorrect
+    incorrect = len(incorrect_times)
+    incorrect_adj = combine_incorrect_time(incorrect_times, delta)
+
+    return correct, incorrect, incorrect_adj
 
 
 # Verify whether specific activities did occur on the timestamps specified in the output file
@@ -84,47 +87,35 @@ def verify_matches(output_file, activity_file, aoi, delta):
     times = read_json(output_file)["all_timestamps"]
     activities = read_activities(activity_file)
 
-    ak_correct_total = 0
-    ak_miss_total = 0
-    ak_incorrect_total = 0
-    expected_total = 0
+    ak_correct, ak_incorrect, ak_incorrect_adj = check_input_list(activities, times, aoi, delta)
 
-    # for act in aoi:
-    correct, incorrect = check_input_list(activities, times, aoi, delta)
+    ak_expected = np.sum([np.count_nonzero(activities[:, 1] == i) for i in aoi])
+    ak_miss = ak_expected - ak_correct
 
-    expected = np.sum([np.count_nonzero(activities[:, 1] == i) for i in aoi])
-    # expected = np.count_nonzero(activities[:, 1] == act)
-    miss = expected - correct
-
-    ak_correct_total += correct
-    ak_miss_total += miss
-    ak_incorrect_total += incorrect
-    expected_total += expected
-
-    return ak_correct_total, ak_miss_total, ak_incorrect_total, expected_total
+    return ak_correct, ak_miss, ak_incorrect, ak_incorrect_adj
 
 
 def start_verifier(delta):
     for scenario in ['none', 'RS', 'AL_RS_SC']:
         for act_len in [387, 1494, 2959, 10000]:
-            all_output = sorted(glob.glob(f'data/output/synth/{act_len}_rand/*_{scenario}_new.json'))
+            all_output = sorted(glob.glob(f'data/output/synth/{act_len}_rand/*_{scenario}.json'))
             all_acts = sorted(glob.glob(f'data/activities/synth/{act_len}_rand/*_{scenario}.txt'))
 
             correct_total = 0
             incorrect_total = 0
-            expected_total = 0
             missed_total = 0
+            incorrect_adj_total = 0
 
             for output, act in zip(all_output, all_acts):
                 aoi = [1, 2, 3, 4, 5, 6]
-                correct, miss, incorrect, expected = verify_matches(output, act, aoi, delta)
+                correct, miss, incorrect, incorrect_adj = verify_matches(output, act, aoi, delta)
                 correct_total += correct
                 incorrect_total += incorrect
-                expected_total += expected
                 missed_total += miss
+                incorrect_adj_total += incorrect_adj
 
-            print(f'{scenario=}, {act_len=}, expected = {expected_total}, correct={correct_total}, '
-                  f'missed={missed_total}, incorrect={incorrect_total}, total={correct_total + incorrect_total}')
+            print(f'{scenario=}, {act_len=}, correct={correct_total}, '
+                  f'missed={missed_total}, incorrect={incorrect_total} (adj={incorrect_adj_total})')
 
 
 def start_verifier_real(delta):
@@ -133,9 +124,9 @@ def start_verifier_real(delta):
         act = f'data/activities/real/{length}.txt'
 
         aoi = [1, 2, 3, 4, 5, 6]
-        correct, missed, incorrect, expected = verify_matches(output, act, aoi, delta)
+        correct, missed, incorrect, incorrect_adj = verify_matches(output, act, aoi, delta)
 
-        print(f'scenario=real_med, {length=}, {correct=}, {missed=}, {incorrect=}')
+        print(f'scenario=real_med, {length=}, {correct=}, {missed=}, {incorrect=} (adj={incorrect_adj})')
 
 
 # Run the matching algorithms
@@ -182,10 +173,17 @@ def run_matching(map_file, aoi, delta, theta, act_event):
         expected_total += expected
 
     incorrect = len(incorrect_times)
+    incorrect_adj = combine_incorrect_time(incorrect_times, delta)
+
+    return wm_correct_total, wm_miss_total, incorrect, expected_total, incorrect_adj
+
+
+# Combine incorrect occurrences given the delta value
+def combine_incorrect_time(incorrect_times, delta):
     incorrect_sorted = sorted(incorrect_times)
     # Merge incorrect to a bigger window to smooth over data
     if delta == 0 or len(incorrect_sorted) == 0:
-        incorrect_adj = incorrect
+        incorrect_adj = len(incorrect_times)
     else:
         last = incorrect_sorted[0]
         incorrect_adj = 0
@@ -203,7 +201,7 @@ def run_matching(map_file, aoi, delta, theta, act_event):
             incorrect_current = np.ceil(incorrect_current / (delta * 2))
             incorrect_adj += incorrect_current
 
-    return wm_correct_total, wm_miss_total, incorrect, expected_total, incorrect_adj
+    return incorrect_adj
 
 
 # Get the expected activity duration given a percentile (result centered around mean)
@@ -248,7 +246,7 @@ def start_matching(delta, theta):
             expected_total = np.sum([result[3] for result in results])
             wm_incorrect_adj_total = np.sum([result[4] for result in results])
 
-            print(f'{scenario=}, {act_len=}\n'
+            print(f'------{scenario=}, {act_len=}------\n'
                   f'{wm_correct_total=}, {wm_missed_total=}, {wm_incorrect_total=} (adj = {wm_incorrect_adj_total}), '
                   f'{expected_total=}\n')
 
