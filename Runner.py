@@ -3,6 +3,7 @@ import logging as log
 import os
 import time
 from multiprocessing import Pool
+import platform
 
 import editdistance
 import psutil
@@ -188,7 +189,11 @@ def split_events(M, E):
 def process_segment(C, mappings, ni, indexed_segment):
     # Limit CPU usage by setting its priority to "below normal"
     pid = psutil.Process(os.getpid())
-    pid.nice(psutil.BELOW_NORMAL_PRIORITY_CLASS)
+    os_ = platform.system()
+    if os_ == 'Windows':
+        pid.nice(psutil.BELOW_NORMAL_PRIORITY_CLASS)
+    else:
+        pid.nice(-10)
     sln = SLN(mappings, indexed_segment[1], ni)
     _, Aw, f_opt = sln.sln_nd(C)
 
