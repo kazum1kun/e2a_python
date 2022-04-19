@@ -77,9 +77,8 @@ def check_input_list(activities, times, aoi, delta):
                 used_idx.add(act_idx)
 
     incorrect = len(incorrect_times)
-    incorrect_adj = combine_incorrect_time(incorrect_times, delta)
 
-    return correct, incorrect, incorrect_adj
+    return correct, incorrect
 
 
 # Verify whether specific activities did occur on the timestamps specified in the output file
@@ -87,12 +86,12 @@ def verify_matches(output_file, activity_file, aoi, delta):
     times = read_json(output_file)["all_timestamps"]
     activities = read_activities(activity_file)
 
-    ak_correct, ak_incorrect, ak_incorrect_adj = check_input_list(activities, times, aoi, delta)
+    ak_correct, ak_incorrect = check_input_list(activities, times, aoi, delta)
 
     ak_expected = np.sum([np.count_nonzero(activities[:, 1] == i) for i in aoi])
     ak_miss = ak_expected - ak_correct
 
-    return ak_correct, ak_miss, ak_incorrect, ak_incorrect_adj
+    return ak_correct, ak_miss, ak_incorrect
 
 
 def start_verifier(delta):
@@ -104,18 +103,16 @@ def start_verifier(delta):
             correct_total = 0
             incorrect_total = 0
             missed_total = 0
-            incorrect_adj_total = 0
 
             for output, act in zip(all_output, all_acts):
                 aoi = [1, 2, 3, 4, 5, 6]
-                correct, miss, incorrect, incorrect_adj = verify_matches(output, act, aoi, delta)
+                correct, miss, incorrect= verify_matches(output, act, aoi, delta)
                 correct_total += correct
                 incorrect_total += incorrect
                 missed_total += miss
-                incorrect_adj_total += incorrect_adj
 
             print(f'{scenario=}, {act_len=}, correct={correct_total}, '
-                  f'missed={missed_total}, incorrect={incorrect_total} (adj={incorrect_adj_total})')
+                  f'missed={missed_total}, incorrect={incorrect_total}')
 
 
 def start_verifier_real(delta):
@@ -124,9 +121,9 @@ def start_verifier_real(delta):
         act = f'data/activities/real/{length}.txt'
 
         aoi = [1, 2, 3, 4, 5, 6]
-        correct, missed, incorrect, incorrect_adj = verify_matches(output, act, aoi, delta)
+        correct, missed, incorrect = verify_matches(output, act, aoi, delta)
 
-        print(f'scenario=real_med, {length=}, {correct=}, {missed=}, {incorrect=} (adj={incorrect_adj})')
+        print(f'scenario=real_med, {length=}, {correct=}, {missed=}, {incorrect=}')
 
 
 # Run the matching algorithms
