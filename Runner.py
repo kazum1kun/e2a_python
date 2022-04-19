@@ -1,6 +1,7 @@
 import functools
 import logging as log
 import os
+import time
 from multiprocessing import Pool
 
 import editdistance
@@ -196,112 +197,62 @@ def process_segment(C, mappings, ni, indexed_segment):
 
 def main():
     log.basicConfig(filename='debug.log', format='%(message)s', level=log.INFO)
-
-    progress_bar = tqdm(range(1200), desc='Processing test cases...')
-    for itr in range(100):
-        for scenario in ['none', 'RS', 'AL_RS_SC']:
-            mapping_file = f'data/mappings/k_missing/{scenario}_fail.txt'
-            for act_len in [387, 1494, 2959, 10000]:
-                out_folder = f'data/output/synth/{act_len}_rand'
-                if not os.path.exists(out_folder):
-                    os.mkdir(out_folder)
-
-                out_file = f'{out_folder}/{itr}_{scenario}.json'
-
-                # Skip the entries that are already computed
-                if os.path.exists(out_file):
-                    print(f'Skipping {out_file}')
-                    progress_bar.update(1)
-                    continue
-
-                activity_file = f'data/activities/synth/{act_len}_rand/{itr}_{scenario}.txt'
-                event_file = f'data/events/synth/{act_len}_rand/{itr}_{scenario}.txt'
-
-                res = run_e2a(activity_file, event_file, mapping_file, aoi=[1, 2, 3, 4, 5, 6])
-                write_dictionary_json(res, out_file)
-
-                progress_bar.update(1)
-
-    # mapping = f'data/mappings/with_q.txt'
-    # for length in [387, 1494, 2959]:
-    #     out_file = f'data/output/real/{length}.json'
     #
-    #     act_file = f'data/activities/real/{length}.txt'
-    #     event_file = f'data/events/real/{length}.txt'
+    # progress_bar = tqdm(range(1200), desc='Processing test cases...')
+    # for itr in range(100):
+    #     for scenario in ['none', 'RS', 'AL_RS_SC']:
+    #         mapping_file = f'data/mappings/k_missing/{scenario}_fail.txt'
+    #         for act_len in [387, 1494, 2959, 10000]:
+    #             out_folder = f'data/output/synth/{act_len}_rand'
+    #             if not os.path.exists(out_folder):
+    #                 os.mkdir(out_folder)
     #
-    #     print(f'Running original length {length}')
-    #     res = run_e2a(act_file, event_file, mapping, aoi=[1, 2, 3, 4, 5, 6])
+    #             out_file = f'{out_folder}/{itr}_{scenario}.json'
     #
-    #     write_dictionary_json(res, out_file)
-    #
-    # for activity in ['AQ', 'RS', 'AL_RS_SC']:
-    #     for length in [387, 1494, 2959]:
-    #         mapping = f'data/mappings/k_missing/{activity}_fail.txt'
-    #         act_file = f'data/activities/synth/dev_fails/{activity}_{length}.txt'
-    #         event_file = f'data/events/synth/dev_fails/{activity}_{length}.txt'
-    #
-    #         print(f'Running {activity} length {length}')
-    #         run_e2a(act_file, event_file, mapping, max_cpu=0.8)
-
-    # progress_bar = tqdm(range(1000), desc='Processing synth test cases...')
-    # # input_types = ['real', 'normal', 'fail']
-    # input_types = ['normal']
-    # for input_type in input_types:
-    #     if input_type == 'real' or input_type == 'normal':
-    #         mapping = 'data/mappings/with_q.txt'
-    #     else:
-    #         mapping = 'data/mappings/synth_combined.txt'
-    #
-    #     if input_type == 'real':
-    #         for length in [387, 1494, 2959]:
-    #             activity_file = f'data/activities/real/{length}.txt'
-    #             event_file = f'data/events/real/{length}.txt'
-    #             res = run_e2a(activity_file, event_file, mapping)
-    #
-    #             print(f'\n\nType: {input_type} length: {length}\n'
-    #                   f'Time: {res[0]:.5f}, Missed: {res[3]:.5f}, Extra: {res[4]:.5f}, ED (Act): {res[2]:.5f}, '
-    #                   f'ED (Event): {res[1]:.5f}, Acc: {1 - res[5]:.5f}')
-    #             print('====================================================')
-    #     else:
-    #         # for length in [387, 1494, 2959, 10000, 30000]:
-    #         for length in [387]:
-    #             time = []
-    #             missed = []
-    #             extra = []
-    #             ed_act = []
-    #             ed_event = []
-    #             acc = []
-    #
-    #             for itr in range(100):
-    #                 if not os.path.exists(f'data/output/synth/{length}'):
-    #                     os.mkdir(f'data/output/synth/{length}')
-    #
-    #                 if input_type == 'normal':
-    #                     activity_file = f'data/activities/synth/{length}/{itr}.txt'
-    #                     event_file = f'data/events/synth/{length}/{itr}.txt'
-    #
-    #                 else:
-    #                     activity_file = f'data/activities/synth/{length}/{itr}_aqtcfail.txt'
-    #                     event_file = f'data/events/synth/{length}/{itr}_aqtcfail.txt'
-    #
-    #                 res = run_e2a(activity_file, event_file, mapping)
-    #                 time.append(res[0])
-    #                 ed_event.append(res[1])
-    #                 ed_act.append(res[2])
-    #                 missed.append(res[3])
-    #                 extra.append(res[4])
-    #                 acc.append(1 - res[5])
-    #
+    #             # Skip the entries that are already computed
+    #             if os.path.exists(out_file):
+    #                 print(f'Skipping {out_file}')
     #                 progress_bar.update(1)
+    #                 continue
     #
-    #             print(f'\n\nType: {input_type} length: {length}\n'
-    #                   f'Time: avg={np.mean(time):.5f}, median={np.median(time):.5f}, min={np.min(time):.5f}, max={np.max(time):.5f}, std={np.std(time):.5f}\n'
-    #                   f'Missed: avg={np.mean(missed):.5f}, median={np.median(missed):.5f}, min={np.min(missed):.5f}, max={np.max(missed):.5f}, std={np.std(missed):.5f}\n'
-    #                   f'Extra: avg={np.mean(extra):.5f}, median={np.median(extra):.5f}, min={np.min(extra):.5f}, max={np.max(extra):.5f}, std={np.std(extra):.5f}\n'
-    #                   f'ED (Act): avg={np.mean(ed_act):.5f}, median={np.median(ed_act):.5f}, min={np.min(ed_act):.5f}, max={np.max(ed_act):.5f}, std={np.std(ed_act):.5f}\n'
-    #                   f'ED (Event): avg={np.mean(ed_event):.5f}, median={np.median(ed_event):.5f}, min={np.min(ed_event):.5f}, max={np.max(ed_event):.5f}, std={np.std(ed_event):.5f}\n'
-    #                   f'Acc: avg={np.mean(acc):.5f}, median={np.median(acc):.5f}, min={np.min(acc):.5f}, max={np.max(acc):.5f}, std={np.std(acc):.5f}')
-    #             print('====================================================')
+    #             activity_file = f'data/activities/synth/{act_len}_rand/{itr}_{scenario}.txt'
+    #             event_file = f'data/events/synth/{act_len}_rand/{itr}_{scenario}.txt'
+    #
+    #             res = run_e2a(activity_file, event_file, mapping_file, aoi=[1, 2, 3, 4, 5, 6])
+    #             write_dictionary_json(res, out_file)
+    #
+    #             progress_bar.update(1)
+
+    # Test multithreading speedup
+    progress_bar = tqdm(range(40), desc='Processing test cases...')
+    scenario = 'none'
+
+    mapping_file = f'data/mappings/k_missing/{scenario}_fail.txt'
+
+    for act_len in [387, 1494, 2959]:
+        time_multi = []
+        time_single = []
+
+        for itr in range(10):
+            activity_file = f'data/activities/synth/{act_len}_rand/{itr}_{scenario}.txt'
+            event_file = f'data/events/synth/{act_len}_rand/{itr}_{scenario}.txt'
+
+            # Multi-threaded version
+            start = time.time()
+            run_e2a(activity_file, event_file, mapping_file, aoi=None)
+            end = time.time()
+            time_multi.append(end - start)
+
+            # Single-threaded version
+            start = time.time()
+            run_e2a(activity_file, event_file, mapping_file, aoi=None, method='mono')
+            end = time.time()
+            time_single.append(end - start)
+
+            progress_bar.update(1)
+
+        print(f'act_len = {act_len}, multi avg={sum(time_multi) / len(time_multi)}, '
+              f'single avg={sum(time_single) / len(time_single)}')
 
 
 if __name__ == '__main__':
