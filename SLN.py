@@ -16,7 +16,7 @@ class SLN:
         # Make array 1-based
         self.ni = ni
 
-        self.w = np.zeros((self.n + 1, k + 1), np.float_)
+        self.w = np.zeros((self.n + 1, k + 1), np.float64)
         self.S = mappings
         self.E = events
         self.oMatch = OMatch(self.E, self.S, self.n, self.ni)
@@ -44,9 +44,9 @@ class SLN:
             itr_num += 1
 
             log.debug(f'Iteration {itr_num}')
-            OPT = np.zeros((m,), np.float_)
+            OPT = np.zeros((m,), np.float64)
             a = np.zeros((m,), np.int_)
-            sigma = np.infty
+            sigma = np.inf
             delta = np.zeros((m,), np.int_)
 
             for j in range(1, m):
@@ -86,7 +86,7 @@ class SLN:
                         log.debug('Line 23: true')
                         log.debug(f'{OPT[j]=}, {a[j]=}\n')
 
-            if sigma == np.infty:
+            if sigma == np.inf:
                 sigma = 2
                 done = True
             mu = x + sigma

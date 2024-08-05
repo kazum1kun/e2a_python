@@ -48,7 +48,7 @@ def read_events(file, dtype='int'):
         if dtype == 'int':
             events = np.zeros((num_events + 1, 2), np.int_)
         elif dtype == 'float':
-            events = np.zeros((num_events + 1, 2), np.float_)
+            events = np.zeros((num_events + 1, 2), np.float64)
         i = 1
 
         for line in event_file:

@@ -144,8 +144,8 @@ def get_act_stats(act_file, event_file, map_file):
             'ppp'
 
     means = [np.mean(results[i]) for i in range(1, len(results) + 1)]
-    means.insert(0, np.float_(0.0))
+    means.insert(0, np.float64(0.0))
     stds = [np.std(results[i]) for i in range(1, len(results) + 1)]
-    stds.insert(0, np.float_(0.0))
+    stds.insert(0, np.float64(0.0))
 
     return means, stds
